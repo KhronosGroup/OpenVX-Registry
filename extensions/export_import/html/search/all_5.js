@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['vx_5fexport_5fuse_5fapplication_5fcreate',['VX_EXPORT_USE_APPLICATION_CREATE',['../d6/d92/group__group1__import__export__type.html#gga717a1db4fd0a05e8b4fac5afe38911aea02f1d22f55a5d624f1349da19b65e3e2',1,'vx_import_export.h']]],
+  ['vx_5fexport_5fuse_5fexport_5fvalues',['VX_EXPORT_USE_EXPORT_VALUES',['../d6/d92/group__group1__import__export__type.html#gga717a1db4fd0a05e8b4fac5afe38911aeae4c3ef3f6e17879a12a2ece89d0bea99',1,'vx_import_export.h']]],
+  ['vx_5fexport_5fuse_5fno_5fexport_5fvalues',['VX_EXPORT_USE_NO_EXPORT_VALUES',['../d6/d92/group__group1__import__export__type.html#gga717a1db4fd0a05e8b4fac5afe38911aea6543df9f34e3f32da643fa58672dd6a9',1,'vx_import_export.h']]],
+  ['vx_5fext_5fimport_5ftype_5fe',['vx_ext_import_type_e',['../d6/d92/group__group1__import__export__type.html#ga1ffe10fbf8c370e8b40af5a609253af4',1,'vx_import_export.h']]],
+  ['vx_5fimport',['vx_import',['../d6/d92/group__group1__import__export__type.html#gaa6bb9b82b8f07ac282210c48d358f977',1,'vx_import_export.h']]],
+  ['vx_5ftype_5fimport',['VX_TYPE_IMPORT',['../d6/d92/group__group1__import__export__type.html#gga1ffe10fbf8c370e8b40af5a609253af4a823600deb4c9b8a7bda82a316a0ad281',1,'vx_import_export.h']]],
+  ['vx_5furl_5fclose_5ff',['vx_url_close_f',['../dd/da9/group__group7__export__and__import__from__url.html#ga63b8bc2586077de916d0599a2b67372d',1,'vx_import_export.h']]],
+  ['vx_5furl_5fcreate_5ff',['vx_url_create_f',['../dd/da9/group__group7__export__and__import__from__url.html#ga92e3966a0b05b690d4ba90dcacde13b9',1,'vx_import_export.h']]],
+  ['vx_5furl_5fhandle',['vx_url_handle',['../dd/da9/group__group7__export__and__import__from__url.html#ga4e9124262f8490182a125ba925280eed',1,'vx_import_export.h']]],
+  ['vx_5furl_5fopen_5ff',['vx_url_open_f',['../dd/da9/group__group7__export__and__import__from__url.html#gad8103b34ddadca6ef8a65e276f01586d',1,'vx_import_export.h']]],
+  ['vx_5furl_5fread_5ff',['vx_url_read_f',['../dd/da9/group__group7__export__and__import__from__url.html#ga4e4a069fd020f0b0251d2cf2c4c641de',1,'vx_import_export.h']]],
+  ['vx_5furl_5fwrite_5ff',['vx_url_write_f',['../dd/da9/group__group7__export__and__import__from__url.html#gac8824817bb748a1e74a3986ba5ee6662',1,'vx_import_export.h']]],
+  ['vxexportobjectstomemory',['vxExportObjectsToMemory',['../db/d09/group__group2__export__to__memory.html#ga9982160a5e3ad87b36803cde88a766b9',1,'vx_import_export.h']]],
+  ['vxexportobjectstourl',['vxExportObjectsToURL',['../da/dd1/group__group8__export__objects__to__url.html#gaf246ef73fdc4086c4dceb13084d312b5',1,'vx_import_export.h']]],
+  ['vxgetimportreferencebyname',['vxGetImportReferenceByName',['../d7/d40/group__group6__get__import__reference__api.html#gac3d3b78341ab42e8559548a75ca30742',1,'vx_import_export.h']]],
+  ['vximportobjectsfrommemory',['vxImportObjectsFromMemory',['../df/d20/group__group4__import__objects__api__from__memory.html#ga8e141d0c1eafd473cf76074a82dc31c1',1,'vx_import_export.h']]],
+  ['vximportobjectsfromurl',['vxImportObjectsFromURL',['../d6/d1c/group__group9__import__objects__from__url.html#gab3b0f74987a0bdfb1ec349dc4687b21c',1,'vx_import_export.h']]],
+  ['vxreleaseexportedmemory',['vxReleaseExportedMemory',['../db/d4a/group__group3__release__exported__memory__api.html#ga15ff1180fc0fdd88691ba09d7254baa5',1,'vx_import_export.h']]],
+  ['vxreleaseimport',['vxReleaseImport',['../db/d9f/group__group5__release__import__api.html#ga6a0dab8a7f1b416faf4e4a69a6e7a05b',1,'vx_import_export.h']]]
+];

@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['vxactivationlayer',['vxActivationLayer',['../d6/d9a/group__group__cnn.html#ga6c4f56037d6a25692ef79887fdd952af',1,'vx_khr_cnn.h']]],
+  ['vxconvolutionlayer',['vxConvolutionLayer',['../d6/d9a/group__group__cnn.html#ga870c106e8ceb4c118692c6f754f75f43',1,'vx_khr_cnn.h']]],
+  ['vxcopytensorpatch',['vxCopyTensorPatch',['../dd/dad/group__group__tensor.html#gabacda16928cb3ab9714402c64a9f9710',1,'vx_khr_cnn.h']]],
+  ['vxcreateimageobjectarrayfromtensor',['vxCreateImageObjectArrayFromTensor',['../dd/dad/group__group__tensor.html#ga413cc779500ae059e474b1b58428c3f9',1,'vx_khr_cnn.h']]],
+  ['vxcreatetensor',['vxCreateTensor',['../dd/dad/group__group__tensor.html#gaefbe70a40c695d79ebeb2bc550351e04',1,'vx_khr_cnn.h']]],
+  ['vxcreatetensoraddressing',['vxCreateTensorAddressing',['../dd/dad/group__group__tensor.html#gad7487061cf90c8b1b1e2538bf79d3eaf',1,'vx_khr_cnn.h']]],
+  ['vxcreatetensorfromview',['vxCreateTensorFromView',['../dd/dad/group__group__tensor.html#ga3f63a5a6f4a3a08eb45a35211956c44e',1,'vx_khr_cnn.h']]],
+  ['vxcreatetensorview',['vxCreateTensorView',['../dd/dad/group__group__tensor.html#ga2aaa8f0282d709a2bc3067737390ff5a',1,'vx_khr_cnn.h']]],
+  ['vxcreatevirtualtensor',['vxCreateVirtualTensor',['../dd/dad/group__group__tensor.html#gad7451299a63894cd952324c9c073609c',1,'vx_khr_cnn.h']]],
+  ['vxfullyconnectedlayer',['vxFullyConnectedLayer',['../d6/d9a/group__group__cnn.html#gaf940a27e357e2836af6a6492148f4c93',1,'vx_khr_cnn.h']]],
+  ['vxnormalizationlayer',['vxNormalizationLayer',['../d6/d9a/group__group__cnn.html#ga2269eca24047c7b564ab7708a8420afa',1,'vx_khr_cnn.h']]],
+  ['vxpoolinglayer',['vxPoolingLayer',['../d6/d9a/group__group__cnn.html#ga0b2cc8c5e172128a3014b56a1ae7b173',1,'vx_khr_cnn.h']]],
+  ['vxquerytensor',['vxQueryTensor',['../dd/dad/group__group__tensor.html#gaa96e480cdfdcb642d0f3f944ea6fec4f',1,'vx_khr_cnn.h']]],
+  ['vxreleasetensor',['vxReleaseTensor',['../dd/dad/group__group__tensor.html#gafbdcb72a17b7d740db68ae9464d5d6fd',1,'vx_khr_cnn.h']]],
+  ['vxreleasetensoraddressing',['vxReleaseTensorAddressing',['../dd/dad/group__group__tensor.html#ga30b8f5de5443a53f65746ea5dd0050c9',1,'vx_khr_cnn.h']]],
+  ['vxreleasetensorview',['vxReleaseTensorView',['../dd/dad/group__group__tensor.html#ga4ec0834c08f2a94465891d3ad440729d',1,'vx_khr_cnn.h']]],
+  ['vxsoftmaxlayer',['vxSoftmaxLayer',['../d6/d9a/group__group__cnn.html#ga76a3a94a73992017519d7dc01e81c476',1,'vx_khr_cnn.h']]],
+  ['vxtensoraddnode',['vxTensorAddNode',['../dd/dad/group__group__tensor.html#ga9342ae0985396b3b2c6793eeb3c90336',1,'vx_khr_cnn.h']]],
+  ['vxtensormultiplynode',['vxTensorMultiplyNode',['../dd/dad/group__group__tensor.html#ga5cb213b679b5a0ed643d6f9db36d2fc1',1,'vx_khr_cnn.h']]],
+  ['vxtensorsubtractnode',['vxTensorSubtractNode',['../dd/dad/group__group__tensor.html#gada7abc9351bb8db86d169f8a29b487de',1,'vx_khr_cnn.h']]],
+  ['vxtensortablelookupnode',['vxTensorTableLookupNode',['../dd/dad/group__group__tensor.html#ga827364134e8934ae2c5859fefb5e9f97',1,'vx_khr_cnn.h']]],
+  ['vxtensortransposenode',['vxTensorTransposeNode',['../dd/dad/group__group__tensor.html#gab8095ad90a57f4d45fc27cb57837577a',1,'vx_khr_cnn.h']]]
+];
