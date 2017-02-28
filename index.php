@@ -97,6 +97,11 @@ include_once("../../assets/static_pages/khr_page_top.php");
      2016). The extension specification is also available in <a
      href="extensions/neural_network/OpenVX_NN_Extension_1_1.pdf"> PDF
      </a> format for offline reading. </li>
+<li> <a href="extensions/vx_khr_s16/1.1/html/index.html"> OpenVX 1.1
+     S16 Extension Provisional (HTML) </a> (updated February,
+     2017). The extension specification is also available in <a
+     href="extensions/vx_khr_s16/1.1/OpenVX_S16_Extension_1.1.pdf"> PDF
+     </a> format for offline reading. </li>
 </ul>
 
 <h6> Providing Feedback on the Registry </h6>
