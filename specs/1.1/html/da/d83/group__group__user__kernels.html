@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">2b213f9</span>
+   &#160;<span id="projectnumber">24c1cf8</span>
    </div>
   </td>
  </tr>
@@ -266,7 +266,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga7c4205e5134b07dc93237e3a64837adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and registers user-defined kernel library ID to a context.  <a href="#ga7c4205e5134b07dc93237e3a64837adf">More...</a><br/></td></tr>
 <tr class="separator:ga7c4205e5134b07dc93237e3a64837adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6f49b3440d5abef4351a5d2194e2ecbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="el" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d83/group__group__user__kernels.html#ga6f49b3440d5abef4351a5d2194e2ecbc">vxFinalizeKernel</a> (<a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a> kernel)</td></tr>
-<tr class="memdesc:ga6f49b3440d5abef4351a5d2194e2ecbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This API is called after all parameters have been added to the kernel and the kernel is <em>ready</em> to be used. Notice that the reference to the kernel created by vxAddUserKernel is still valid after the call to vxFinalizeKernel.  <a href="#ga6f49b3440d5abef4351a5d2194e2ecbc">More...</a><br/></td></tr>
+<tr class="memdesc:ga6f49b3440d5abef4351a5d2194e2ecbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This API is called after all parameters have been added to the kernel and the kernel is <em>ready</em> to be used. Notice that the reference to the kernel created by vxAddUserKernel is still valid after the call to vxFinalizeKernel. If an error occurs, the kernel is not available for usage by the clients of OpenVX. Typically this is due to a mismatch between the number of parameters requested and given.  <a href="#ga6f49b3440d5abef4351a5d2194e2ecbc">More...</a><br/></td></tr>
 <tr class="separator:ga6f49b3440d5abef4351a5d2194e2ecbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae00b6343fbb0126e3bf0f587b09393a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="el" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d83/group__group__user__kernels.html#gae00b6343fbb0126e3bf0f587b09393a3">vxLoadKernels</a> (<a class="el" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a> context, const <a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ce3f44bccc95f52b9897df2b3620713">vx_char</a> *module)</td></tr>
 <tr class="memdesc:gae00b6343fbb0126e3bf0f587b09393a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a library of kernels, called module, into a context.  <a href="#gae00b6343fbb0126e3bf0f587b09393a3">More...</a><br/></td></tr>
@@ -515,7 +515,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the context is not a valid <code><a class="el" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_NO_RESOURCES</td><td>The enumerations has been exhausted. </td></tr>
   </table>
   </dd>
@@ -561,7 +562,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
     <tr><td class="paramname">VX_ERROR_NO_RESOURCES</td><td>The enumerations has been exhausted. </td></tr>
   </table>
   </dd>
@@ -609,8 +610,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the context is not a <code><a class="el" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a></code>. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>context is not a valid <code><a class="el" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>If any of the other parameters are incorrect.</td></tr>
   </table>
   </dd>
@@ -657,8 +658,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the context is not a <code><a class="el" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a></code>. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>context is not a valid <code><a class="el" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>If any of the other parameters are incorrect.</td></tr>
   </table>
   </dd>
@@ -737,18 +738,11 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">numParams</td><td>The number of parameters for this kernel. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">validate</td><td>The pointer to <code><a class="el" href="../../da/d83/group__group__user__kernels.html#gaf7480425f34d628140d71395ebc2a3b3">vx_kernel_validate_f</a></code>, which validates parameters to this kernel. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">init</td><td>The kernel initialization function. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">deinit</td><td>The kernel de-initialization function.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">deinit</td><td>The kernel de-initialization function. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code>. Any possible errors preventing a successful creation should be checked using <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ff8fafafe415f56a02e6a1825baac97">vxGetStatus</a></code>. </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>Indicates that an error occurred when adding the kernel. </td></tr>
-    <tr><td class="paramname">*</td><td>Kernel added to OpenVX. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code> reference. Any possible errors preventing a successful creation should be checked using <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ff8fafafe415f56a02e6a1825baac97">vxGetStatus</a></code>. </dd></dl>
 
 </div>
 </div>
@@ -766,14 +760,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This API is called after all parameters have been added to the kernel and the kernel is <em>ready</em> to be used. Notice that the reference to the kernel created by vxAddUserKernel is still valid after the call to vxFinalizeKernel. </p>
+<p>This API is called after all parameters have been added to the kernel and the kernel is <em>ready</em> to be used. Notice that the reference to the kernel created by vxAddUserKernel is still valid after the call to vxFinalizeKernel. If an error occurs, the kernel is not available for usage by the clients of OpenVX. Typically this is due to a mismatch between the number of parameters requested and given. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">kernel</td><td>The reference to the loaded kernel from <code><a class="el" href="../../da/d83/group__group__user__kernels.html#ga2efd561d09fae3f87e8ba394a88da397">vxAddUserKernel</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. If an error occurs, the kernel is not available for usage by the clients of OpenVX. Typically this is due to a mismatch between the number of parameters requested and given. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>kernel is not a valid <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code> reference. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code><a class="el" href="../../da/d83/group__group__user__kernels.html#ga2efd561d09fae3f87e8ba394a88da397">vxAddUserKernel</a></code> and <code><a class="el" href="../../da/d83/group__group__user__kernels.html#gab3d20fd7d79deeb65d2bff2e8350acea">vxAddParameterToKernel</a></code> </dd></dl>
 
 </div>
@@ -834,8 +835,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumerated value. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>Parameter is successfully set on kernel. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The value passed as kernel was not a <code>vx_kernel</code>. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>Parameter is successfully set on kernel; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>kernel is not a valid <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>If the parameter is not valid for any reason. </td></tr>
   </table>
   </dd>
 </dl>
@@ -868,8 +870,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. The function returns to the application full control over the memory resources provided at the kernel creation time. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If an invalid kernel is passed in. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETER</td><td>If a base kernel is passed in. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>kernel is not a valid <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>If a base kernel is passed in. </td></tr>
     <tr><td class="paramname">VX_FAILURE</td><td>If the application has not released all references to the kernel object OR if the application has not released all references to a node that is using this kernel OR if the application has not released all references to a graph which has nodes that is using this kernel. </td></tr>
   </table>
   </dd>
@@ -925,6 +928,13 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>After a kernel has been passed to <code><a class="el" href="../../da/d83/group__group__user__kernels.html#ga6f49b3440d5abef4351a5d2194e2ecbc">vxFinalizeKernel</a></code>, no attributes can be altered. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>kernel is not a valid <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code> reference. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -976,7 +986,8 @@ Functions</h2></td></tr>
 <li><a class="el" href="../../d3/d27/group__group__distribution.html#gae8e4d674e49a53c20b3ecd5ad80387bb">vx_distribution</a> : <a class="el" href="../../d3/d27/group__group__distribution.html#gga2df35cf9de7d83854fede1abab71c14dacb64bc07705e1f6212bd24b897cf0b46">VX_DISTRIBUTION_BINS</a>, <a class="el" href="../../d3/d27/group__group__distribution.html#gga2df35cf9de7d83854fede1abab71c14da926108a577f77bda45892d0444ac14bc">VX_DISTRIBUTION_OFFSET</a>, <a class="el" href="../../d3/d27/group__group__distribution.html#gga2df35cf9de7d83854fede1abab71c14dabaa957d2ac7f70931ac410e74c81baa7">VX_DISTRIBUTION_RANGE</a></li>
 <li><a class="el" href="../../d3/db0/group__group__remap.html#ga4738486c2a18ba154fdc1ca154ed7325">vx_remap</a> : <a class="el" href="../../d3/db0/group__group__remap.html#ggaeb825a4b63bdc742d8b4080ac0a1298cad22c42925cc4c8fe2e703dcc60ab4f79">VX_REMAP_SOURCE_WIDTH</a>, <a class="el" href="../../d3/db0/group__group__remap.html#ggaeb825a4b63bdc742d8b4080ac0a1298ca420dc8ac1f6bde851235be55ca0b3086">VX_REMAP_SOURCE_HEIGHT</a>, <a class="el" href="../../d3/db0/group__group__remap.html#ggaeb825a4b63bdc742d8b4080ac0a1298caf44116653c14ed23534e5261cf22dfc2">VX_REMAP_DESTINATION_WIDTH</a>, <a class="el" href="../../d3/db0/group__group__remap.html#ggaeb825a4b63bdc742d8b4080ac0a1298caed13132d9c99091f314d39892c4fac4f">VX_REMAP_DESTINATION_HEIGHT</a></li>
 <li><a class="el" href="../../de/d5f/group__group__lut.html#ga575a2ddce2162b9ac214ca31c0981e3e">vx_lut</a> : <a class="el" href="../../de/d5f/group__group__lut.html#gga542c33297994ce6fcaaf1712541cc2a7a4a38cde417bbc1ede3a6bfef9fdbcc74">VX_LUT_TYPE</a>, <a class="el" href="../../de/d5f/group__group__lut.html#gga542c33297994ce6fcaaf1712541cc2a7acec0514b3d47f3e1b0e8bbdace96b12a">VX_LUT_COUNT</a></li>
-<li><a class="el" href="../../de/dbe/group__group__threshold.html#ga264c4cd16ce3d3c12462217c30877004">vx_threshold</a> : <a class="el" href="../../de/dbe/group__group__threshold.html#gga1f6062993766a5a622e80c87fe912826ab5bbd5f987cfc62a49dc67fc382d7f5a">VX_THRESHOLD_TYPE</a></li>
+<li><a class="el" href="../../de/dbe/group__group__threshold.html#ga264c4cd16ce3d3c12462217c30877004">vx_threshold</a> : <a class="el" href="../../de/dbe/group__group__threshold.html#gga1f6062993766a5a622e80c87fe912826ab5bbd5f987cfc62a49dc67fc382d7f5a">VX_THRESHOLD_TYPE</a>, <a class="el" href="../../de/dbe/group__group__threshold.html#gga1f6062993766a5a622e80c87fe912826a72af0048834eb4240fbef75ffb462108">VX_THRESHOLD_DATA_TYPE</a></li>
+<li><a class="el" href="../../db/d9f/group__group__object__array.html#ga31a0de03c8cbf474afab6efb7bcffddb">vx_object_array</a> : <a class="el" href="../../db/d9f/group__group__object__array.html#gga77518448bc4d2d157b73defcc2cac9b9a9fd280c529fa57498c11013a8ee55b67">VX_OBJECT_ARRAY_NUMITEMS</a>, <a class="el" href="../../db/d9f/group__group__object__array.html#gga77518448bc4d2d157b73defcc2cac9b9a1182311f349e73b8e5d5b343ce6654b4">VX_OBJECT_ARRAY_ITEMTYPE</a></li>
 <li><a class="el" href="../../da/d83/group__group__user__kernels.html#gga244bdb2fc3ebac38195a2be5dc37d99ba7092061036dc800df5ae31b2b841f6ff">VX_VALID_RECT_CALLBACK</a> <dl class="section note"><dt>Note</dt><dd>For vx_image, a specific attribute can be used to specify the valid region evolution. This information is not a meta data.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -990,9 +1001,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>The attribute was set. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>meta was not a <code><a class="el" href="../../da/d83/group__group__user__kernels.html#gabfa72c9eff71470a4c96e3cab7dbe838">vx_meta_format</a></code>. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETER</td><td>size was not correct for the type needed. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>The attribute was set; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>meta is not a valid <code><a class="el" href="../../da/d83/group__group__user__kernels.html#gabfa72c9eff71470a4c96e3cab7dbe838">vx_meta_format</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>size was not correct for the type needed. </td></tr>
     <tr><td class="paramname">VX_ERROR_NOT_SUPPORTED</td><td>the object attribute was not supported on the meta format object. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_TYPE</td><td>attribute type did not match known meta format type. </td></tr>
   </table>
@@ -1036,11 +1047,11 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a> enumeration. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>The meta format was correctly set. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>the reference was not a reference to a data object </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>The meta format was correctly set; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>meta is not a valid <code><a class="el" href="../../da/d83/group__group__user__kernels.html#gabfa72c9eff71470a4c96e3cab7dbe838">vx_meta_format</a></code> reference, or exemplar is not a valid <code><a class="el" href="../../dd/d90/group__group__reference.html#ga1a95c3bf180e49d4d1ecd64cb35f45a3">vx_reference</a></code> reference. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1052,7 +1063,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 20 2016 15:46:13 for The OpenVX Specification by
+    <li class="footer">Generated on Fri Mar 10 2017 14:53:34 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

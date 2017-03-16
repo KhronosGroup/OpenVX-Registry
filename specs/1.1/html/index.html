@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="OpenVX_Color_119x55.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="OpenVX_170px_June16.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">2b213f9</span>
+   &#160;<span id="projectnumber">24c1cf8</span>
    </div>
   </td>
  </tr>
@@ -139,7 +139,7 @@ Version/Change History</h1>
 </ul>
 <h1><a class="anchor" id="sec_deprecation"></a>
 Deprecation</h1>
-<p>Certain items that are deprecated through the evolution of this specification document are removed from it. However, to provide a backward compatibility for such items for a certain time period these items are made available via a compatibility header file available with the release of this specification document (<a class="el" href="dc/d92/vx__compatibility_8h_source.html">vx_compatibility.h</a>). The items listed in this compatibility header file are temporary only and are removed permanently when the backward compatibility is no longer supported for those items.</p>
+<p>Certain items that are deprecated through the evolution of this specification document are removed from it. However, to provide a backward compatibility for such items for a certain time period these items are made available via a compatibility header file available with the release of this specification document (vx_compatibility.h). The items listed in this compatibility header file are temporary only and are removed permanently when the backward compatibility is no longer supported for those items.</p>
 <h1><a class="anchor" id="sec_requirements"></a>
 Requirements Language</h1>
 <p>In this specification, the words <em>shall</em> or <em>must</em> express a requirement that is binding, <em>should</em> expresses design goals or recommended actions, and <em>may</em> expresses an allowed behavior.</p>
@@ -167,7 +167,7 @@ Naming Conventions</h2>
 <li>Opaque objects and atomics are named as <code>vx_<em>object</em></code>, e.g., <code><a class="el" href="df/d09/group__group__image.html#gafaa07841fe324f1c1d5b0f27c27de7b5">vx_image</a></code> or <code><a class="el" href="d4/dae/group__group__basic__features.html#gae3c17ecc60bf32f3e113766b10830aa4">vx_uint8</a></code>, with an underscore separating the object name from the &ldquo;vx&rdquo; prefix.</li>
 <li>Defined Structures are named as <code>vx_<em>struct</em>_t</code>, e.g., <code><a class="el" href="df/d09/group__group__image.html#d4/d7a/structvx__imagepatch__addressing__t">vx_imagepatch_addressing_t</a></code>, with underscores separating the structure from the &ldquo;vx&rdquo; prefix and a &ldquo;t&rdquo; to denote that it is a structure.</li>
 <li>Defined Enumerations are named as <code>vx_<em>enum</em>_e</code>, e.g., <code><a class="el" href="d4/dae/group__group__basic__features.html#ga44aa67e15168e5912a0800090a120be6">vx_type_e</a></code>, with underscores separating the enumeration from the &ldquo;vx&rdquo; prefix and an &ldquo;e&rdquo; to denote that it is an enumerated value.</li>
-<li>Application Programming Interfaces are named <code>vx<em>someFunction</em></code>() using camel case, starting with lowercase, and no underscores, e.g., <code><a class="el" href="d1/dc3/group__group__context.html#ga8a4d197c61df13f3f37de8b81af18fee">vxCreateContext()</a></code>.</li>
+<li>Application Programming Interfaces are named <code>vx<em>someFunction</em></code>() using camel case, starting with lowercase, and no underscores, e.g., <code><a class="el" href="d1/dc3/group__group__context.html#ga8a934a768f4181fab8d57440731aa404">vxCreateContext()</a></code>.</li>
 <li><p class="startli">Vision functions also have a naming convention that follows a lower-case, inverse dotted hierarchy similar to Java Packages, e.g.,</p>
 <div class="fragment"><div class="line"><span class="stringliteral">&quot;org.khronos.openvx.color_convert&quot;</span>. </div>
 </div><!-- fragment --><p class="startli">This minimizes the possibility of name collisions and promotes sorting and readability when querying the namespace of available vision functions. Each vision function should have a unique dotted name of the style: <em>tld.vendor.library.function</em>. The hierarchy of such vision function namespaces is undefined outside the subdomain &ldquo;org.khronos&rdquo;, but they do follow existing international standards. For OpenVX-specified vision functions, the &ldquo;function&rdquo; section of the unique name does not use camel case and uses underscores to separate words.</p>
@@ -188,52 +188,56 @@ Acknowledgements</h1>
 <p>This specification would not be possible without the contributions from this partial list of the following individuals from the Khronos Working Group and the companies that they represented at the time:</p>
 <ul>
 <li>Erik Rainey - Amazon </li>
-<li>Susheel Gautam - QUALCOMM </li>
-<li>Victor Erukhimov - Itseez </li>
-<li>Doug Knisely - QUALCOMM </li>
-<li>Frank Brill - Samsung </li>
-<li>Kari Pulli - NVIDIA </li>
-<li>Thierry Lepley - NVIDIA </li>
-<li>Neil Trevett - NVIDIA </li>
-<li>Tomer Schwartz - Intel </li>
-<li>Shervin Emami - NVIDIA </li>
-<li>Olivier Pothier - STMicroelectronics International NV </li>
-<li>Andy Kuzma - Intel </li>
-<li>Mostafa Hagog - Intel </li>
-<li>Shorin Kyo - Huawei </li>
-<li>Renato Grottesi - ARM Limited </li>
-<li>Dave Schreiner - ARM Limited </li>
-<li>Chris Tseng - Texas Instruments, Inc. </li>
-<li>Daniel Laroche - NXP Semiconductors </li>
-<li>Andrew Garrard - Samsung Electronics </li>
-<li>Tomer Yanir - Samsung Electronics </li>
-<li>Erez Natan - Samsung Electronics </li>
-<li>Chang-Hyo Yu - Samsung Electronics </li>
-<li>Hans-Peter Nilsson - Axis Communications </li>
-<li>Stephen Neuendorffer - Xilinx, Inc. </li>
-<li>Amit Shoham - BDTi </li>
-<li>Paul Buxton - Imagination Technologies </li>
-<li>Yuki Kobayashi - Renesas Electronics </li>
-<li>Cormac Brick - Movidius Ltd </li>
+<li>Radhakrishna Giduthuri - AMD </li>
 <li>Mikael Bourges-Sevenier - Aptina Imaging Corporation </li>
-<li>Tao Zhang - QUALCOMM </li>
-<li>Jesse Villareal - Texas Instruments, Inc. </li>
-<li>Vadim Pisarevsky - Itseez </li>
-<li>Andrey Kamaev - Itseez </li>
-<li>Vlad Vinogradov - Itseez </li>
-<li>Roman Donchenko - Itseez </li>
+<li>Dave Schreiner - ARM Limited </li>
+<li>Renato Grottesi - ARM Limited </li>
+<li>Hans-Peter Nilsson - Axis Communications </li>
+<li>Amit Shoham - BDTi </li>
+<li>Frank Brill - Cadence Design Systems </li>
+<li>Thierry Lepley - Cadence Design Systems </li>
+<li>Shorin Kyo - Huawei </li>
+<li>Paul Buxton - Imagination Technologies </li>
+<li>Steve Ramm - Imagination Technologies </li>
+<li>Ben Ashbaugh - Intel </li>
+<li>Mostafa Hagog - Intel </li>
+<li>Andrey Kamaev - Intel </li>
+<li>Yaniv klein - Intel </li>
+<li>Andy Kuzma - Intel </li>
+<li>Tomer Schwartz - Intel </li>
 <li>Alexander Alekhin - Itseez </li>
-<li>Radha Giduthuri - AMD </li>
-<li>Xin Wang - Vivante Corporation </li>
+<li>Roman Donchenko - Itseez </li>
+<li>Victor Erukhimov - Itseez </li>
+<li>Vadim Pisarevsky - Itseez </li>
+<li>Vlad Vinogradov - Itseez </li>
+<li>Cormac Brick - Movidius Ltd </li>
 <li>Anshu Arya - MulticoreWare </li>
-<li>Steve Ramm - Imagination Technologies</li>
+<li>Shervin Emami - NVIDIA </li>
+<li>Kari Pulli - NVIDIA </li>
+<li>Neil Trevett - NVIDIA </li>
+<li>Daniel Laroche - NXP Semiconductors </li>
+<li>Susheel Gautam - QUALCOMM </li>
+<li>Doug Knisely - QUALCOMM </li>
+<li>Tao Zhang - QUALCOMM </li>
+<li>Yuki Kobayashi - Renesas Electronics </li>
+<li>Andrew Garrard - Samsung Electronics </li>
+<li>Erez Natan - Samsung Electronics </li>
+<li>Tomer Yanir - Samsung Electronics </li>
+<li>Chang-Hyo Yu - Samsung Electronics </li>
+<li>Olivier Pothier - STMicroelectronics International NV </li>
+<li>Chris Tseng - Texas Instruments, Inc. </li>
+<li>Jesse Villareal - Texas Instruments, Inc. </li>
+<li>Jiechao Nie - Verisilicon.Inc. </li>
+<li>Shehrzad Qureshi - Verisilicon.Inc. </li>
+<li>Xin Wang - Verisilicon.Inc. </li>
+<li>Stephen Neuendorffer - Xilinx, Inc.</li>
 </ul>
  
  
  <h2>Copyright</h2>
- <p>The Khronos Group 2011-2016. OpenVX&trade;, OpenCL&trade;, OpenGL&trade;, and OpenMAX&trade; are trademarks of the Khronos Group&trade;.</p>
+ <p>The Khronos Group 2011-2017. OpenVX&trade;, OpenCL&trade;, OpenGL&trade;, and OpenMAX&trade; are trademarks of the Khronos Group&trade;.</p>
 
- <p>Copyright &copy; 2016 The Khronos Group Inc. All Rights Reserved.</p>
+ <p>Copyright &copy; 2016-2017 The Khronos Group Inc. All Rights Reserved.</p>
 
  <p>This specification is protected by copyright laws and contains material proprietary to the Khronos Group, Inc. It or any components may not be reproduced, republished, distributed, transmitted, displayed, broadcast or otherwise exploited in any manner without the express prior written permission of Khronos Group. You may use this specification for implementing the functionality therein, without altering or removing any trademark, copyright or other notice from the specification, but the receipt or possession of this specification does not convey any rights to reproduce, disclose, or distribute its contents, or to manufacture, use, or sell anything that it may describe, in whole or in part.</p>
 
@@ -248,7 +252,7 @@ Acknowledgements</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 20 2016 15:46:13 for The OpenVX Specification by
+    <li class="footer">Generated on Fri Mar 10 2017 14:53:34 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

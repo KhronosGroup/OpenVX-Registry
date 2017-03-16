@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">2b213f9</span>
+   &#160;<span id="projectnumber">24c1cf8</span>
    </div>
   </td>
  </tr>
@@ -111,7 +111,8 @@ $(document).ready(function(){initNavTree('d0/d0c/group__group__vision__function_
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Computes the optical flow using the Lucas-Kanade method between two pyramid images. </p>
-<p>The function is an implementation of the algorithm described in <a class="el" href="../../d0/de3/citelist.html#CITEREF_Bouguet2000">[1]</a>. The function inputs are two <code><a class="el" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a></code> objects, old and new, along with a <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> of <code><a class="el" href="../../d4/dae/group__group__basic__features.html#d6/db0/structvx__keypoint__t">vx_keypoint_t</a></code> structs to track from the old <code><a class="el" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a></code>. The function outputs a <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> of <code><a class="el" href="../../d4/dae/group__group__basic__features.html#d6/db0/structvx__keypoint__t">vx_keypoint_t</a></code> structs that were tracked from the old <code><a class="el" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a></code> to the new <code><a class="el" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a></code>. Each element in the <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> of <code><a class="el" href="../../d4/dae/group__group__basic__features.html#d6/db0/structvx__keypoint__t">vx_keypoint_t</a></code> structs in the new array may be valid or not. The implementation shall return the same number of <code><a class="el" href="../../d4/dae/group__group__basic__features.html#d6/db0/structvx__keypoint__t">vx_keypoint_t</a></code> structs in the new <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> that were in the older <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code>.</p>
+<p>The function is an implementation of the algorithm described in <a class="el" href="../../d0/de3/citelist.html#CITEREF_Bouguet2000">[1]</a>. The function inputs are two <code><a class="el" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a></code> objects, old and new, along with a <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> of <code><a class="el" href="../../d4/dae/group__group__basic__features.html#d6/db0/structvx__keypoint__t">vx_keypoint_t</a></code> structs to track from the old <code><a class="el" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a></code>. Both pyramids old and new pyramids must have the same dimensionality. <code><a class="el" href="../../db/d29/group__group__pyramid.html#ga54f005b336d84c97f75fc850ab860625">VX_SCALE_PYRAMID_HALF</a></code> pyramidal scaling must be supported.<br/>
+ The function outputs a <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> of <code><a class="el" href="../../d4/dae/group__group__basic__features.html#d6/db0/structvx__keypoint__t">vx_keypoint_t</a></code> structs that were tracked from the old <code><a class="el" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a></code> to the new <code><a class="el" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a></code>. Each element in the <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> of <code><a class="el" href="../../d4/dae/group__group__basic__features.html#d6/db0/structvx__keypoint__t">vx_keypoint_t</a></code> structs in the new array may be valid or not. The implementation shall return the same number of <code><a class="el" href="../../d4/dae/group__group__basic__features.html#d6/db0/structvx__keypoint__t">vx_keypoint_t</a></code> structs in the new <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> that were in the older <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code>.</p>
 <p>In more detail: The Lucas-Kanade method finds the affine motion vector \( V \) for each point in the old image tracking points array, using the following equation: </p>
 <p class="formulaDsp">
 \[ \begin{bmatrix} V_x \\ V_y \end{bmatrix} = \begin{bmatrix} \sum_{i}{I_x}^2 &amp; \sum_{i}{I_x*I_y} \\ \sum_{i}{I_x*I_y} &amp; \sum_{i}{I_y}^2 \end{bmatrix}^{-1} \begin{bmatrix} -\sum_{i}{I_x*I_t} \\ -\sum_{i}{I_y*I_t} \end{bmatrix} \]
@@ -357,7 +358,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 20 2016 15:46:09 for The OpenVX Specification by
+    <li class="footer">Generated on Fri Mar 10 2017 14:53:29 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">2b213f9</span>
+   &#160;<span id="projectnumber">24c1cf8</span>
    </div>
   </td>
  </tr>
@@ -285,7 +285,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>Successful </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>node is not a valid <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>The type or size is incorrect. </td></tr>
   </table>
   </dd>
@@ -343,9 +344,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>The attribute was set. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>node is not a vx_node. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETER</td><td>size is not correct for the type needed. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>The attribute was set; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>node is not a valid <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>size is not correct for the type needed. </td></tr>
   </table>
   </dd>
 </dl>
@@ -377,8 +378,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If node is not a <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code>. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>node is not a valid <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code> reference. </td></tr>
   </table>
   </dd>
 </dl>
@@ -410,8 +411,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If node is not a <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code>. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>node is not a valid <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code> reference. </td></tr>
   </table>
   </dd>
 </dl>
@@ -460,8 +461,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>Node target set. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If node is not a <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code>. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>Node target set; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>node is not a valid <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_NOT_SUPPORTED</td><td>If the node kernel is not supported by the specified target. </td></tr>
   </table>
   </dd>
@@ -518,8 +519,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the first_node is not a <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code>, or it is not the first child of a vx_pyramid. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference, or first_node is not a valid <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_NOT_COMPATIBLE</td><td>At least one of replicated parameters is not of level 0 of a pyramid or at index 0 of an object array. </td></tr>
     <tr><td class="paramname">VX_FAILURE</td><td>If the node does not belong to the graph, or the number of objects in the parent objects of inputs and output are not the same. </td></tr>
   </table>
@@ -533,7 +534,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 20 2016 15:46:11 for The OpenVX Specification by
+    <li class="footer">Generated on Fri Mar 10 2017 14:53:32 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">2b213f9</span>
+   &#160;<span id="projectnumber">24c1cf8</span>
    </div>
   </td>
  </tr>
@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('d2/d92/vxu_8h_source.html','../../');}
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2012-2016 The Khronos Group Inc.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2012-2017 The Khronos Group Inc.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Permission is hereby granted, free of charge, to any person obtaining a</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * copy of this software and/or associated documentation files (the</span></div>
@@ -240,31 +240,31 @@ $(document).ready(function(){initNavTree('d2/d92/vxu_8h_source.html','../../');}
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                           <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> num_corners);</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;VX_API_ENTRY <a class="code" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="code" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a> <a class="code" href="../../dd/d22/group__group__vision__function__fast.html#gaefb99284d37b9eac0e9158191493f328">vxuFastCorners</a>(<a class="code" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a> context, <a class="code" href="../../df/d09/group__group__image.html#gafaa07841fe324f1c1d5b0f27c27de7b5">vx_image</a> input, <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> strength_thresh, <a class="code" href="../../d4/dae/group__group__basic__features.html#ga7ab7c7864a0ea6762a9e15be80ef28f0">vx_bool</a> nonmax_suppression, <a class="code" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a> corners, <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> num_corners);</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;VX_API_ENTRY <a class="code" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="code" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a> <a class="code" href="../../d0/d0c/group__group__vision__function__opticalflowpyrlk.html#gab32248a9bdac0d62bf0d41058ec1be56">vxuOpticalFlowPyrLK</a>(<a class="code" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a> context,</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                              <a class="code" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a> old_images,</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                              <a class="code" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a> new_images,</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                              <a class="code" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a> old_points,</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                              <a class="code" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a> new_points_estimates,</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                              <a class="code" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a> new_points,</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                              <a class="code" href="../../d4/dae/group__group__basic__features.html#ga73d23cb932d31a69f44182054a987c85">vx_enum</a> termination,</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                              <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> epsilon,</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                              <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> num_iterations,</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                              <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> use_initial_estimate,</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                              <a class="code" href="../../d4/dae/group__group__basic__features.html#ga46d89d47ad9a2de1de723d0db861d324">vx_size</a> window_dimension);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;VX_API_ENTRY <a class="code" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="code" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a> <a class="code" href="../../df/dca/group__group__vision__function__remap.html#gaa8564b9822cf9e25aba2424c31ef5e77">vxuRemap</a>(<a class="code" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a> context,</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                  <a class="code" href="../../df/d09/group__group__image.html#gafaa07841fe324f1c1d5b0f27c27de7b5">vx_image</a> input,</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                  <a class="code" href="../../d3/db0/group__group__remap.html#ga4738486c2a18ba154fdc1ca154ed7325">vx_remap</a> table,</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                  <a class="code" href="../../d4/dae/group__group__basic__features.html#ga73d23cb932d31a69f44182054a987c85">vx_enum</a> policy,</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                  <a class="code" href="../../df/d09/group__group__image.html#gafaa07841fe324f1c1d5b0f27c27de7b5">vx_image</a> output);</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;VX_API_ENTRY <a class="code" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="code" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a> <a class="code" href="../../dd/d22/group__group__vision__function__fast.html#gaefb99284d37b9eac0e9158191493f328">vxuFastCorners</a>(<a class="code" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a> context, <a class="code" href="../../df/d09/group__group__image.html#gafaa07841fe324f1c1d5b0f27c27de7b5">vx_image</a> input, <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> strength_thresh, <a class="code" href="../../d4/dae/group__group__basic__features.html#ga7ab7c7864a0ea6762a9e15be80ef28f0">vx_bool</a> nonmax_suppression, <a class="code" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a> corners, <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> num_corners);</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;VX_API_ENTRY <a class="code" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="code" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a> <a class="code" href="../../d0/d0c/group__group__vision__function__opticalflowpyrlk.html#gab32248a9bdac0d62bf0d41058ec1be56">vxuOpticalFlowPyrLK</a>(<a class="code" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a> context,</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                              <a class="code" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a> old_images,</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                              <a class="code" href="../../db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9">vx_pyramid</a> new_images,</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                              <a class="code" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a> old_points,</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                              <a class="code" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a> new_points_estimates,</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                              <a class="code" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a> new_points,</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                              <a class="code" href="../../d4/dae/group__group__basic__features.html#ga73d23cb932d31a69f44182054a987c85">vx_enum</a> termination,</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                              <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> epsilon,</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                              <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> num_iterations,</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                              <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> use_initial_estimate,</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                              <a class="code" href="../../d4/dae/group__group__basic__features.html#ga46d89d47ad9a2de1de723d0db861d324">vx_size</a> window_dimension);</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;VX_API_ENTRY <a class="code" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="code" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a> <a class="code" href="../../df/dca/group__group__vision__function__remap.html#gaa8564b9822cf9e25aba2424c31ef5e77">vxuRemap</a>(<a class="code" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a> context,</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                  <a class="code" href="../../df/d09/group__group__image.html#gafaa07841fe324f1c1d5b0f27c27de7b5">vx_image</a> input,</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                  <a class="code" href="../../d3/db0/group__group__remap.html#ga4738486c2a18ba154fdc1ca154ed7325">vx_remap</a> table,</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                  <a class="code" href="../../d4/dae/group__group__basic__features.html#ga73d23cb932d31a69f44182054a987c85">vx_enum</a> policy,</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                  <a class="code" href="../../df/d09/group__group__image.html#gafaa07841fe324f1c1d5b0f27c27de7b5">vx_image</a> output);</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;<span class="preprocessor"></span>}</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="group__group__image_html_gafaa07841fe324f1c1d5b0f27c27de7b5"><div class="ttname"><a href="../../df/d09/group__group__image.html#gafaa07841fe324f1c1d5b0f27c27de7b5">vx_image</a></div><div class="ttdeci">struct _vx_image * vx_image</div><div class="ttdoc">An opaque reference to an image. </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d86/vx__types_8h_source.html#l00190">vx_types.h:190</a></div></div>
 <div class="ttc" id="group__group__vision__function__and_html_ga3df71b0f383e72b7d05d955fd6b76c5f"><div class="ttname"><a href="../../d4/d4e/group__group__vision__function__and.html#ga3df71b0f383e72b7d05d955fd6b76c5f">vxuAnd</a></div><div class="ttdeci">vx_status VX_API_CALL vxuAnd(vx_context context, vx_image in1, vx_image in2, vx_image out)</div><div class="ttdoc">[Immediate] Computes the bitwise and between two images. </div></div>
 <div class="ttc" id="group__group__basic__features_html_ga7ab7c7864a0ea6762a9e15be80ef28f0"><div class="ttname"><a href="../../d4/dae/group__group__basic__features.html#ga7ab7c7864a0ea6762a9e15be80ef28f0">vx_bool</a></div><div class="ttdeci">vx_bool</div><div class="ttdoc">A Boolean value. This allows 0 to be FALSE, as it is in C, and any non-zero to be TRUE...</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d86/vx__types_8h_source.html#l00301">vx_types.h:301</a></div></div>
@@ -333,7 +333,7 @@ $(document).ready(function(){initNavTree('d2/d92/vxu_8h_source.html','../../');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_a3324bfc7e66844c57dfd3bddf0b96d4.html">VX</a></li><li class="navelem"><b>vxu.h</b></li>
-    <li class="footer">Generated on Tue Sep 20 2016 15:46:07 for The OpenVX Specification by
+    <li class="footer">Generated on Fri Mar 10 2017 14:53:25 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

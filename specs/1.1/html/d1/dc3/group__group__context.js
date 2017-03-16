@@ -36,7 +36,7 @@ var group__group__context =
       [ "VX_ROUND_POLICY_TO_ZERO", "d1/dc3/group__group__context.html#ggabb9dfa7effd06920db3377f0eba611fea91199b2872fc9db92e85cc49b5a1bf94", null ],
       [ "VX_ROUND_POLICY_TO_NEAREST_EVEN", "d1/dc3/group__group__context.html#ggabb9dfa7effd06920db3377f0eba611feaa11156ba79a345587832a1997568b408", null ]
     ] ],
-    [ "vxCreateContext", "d1/dc3/group__group__context.html#ga8a4d197c61df13f3f37de8b81af18fee", null ],
+    [ "vxCreateContext", "d1/dc3/group__group__context.html#ga8a934a768f4181fab8d57440731aa404", null ],
     [ "vxReleaseContext", "d1/dc3/group__group__context.html#ga84fd4eb1034c1746356db66eb3890258", null ],
     [ "vxGetContext", "d1/dc3/group__group__context.html#ga9460f896a3b8a423d77467a2213b057f", null ],
     [ "vxQueryContext", "d1/dc3/group__group__context.html#ga9f5c06778936c587051184ac0358abfd", null ],

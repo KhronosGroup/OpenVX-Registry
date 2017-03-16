@@ -76,9 +76,6 @@ var NAVTREE =
         [ "Vendor Custom Extensions", "d0/d84/page_design.html#sub_framework_extensions", null ],
         [ "Hinting", "d0/d84/page_design.html#sub_hints", null ],
         [ "Directives", "d0/d84/page_design.html#sub_directives", null ]
-      ] ],
-      [ "Known Extensions to OpenVX", "d0/d84/page_design.html#sec_known_extensions", [
-        [ "User Kernel Tiling", "d0/d84/page_design.html#sub_node_tiling_ext", null ]
       ] ]
     ] ],
     [ "Bibliography", "d0/de3/citelist.html", null ],
@@ -96,9 +93,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d4/dae/group__group__basic__features.html#gaa60636efaaf929c89f35f26c15bd3133",
-"d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96",
-"dd/daa/group__group__vision__function__laplacian__reconstruct.html#ga9162a9f6661dfc3704a77bbffa537c5b"
+"d4/dae/group__group__basic__features.html#gaba1ab5885e373ec34614ec06ed787801",
+"d7/d61/group__group__node.html#gga6698e2a55aa6d7fd5c45e746a0d640b9a320af83374fdedbd4a82da1869b922d5",
+"dd/de7/group__group__performance.html#abb283d5564a3d785736448c223800a52"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

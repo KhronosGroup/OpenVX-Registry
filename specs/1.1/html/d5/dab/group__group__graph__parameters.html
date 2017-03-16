@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">2b213f9</span>
+   &#160;<span id="projectnumber">24c1cf8</span>
    </div>
   </td>
  </tr>
@@ -241,9 +241,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>Parameter added to Graph. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The parameter is not a valid <code><a class="el" href="../../d3/da9/group__group__parameter.html#ga35fab5fdbef16e118146d667cd98cc4d">vx_parameter</a></code>. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETER</td><td>The parameter is of a node not in this graph. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>Parameter added to Graph; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference or parameter is not a valid <code><a class="el" href="../../d3/da9/group__group__parameter.html#ga35fab5fdbef16e118146d667cd98cc4d">vx_parameter</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>The parameter is of a node not in this graph. </td></tr>
   </table>
   </dd>
 </dl>
@@ -292,9 +292,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>Parameter set to Graph. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The value is not a valid <code><a class="el" href="../../dd/d90/group__group__reference.html#ga1a95c3bf180e49d4d1ecd64cb35f45a3">vx_reference</a></code>. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETER</td><td>The parameter index is out of bounds or the dir parameter is incorrect. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>Parameter set to Graph; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference or value is not a valid <code><a class="el" href="../../dd/d90/group__group__reference.html#ga1a95c3bf180e49d4d1ecd64cb35f45a3">vx_reference</a></code>. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>The parameter index is out of bounds or the dir parameter is incorrect. </td></tr>
   </table>
   </dd>
 </dl>
@@ -333,14 +333,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../d3/da9/group__group__parameter.html#ga35fab5fdbef16e118146d667cd98cc4d">vx_parameter</a></code> reference. Any possible errors preventing a successful creation should be checked using <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ff8fafafe415f56a02e6a1825baac97">vxGetStatus</a></code>. </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>if the index is out of bounds. </td></tr>
-    <tr><td class="paramname">*</td><td>The parameter reference. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../d3/da9/group__group__parameter.html#ga35fab5fdbef16e118146d667cd98cc4d">vx_parameter</a></code> reference. Any possible errors preventing a successful function completion should be checked using <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ff8fafafe415f56a02e6a1825baac97">vxGetStatus</a></code>. </dd></dl>
 
 </div>
 </div>
@@ -349,7 +342,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 20 2016 15:46:13 for The OpenVX Specification by
+    <li class="footer">Generated on Fri Mar 10 2017 14:53:34 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
