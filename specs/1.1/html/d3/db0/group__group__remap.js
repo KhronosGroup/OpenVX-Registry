@@ -11,5 +11,5 @@ var group__group__remap =
     [ "vxReleaseRemap", "d3/db0/group__group__remap.html#ga745a0a51022a35cc496c98480f7ea73f", null ],
     [ "vxSetRemapPoint", "d3/db0/group__group__remap.html#gadd9f8ee866b4ee949ea572022ed1bc7f", null ],
     [ "vxGetRemapPoint", "d3/db0/group__group__remap.html#gadf470be9db9a071bf735ab977cee25db", null ],
-    [ "vxQueryRemap", "d3/db0/group__group__remap.html#ga930420ac10f6f24982e8d71ffa06b32b", null ]
+    [ "vxQueryRemap", "d3/db0/group__group__remap.html#ga07be86a352daefafa1d4acd8c1b2ce0d", null ]
 ];

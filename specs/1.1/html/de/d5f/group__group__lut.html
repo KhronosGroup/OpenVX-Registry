@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">2b213f9</span>
+   &#160;<span id="projectnumber">24c1cf8</span>
    </div>
   </td>
  </tr>
@@ -259,8 +259,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If lut is not a <code><a class="el" href="../../de/d5f/group__group__lut.html#ga575a2ddce2162b9ac214ca31c0981e3e">vx_lut</a></code>. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>lut is not a valid <code><a class="el" href="../../de/d5f/group__group__lut.html#ga575a2ddce2162b9ac214ca31c0981e3e">vx_lut</a></code> reference. </td></tr>
   </table>
   </dd>
 </dl>
@@ -314,6 +314,13 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>lut is not a valid <code><a class="el" href="../../de/d5f/group__group__lut.html#ga575a2ddce2162b9ac214ca31c0981e3e">vx_lut</a></code> reference. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -370,7 +377,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The LUT reference is not actually a LUT reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>lut is not a valid <code><a class="el" href="../../de/d5f/group__group__lut.html#ga575a2ddce2162b9ac214ca31c0981e3e">vx_lut</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>An other parameter is incorrect. </td></tr>
   </table>
   </dd>
@@ -449,7 +457,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The LUT reference is not actually a LUT reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>lut is not a valid <code><a class="el" href="../../de/d5f/group__group__lut.html#ga575a2ddce2162b9ac214ca31c0981e3e">vx_lut</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>An other parameter is incorrect.</td></tr>
   </table>
   </dd>
@@ -493,7 +502,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The LUT reference is not actually a LUT reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>lut is not a valid <code><a class="el" href="../../de/d5f/group__group__lut.html#ga575a2ddce2162b9ac214ca31c0981e3e">vx_lut</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>An other parameter is incorrect.</td></tr>
   </table>
   </dd>
@@ -507,7 +517,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 20 2016 15:46:11 for The OpenVX Specification by
+    <li class="footer">Generated on Fri Mar 10 2017 14:53:32 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
