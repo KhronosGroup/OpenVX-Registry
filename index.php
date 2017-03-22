@@ -26,7 +26,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
      <a href="specs/1.1/OpenVX_Specification_1_1.pdf"> PDF </a> format for
      offline reading.
 <li> <a href="api/1.1/openvx-standard-headers-1.1.tar.bz2"> OpenVX
-     1.1 header package </a> (updated March 15, 2016).
+     1.1 header package </a> (updated March 15, 2017).
 </ul>
 
 <h3> OpenVX 1.1 Sample Implementation </h3>
