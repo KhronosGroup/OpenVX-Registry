@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">24c1cf8</span>
+   &#160;<span id="projectnumber">2b213f9</span>
    </div>
   </td>
  </tr>
@@ -174,7 +174,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga1334f741d1c76d27a0e26117603885f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases a reference to a graph. The object may not be garbage collected until its total reference count is zero. Once the reference count is zero, all node references in the graph are automatically released as well. Data referenced by those nodes may not be released as the user may have external references to the data.  <a href="#ga1334f741d1c76d27a0e26117603885f1">More...</a><br/></td></tr>
 <tr class="separator:ga1334f741d1c76d27a0e26117603885f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga718b5f98fd11581ec102303ce94f45b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="el" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7f/group__group__graph.html#ga718b5f98fd11581ec102303ce94f45b2">vxScheduleGraph</a> (<a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a> graph)</td></tr>
-<tr class="memdesc:ga718b5f98fd11581ec102303ce94f45b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedules a graph for future execution. If the graph has not been verified, then the implementation verifies the graph immediately. If verification fails this function returns a status identical to what <code><a class="el" href="../../d9/d7f/group__group__graph.html#gaa815ffa0b7cc2598d3d53bffc7c8c154">vxVerifyGraph</a></code> would return. After the graph verfies successfully then processing occurs. If the graph was previously verified via <code><a class="el" href="../../d9/d7f/group__group__graph.html#gaa815ffa0b7cc2598d3d53bffc7c8c154">vxVerifyGraph</a></code> or <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga36b37f13ca2269258b813955f7089873">vxProcessGraph</a></code> then the graph is processed.  <a href="#ga718b5f98fd11581ec102303ce94f45b2">More...</a><br/></td></tr>
+<tr class="memdesc:ga718b5f98fd11581ec102303ce94f45b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedules a graph for future execution.  <a href="#ga718b5f98fd11581ec102303ce94f45b2">More...</a><br/></td></tr>
 <tr class="separator:ga718b5f98fd11581ec102303ce94f45b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga816cb2fa16fd674c3f0ae0721760db27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0">vx_status</a> <a class="el" href="../../d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237">VX_API_CALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7f/group__group__graph.html#ga816cb2fa16fd674c3f0ae0721760db27">vxSetGraphAttribute</a> (<a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a> graph, <a class="el" href="../../d4/dae/group__group__basic__features.html#ga73d23cb932d31a69f44182054a987c85">vx_enum</a> attribute, const void *ptr, <a class="el" href="../../d4/dae/group__group__basic__features.html#ga46d89d47ad9a2de1de723d0db861d324">vx_size</a> size)</td></tr>
 <tr class="memdesc:ga816cb2fa16fd674c3f0ae0721760db27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the attributes of the Graph to be set to the provided value.  <a href="#ga816cb2fa16fd674c3f0ae0721760db27">More...</a><br/></td></tr>
@@ -320,8 +320,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If graph is not a <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -356,8 +356,8 @@ Functions</h2></td></tr>
 A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If graph is not a <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code>. </td></tr>
     <tr><td class="paramname">VX_ERROR_MULTIPLE_WRITERS</td><td>If the graph contains more than one writer to any data object. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_NODE</td><td>If a node in the graph is invalid or failed be created. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_GRAPH</td><td>If the graph contains cycles or some other invalid topology. </td></tr>
@@ -395,12 +395,14 @@ A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>Graph has been processed; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>Graph has been processed. </td></tr>
     <tr><td class="paramname">VX_FAILURE</td><td>A catastrophic error occurred during processing. </td></tr>
+    <tr><td class="paramname">*</td><td>See <code><a class="el" href="../../d9/d7f/group__group__graph.html#gaa815ffa0b7cc2598d3d53bffc7c8c154">vxVerifyGraph</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code><a class="el" href="../../d9/d7f/group__group__graph.html#gaa815ffa0b7cc2598d3d53bffc7c8c154">vxVerifyGraph</a></code> must return <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ggaa2387ff4d3e967f124fb316300503f92a1c066c6ca46bf666215a58b0b2221abb">VX_SUCCESS</a></code> before this function will pass.</dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d9/d7f/group__group__graph.html#gaa815ffa0b7cc2598d3d53bffc7c8c154" title="Verifies the state of the graph before it is executed. This is useful to catch programmer errors and ...">vxVerifyGraph</a> </dd></dl>
 
 </div>
 </div>
@@ -418,7 +420,7 @@ A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2
       </table>
 </div><div class="memdoc">
 
-<p>Schedules a graph for future execution. If the graph has not been verified, then the implementation verifies the graph immediately. If verification fails this function returns a status identical to what <code><a class="el" href="../../d9/d7f/group__group__graph.html#gaa815ffa0b7cc2598d3d53bffc7c8c154">vxVerifyGraph</a></code> would return. After the graph verfies successfully then processing occurs. If the graph was previously verified via <code><a class="el" href="../../d9/d7f/group__group__graph.html#gaa815ffa0b7cc2598d3d53bffc7c8c154">vxVerifyGraph</a></code> or <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga36b37f13ca2269258b813955f7089873">vxProcessGraph</a></code> then the graph is processed. </p>
+<p>Schedules a graph for future execution. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">graph</td><td>The graph to schedule. </td></tr>
@@ -428,13 +430,13 @@ A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>The graph has been scheduled; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_NO_RESOURCES</td><td>The graph cannot be scheduled now. </td></tr>
     <tr><td class="paramname">VX_ERROR_NOT_SUFFICIENT</td><td>The graph is not verified and has failed forced verification. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>The graph has been scheduled. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code><a class="el" href="../../d9/d7f/group__group__graph.html#gaa815ffa0b7cc2598d3d53bffc7c8c154">vxVerifyGraph</a></code> must return <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ggaa2387ff4d3e967f124fb316300503f92a1c066c6ca46bf666215a58b0b2221abb">VX_SUCCESS</a></code> before this function will pass. </dd></dl>
 
 </div>
 </div>
@@ -462,8 +464,7 @@ A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>The graph has successfully completed execution and its outputs are the valid results of the most recent execution; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>The graph has successfully completed execution and its outputs are the valid results of the most recent execution. </td></tr>
     <tr><td class="paramname">VX_FAILURE</td><td>An error occurred or the graph was never scheduled. Output data of the graph is undefined. </td></tr>
   </table>
   </dd>
@@ -519,13 +520,6 @@ A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -576,13 +570,6 @@ A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -652,11 +639,11 @@ A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>graph is not a valid <code><a class="el" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a></code> reference, or delay is not a valid <code><a class="el" href="../../de/d09/group__group__delay.html#ga2c6de63476aff4a009bac8d0eb9800d1">vx_delay</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the <code>graph</code> or <code>delay</code> is not a valid reference </td></tr>
   </table>
   </dd>
 </dl>
@@ -668,7 +655,7 @@ A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 10 2017 14:53:32 for The OpenVX Specification by
+    <li class="footer">Generated on Tue Sep 20 2016 15:46:11 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

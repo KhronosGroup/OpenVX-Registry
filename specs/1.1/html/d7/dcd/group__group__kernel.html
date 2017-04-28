@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">24c1cf8</span>
+   &#160;<span id="projectnumber">2b213f9</span>
    </div>
   </td>
  </tr>
@@ -666,9 +666,15 @@ The kernel name in dotted hierarchical format. e.g. "org.khronos.openvx.sobel_3x
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A kernel reference. Any possible errors preventing a successful completion of the function should be checked using <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ff8fafafe415f56a02e6a1825baac97">vxGetStatus</a></code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A kernel reference or zero if an error occurred. Any possible errors preventing a successful creation should be checked using <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ff8fafafe415f56a02e6a1825baac97">vxGetStatus</a></code>. </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>The kernel name is not found in the context.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code><a class="el" href="../../da/d83/group__group__user__kernels.html#gae00b6343fbb0126e3bf0f587b09393a3">vxLoadKernels</a></code> if the kernel is not provided by the OpenVX implementation. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>User Kernels should follow a "dotted" hierarchical syntax. For example: "com.company.example.xyz". </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>User Kernels should follow a "dotted" heirarchical syntax. For example: "com.company.example.xyz". </dd></dl>
 
 </div>
 </div>
@@ -705,7 +711,13 @@ The kernel name in dotted hierarchical format. e.g. "org.khronos.openvx.sobel_3x
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code> reference. Any possible errors preventing a successful completion of the function should be checked using <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ff8fafafe415f56a02e6a1825baac97">vxGetStatus</a></code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code>. Any possible errors preventing a successful creation should be checked using <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ff8fafafe415f56a02e6a1825baac97">vxGetStatus</a></code>. </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>The kernel enumeration is not found in the context.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code><a class="el" href="../../da/d83/group__group__user__kernels.html#gae00b6343fbb0126e3bf0f587b09393a3">vxLoadKernels</a></code> if the kernel is not provided by the OpenVX implementation. </dd></dl>
 
 </div>
@@ -759,8 +771,8 @@ The kernel name in dotted hierarchical format. e.g. "org.khronos.openvx.sobel_3x
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>kernel is not a valid <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the kernel is not a <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code>. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>If any of the other parameters are incorrect. </td></tr>
     <tr><td class="paramname">VX_ERROR_NOT_SUPPORTED</td><td>If the attribute value is not supported in this implementation. </td></tr>
   </table>
@@ -794,8 +806,8 @@ The kernel name in dotted hierarchical format. e.g. "org.khronos.openvx.sobel_3x
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>kernel is not a valid <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If kernel is not a <code><a class="el" href="../../d7/dcd/group__group__kernel.html#ga3a8a8757a8cc42cdd1af41e5b8bf127a">vx_kernel</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -807,7 +819,7 @@ The kernel name in dotted hierarchical format. e.g. "org.khronos.openvx.sobel_3x
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 10 2017 14:53:32 for The OpenVX Specification by
+    <li class="footer">Generated on Tue Sep 20 2016 15:46:11 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

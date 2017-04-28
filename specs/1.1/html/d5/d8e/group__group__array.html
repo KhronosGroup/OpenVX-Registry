@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">24c1cf8</span>
+   &#160;<span id="projectnumber">2b213f9</span>
    </div>
   </td>
  </tr>
@@ -229,7 +229,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d3/d93/vx__api_8h_source.html#l02432">2432</a> of file <a class="el" href="../../d3/d93/vx__api_8h_source.html">vx_api.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d93/vx__api_8h_source.html#l02358">2358</a> of file <a class="el" href="../../d3/d93/vx__api_8h_source.html">vx_api.h</a>.</p>
 
 </div>
 </div>
@@ -280,7 +280,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d3/d93/vx__api_8h_source.html#l02443">2443</a> of file <a class="el" href="../../d3/d93/vx__api_8h_source.html">vx_api.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/d93/vx__api_8h_source.html#l02369">2369</a> of file <a class="el" href="../../d3/d93/vx__api_8h_source.html">vx_api.h</a>.</p>
 
 </div>
 </div>
@@ -400,7 +400,7 @@ Functions</h2></td></tr>
 <p>Creates an opaque reference to a virtual Array with no direct user access. </p>
 <p>Virtual Arrays are useful when item type or capacity are unknown ahead of time and the Array is used as internal graph edge. Virtual arrays are scoped within the parent graph only.</p>
 <p>All of the following constructions are allowed. </p>
-<div class="fragment"><div class="line"><a class="code" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a> context = <a class="code" href="../../d1/dc3/group__group__context.html#ga8a934a768f4181fab8d57440731aa404">vxCreateContext</a>();</div>
+<div class="fragment"><div class="line"><a class="code" href="../../d1/dc3/group__group__context.html#ga0f4f894d935fbf50bf38b3529a001249">vx_context</a> context = <a class="code" href="../../d1/dc3/group__group__context.html#ga8a4d197c61df13f3f37de8b81af18fee">vxCreateContext</a>();</div>
 <div class="line"><a class="code" href="../../d9/d7f/group__group__graph.html#ga7e71c08b1777e49abaf4417506ca8451">vx_graph</a> graph = <a class="code" href="../../d9/d7f/group__group__graph.html#ga6ce40cbacadd686cc46de313ea3a0fbd">vxCreateGraph</a>(context);</div>
 <div class="line"><a class="code" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a> virt[] = {</div>
 <div class="line">    <a class="code" href="../../d5/d8e/group__group__array.html#gaa9a6b28a938dc65cc9e2e079666b983e">vxCreateVirtualArray</a>(graph, 0, 0), <span class="comment">// totally unspecified</span></div>
@@ -444,8 +444,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>arr is not a valid <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If arr is not a <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -501,8 +501,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>arr is not a valid <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the <em>arr</em> is not a <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code>. </td></tr>
     <tr><td class="paramname">VX_ERROR_NOT_SUPPORTED</td><td>If the <em>attribute</em> is not a value supported on this implementation. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>If any of the other parameters are incorrect. </td></tr>
   </table>
@@ -562,8 +562,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>arr is not a valid <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the <em>arr</em> is not a <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code>. </td></tr>
     <tr><td class="paramname">VX_FAILURE</td><td>If the Array is full. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>If any of the other parameters are incorrect. </td></tr>
   </table>
@@ -607,8 +607,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>arr is not a valid <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the <em>arr</em> is not a <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code>. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>The <em>new_size</em> is greater than the current size. </td></tr>
   </table>
   </dd>
@@ -690,9 +690,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
     <tr><td class="paramname">VX_ERROR_OPTIMIZED_AWAY</td><td>This is a reference to a virtual array that cannot be accessed by the application. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>array is not a valid <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The array reference is not actually an array reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>An other parameter is incorrect. </td></tr>
   </table>
   </dd>
@@ -792,9 +791,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
     <tr><td class="paramname">VX_ERROR_OPTIMIZED_AWAY</td><td>This is a reference to a virtual array that cannot be accessed by the application. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>array is not a valid <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The array reference is not actually an array reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>An other parameter is incorrect.</td></tr>
   </table>
   </dd>
@@ -838,8 +836,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>array is not a valid <code><a class="el" href="../../d5/d8e/group__group__array.html#gab1f0193f8a470dd2fe10de539a533697">vx_array</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The array reference is not actually an array reference. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>An other parameter is incorrect.</td></tr>
   </table>
   </dd>
@@ -853,7 +850,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 10 2017 14:53:32 for The OpenVX Specification by
+    <li class="footer">Generated on Tue Sep 20 2016 15:46:11 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
