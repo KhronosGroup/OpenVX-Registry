@@ -1,0 +1,28 @@
+var group__vx__enum__e =
+[
+    [ "VX_ENUM_DIRECTION", "d6/dcc/group__vx__enum__e.html#ga1e69f34729a9ea364246073762aa8cc8", null ],
+    [ "VX_ENUM_ACTION", "d6/dcc/group__vx__enum__e.html#gaadd595a3479f061ad4a724a1a7ba2abd", null ],
+    [ "VX_ENUM_HINT", "d6/dcc/group__vx__enum__e.html#gaf71fdafe69df785813cb634f703996b2", null ],
+    [ "VX_ENUM_DIRECTIVE", "d6/dcc/group__vx__enum__e.html#gad353f86942845686d2f78128ecfc5d2a", null ],
+    [ "VX_ENUM_INTERPOLATION", "d6/dcc/group__vx__enum__e.html#ga330ff3e45535612109002ee131281cff", null ],
+    [ "VX_ENUM_OVERFLOW", "d6/dcc/group__vx__enum__e.html#ga9d3f259d63325199486708601d7e7d05", null ],
+    [ "VX_ENUM_COLOR_SPACE", "d6/dcc/group__vx__enum__e.html#ga197799b4cf372c21dbc7004dc931070f", null ],
+    [ "VX_ENUM_COLOR_RANGE", "d6/dcc/group__vx__enum__e.html#gabf7ba5c4588cc7cd8a56370ab8a447ab", null ],
+    [ "VX_ENUM_PARAMETER_STATE", "d6/dcc/group__vx__enum__e.html#gace538dd920ff1398d8f293eb5f911431", null ],
+    [ "VX_ENUM_CHANNEL", "d6/dcc/group__vx__enum__e.html#ga1082bf5298eab01814640ee12aab897a", null ],
+    [ "VX_ENUM_CONVERT_POLICY", "d6/dcc/group__vx__enum__e.html#ga2b8482beaf71f9cb4865e28050a6b965", null ],
+    [ "VX_ENUM_THRESHOLD_TYPE", "d6/dcc/group__vx__enum__e.html#ga47c86a1847fb625f1028806ed4e41cba", null ],
+    [ "VX_ENUM_BORDER", "d6/dcc/group__vx__enum__e.html#gab90f2ffd7c6dd86b6c056d20fdbfd76f", null ],
+    [ "VX_ENUM_COMPARISON", "d6/dcc/group__vx__enum__e.html#ga7bdc3bc8e3cd268d9d1b1bcebdb3cad2", null ],
+    [ "VX_ENUM_MEMORY_TYPE", "d6/dcc/group__vx__enum__e.html#ga264ca8aa70b39038e09f835efadfe120", null ],
+    [ "VX_ENUM_TERM_CRITERIA", "d6/dcc/group__vx__enum__e.html#ga5a458d48fc113debf04660368378e7c4", null ],
+    [ "VX_ENUM_NORM_TYPE", "d6/dcc/group__vx__enum__e.html#gaaa040721bd490a1e4862d6f84eecc63e", null ],
+    [ "VX_ENUM_ACCESSOR", "d6/dcc/group__vx__enum__e.html#gaa80ebfe0fe37082a9ed4163d1731c152", null ],
+    [ "VX_ENUM_ROUND_POLICY", "d6/dcc/group__vx__enum__e.html#ga611dbcdb08098426a3bb70ebadb9dc5c", null ],
+    [ "VX_ENUM_TARGET", "d6/dcc/group__vx__enum__e.html#ga988b71e62f09b238f4fe1966d3f0525e", null ],
+    [ "VX_ENUM_BORDER_POLICY", "d6/dcc/group__vx__enum__e.html#ga6e7e81f0a6784a3a5a1db20c9ce0d0c0", null ],
+    [ "VX_ENUM_GRAPH_STATE", "d6/dcc/group__vx__enum__e.html#ga74508413175e89399b7ea54483ff5eba", null ],
+    [ "VX_ENUM_NONLINEAR", "d6/dcc/group__vx__enum__e.html#gaef9a81454c2a046b69b8627530d3aa0a", null ],
+    [ "VX_ENUM_PATTERN", "d6/dcc/group__vx__enum__e.html#ga93617d86a2df83c2b896a502b15e1359", null ],
+    [ "VX_ENUM_IX_USE", "d6/dcc/group__vx__enum__e.html#ga8fb6b9036a704f424002b87479c2ea0e", null ]
+];

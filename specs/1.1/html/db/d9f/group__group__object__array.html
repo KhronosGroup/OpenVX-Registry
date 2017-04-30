@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">24c1cf8</span>
+   &#160;<span id="projectnumber">2b213f9</span>
    </div>
   </td>
  </tr>
@@ -168,7 +168,7 @@ Functions</h2></td></tr>
 <p>The type of the ObjectArray items. Read-only. Use a <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga73d23cb932d31a69f44182054a987c85">vx_enum</a></code> parameter. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="gga77518448bc4d2d157b73defcc2cac9b9a9fd280c529fa57498c11013a8ee55b67"></a>VX_OBJECT_ARRAY_NUMITEMS</em>&#160;</td><td class="fielddoc">
-<p>The number of items in the ObjectArray. Read-only. Use a <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga46d89d47ad9a2de1de723d0db861d324">vx_size</a></code> parameter. </p>
+<p>The number of items in the ObjectArray. Read-only. Use a <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga73d23cb932d31a69f44182054a987c85">vx_enum</a></code> parameter. </p>
 </td></tr>
 </table>
 
@@ -298,7 +298,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to an OpenVX data object. Any possible errors preventing a successful completion of the function should be checked using <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ff8fafafe415f56a02e6a1825baac97">vxGetStatus</a></code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to an OpenVX data object. </dd></dl>
 
 </div>
 </div>
@@ -327,8 +327,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>arr is not a valid <code><a class="el" href="../../db/d9f/group__group__object__array.html#ga31a0de03c8cbf474afab6efb7bcffddb">vx_object_array</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If arr is not a <code><a class="el" href="../../db/d9f/group__group__object__array.html#ga31a0de03c8cbf474afab6efb7bcffddb">vx_object_array</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -384,8 +384,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>arr is not a valid <code><a class="el" href="../../db/d9f/group__group__object__array.html#ga31a0de03c8cbf474afab6efb7bcffddb">vx_object_array</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the <em>arr</em> is not a <code><a class="el" href="../../db/d9f/group__group__object__array.html#ga31a0de03c8cbf474afab6efb7bcffddb">vx_object_array</a></code>. </td></tr>
     <tr><td class="paramname">VX_ERROR_NOT_SUPPORTED</td><td>If the <em>attribute</em> is not a value supported on this implementation. </td></tr>
     <tr><td class="paramname">VX_ERROR_INVALID_PARAMETERS</td><td>If any of the other parameters are incorrect. </td></tr>
   </table>
@@ -399,7 +399,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 10 2017 14:53:32 for The OpenVX Specification by
+    <li class="footer">Generated on Tue Sep 20 2016 15:46:11 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

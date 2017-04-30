@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">24c1cf8</span>
+   &#160;<span id="projectnumber">2b213f9</span>
    </div>
   </td>
  </tr>
@@ -131,11 +131,11 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga769da45f9a00160000c8982549eea4e2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d90/group__group__reference.html#ga769da45f9a00160000c8982549eea4e2">vx_reference_attribute_e</a> { <br/>
-&#160;&#160;<a class="el" href="../../dd/d90/group__group__reference.html#gga769da45f9a00160000c8982549eea4e2a2ec1c0b16c04b212e47d8900a856ff8b">VX_REFERENCE_COUNT</a> = ((( VX_ID_KHRONOS ) &lt;&lt; 20) | ( VX_TYPE_REFERENCE &lt;&lt; 8)) + 0x0, 
+&#160;&#160;<a class="el" href="../../dd/d90/group__group__reference.html#gga769da45f9a00160000c8982549eea4e2a1a42e0b79fcb1aa9586c28f30d4d9579">VX_REF_ATTRIBUTE_COUNT</a> = ((( VX_ID_KHRONOS ) &lt;&lt; 20) | ( VX_TYPE_REFERENCE &lt;&lt; 8)) + 0x0, 
 <br/>
-&#160;&#160;<a class="el" href="../../dd/d90/group__group__reference.html#gga769da45f9a00160000c8982549eea4e2afe9e99e2330440b5fdf194b32e4e4775">VX_REFERENCE_TYPE</a> = ((( VX_ID_KHRONOS ) &lt;&lt; 20) | ( VX_TYPE_REFERENCE &lt;&lt; 8)) + 0x1, 
+&#160;&#160;<a class="el" href="../../dd/d90/group__group__reference.html#gga769da45f9a00160000c8982549eea4e2ae55e53544fdc30742055277971fdf120">VX_REF_ATTRIBUTE_TYPE</a> = ((( VX_ID_KHRONOS ) &lt;&lt; 20) | ( VX_TYPE_REFERENCE &lt;&lt; 8)) + 0x1, 
 <br/>
-&#160;&#160;<a class="el" href="../../dd/d90/group__group__reference.html#gga769da45f9a00160000c8982549eea4e2ac8b1a7638a2874fe5055e4b1a1f38c04">VX_REFERENCE_NAME</a> = ((( VX_ID_KHRONOS ) &lt;&lt; 20) | ( VX_TYPE_REFERENCE &lt;&lt; 8)) + 0x2
+&#160;&#160;<a class="el" href="../../dd/d90/group__group__reference.html#gga769da45f9a00160000c8982549eea4e2a6eff840bc3f294a3b7f1490d3972bcf7">VX_REF_ATTRIBUTE_NAME</a> = ((( VX_ID_KHRONOS ) &lt;&lt; 20) | ( VX_TYPE_REFERENCE &lt;&lt; 8)) + 0x2
 <br/>
  }</td></tr>
 <tr class="memdesc:ga769da45f9a00160000c8982549eea4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The reference attributes list.  <a href="../../dd/d90/group__group__reference.html#ga769da45f9a00160000c8982549eea4e2">More...</a><br/></td></tr>
@@ -205,14 +205,14 @@ Functions</h2></td></tr>
 
 <p>The reference attributes list. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga769da45f9a00160000c8982549eea4e2a2ec1c0b16c04b212e47d8900a856ff8b"></a>VX_REFERENCE_COUNT</em>&#160;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga769da45f9a00160000c8982549eea4e2a1a42e0b79fcb1aa9586c28f30d4d9579"></a>VX_REF_ATTRIBUTE_COUNT</em>&#160;</td><td class="fielddoc">
 <p>Returns the reference count of the object. Read-only. Use a <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga1ddb983b9696cafdb4256c0df757171c">vx_uint32</a></code> parameter. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga769da45f9a00160000c8982549eea4e2afe9e99e2330440b5fdf194b32e4e4775"></a>VX_REFERENCE_TYPE</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga769da45f9a00160000c8982549eea4e2ae55e53544fdc30742055277971fdf120"></a>VX_REF_ATTRIBUTE_TYPE</em>&#160;</td><td class="fielddoc">
 <p>Returns the <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga44aa67e15168e5912a0800090a120be6">vx_type_e</a></code> of the reference. Read-only. Use a <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga73d23cb932d31a69f44182054a987c85">vx_enum</a></code> parameter. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga769da45f9a00160000c8982549eea4e2ac8b1a7638a2874fe5055e4b1a1f38c04"></a>VX_REFERENCE_NAME</em>&#160;</td><td class="fielddoc">
-<p>Used to query the reference for its name. Read-write. Use a <code>*vx_char</code> parameter. </p>
+<tr><td class="fieldname"><em><a class="anchor" id="gga769da45f9a00160000c8982549eea4e2a6eff840bc3f294a3b7f1490d3972bcf7"></a>VX_REF_ATTRIBUTE_NAME</em>&#160;</td><td class="fielddoc">
+<p>Used to query the reference for its name. Read-write. Use a * <code><a class="el" href="../../d4/dae/group__group__basic__features.html#ga9ce3f44bccc95f52b9897df2b3620713">vx_char</a></code> parameter. </p>
 </td></tr>
 </table>
 
@@ -268,13 +268,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>ref is not a valid <code><a class="el" href="../../dd/d90/group__group__reference.html#ga1a95c3bf180e49d4d1ecd64cb35f45a3">vx_reference</a></code> reference. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -303,8 +296,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>ref_ptr is not a valid <code><a class="el" href="../../dd/d90/group__group__reference.html#ga1a95c3bf180e49d4d1ecd64cb35f45a3">vx_reference</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If the reference is not valid. </td></tr>
   </table>
   </dd>
 </dl>
@@ -335,8 +328,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>ref is not a valid <code><a class="el" href="../../dd/d90/group__group__reference.html#ga1a95c3bf180e49d4d1ecd64cb35f45a3">vx_reference</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>if reference is not valid. </td></tr>
   </table>
   </dd>
 </dl>
@@ -376,11 +369,11 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>No errors; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>ref is not a valid <code><a class="el" href="../../dd/d90/group__group__reference.html#ga1a95c3bf180e49d4d1ecd64cb35f45a3">vx_reference</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>No errors. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>If reference is not valid. </td></tr>
   </table>
   </dd>
 </dl>
@@ -392,7 +385,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 10 2017 14:53:30 for The OpenVX Specification by
+    <li class="footer">Generated on Tue Sep 20 2016 15:46:10 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

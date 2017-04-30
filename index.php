@@ -18,13 +18,38 @@ include_once("../../assets/static_pages/khr_page_top.php");
 
 <h3> OpenVX Core API Specification, Headers, and Documentation </h3>
 
-<p> The current version of OpenVX is OpenVX 1.1. </p>
+<p> The current version of OpenVX is OpenVX 1.2. </p>
+
+<ul>
+<li> <a href="specs/1.2/html/index.html"> OpenVX 1.2 Specification (HTML)
+     </a> (updated April 27, 2017). The specification is also available in
+     <a href="specs/1.2/OpenVX_Specification_1_2.pdf"> PDF </a> format for
+     offline reading. </li>
+<li> <a href="api/1.2/openvx-standard-headers-1.2.tar.bz2"> OpenVX
+     1.2 header package </a> (updated April 27, 2017).</li>
+</ul>
+
+<p> The current safety critical version of OpenVX is OpenVX1.1 SC. </p>
+
+<ul>
+<li> <a href="specs/1.1_SC/html/index.html"> OpenVX 1.1 SC Specification (HTML)
+     </a> (updated March 8, 2017). The specification is also available in
+     <a href="specs/1.1_SC/OpenVX_Specification_SC_1_1.pdf"> PDF </a> format for
+     offline reading. </li>
+</ul>
+
+
+<h3> Older Specifications </h3>
+
+<p> Older versions of the OpenVX Specification provided for reference. </p>
+
+<p> OpenVX 1.1 </p>
 
 <ul>
 <li> <a href="specs/1.1/html/index.html"> OpenVX 1.1 Specification (HTML)
      </a> (updated March 15, 2017). The specification is also available in
      <a href="specs/1.1/OpenVX_Specification_1_1.pdf"> PDF </a> format for
-     offline reading.
+     offline reading. </li>
 <li> <a href="api/1.1/openvx-standard-headers-1.1.tar.bz2"> OpenVX
      1.1 header package </a> (updated March 15, 2017).
 </ul>
@@ -34,9 +59,6 @@ include_once("../../assets/static_pages/khr_page_top.php");
 <p> <a href="sample/openvx_sample_1.1.tar.bz2">OpenVX 1.1 Sample Code</a>
     (last updated June 17, 2016). </p>
 
-<h3> Older Specifications </h3>
-
-<p> Older versions of the OpenVX Specification provided for reference. </p>
 
 <p> <b> OpenVX 1.0.1 </b> </p>
 
@@ -70,6 +92,24 @@ include_once("../../assets/static_pages/khr_page_top.php");
 <h3> OpenVX Extensions </h3>
 
 <ul>
+
+<li> <a href="extensions/neural_network_1.2/html/index.html"> OpenVX 1.2
+     Neural Network Extension (HTML) </a> (updated April 27, 2017).
+     The extension specification is also available in <a
+     href="extensions/neural_network_1.2/OpenVX_NN_Extension_1_2.pdf">
+     PDF </a> format for offline reading. </li>
+<li> <a href="api/1.2/openvx-extension-headers-1.2.tar.bz2"> OpenVX
+     1.2 extenstion header package </a> (updated April 27, 2017). </li>
+
+<li> <a href="extensions/export_import_1.1/html/index.html"> OpenVX 1.1
+     Export And Import Extension (HTML) </a> (updated April 27, 2017).
+     The extension specification is also available in <a
+     href="extensions/export_import_1.1/OpenVX_Export_and_Import_Extension_1_1.pdf">
+     PDF </a> format for offline reading. </li>
+<li> <a href="api/1.1/openvx-extension-headers-1.1.tar.bz2"> OpenVX
+     1.1 extenstion header package </a> (updated April 27, 2017).
+</li>
+
 <li> <a href="extensions/vx_khr_tiling/1.0/html/index.html"> OpenVX 1.0
      Tiling Extension Provisional (HTML) </a> (updated January, 2015).
      The extension specification is also available in <a

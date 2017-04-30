@@ -34,10 +34,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_170px_June16.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="../../OpenVX_Color_119x55.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">The OpenVX Specification
-   &#160;<span id="projectnumber">24c1cf8</span>
+   &#160;<span id="projectnumber">2b213f9</span>
    </div>
   </td>
  </tr>
@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('d8/d69/group__group__node__callback.ht
 <div class="line">    <a class="code" href="../../d3/da9/group__group__parameter.html#ga35fab5fdbef16e118146d667cd98cc4d">vx_parameter</a> pmax = <a class="code" href="../../d3/da9/group__group__parameter.html#gab3e64f553957ac629e4f391eb4b47fdd">vxGetParameterByIndex</a>(node, 2); <span class="comment">// Max Value</span></div>
 <div class="line">    <span class="keywordflow">if</span> (pmax) {</div>
 <div class="line">        <a class="code" href="../../de/d7e/group__group__scalar.html#ga1bf12c9f0e72ed39970212b04148788d">vx_scalar</a> smax = 0;</div>
-<div class="line">        <a class="code" href="../../d3/da9/group__group__parameter.html#ga52a1f5ce39d52ca5b3522650067dd237">vxQueryParameter</a>(pmax, <a class="code" href="../../d3/da9/group__group__parameter.html#gga0534bb02e93eb4bab196bde2d3eccd59a6c352e5e19f27e9b3c69314aeb48a8f6">VX_PARAMETER_REF</a>, &amp;smax, <span class="keyword">sizeof</span>(smax));</div>
+<div class="line">        <a class="code" href="../../d3/da9/group__group__parameter.html#ga1418cbc77cc0e5f88827874cc0eb7b96">vxQueryParameter</a>(pmax, <a class="code" href="../../d3/da9/group__group__parameter.html#gga0534bb02e93eb4bab196bde2d3eccd59a6c352e5e19f27e9b3c69314aeb48a8f6">VX_PARAMETER_REF</a>, &amp;smax, <span class="keyword">sizeof</span>(smax));</div>
 <div class="line">        <span class="keywordflow">if</span> (smax) {</div>
 <div class="line">            <a class="code" href="../../d4/dae/group__group__basic__features.html#gae3c17ecc60bf32f3e113766b10830aa4">vx_uint8</a> value = 0u;</div>
 <div class="line">            <a class="code" href="../../de/d7e/group__group__scalar.html#gac0d4fdb4d6cc4f86840cb90392681cd1">vxCopyScalar</a>(smax, &amp;value, <a class="code" href="../../d1/dc3/group__group__context.html#ggadc2f56f2c0b0255308ce90746b454fe6a9405a00f7087f94be9c95bfbca5a98d8">VX_READ_ONLY</a>, <a class="code" href="../../d1/dc3/group__group__context.html#ggaeb1451df9727164fedf70723af2264b2acbf95a2ee31f2e48cf51ade3db9f4aba">VX_MEMORY_TYPE_HOST</a>);</div>
@@ -316,8 +316,8 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="../../d4/dae/group__group__basic__features.html#gaa2387ff4d3e967f124fb316300503f92">vx_status_e</a></code> enumeration. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">VX_SUCCESS</td><td>Callback assigned; any other value indicates failure. </td></tr>
-    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>node is not a valid <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code> reference. </td></tr>
+    <tr><td class="paramname">VX_SUCCESS</td><td>Callback assigned. </td></tr>
+    <tr><td class="paramname">VX_ERROR_INVALID_REFERENCE</td><td>The value passed as node was not a <code><a class="el" href="../../d7/d61/group__group__node.html#ga7f1b5d91fac63093ee3a77e87d942f96">vx_node</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -361,7 +361,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 10 2017 14:53:32 for The OpenVX Specification by
+    <li class="footer">Generated on Tue Sep 20 2016 15:46:12 for The OpenVX Specification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
