@@ -110,6 +110,15 @@ include_once("../../assets/static_pages/khr_page_top.php");
      1.1 extenstion header package </a> (updated April 27, 2017).
 </li>
 
+<li> <a href="extensions/vx_khr_class/html/index.html"> OpenVX 1.2
+     Provisional classifier Extension (HTML) </a> (updated Jul 11, 2017).
+     The extension specification is also available in <a
+     href="extensions/vx_khr_class/OpenVX_Classifier_Extension_1_2.pdf">
+     PDF </a> format for offline reading. </li>
+<li> <a href="api/1.2/openvx-extension-headers-1.2.tar.bz2"> OpenVX
+     1.2 extenstion header package </a> (updated Jul 11, 2017).
+</li>
+
 <li> <a href="extensions/vx_khr_tiling/1.0/html/index.html"> OpenVX 1.0
      Tiling Extension Provisional (HTML) </a> (updated January, 2015).
      The extension specification is also available in <a
