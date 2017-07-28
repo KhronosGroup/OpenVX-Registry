@@ -1,17 +1,8 @@
 <?php
 $static_title = 'Khronos OpenVX Registry';
-$static_breadcrumb = array(
-    '/registry/' => 'Registry',
-    'NOLINK' => 'OpenVX Registry'
-);
+
 include_once("../../assets/static_pages/khr_page_top.php");
 ?>
-
-<h1 class="pagetitle">Khronos OpenVX&trade; Registry</h1>
-<div id="mainformat">
-
-
-<h1 style="text-align:center"> Khronos OpenVX&trade; Registry </h1>
 
 <p> The OpenVX registry contains specifications of the core API, headers,
     extensions, and related documentation. </p>
