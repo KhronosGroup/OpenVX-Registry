@@ -17,8 +17,13 @@ include_once("../../assets/static_pages/khr_page_top.php");
      <a href="specs/1.2/OpenVX_Specification_1_2.pdf"> PDF </a> format for
      offline reading. </li>
 <li> <a href="api/1.2/openvx-standard-headers-1.2.tar.bz2"> OpenVX
-     1.2 header package </a> (updated April 27, 2017).</li>
+     1.2 header package </a> (updated November 7, 2017).</li>
 </ul>
+
+<h3> OpenVX 1.2 Sample Implementation </h3>
+
+<p> <a href="sample/openvx_sample_1.2.tar.bz2">OpenVX 1.2 Sample Code</a>
+    (last updated November 7, 2017). </p>
 
 <p> The current safety critical version of OpenVX is OpenVX1.1 SC. </p>
 
@@ -90,7 +95,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
      href="extensions/neural_network_1.2/OpenVX_NN_Extension_1_2.pdf">
      PDF </a> format for offline reading. </li>
 <li> <a href="api/1.2/openvx-extension-headers-1.2.tar.bz2"> OpenVX
-     1.2 extenstion header package </a> (updated April 27, 2017). </li>
+     1.2 extension header package </a> (updated November 7, 2017). </li>
 
 <li> <a href="extensions/export_import_1.1/html/index.html"> OpenVX 1.1
      Export And Import Extension (HTML) </a> (updated April 27, 2017).
@@ -98,7 +103,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
      href="extensions/export_import_1.1/OpenVX_Export_and_Import_Extension_1_1.pdf">
      PDF </a> format for offline reading. </li>
 <li> <a href="api/1.1/openvx-extension-headers-1.1.tar.bz2"> OpenVX
-     1.1 extenstion header package </a> (updated April 27, 2017).
+     1.1 extension header package </a> (updated April 27, 2017).
 </li>
 
 <li> <a href="extensions/vx_khr_class/html/index.html"> OpenVX 1.2
@@ -107,7 +112,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
      href="extensions/vx_khr_class/OpenVX_Classifier_Extension_1_2.pdf">
      PDF </a> format for offline reading. </li>
 <li> <a href="api/1.2/openvx-extension-headers-1.2.tar.bz2"> OpenVX
-     1.2 extenstion header package </a> (updated Jul 11, 2017).
+     1.2 extension header package </a> (updated November 7, 2017).
 </li>
 
 <li> <a href="extensions/vx_khr_tiling/1.0/html/index.html"> OpenVX 1.0
