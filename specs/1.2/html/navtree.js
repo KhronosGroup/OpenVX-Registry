@@ -1,110 +1,3 @@
-var NAVTREE =
-[
-  [ "The OpenVX Specification", "index.html", [
-    [ "Introduction", "index.html", [
-      [ "Abstract", "index.html#sec_abstract", null ],
-      [ "Purpose", "index.html#sec_purpose", null ],
-      [ "Scope of Specification", "index.html#sec_scope", null ],
-      [ "Normative References", "index.html#sec_normative", null ],
-      [ "Version/Change History", "index.html#sec_versions", null ],
-      [ "Deprecation", "index.html#sec_deprecation", null ],
-      [ "Requirements Language", "index.html#sec_requirements", null ],
-      [ "Typographical Conventions", "index.html#sec_typo", [
-        [ "Naming Conventions", "index.html#sec_naming_conventions", null ],
-        [ "Vendor Naming Conventions", "index.html#sec_vendor_naming_conventions", null ]
-      ] ],
-      [ "Glossary and Acronyms", "index.html#sec_glossary", null ],
-      [ "Acknowledgements", "index.html#sec_acknowledgements", null ]
-    ] ],
-    [ "Design Overview", "d0/d84/page_design.html", [
-      [ "Software Landscape", "d0/d84/page_design.html#sec_overview", null ],
-      [ "Design Objectives", "d0/d84/page_design.html#sec_design_objective", [
-        [ "Hardware Optimizations", "d0/d84/page_design.html#sec_sub_optimizations", null ],
-        [ "Hardware Limitations", "d0/d84/page_design.html#sec_design_hw_limitations", null ]
-      ] ],
-      [ "Assumptions", "d0/d84/page_design.html#sec_assumptions", [
-        [ "Portability", "d0/d84/page_design.html#sec_portability", null ],
-        [ "Opaqueness", "d0/d84/page_design.html#sec_opaque", null ]
-      ] ],
-      [ "Object-Oriented Behaviors", "d0/d84/page_design.html#sec_framework", null ],
-      [ "OpenVX Framework Objects", "d0/d84/page_design.html#sec_framework_objects", null ],
-      [ "OpenVX Data Objects", "d0/d84/page_design.html#sec_data_objects", null ],
-      [ "Error Objects", "d0/d84/page_design.html#sec_errors", null ],
-      [ "Graphs Concepts", "d0/d84/page_design.html#sub_graphs", [
-        [ "Linking Nodes", "d0/d84/page_design.html#sub_graph_linking", null ],
-        [ "Virtual Data Objects", "d0/d84/page_design.html#sec_data_virtual", null ],
-        [ "Node Parameters", "d0/d84/page_design.html#sub_node_parameters", null ],
-        [ "Graph Parameters", "d0/d84/page_design.html#sub_graph_parameters", null ],
-        [ "Execution Model", "d0/d84/page_design.html#sub_graphs_execution", [
-          [ "Asynchronous Mode", "d0/d84/page_design.html#sub_graphs_execution_asynch", null ]
-        ] ],
-        [ "Graph Formalisms", "d0/d84/page_design.html#sub_graphs_rules", [
-          [ "Contained & Overlapping Data Objects", "d0/d84/page_design.html#sub_graphs_rules_data_obj", null ]
-        ] ],
-        [ "Node Execution Independence", "d0/d84/page_design.html#sec_graph_indep", null ],
-        [ "Verification", "d0/d84/page_design.html#sec_graph_verification", null ]
-      ] ],
-      [ "Callbacks", "d0/d84/page_design.html#sec_callback", null ],
-      [ "User Kernels", "d0/d84/page_design.html#sec_user_kernels", [
-        [ "Parameter Validation", "d0/d84/page_design.html#sec_user_node_validation", [
-          [ "The Meta Format Object", "d0/d84/page_design.html#subsec_meta_format", null ]
-        ] ],
-        [ "User Kernels Naming Conventions", "d0/d84/page_design.html#sec_functionnaming", null ]
-      ] ],
-      [ "Immediate Mode Functions", "d0/d84/page_design.html#sec_immediate_mode", null ],
-      [ "Targets", "d0/d84/page_design.html#sec_target", null ],
-      [ "Base Vision Functions", "d0/d84/page_design.html#sec_vision_functions", [
-        [ "Inputs", "d0/d84/page_design.html#sec_vision_function_inputs", null ],
-        [ "Outputs", "d0/d84/page_design.html#sec_vision_function_outputs", null ],
-        [ "Parameter ordering convention", "d0/d84/page_design.html#sec_vision_function_ordering", null ]
-      ] ],
-      [ "Lifecycles", "d0/d84/page_design.html#sec_lifecycle", [
-        [ "OpenVX Context Lifecycle", "d0/d84/page_design.html#sec_lc_context", null ],
-        [ "Graph Lifecycle", "d0/d84/page_design.html#sub_lc_graph", null ],
-        [ "Data Object Lifecycle", "d0/d84/page_design.html#sec_data_object_lifecycle", [
-          [ "OpenVX Image Lifecycle", "d0/d84/page_design.html#sec_lc_image", null ]
-        ] ]
-      ] ],
-      [ "Host Memory Data Object Access Patterns", "d0/d84/page_design.html#sec_host_memory", [
-        [ "Matrix Access Example", "d0/d84/page_design.html#sub_matrix_access", null ],
-        [ "Image Access Example", "d0/d84/page_design.html#sub_image_access", null ],
-        [ "Array Access Example", "d0/d84/page_design.html#sub_array_access", null ]
-      ] ],
-      [ "Concurrent Data Object Access", "d0/d84/page_design.html#sec_concurrent_access", null ],
-      [ "Valid Image Region", "d0/d84/page_design.html#sec_valid_region", null ],
-      [ "Extending OpenVX", "d0/d84/page_design.html#sec_extending", [
-        [ "Extending Attributes", "d0/d84/page_design.html#sub_attribute_extensions", null ],
-        [ "Vendor Custom Kernels", "d0/d84/page_design.html#sub_kernel_extensions", null ],
-        [ "Vendor Custom Extensions", "d0/d84/page_design.html#sub_framework_extensions", null ],
-        [ "Hinting", "d0/d84/page_design.html#sub_hints", null ],
-        [ "Directives", "d0/d84/page_design.html#sub_directives", null ]
-      ] ]
-    ] ],
-    [ "Bibliography", "d0/de3/citelist.html", null ],
-    [ "Modules", "modules.html", "modules" ],
-    [ "Data Structures", null, [
-      [ "Data Structures", "annotated.html", "annotated" ],
-      [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Variables", "functions_vars.html", null ]
-      ] ]
-    ] ]
-  ] ]
-];
-
-var NAVTREEINDEX =
-[
-"annotated.html",
-"d4/dae/group__group__basic__features.html#ga23fad3d6af10532a44a2d497b7a9e6eb",
-"d5/d8e/group__group__array.html#ggad4a2939e3d71ab3b1ae36733ab7b9511a037613d79c7c724208eb4c3873bbd059",
-"db/d29/group__group__pyramid.html#gad9e43dc4026a9593d63e3e9881b9c4d9",
-"df/d09/group__group__image.html#aa97450bc45011d86899c7bc825d3d2d9"
-];
-
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
 var navTreeSubIndices = new Array();
 
 function getData(varName)
@@ -125,6 +18,21 @@ function stripPath2(uri)
   var s = uri.substring(i+1);
   var m = uri.substring(0,i+1).match(/\/d\w\/d\w\w\/$/);
   return m ? uri.substring(i-6) : s;
+}
+
+function hashValue()
+{
+  return $(location).attr('hash').substring(1).replace(/[^\w\-]/g,'');
+}
+
+function hashUrl()
+{
+  return '#'+hashValue();
+}
+
+function pathName()
+{
+  return $(location).attr('pathname').replace(/[^-A-Za-z0-9+&@#/%?=~_|!:,.;\(\)]/g, '');
 }
 
 function localStorageSupported()
@@ -149,7 +57,7 @@ function deleteLink()
 {
   if (localStorageSupported()) {
     window.localStorage.setItem('navpath','');
-  } 
+  }
 }
 
 function cachedLink()
@@ -197,7 +105,7 @@ function createIndent(o,domNode,node,level)
     node.expandToggle.onclick = function() {
       if (node.expanded) {
         $(node.getChildrenUL()).slideUp("fast");
-        node.plus_img.src = node.relpath+"ftv2pnode.png";
+        node.plus_img.src = node.relpath+"arrowright.png";
         node.expanded = false;
       } else {
         expandNode(o, node, false, false);
@@ -205,7 +113,7 @@ function createIndent(o,domNode,node,level)
     }
     node.expandToggle.appendChild(imgNode);
     domNode.appendChild(node.expandToggle);
-    imgNode.src = node.relpath+"ftv2pnode.png";
+    imgNode.src = node.relpath+"arrowright.png";
   } else {
     var span = document.createElement("span");
     span.style.display = 'inline-block';
@@ -221,11 +129,13 @@ var animationInProgress = false;
 function gotoAnchor(anchor,aname,updateLocation)
 {
   var pos, docContent = $('#doc-content');
-  if (anchor.parent().attr('class')=='memItemLeft' ||
-      anchor.parent().attr('class')=='fieldtype' ||
-      anchor.parent().is(':header')) 
+  var ancParent = $(anchor.parent());
+  if (ancParent.hasClass('memItemLeft') ||
+      ancParent.hasClass('fieldname') ||
+      ancParent.hasClass('fieldtype') ||
+      ancParent.is(':header'))
   {
-    pos = anchor.parent().position().top;
+    pos = ancParent.position().top;
   } else if (anchor.position()) {
     pos = anchor.position().top;
   }
@@ -283,7 +193,7 @@ function newNode(o, po, text, link, childrenData, lastNode)
     a.className = stripPath(link.replace('#',':'));
     if (link.indexOf('#')!=-1) {
       var aname = '#'+link.split('#')[1];
-      var srcPage = stripPath($(location).attr('pathname'));
+      var srcPage = stripPath(pathName());
       var targetPage = stripPath(link.split('#')[0]);
       a.href = srcPage!=targetPage ? url : "javascript:void(0)"; 
       a.onclick = function(){
@@ -359,9 +269,9 @@ function expandNode(o, node, imm, showRoot)
         $(node.getChildrenUL()).slideDown("fast");
       }
       if (node.isLast) {
-        node.plus_img.src = node.relpath+"ftv2mlastnode.png";
+        node.plus_img.src = node.relpath+"arrowdown.png";
       } else {
-        node.plus_img.src = node.relpath+"ftv2mnode.png";
+        node.plus_img.src = node.relpath+"arrowdown.png";
       }
       node.expanded = true;
     }
@@ -377,14 +287,13 @@ function glowEffect(n,duration)
 
 function highlightAnchor()
 {
-  var aname = $(location).attr('hash');
+  var aname = hashUrl();
   var anchor = $(aname);
   if (anchor.parent().attr('class')=='memItemLeft'){
-    var rows = $('.memberdecls tr[class$="'+
-               window.location.hash.substring(1)+'"]');
+    var rows = $('.memberdecls tr[class$="'+hashValue()+'"]');
     glowEffect(rows.children(),300); // member without details
-  } else if (anchor.parents().slice(2).prop('tagName')=='TR') {
-    glowEffect(anchor.parents('div.memitem'),1000); // enum value
+  } else if (anchor.parent().attr('class')=='fieldname'){
+    glowEffect(anchor.parent().parent(),1000); // enum value
   } else if (anchor.parent().attr('class')=='fieldtype'){
     glowEffect(anchor.parent().parent(),1000); // struct field
   } else if (anchor.parent().is(":header")) {
@@ -399,7 +308,7 @@ function selectAndHighlight(hash,n)
 {
   var a;
   if (hash) {
-    var link=stripPath($(location).attr('pathname'))+':'+hash.substring(1);
+    var link=stripPath(pathName())+':'+hash.substring(1);
     a=$('.item a[class$="'+link+'"]');
   }
   if (a && a.length) {
@@ -432,11 +341,7 @@ function showNode(o, node, index, hash)
         getNode(o, node);
       }
       $(node.getChildrenUL()).css({'display':'block'});
-      if (node.isLast) {
-        node.plus_img.src = node.relpath+"ftv2mlastnode.png";
-      } else {
-        node.plus_img.src = node.relpath+"ftv2mnode.png";
-      }
+      node.plus_img.src = node.relpath+"arrowdown.png";
       node.expanded = true;
       var n = node.children[o.breadcrumbs[index]];
       if (index+1<o.breadcrumbs.length) {
@@ -510,14 +415,13 @@ function navTo(o,root,hash,relpath)
   if (link) {
     var parts = link.split('#');
     root = parts[0];
-    if (parts.length>1) hash = '#'+parts[1];
+    if (parts.length>1) hash = '#'+parts[1].replace(/[^\w\-]/g,'');
     else hash='';
   }
   if (hash.match(/^#l\d+$/)) {
     var anchor=$('a[name='+hash.substring(1)+']');
     glowEffect(anchor.parent(),1000); // line number
     hash=''; // strip line number anchors
-    //root=root.replace(/_source\./,'.'); // source link to doc link
   }
   var url=root+hash;
   var i=-1;
@@ -551,7 +455,7 @@ function toggleSyncButton(relpath)
   if (navSync.hasClass('sync')) {
     navSync.removeClass('sync');
     showSyncOff(navSync,relpath);
-    storeLink(stripPath2($(location).attr('pathname'))+$(location).attr('hash'));
+    storeLink(stripPath2(pathName())+hashUrl());
   } else {
     navSync.addClass('sync');
     showSyncOn(navSync,relpath);
@@ -575,7 +479,7 @@ function initNavTree(toroot,relpath)
   o.node.expanded = false;
   o.node.isLast = true;
   o.node.plus_img = document.createElement("img");
-  o.node.plus_img.src = relpath+"ftv2pnode.png";
+  o.node.plus_img.src = relpath+"arrowright.png";
   o.node.plus_img.width = 16;
   o.node.plus_img.height = 22;
 
@@ -591,7 +495,7 @@ function initNavTree(toroot,relpath)
   }
 
   $(window).load(function(){
-    navTo(o,toroot,window.location.hash,relpath);
+    navTo(o,toroot,hashUrl(),relpath);
     showRoot();
   });
 
@@ -599,21 +503,20 @@ function initNavTree(toroot,relpath)
      if (window.location.hash && window.location.hash.length>1){
        var a;
        if ($(location).attr('hash')){
-         var clslink=stripPath($(location).attr('pathname'))+':'+
-                               $(location).attr('hash').substring(1);
-         a=$('.item a[class$="'+clslink+'"]');
+         var clslink=stripPath(pathName())+':'+hashValue();
+         a=$('.item a[class$="'+clslink.replace(/</g,'\\3c ')+'"]');
        }
        if (a==null || !$(a).parent().parent().hasClass('selected')){
          $('.item').removeClass('selected');
          $('.item').removeAttr('id');
        }
-       var link=stripPath2($(location).attr('pathname'));
-       navTo(o,link,$(location).attr('hash'),relpath);
+       var link=stripPath2(pathName());
+       navTo(o,link,hashUrl(),relpath);
      } else if (!animationInProgress) {
        $('#doc-content').scrollTop(0);
        $('.item').removeClass('selected');
        $('.item').removeAttr('id');
-       navTo(o,toroot,window.location.hash,relpath);
+       navTo(o,toroot,hashUrl(),relpath);
      }
   })
 }

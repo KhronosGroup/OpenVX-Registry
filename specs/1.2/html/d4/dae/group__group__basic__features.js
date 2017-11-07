@@ -40,6 +40,7 @@ var group__group__basic__features =
     [ "VX_VERSION_MINOR", "d4/dae/group__group__basic__features.html#ga56007a9459bdf2112598289a76e7191f", null ],
     [ "VX_VERSION_1_0", "d4/dae/group__group__basic__features.html#gaa60636efaaf929c89f35f26c15bd3133", null ],
     [ "VX_VERSION_1_1", "d4/dae/group__group__basic__features.html#gacf4ecf51da077479370880ea65ee173f", null ],
+    [ "VX_VERSION_1_2", "d4/dae/group__group__basic__features.html#gaa90a8f15b7c831195fef29d5a693f233", null ],
     [ "VX_VERSION", "d4/dae/group__group__basic__features.html#gaac2cc35a95597bdc3d1f3ee76ee2d421", null ],
     [ "VX_API_CALL", "d4/dae/group__group__basic__features.html#gaafbf3083f20518b915e89d73e26fe237", null ],
     [ "VX_CALLBACK", "d4/dae/group__group__basic__features.html#gaf22acf717e04b29aa5b836a1097f7181", null ],
@@ -75,10 +76,11 @@ var group__group__basic__features =
     [ "vx_enum", "d4/dae/group__group__basic__features.html#ga73d23cb932d31a69f44182054a987c85", null ],
     [ "vx_size", "d4/dae/group__group__basic__features.html#ga46d89d47ad9a2de1de723d0db861d324", null ],
     [ "vx_df_image", "d4/dae/group__group__basic__features.html#ga371968e3355d6f9e413d836ccc14d5b8", null ],
+    [ "vx_bool", "d4/dae/group__group__basic__features.html#gab1690f4b7e55ce7712e9a4c2ca61e100", null ],
     [ "vx_status", "d4/dae/group__group__basic__features.html#ga64df90a05ff50c048d65ab77bc60e4f0", null ],
-    [ "vx_bool", "d4/dae/group__group__basic__features.html#ga7ab7c7864a0ea6762a9e15be80ef28f0", [
-      [ "vx_false_e", "d4/dae/group__group__basic__features.html#gga7ab7c7864a0ea6762a9e15be80ef28f0afb2a8f065f221fda7ecac976517a28f3", null ],
-      [ "vx_true_e", "d4/dae/group__group__basic__features.html#gga7ab7c7864a0ea6762a9e15be80ef28f0a2a695a4d881a8c863881d4f1f88d6442", null ]
+    [ "vx_bool_e", "d4/dae/group__group__basic__features.html#ga3519b709518117bb11af04b11d594974", [
+      [ "vx_false_e", "d4/dae/group__group__basic__features.html#gga3519b709518117bb11af04b11d594974afb2a8f065f221fda7ecac976517a28f3", null ],
+      [ "vx_true_e", "d4/dae/group__group__basic__features.html#gga3519b709518117bb11af04b11d594974a2a695a4d881a8c863881d4f1f88d6442", null ]
     ] ],
     [ "vx_type_e", "d4/dae/group__group__basic__features.html#ga44aa67e15168e5912a0800090a120be6", [
       [ "VX_TYPE_INVALID", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6abf4c9a7d6d689998498573ac247598f8", null ],
@@ -102,6 +104,10 @@ var group__group__basic__features =
       [ "VX_TYPE_COORDINATES2D", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6a405c122917eaef7824401e4c43383ed2", null ],
       [ "VX_TYPE_COORDINATES3D", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6abf19370533a67a1031a6ab2490df6da9", null ],
       [ "VX_TYPE_COORDINATES2DF", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6abc1011909b61cb51967476483ac25b5c", null ],
+      [ "VX_TYPE_HOG_PARAMS", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6afb1444a80e2b82859cd2d6b1aeb527f5", null ],
+      [ "VX_TYPE_HOUGH_LINES_PARAMS", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6a5305ea6bb2acc22be7dd534a7a142851", null ],
+      [ "VX_TYPE_LINE_2D", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6a1ee12e96592e552e7990e3073d14dcd2", null ],
+      [ "VX_TYPE_TENSOR_MATRIX_MULTIPLY_PARAMS", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6a6f71ee4868a6e6cec807f714d800ebc6", null ],
       [ "VX_TYPE_USER_STRUCT_START", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6ad588cc90fe91c7da4216d7b74f56b969", null ],
       [ "VX_TYPE_VENDOR_STRUCT_START", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6a07a03f21f1325c60f7f2102486baf745", null ],
       [ "VX_TYPE_KHRONOS_OBJECT_START", "d4/dae/group__group__basic__features.html#gga44aa67e15168e5912a0800090a120be6a00a9d7647bc52d3848fdc84c0e14b295", null ],
@@ -187,7 +193,8 @@ var group__group__basic__features =
       [ "VX_ENUM_NONLINEAR", "d4/dae/group__group__basic__features.html#gga64bbf073b67ff3b5398d271fe49f940eace52957fb6cca193ccb232d1bd09073b", null ],
       [ "VX_ENUM_PATTERN", "d4/dae/group__group__basic__features.html#gga64bbf073b67ff3b5398d271fe49f940eaa4beca6e384519a1ed1d0629e5c63ee3", null ],
       [ "VX_ENUM_LBP_FORMAT", "d4/dae/group__group__basic__features.html#gga64bbf073b67ff3b5398d271fe49f940ea7d0013dbbd6641f319f48264fc4691a1", null ],
-      [ "VX_ENUM_COMP_METRIC", "d4/dae/group__group__basic__features.html#gga64bbf073b67ff3b5398d271fe49f940ea123a8baa82c66db8977dd613503c55df", null ]
+      [ "VX_ENUM_COMP_METRIC", "d4/dae/group__group__basic__features.html#gga64bbf073b67ff3b5398d271fe49f940ea123a8baa82c66db8977dd613503c55df", null ],
+      [ "VX_ENUM_SCALAR_OPERATION", "d4/dae/group__group__basic__features.html#gga64bbf073b67ff3b5398d271fe49f940ea33ae0b13705d230b76ad6d5252a5fea9", null ]
     ] ],
     [ "vx_convert_policy_e", "d4/dae/group__group__basic__features.html#ga4906e37bb7a3d678e83d624da09a7490", [
       [ "VX_CONVERT_POLICY_WRAP", "d4/dae/group__group__basic__features.html#gga4906e37bb7a3d678e83d624da09a7490a83d8a3e0712b2d99befd918ada4b0c3c", null ],

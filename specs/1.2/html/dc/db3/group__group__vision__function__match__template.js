@@ -9,5 +9,5 @@ var group__group__vision__function__match__template =
       [ "VX_COMPARE_CCORR_NORM", "dc/db3/group__group__vision__function__match__template.html#ggaa38a947020cb876cba5f8388a0998406ae30132888a3bf429bbee204e19a7727a", null ]
     ] ],
     [ "vxMatchTemplateNode", "dc/db3/group__group__vision__function__match__template.html#gaf7a0ddecd635cc227b0c0b7f3f5cbe12", null ],
-    [ "vxuMatchTemplateNode", "dc/db3/group__group__vision__function__match__template.html#ga32bfd3aabeed374acd3b6234a8cd8eb9", null ]
+    [ "vxuMatchTemplate", "dc/db3/group__group__vision__function__match__template.html#ga070a6047250634c07115808d8afa1392", null ]
 ];

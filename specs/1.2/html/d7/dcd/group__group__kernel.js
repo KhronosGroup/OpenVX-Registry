@@ -60,7 +60,7 @@ var group__group__kernel =
       [ "VX_KERNEL_TENSOR_MULTIPLY", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa410515d11da7a808ed3504b83c348177", null ],
       [ "VX_KERNEL_TENSOR_ADD", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa533181163224486be985fb7ee5c283a6", null ],
       [ "VX_KERNEL_TENSOR_SUBTRACT", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aadf6a30a81a7a7284e81723bc2634d966", null ],
-      [ "VX_KERNEL_TENSOR_TABLELOOKUP", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aada388b0ee74d47b06287218cdd39f20d", null ],
+      [ "VX_KERNEL_TENSOR_TABLE_LOOKUP", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa64c54e9c6e24b7fcc548fdcb16c7ac01", null ],
       [ "VX_KERNEL_TENSOR_TRANSPOSE", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aaaba68b61dc4aa25d63c03e7d8f60bf10", null ],
       [ "VX_KERNEL_TENSOR_CONVERT_DEPTH", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa1a89f4b2f7bc57a6f174146707d456dc", null ],
       [ "VX_KERNEL_TENSOR_MATRIX_MULTIPLY", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa1f82f64fe6486a17a53b977c390f2d0b", null ],
@@ -70,7 +70,9 @@ var group__group__kernel =
       [ "VX_KERNEL_HOG_FEATURES", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aab7cdf97b729988f3410bec2d5d9d7737", null ],
       [ "VX_KERNEL_HOG_CELLS", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa07b18171601a8fa49b211012c28964ef", null ],
       [ "VX_KERNEL_BILATERAL_FILTER", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa31e22ec4757095cd9fda169cf1ce7051", null ],
-      [ "VX_KERNEL_SELECT", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa049cd9e1a163f116fea97f524634bf4c", null ]
+      [ "VX_KERNEL_SELECT", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa049cd9e1a163f116fea97f524634bf4c", null ],
+      [ "VX_KERNEL_MAX", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aa28f60a4708a595e4aa21607781e9636d", null ],
+      [ "VX_KERNEL_MIN", "d7/dcd/group__group__kernel.html#gga2814901a6714649927c52179a5bd422aab78ea84ffef5196a0924f2bd483f133d", null ]
     ] ],
     [ "vx_kernel_attribute_e", "d7/dcd/group__group__kernel.html#ga5d2fdc999ccec0af77054f2833ec9652", [
       [ "VX_KERNEL_PARAMETERS", "d7/dcd/group__group__kernel.html#gga5d2fdc999ccec0af77054f2833ec9652ae36738b6c89592a89c562e29da6c81bc", null ],

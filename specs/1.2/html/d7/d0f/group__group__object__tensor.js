@@ -10,7 +10,7 @@ var group__group__object__tensor =
     [ "vxCreateTensor", "d7/d0f/group__group__object__tensor.html#gadbdf17ec3c874de20733e59330990925", null ],
     [ "vxCreateImageObjectArrayFromTensor", "d7/d0f/group__group__object__tensor.html#ga64427e7cf4935ceb204a18b8675dbbe3", null ],
     [ "vxCreateTensorFromView", "d7/d0f/group__group__object__tensor.html#gae2ac06985825a5d54b66f11c1a238aa7", null ],
-    [ "vxCreateVirtualTensor", "d7/d0f/group__group__object__tensor.html#gadf3bde6aa9b6de40246bfc708e26538b", null ],
+    [ "vxCreateVirtualTensor", "d7/d0f/group__group__object__tensor.html#gaea864d8c3bb3a8346134bc552d05b65a", null ],
     [ "vxCopyTensorPatch", "d7/d0f/group__group__object__tensor.html#gabc144c8931534ebaab4fd9184cd6ba2a", null ],
     [ "vxQueryTensor", "d7/d0f/group__group__object__tensor.html#gaa5deeabc3f2f3a5299efb8e6023eb9cd", null ],
     [ "vxReleaseTensor", "d7/d0f/group__group__object__tensor.html#ga4fa102e41935c5d42b0b0a999ea14a63", null ]
