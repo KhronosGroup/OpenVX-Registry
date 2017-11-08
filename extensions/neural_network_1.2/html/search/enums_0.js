@@ -5,5 +5,6 @@ var searchData=
   ['vx_5fnn_5fenum_5fe',['vx_nn_enum_e',['../d6/d9a/group__group__cnn.html#gae5b5a30ecdff611b248b26f65d7aa900',1,'vx_khr_nn.h']]],
   ['vx_5fnn_5fnorm_5ftype_5fe',['vx_nn_norm_type_e',['../d6/d9a/group__group__cnn.html#ga5edc475524c86e326b56ffaa7e8eaa28',1,'vx_khr_nn.h']]],
   ['vx_5fnn_5fpooling_5ftype_5fe',['vx_nn_pooling_type_e',['../d6/d9a/group__group__cnn.html#ga516b0d3e8da43e82826bcccfc196c3e2',1,'vx_khr_nn.h']]],
-  ['vx_5fnn_5frounding_5ftype_5fe',['vx_nn_rounding_type_e',['../d6/d9a/group__group__cnn.html#ga86bbe62218962d22af01d434a42603c6',1,'vx_khr_nn.h']]]
+  ['vx_5fnn_5frounding_5ftype_5fe',['vx_nn_rounding_type_e',['../d6/d9a/group__group__cnn.html#ga86bbe62218962d22af01d434a42603c6',1,'vx_khr_nn.h']]],
+  ['vx_5fnn_5ftype_5fe',['vx_nn_type_e',['../d6/d9a/group__group__cnn.html#ga27a8a65bf3129353d6446474b0b78164',1,'vx_khr_nn.h']]]
 ];
