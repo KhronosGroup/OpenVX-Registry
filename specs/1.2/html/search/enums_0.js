@@ -3,7 +3,7 @@ var searchData=
   ['vx_5faccessor_5fe',['vx_accessor_e',['../d1/dc3/group__group__context.html#gadc2f56f2c0b0255308ce90746b454fe6',1,'vx_types.h']]],
   ['vx_5faction_5fe',['vx_action_e',['../d8/d69/group__group__node__callback.html#ga28324bfc81fd9121efb8c1ec416d507a',1,'vx_types.h']]],
   ['vx_5farray_5fattribute_5fe',['vx_array_attribute_e',['../d5/d8e/group__group__array.html#gad4a2939e3d71ab3b1ae36733ab7b9511',1,'vx_types.h']]],
-  ['vx_5fbool',['vx_bool',['../d4/dae/group__group__basic__features.html#ga7ab7c7864a0ea6762a9e15be80ef28f0',1,'vx_types.h']]],
+  ['vx_5fbool_5fe',['vx_bool_e',['../d4/dae/group__group__basic__features.html#ga3519b709518117bb11af04b11d594974',1,'vx_types.h']]],
   ['vx_5fborder_5fe',['vx_border_e',['../dc/de4/group__group__borders.html#ga2430709469c374c6fadfac72abbbcbb4',1,'vx_types.h']]],
   ['vx_5fborder_5fpolicy_5fe',['vx_border_policy_e',['../dc/de4/group__group__borders.html#ga146d4f89d9ade0ad70e19c6a8a7c944d',1,'vx_types.h']]],
   ['vx_5fchannel_5fe',['vx_channel_e',['../d4/dae/group__group__basic__features.html#ga5918ef0456c126837dca21f6fb55ccb3',1,'vx_types.h']]],

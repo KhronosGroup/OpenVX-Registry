@@ -10,5 +10,5 @@ var group__group__vision__function__hough__lines__p =
       [ "theta_min", "d9/d99/group__group__vision__function__hough__lines__p.html#a2acc2c6ec37dd70e34c0a21e9fd0ca09", null ]
     ] ],
     [ "vxHoughLinesPNode", "d9/d99/group__group__vision__function__hough__lines__p.html#ga921642ed4a2b0589091ea66ee8062867", null ],
-    [ "vxuHoughLinesPNode", "d9/d99/group__group__vision__function__hough__lines__p.html#ga23190ef3a9786395c8e0b29236a53fd9", null ]
+    [ "vxuHoughLinesP", "d9/d99/group__group__vision__function__hough__lines__p.html#ga3de5f808ed39b9c3ca35916b1ddd5cfa", null ]
 ];

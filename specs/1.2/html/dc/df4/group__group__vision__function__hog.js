@@ -12,8 +12,8 @@ var group__group__vision__function__hog =
       [ "window_stride", "dc/df4/group__group__vision__function__hog.html#a6c49355bb9db069471aa0f0e6e160323", null ],
       [ "threshold", "dc/df4/group__group__vision__function__hog.html#a0c779dd7d0e6247ecad2a5ff5dd913af", null ]
     ] ],
-    [ "vxHOGFeaturesNode", "dc/df4/group__group__vision__function__hog.html#gab86f79b46663b3117ce9681cdcf8e0de", null ],
     [ "vxHOGCellsNode", "dc/df4/group__group__vision__function__hog.html#ga7eab4159671a5e928d00a01605b8cf19", null ],
-    [ "vxuHOGFeatures", "dc/df4/group__group__vision__function__hog.html#gaa34fa784c40d625d69884e17a17f3e56", null ],
-    [ "vxuHOGCells", "dc/df4/group__group__vision__function__hog.html#gaed3885fb74f53efc617aa858baead6d8", null ]
+    [ "vxHOGFeaturesNode", "dc/df4/group__group__vision__function__hog.html#gab86f79b46663b3117ce9681cdcf8e0de", null ],
+    [ "vxuHOGCells", "dc/df4/group__group__vision__function__hog.html#ga7882607ba76bb85754207158c3295a43", null ],
+    [ "vxuHOGFeatures", "dc/df4/group__group__vision__function__hog.html#gaa34fa784c40d625d69884e17a17f3e56", null ]
 ];

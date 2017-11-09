@@ -6,5 +6,5 @@ var group__group__vision__function__lbp =
       [ "VX_ULBP", "d1/d9e/group__group__vision__function__lbp.html#gga4bbb6d74e8280a8effeaccb9d6238eedabf1d828174ad708c36274f8b40387634", null ]
     ] ],
     [ "vxLBPNode", "d1/d9e/group__group__vision__function__lbp.html#ga72cd1b3a84a19da5046b984c8d99f06b", null ],
-    [ "vxuLBPNode", "d1/d9e/group__group__vision__function__lbp.html#gaea8f42df17368e6c2554156a8ae3c0af", null ]
+    [ "vxuLBP", "d1/d9e/group__group__vision__function__lbp.html#ga4531d15747738de0792cfd933fc1adc4", null ]
 ];

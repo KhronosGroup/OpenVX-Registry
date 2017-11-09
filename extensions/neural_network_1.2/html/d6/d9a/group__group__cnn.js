@@ -23,12 +23,12 @@ var group__group__cnn =
     [ "VX_LIBRARY_KHR_NN_EXTENSION", "d6/d9a/group__group__cnn.html#ga187a95c41a5802659b184f46991c1147", null ],
     [ "vx_kernel_nn_ext_e", "d6/d9a/group__group__cnn.html#gad499c32ff42607fcffda9c3cca7185ef", [
       [ "VX_KERNEL_CONVOLUTION_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efa10c8eec4ac69b37a90b34d9751aefc31", null ],
-      [ "VX_KERNEL_FULLYCONNECTED_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efa0aa62db7000236d5380c0d3fddbdb3db", null ],
+      [ "VX_KERNEL_FULLY_CONNECTED_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efa3269ace450aac7e30be256d5a3efcc8c", null ],
       [ "VX_KERNEL_POOLING_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efad75b4eaef510d969e412aa08d2cb3edc", null ],
       [ "VX_KERNEL_SOFTMAX_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efa270b8ce654066df27b279fdec4b07bdf", null ],
       [ "VX_KERNEL_NORMALIZATION_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efa839fdec645115663c8ecd71238d5353f", null ],
       [ "VX_KERNEL_ACTIVATION_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efafcfbeeb8d83b4ae949ec8fd06c7dcc19", null ],
-      [ "VX_KERNEL_ROIPOOLING_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efa6e7db95026027556a0eea82ad2b1c386", null ],
+      [ "VX_KERNEL_ROI_POOLING_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efa04b0137b6e503e303c75f38da895cfe9", null ],
       [ "VX_KERNEL_DECONVOLUTION_LAYER", "d6/d9a/group__group__cnn.html#ggad499c32ff42607fcffda9c3cca7185efa0993f051aa373134ea832496168d6fed", null ]
     ] ],
     [ "vx_nn_activation_function_e", "d6/d9a/group__group__cnn.html#gaf28d53e554beba3da27f70fcd63895af", null ],
@@ -45,12 +45,17 @@ var group__group__cnn =
       [ "VX_NN_DS_SIZE_ROUNDING_FLOOR", "d6/d9a/group__group__cnn.html#gga86bbe62218962d22af01d434a42603c6a2aa48ad506133fdf01c0bd37f6293860", null ],
       [ "VX_NN_DS_SIZE_ROUNDING_CEILING", "d6/d9a/group__group__cnn.html#gga86bbe62218962d22af01d434a42603c6ad6a16dde063af1e7b3797cd5c3d58415", null ]
     ] ],
+    [ "vx_nn_type_e", "d6/d9a/group__group__cnn.html#ga27a8a65bf3129353d6446474b0b78164", [
+      [ "VX_TYPE_NN_CONVOLUTION_PARAMS", "d6/d9a/group__group__cnn.html#gga27a8a65bf3129353d6446474b0b78164a411116ea30558ddbf45dc7db2074522f", null ],
+      [ "VX_TYPE_NN_DECONVOLUTION_PARAMS", "d6/d9a/group__group__cnn.html#gga27a8a65bf3129353d6446474b0b78164a93013c97c0c22dfc6e165e636616da56", null ],
+      [ "VX_TYPE_NN_ROI_POOL_PARAMS", "d6/d9a/group__group__cnn.html#gga27a8a65bf3129353d6446474b0b78164af06282ca200b459a31d85e09aec81cc1", null ]
+    ] ],
     [ "vxActivationLayer", "d6/d9a/group__group__cnn.html#ga81fccaa902dfe507dace415f189d5e5e", null ],
-    [ "vxConvolutionLayer", "d6/d9a/group__group__cnn.html#ga0809f17c7f1e9df00592415f45298995", null ],
-    [ "vxDeconvolutionLayer", "d6/d9a/group__group__cnn.html#ga6c39ddc0075da0527d0e842c622938b4", null ],
+    [ "vxConvolutionLayer", "d6/d9a/group__group__cnn.html#ga69764625f436c14d739fc467515c1584", null ],
+    [ "vxDeconvolutionLayer", "d6/d9a/group__group__cnn.html#ga5c056442529c4c979eb6b82d81cab907", null ],
     [ "vxFullyConnectedLayer", "d6/d9a/group__group__cnn.html#ga70f11e4a18658dd8753f9d8e009730b2", null ],
     [ "vxNormalizationLayer", "d6/d9a/group__group__cnn.html#ga2f2dd3b8c00370e78552ef64bb2a174c", null ],
     [ "vxPoolingLayer", "d6/d9a/group__group__cnn.html#gac4e286be0f9c9a2fbd3019fd74531332", null ],
-    [ "vxROIPoolingLayer", "d6/d9a/group__group__cnn.html#ga5220b1fc490bceba188fb04c5da35d92", null ],
+    [ "vxROIPoolingLayer", "d6/d9a/group__group__cnn.html#gae80cce7ad61e5b4ac9e1c1136f40d65e", null ],
     [ "vxSoftmaxLayer", "d6/d9a/group__group__cnn.html#ga76a3a94a73992017519d7dc01e81c476", null ]
 ];
