@@ -26,7 +26,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
   <li>OpenVX 1.2 neural network extension
     (<a href="extensions/neural_network_1.2/html/index.html">HTML</a>,
     <a href="extensions/neural_network_1.2/OpenVX_NN_Extension_1_2.pdf">PDF</a>)
-    (updated October 11, 2017).</li>
+    (updated November 8, 2017).</li>
   <li>OpenVX 1.1 export and import extension
     (<a href="extensions/export_import_1.1/html/index.html">HTML</a>,
     <a href="extensions/export_import_1.1/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
@@ -63,7 +63,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
   <li><a href="api/1.1/openvx-standard-headers-1.1.tar.bz2">OpenVX 1.1 header
       package </a> (updated March 15, 2017).
   <li> <a href="sample/openvx_sample_1.1.tar.bz2">OpenVX 1.1 sample code</a>
-    (updated June 17, 2016). 
+    (updated June 17, 2016).
   <li>OpenVX 1.1 export and import extension
     (<a href="extensions/export_import_1.1/html/index.html">HTML</a>,
     <a href="extensions/export_import_1.1/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
@@ -77,7 +77,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
 improved 1.1 and 1.2 specifications. New submissions for conformance testing of
 1.0.X implementations will not be accepted after May 15, 2018.</em></p>
 <ul>
-  <li> 
+  <li>
     OpenVX 1.0.1 specification
     (<a href="specs/1.0.1/html/index.html">HTML</a>,
     <a href="specs/1.0.1/OpenVX_Specification_1_0_1.pdf">PDF</a>)
