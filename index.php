@@ -50,6 +50,44 @@ include_once("../../assets/static_pages/khr_page_top.php");
     (updated March 8, 2017).</li>
 </ul>
 
+<h3> OpenVX Provisional Extensions </h3>
+<ul>
+  <li>Classifier extension (provisional, OpenVX 1.2)
+    (<a href="extensions/vx_khr_class/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_class/OpenVX_Classifier_Extension_1_2.pdf">PDF</a>)
+    (updated Jul 11, 2017).</li>
+  <li>Export and import extension (provisional, OpenVX 1.1)
+    (<a href="extensions/export_import/html/index.html">HTML</a>,
+    <a href="extensions/export_import/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
+    (updated September, 2016).</li>
+  <li>Installable client driver extension (provisional, OpenVX 1.0)
+    (<a href="extensions/vx_khr_icd/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_icd/OpenVX_ICD_Extension.pdf">PDF</a>)
+    (updated September, 2016).</li>
+  <li>Pipelining, streaming,and batch processing extension (provisional, OpenVX 1.1 and 1.2)
+    (<a href="extensions/vx_khr_pipelining/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_pipelining/OpenVX_Graph_Pipelining_Streaming_and_Batch_Processing_Extension_1_0.pdf">PDF</a>)
+    (updated December, 2017).</li>
+  <li>S16 extension (provisional, OpenVX 1.1)
+    (<a href="extensions/vx_khr_s16/1.1/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_s16/1.1/OpenVX_S16_Extension_1.1.pdf">PDF</a>)
+    (updated February, 2017).</li>
+  <li>Tiling extension (provisional, OpenVX 1.0)
+    (<a href="extensions/vx_khr_tiling/1.0/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_tiling/1.0/OpenVX_Tiling_Extension_1_0.pdf">PDF</a>)
+    (updated January, 2015).</li>
+  <li>XML schema extension (provisional, OpenVX 1.0)
+    (<a href="extensions/vx_khr_xml/1.0/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_xml/1.0/OpenVX_XML_Schema_Extension_1_0.pdf">PDF</a>)
+    (updated February, 2015).
+    <ul>
+      <li>The XML extension incorporates the
+	<a href="schema/openvx-1-0.xsd">OpenVX XML Schema</a> document.
+    </ul>
+  </li>
+
+</ul>
+
 <h3>Older Specifications</h3>
 
 <p>Older versions of the OpenVX specification provided for reference.</p>
@@ -86,6 +124,10 @@ improved 1.1 and 1.2 specifications. New submissions for conformance testing of
       1.0.1 header package </a> (updated June, 2015). </li>
   <li> <a href="sample/openvx_sample_1.0.1.tar.bz2">OpenVX 1.0.1 sample
       code</a> (updated June 29, 2015). </li>
+  <li>Neural network extension (provisional, OpenVX 1.0)
+    (<a href="extensions/neural_network/html/index.html">HTML</a>,
+    <a href="extensions/neural_network/OpenVX_NN_Extension_1_1.pdf">PDF</a>)
+    (updated September, 2016).</li>
 </ul>
 
 <p><b>OpenVX 1.0 (withdrawn)</b></p>
@@ -107,43 +149,7 @@ improved 1.1 and 1.2 specifications. New submissions for conformance testing of
      code</a> (updated December 17, 2014). </li>
 </ul>
 
-<h3> OpenVX Provisional Extensions </h3>
-<ul>
-  <li>Classifier extension (provisional, OpenVX 1.2)
-    (<a href="extensions/vx_khr_class/html/index.html">HTML</a>,
-    <a href="extensions/vx_khr_class/OpenVX_Classifier_Extension_1_2.pdf">PDF</a>)
-    (updated Jul 11, 2017).</li>
-  <li>Export and import extension (provisional, OpenVX 1.1)
-    (<a href="extensions/export_import/html/index.html">HTML</a>,
-    <a href="extensions/export_import/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
-    (updated September, 2016).</li>
-  <li>Installable client driver extension (provisional, OpenVX 1.0)
-    (<a href="extensions/vx_khr_icd/html/index.html">HTML</a>,
-    <a href="extensions/vx_khr_icd/OpenVX_ICD_Extension.pdf">PDF</a>)
-    (updated September, 2016).</li>
-  <li>Neural network extension (provisional, OpenVX 1.0)
-    (<a href="extensions/neural_network/html/index.html">HTML</a>,
-    <a href="extensions/neural_network/OpenVX_NN_Extension_1_1.pdf">PDF</a>)
-    (updated September, 2016).</li>
-  <li>S16 extension (provisional, OpenVX 1.1)
-    (<a href="extensions/vx_khr_s16/1.1/html/index.html">HTML</a>,
-    <a href="extensions/vx_khr_s16/1.1/OpenVX_S16_Extension_1.1.pdf">PDF</a>)
-    (updated February, 2017).</li>
-  <li>Tiling extension (provisional, OpenVX 1.0)
-    (<a href="extensions/vx_khr_tiling/1.0/html/index.html">HTML</a>,
-    <a href="extensions/vx_khr_tiling/1.0/OpenVX_Tiling_Extension_1_0.pdf">PDF</a>)
-    (updated January, 2015).</li>
-  <li>XML schema extension (provisional, OpenVX 1.0)
-    (<a href="extensions/vx_khr_xml/1.0/html/index.html">HTML</a>,
-    <a href="extensions/vx_khr_xml/1.0/OpenVX_XML_Schema_Extension_1_0.pdf">PDF</a>)
-    (updated February, 2015).
-    <ul>
-      <li>The XML extension incorporates the
-	<a href="schema/openvx-1-0.xsd">OpenVX XML Schema</a> document.
-    </ul>
-  </li>
-
-</ul>
+<hr>
 
 <h4>Providing Feedback on the Registry</h4>
 
