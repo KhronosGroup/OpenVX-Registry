@@ -17,7 +17,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
   <li> <a href="api/1.2/openvx-standard-headers-1.2.tar.bz2"> OpenVX 1.2 header
     package </a> (updated October 20, 2017).</li>
   <li> <a href="sample/openvx_sample_1.2.tar.bz2">OpenVX 1.2 sample code</a>
-    (updated October 20, 2017). </p>
+    (updated January 17, 2018). </p>
 </ul>
 
 <p>There are two KHR extensions to OpenVX that are supported by the
