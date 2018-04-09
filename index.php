@@ -52,6 +52,10 @@ include_once("../../assets/static_pages/khr_page_top.php");
 
 <h3> OpenVX Provisional Extensions </h3>
 <ul>
+  <li>OpenCL interop extension (provisional, OpenVX 1.1, 1.2)
+    (<a href="extensions/vx_khr_opencl_interop/vx_khr_opencl_interop.html">HTML</a>,
+    <a href="extensions/vx_khr_opencl_interop/vx_khr_opencl_interop.pdf">PDF</a>)
+    (updated Jan 25, 2018).</li>
   <li>Classifier extension (provisional, OpenVX 1.2)
     (<a href="extensions/vx_khr_class/html/index.html">HTML</a>,
     <a href="extensions/vx_khr_class/OpenVX_Classifier_Extension_1_2.pdf">PDF</a>)
