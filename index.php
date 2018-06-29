@@ -70,6 +70,10 @@ include_once("../../assets/static_pages/khr_page_top.php");
     (<a href="extensions/export_import/html/index.html">HTML</a>,
     <a href="extensions/export_import/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
     (updated September, 2016).</li>
+  <li>Import kernel extension (provisional, OpenVX 1.1, 1.2)
+    (<a href="extensions/vx_khr_import_kernel/vx_khr_import_kernel.html">HTML</a>,
+    <a href="extensions/vx_khr_import_kernel/vx_khr_import_kernel.pdf">PDF</a>)
+    (updated March 8, 2018).</li>
   <li>Installable client driver extension (provisional, OpenVX 1.0)
     (<a href="extensions/vx_khr_icd/html/index.html">HTML</a>,
     <a href="extensions/vx_khr_icd/OpenVX_ICD_Extension.pdf">PDF</a>)
