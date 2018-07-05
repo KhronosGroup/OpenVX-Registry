@@ -24,12 +24,12 @@ include_once("../../assets/static_pages/khr_page_top.php");
   OpenVX 1.2 conformance tests: </p>
 <ul>
   <li>OpenVX 1.2.1 neural network extension
-    (<a href="extensions/vx_khr_nn_1.2.1/vx_khr_nn.html">HTML</a>,
-    <a href="extensions/vx_khr_nn_1.2.1/vx_khr_nn.pdf">PDF</a>)
+    (<a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn.html">HTML</a>,
+    <a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn.pdf">PDF</a>)
     (updated May 14, 2018).</li>
   <li>OpenVX 1.1.1 export and import extension
-    (<a href="extensions/vx_khr_export_import_1.2.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
-    <a href="extensions/vx_khr_export_import_1.2.1/vx_khr_export_and_import_1_1_1.pdf">PDF</a>)
+    (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
+    <a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.pdf">PDF</a>)
       (updated June 17, 2018).</li>
     <ul>
       <li>This extension designed for OpenVX 1.1 is valid without change for OpenVX 1.2(.1).</li>
@@ -57,8 +57,8 @@ include_once("../../assets/static_pages/khr_page_top.php");
     <a href="extensions/vx_khr_class/OpenVX_Classifier_Extension_1_2.pdf">PDF</a>)
     (updated Jul 11, 2017).</li>
   <li>Export and import extension (provisional, OpenVX 1.1)
-    (<a href="extensions/export_import/html/index.html">HTML</a>,
-    <a href="extensions/export_import/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
+    (<a href="extensions/vx_khr_ix/1.0/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_ix/1.0/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
     (updated September, 2016).</li>
   <li>Import kernel extension (provisional, OpenVX 1.1, 1.2)
     (<a href="extensions/vx_khr_import_kernel/vx_khr_import_kernel.html">HTML</a>,
@@ -122,8 +122,8 @@ chain are available <a href="prev_tools.html">here</a>.
   <li> <a href="sample/openvx_sample_1.1.tar.bz2">OpenVX 1.1 sample code</a>
     (updated June 17, 2016).
   <li>OpenVX 1.1 export and import extension
-    (<a href="extensions/export_import_1.1/html/index.html">HTML</a>,
-    <a href="extensions/export_import_1.1/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
+    (<a href="extensions/vx_khr_ix/1.1/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_ix/1.1/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
       (updated April 27, 2017).</li>
   <li> <a href="api/1.1/openvx-extension-headers-1.1.tar.bz2"> OpenVX
       1.1 extension header package </a> (updated April 27, 2017).</li>
@@ -144,8 +144,8 @@ improved 1.1 and 1.2 specifications. New submissions for conformance testing of
   <li> <a href="sample/openvx_sample_1.0.1.tar.bz2">OpenVX 1.0.1 sample
       code</a> (updated June 29, 2015). </li>
   <li>Neural network extension (provisional, OpenVX 1.0)
-    (<a href="extensions/neural_network/html/index.html">HTML</a>,
-    <a href="extensions/neural_network/OpenVX_NN_Extension_1_1.pdf">PDF</a>)
+    (<a href="extensions/vx_khr_nn/1.1/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_nn/1.1/OpenVX_NN_Extension_1_1.pdf">PDF</a>)
     (updated September, 2016).</li>
 </ul>
 
