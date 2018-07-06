@@ -1,3 +1,9 @@
+<?php
+$static_title = 'Khronos OpenVX Registry';
+
+include_once("../../assets/static_pages/khr_page_top.php");
+?>
+
 <h3>Doxygen-generated OpenVX API Specifications</h3>
 
 <ul>
@@ -14,5 +20,6 @@
       (updated April 27, 2017).</li>
 </ul>
 
+<?php include_once("../../assets/static_pages/khr_page_bottom.php"); ?>
 </body>
 </html>
