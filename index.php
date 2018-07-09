@@ -48,8 +48,8 @@ include_once("../../assets/static_pages/khr_page_top.php");
       extension header package </a> (updated November 8, 2017).
     <ul>
       <li>
-	This package contains header files for these officially supported
-	extensions <em>and</em> for the provisional extensions listed below.</li>
+        This package contains header files for these officially supported
+        extensions <em>and</em> for the provisional extensions listed below.</li>
     </ul>
 </ul>
 
@@ -100,7 +100,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
     (updated February, 2015).
     <ul>
       <li>The XML extension incorporates the
-	<a href="schema/openvx-1-0.xsd">OpenVX XML Schema</a> document.
+        <a href="schema/openvx-1-0.xsd">OpenVX XML Schema</a> document.
     </ul>
   </li>
 
@@ -184,5 +184,3 @@ improved 1.1 and 1.2 specifications. New submissions for conformance testing of
     other fields. </p>
 
 <?php include_once("../../assets/static_pages/khr_page_bottom.php"); ?>
-</body>
-</html>
