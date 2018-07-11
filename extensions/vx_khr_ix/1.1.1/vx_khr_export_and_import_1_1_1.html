@@ -843,7 +843,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">The Khronos OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Steve Ramm, Radhakrishna Giduthuri</span><br>
 <span id="revnumber">version 1.1.1,</span>
-<span id="revdate">Sun, 17 Jun 2018 16:40:37 +0000</span>
+<span id="revdate">Wed, 11 Jul 2018 05:09:59 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -870,12 +870,17 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 <li><a href="#module_documentation">3. Module Documentation</a>
 <ul class="sectlevel2">
-<li><a href="#group_export">3.1. Export To Memory API</a></li>
+<li><a href="#group_export">3.1. Export To Memory API</a>
+<ul class="sectlevel3">
+<li><a href="#_macros">3.1.1. Macros</a></li>
+<li><a href="#_functions">3.1.2. Functions</a></li>
+</ul>
+</li>
 <li><a href="#group_import">3.2. Import Objects From Memory API</a>
 <ul class="sectlevel3">
-<li><a href="#_macros">3.2.1. Macros</a></li>
+<li><a href="#_macros_2">3.2.1. Macros</a></li>
 <li><a href="#_typedefs">3.2.2. Typedefs</a></li>
-<li><a href="#_functions">3.2.3. Functions</a></li>
+<li><a href="#_functions_2">3.2.3. Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -1263,12 +1268,6 @@ from the import object.</p>
 <div class="paragraph">
 <p>Export objects to a location in memory.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="group_import">3.2. Import Objects From Memory API</h3>
-<div class="paragraph">
-<p>Import objects from memory.</p>
-</div>
 <div class="paragraph">
 <p><strong>Macros</strong></p>
 </div>
@@ -1283,19 +1282,6 @@ from the import object.</p>
 <li>
 <p><code><a href="#VX_IX_USE_NO_EXPORT_VALUES">VX_IX_USE_NO_EXPORT_VALUES</a></code></p>
 </li>
-<li>
-<p><code><a href="#VX_TYPE_IMPORT">VX_TYPE_IMPORT</a></code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Typedefs</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#vx_import">vx_import</a></code></p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -1307,21 +1293,12 @@ from the import object.</p>
 <p><code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code></p>
 </li>
 <li>
-<p><code><a href="#vxGetImportReferenceByName">vxGetImportReferenceByName</a></code></p>
-</li>
-<li>
-<p><code><a href="#vxImportObjectsFromMemory">vxImportObjectsFromMemory</a></code></p>
-</li>
-<li>
 <p><code><a href="#vxReleaseExportedMemory">vxReleaseExportedMemory</a></code></p>
-</li>
-<li>
-<p><code><a href="#vxReleaseImport">vxReleaseImport</a></code></p>
 </li>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_macros">3.2.1. Macros</h4>
+<h4 id="_macros">3.1.1. Macros</h4>
 <div class="sect4">
 <h5 id="_vx_ix_use_application_create">VX_IX_USE_APPLICATION_CREATE</h5>
 <div class="paragraph">
@@ -1364,38 +1341,9 @@ from the import object.</p>
 <p>Data values are not exported.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_vx_type_import">VX_TYPE_IMPORT</h5>
-<div class="paragraph">
-<p>The Object Type Enumeration for import.</p>
-</div>
-<div id="VX_TYPE_IMPORT" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_TYPE_IMPORT                    <span class="hex">0x814</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>A <code><a href="#vx_import">vx_import</a></code>.</p>
-</div>
-</div>
 </div>
 <div class="sect3">
-<h4 id="_typedefs">3.2.2. Typedefs</h4>
-<div class="sect4">
-<h5 id="_vx_import">vx_import</h5>
-<div class="paragraph">
-<p>The Import Object.
-Import is a container of OpenVX objects, which may be retreived by name.</p>
-</div>
-<div id="vx_import" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_import *vx_import</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_functions">3.2.3. Functions</h4>
+<h4 id="_functions">3.1.2. Functions</h4>
 <div class="sect4">
 <h5 id="_vxexportobjectstomemory">vxExportObjectsToMemory</h5>
 <div class="paragraph">
@@ -1447,19 +1395,34 @@ A data object will always have its meta-data (e.g. dimensions and format of
 an image) exported, and optionally may have its data (e.g. pixel values)
 exported, and additionally you can decide whether the importing application
 will create data objects to replace those attached to graphs, or if the
-implementation will automatically create them:</p>
+implementation will automatically create them.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Export sufficient data to check that an application-supplied object is
-compatible when the data is later imported.</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Enumeration for <em>uses</em></th>
+<th class="tableblock halign-left valign-middle">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Export sufficient data to check that an application-supplied object is compatible when the data is later imported.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_EXPORT_VALUES">VX_IX_USE_EXPORT_VALUES</a></code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Export complete information (for example image data or value of a scalar).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_NO_EXPORT_VALUES">VX_IX_USE_NO_EXPORT_VALUES</a></code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Export meta-data only; the importing application will set values as applicable</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1469,28 +1432,12 @@ compatible when the data is later imported.</p>
 <td class="content">
 <div class="title">Note</div>
 <div class="paragraph">
-<p>This value must be given for images created from handles, or the the export
-operation will fail</p>
+<p>The <code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code> value must be given for
+images created from handles, or the the export operation will fail.</p>
 </div>
 </td>
 </tr>
 </table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#VX_IX_USE_EXPORT_VALUES">VX_IX_USE_EXPORT_VALUES</a></code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Export complete information (for example image data or value of a
-scalar).
-  * <code><a href="#VX_IX_USE_NO_EXPORT_VALUES">VX_IX_USE_NO_EXPORT_VALUES</a></code></p>
-</div>
-<div class="paragraph">
-<p>Export meta-data only; the importing application will set values as
-applicable</p>
 </div>
 <div class="paragraph">
 <p>The values in <em>uses</em> are applicable only for data objects and are ignored
@@ -1672,6 +1619,148 @@ memory.</p>
 </div>
 </div>
 <div class="sect4">
+<h5 id="_vxreleaseexportedmemory">vxReleaseExportedMemory</h5>
+<div class="paragraph">
+<p>Releases memory allocated for a binary export when it is no longer required.</p>
+</div>
+<div id="vxReleaseExportedMemory" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxReleaseExportedMemory(
+    vx_context                                  context,
+    <span class="directive">const</span> vx_uint8**                            ptr);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This function releases memory allocated by
+<code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[in]</code> <em>context</em> - The context for which <code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code> was
+called.</p>
+</li>
+<li>
+<p><code>[inout]</code> <em>ptr</em> - A pointer previously set by calling
+<code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.
+The function will fail if <code>*ptr</code> does not contain an address of memory
+previously allocated by <code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Postcondition:</strong> After returning from sucessfully from this function *ptr is
+set to NULL.</p>
+</div>
+<div class="paragraph">
+<p><strong>Returns:</strong> A <code>vx_status</code> value.</p>
+</div>
+<div class="paragraph">
+<p><strong>Return Values</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#VX_SUCCESS">VX_SUCCESS</a></code> - If no errors occurred and the memory was sucessfully
+released.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An error is indicated when the return value is not VX_SUCCESS.</p>
+</div>
+<div class="paragraph">
+<p>An implementation may provide several different return values to give useful
+diagnostic information in the event of failure to export, but these are not
+required to indicate possible recovery mechanisms, and for safety critical
+use assume errors are not recoverable.</p>
+</div>
+<div class="paragraph">
+<p><strong>Precondition:</strong> <code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code> is used to allocate the
+memory.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="group_import">3.2. Import Objects From Memory API</h3>
+<div class="paragraph">
+<p>Import objects from memory.</p>
+</div>
+<div class="paragraph">
+<p><strong>Macros</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#VX_TYPE_IMPORT">VX_TYPE_IMPORT</a></code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Typedefs</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#vx_import">vx_import</a></code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Functions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#vxGetImportReferenceByName">vxGetImportReferenceByName</a></code></p>
+</li>
+<li>
+<p><code><a href="#vxImportObjectsFromMemory">vxImportObjectsFromMemory</a></code></p>
+</li>
+<li>
+<p><code><a href="#vxReleaseImport">vxReleaseImport</a></code></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_macros_2">3.2.1. Macros</h4>
+<div class="sect4">
+<h5 id="_vx_type_import">VX_TYPE_IMPORT</h5>
+<div class="paragraph">
+<p>The Object Type Enumeration for import.</p>
+</div>
+<div id="VX_TYPE_IMPORT" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_TYPE_IMPORT                    <span class="hex">0x814</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <code><a href="#vx_import">vx_import</a></code>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_typedefs">3.2.2. Typedefs</h4>
+<div class="sect4">
+<h5 id="_vx_import">vx_import</h5>
+<div class="paragraph">
+<p>The Import Object.
+Import is a container of OpenVX objects, which may be retreived by name.</p>
+</div>
+<div id="vx_import" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_import *vx_import</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_functions_2">3.2.3. Functions</h4>
+<div class="sect4">
 <h5 id="_vxgetimportreferencebyname">vxGetImportReferenceByName</h5>
 <div class="paragraph">
 <p>Get a reference from the import object by name.</p>
@@ -1785,36 +1874,26 @@ upon export, or this function will not be sucessful.</p>
 <p>The <em>uses</em> array specifies how the objects in the corresponding <em>refs</em> array
 will be imported:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The application must create the object and supply the reference; the
-meta-data of the object must match exactly the meta-data of the object when
-it was exported, except that the name need not match.</p>
-</div>
-<div class="paragraph">
-<p>If the supplied reference has a different name to that stored, the supplied
-name is used.
-  * <code><a href="#VX_IX_USE_EXPORT_VALUES">VX_IX_USE_EXPORT_VALUES</a></code></p>
-</div>
-<div class="paragraph">
-<p>The implementation will create the object and set the data in it.</p>
-</div>
-<div class="paragraph">
-<p>Any data not defined at the time of export of the object will be set to a
-default value (zero in the absence of any other definition) upon
-import.
-  * <code><a href="#VX_IX_USE_NO_EXPORT_VALUES">VX_IX_USE_NO_EXPORT_VALUES</a></code></p>
-</div>
-<div class="paragraph">
-<p>The implementation will create the object and the importing application will
-set values as applicable.</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The application must create the object and supply the reference; the meta-data of the object must match exactly the meta-data of the object when it was exported, except that the name need not match.  If the supplied reference has a different name to that stored, the supplied name is used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_EXPORT_VALUES">VX_IX_USE_EXPORT_VALUES</a></code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The implementation will create the object and set the data in it. Any data not defined at the time of export of the object will be set to a default value (zero in the absence of any other definition) upon import.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_NO_EXPORT_VALUES">VX_IX_USE_NO_EXPORT_VALUES</a></code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The implementation will create the object and the importing application will set values as applicable.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>References are obtained from the import API for those objects whose
 references were listed at the time of export.
@@ -1956,71 +2035,6 @@ required.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_vxreleaseexportedmemory">vxReleaseExportedMemory</h5>
-<div class="paragraph">
-<p>Releases memory allocated for a binary export when it is no longer required.</p>
-</div>
-<div id="vxReleaseExportedMemory" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxReleaseExportedMemory(
-    vx_context                                  context,
-    <span class="directive">const</span> vx_uint8**                            ptr);</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This function releases memory allocated by
-<code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.</p>
-</div>
-<div class="paragraph">
-<p><strong>Parameters</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>[in]</code> <em>context</em> - The context for which <code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code> was
-called.</p>
-</li>
-<li>
-<p><code>[inout]</code> <em>ptr</em> - A pointer previously set by calling
-<code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.
-The function will fail if <code>*ptr</code> does not contain an address of memory
-previously allocated by <code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Postcondition:</strong> After returning from sucessfully from this function *ptr is
-set to NULL.</p>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> A <code>vx_status</code> value.</p>
-</div>
-<div class="paragraph">
-<p><strong>Return Values</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#VX_SUCCESS">VX_SUCCESS</a></code> - If no errors occurred and the memory was sucessfully
-released.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>An error is indicated when the return value is not VX_SUCCESS.</p>
-</div>
-<div class="paragraph">
-<p>An implementation may provide several different return values to give useful
-diagnostic information in the event of failure to export, but these are not
-required to indicate possible recovery mechanisms, and for safety critical
-use assume errors are not recoverable.</p>
-</div>
-<div class="paragraph">
-<p><strong>Precondition:</strong> <code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code> is used to allocate the
-memory.</p>
-</div>
-</div>
-<div class="sect4">
 <h5 id="_vxreleaseimport">vxReleaseImport</h5>
 <div class="paragraph">
 <p>Releases an import object when no longer required.</p>
@@ -2089,7 +2103,7 @@ object.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.1.1<br>
-Last updated 2018-06-13 22:57:46 PDT
+Last updated 2018-07-10 22:09:57 PDT
 </div>
 </div>
 
