@@ -843,7 +843,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">The Khronos OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Tomer Schwartz, Mostafa Hagog, Radhakrishna Giduthuri</span><br>
 <span id="revnumber">version 1.2.1,</span>
-<span id="revdate">Mon, 14 May 2018 22:48:19 +0000</span>
+<span id="revdate">Wed, 11 Jul 2018 06:06:50 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -1061,13 +1061,13 @@ third dimension is the number of OFMs.</p>
 <div class="paragraph">
 <p>The Neural Networks extension enables execution and integration of Deep
 Neural Networks in OpenVX processing graphs.
-The extension is dependent on a <code><a href="#vx_tensor">[vx_tensor]</a></code> object which is introduced
+The extension is dependent on a <code>vx_tensor</code> object which is introduced
 in OpenVX 1.2.
 Therefore this extension is extending OpenVX 1.2 and not previous OpenVX
 specifications.
-The <code><a href="#vx_tensor">[vx_tensor]</a></code> object is a multidimensional array with an arbitrary
+The <code>vx_tensor</code> object is a multidimensional array with an arbitrary
 number of dimensions.
-The <code><a href="#vx_tensor">[vx_tensor]</a></code> object can represent all varieties of data typically
+The <code>vx_tensor</code> object can represent all varieties of data typically
 used in a Deep Neural Network.
 It can represent 2-dimensional images, 3-dimensional sequences of images
 (usually the input and outputs of a Deep Neural Network) and 4-dimensional
@@ -1075,8 +1075,8 @@ weights.</p>
 </div>
 <div class="paragraph">
 <p>Application can build an OpenVX graph that represents Deep Neural Network
-topologies where the layers are represented as OpenVX nodes (<code><a href="#vx_node">[vx_node]</a></code>)
-and the <code><a href="#vx_tensor">[vx_tensor]</a></code> as the data objects connecting the nodes (layers) of
+topologies where the layers are represented as OpenVX nodes (<code>vx_node</code>)
+and the <code>vx_tensor</code> as the data objects connecting the nodes (layers) of
 the OpenVX graph (Deep Neural Network).
 The application can as well build an OpenVX graph that is a mix of Deep
 Neural Network layers and Vision nodes.
@@ -1085,12 +1085,12 @@ and must comply with the graph concepts as specified in section 2.8 of
 OpenVX 1.1, especially but not limit to the graph formalisms in section
 2.8.6.
 Additionally, this extension defines several auxiliary functions to create,
-release, and copy <code><a href="#vx_tensor">[vx_tensor]</a></code> objects.
+release, and copy <code>vx_tensor</code> objects.
 Moreover, the extension introduces the concept of &#8220;view&#8221; for
-<code><a href="#vx_tensor">[vx_tensor]</a></code> objects, which is similar to the ROI of a <code>vx_image</code>.
-The use of &#8220;view&#8221; enables splitting and merging <code><a href="#vx_tensor">[vx_tensor]</a></code> objects,
+<code>vx_tensor</code> objects, which is similar to the ROI of a <code>vx_image</code>.
+The use of &#8220;view&#8221; enables splitting and merging <code>vx_tensor</code> objects,
 which are common operations in Convolutional Networks.
-The layers of the Deep Neural Network (represented by <code><a href="#vx_node">[vx_node]</a></code> objects)
+The layers of the Deep Neural Network (represented by <code>vx_node</code> objects)
 perform the computations on the tensor data objects and form a dataflow
 graph of computations.
 The extension defines the following layer types: convolution, activation,
@@ -1132,7 +1132,7 @@ static parameters of CNN layers must have actual data loaded into them
 before <code>vxVerifyGraph()</code> is called, therefore implementation may cache them
 prior to execution or use them for other optimizations.
 Optionally, implementation may explicitly define support to change weights
-after ` vxVerifyGraph()` was called or between <code>vxProcessGraph()</code> calls.
+after <code>vxVerifyGraph()</code> was called or between <code>vxProcessGraph()</code> calls.
 For convenience we tag [static] the parameters that must have actual data
 loaded into them before <code>vxVerifyGraph()</code>.</p>
 </div>
@@ -1189,9 +1189,9 @@ Implementations must return the 8-bit extension string, and may return the
 16-bit extension string.
 If implementations return the 16-bit extension string, the 8-bit extension
 string must be returned as well.
-The 8-bit extension string is "KHR_NN_8" and the 16-bit extension string is
-"KHR_NN_16".
-The legal string combinations are "KHR_NN_8" or "KHR_NN_8 KHR_NN_16".</p>
+The 8-bit extension string is <code>"KHR_NN_8"</code> and the 16-bit extension string is
+<code>"KHR_NN_16"</code>.
+The legal string combinations are <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR_NN_16"</code>.</p>
 </div>
 </div>
 </div>
@@ -1292,7 +1292,7 @@ The legal string combinations are "KHR_NN_8" or "KHR_NN_8 KHR_NN_16".</p>
 <div class="sect3">
 <h4 id="_data_structures">2.1.1. Data Structures</h4>
 <div class="sect4">
-<h5 id="_vxsoftmaxlayer">vxSoftmaxLayer</h5>
+<h5 id="_vx_nn_convolution_params_t">vx_nn_convolution_params_t</h5>
 <div class="paragraph">
 <p>Input parameters for a convolution operation.</p>
 </div>
@@ -1309,9 +1309,51 @@ The legal string combinations are "KHR_NN_8" or "KHR_NN_8 KHR_NN_16".</p>
 } vx_nn_convolution_params_t;</code></pre>
 </div>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Data Field</th>
+<th class="tableblock halign-left valign-middle">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">dilation_x</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">“inflate” the kernel by inserting zeros between the kernel elements in the x direction. The value is the number of zeros to insert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">dilation_y</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">“inflate” the kernel by inserting zeros between the kernel elements in the y direction. The value is the number of zeros to insert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">down_scale_size_rounding</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Rounding method for calculating output dimensions. See <a href="#vx_nn_rounding_type_e">vx_nn_rounding_type_e</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">overflow_policy</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">A VX_TYPE_ENUM of the vx_convert_policy_e enumeration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">padding_x</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Number of elements added at each side in the x dimension of the input.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">padding_y</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Number of elements added at each side in the y dimension of the input.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">rounding_policy</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">A VX_TYPE_ENUM of the vx_round_policy_e enumeration.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_vxsoftmaxlayer_2">vxSoftmaxLayer</h5>
+<h5 id="_vx_nn_deconvolution_params_t">vx_nn_deconvolution_params_t</h5>
 <div class="paragraph">
 <p>Input parameters for a deconvolution operation.</p>
 </div>
@@ -1327,9 +1369,47 @@ The legal string combinations are "KHR_NN_8" or "KHR_NN_8 KHR_NN_16".</p>
 } vx_nn_deconvolution_params_t;</code></pre>
 </div>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Data Field</th>
+<th class="tableblock halign-left valign-middle">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">a_x</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">user-specified quantity used to distinguish between the \(upscale_x\) different possible output sizes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">a_y</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">user-specified quantity used to distinguish between the \(upscale_y\) different possible output sizes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">overflow_policy</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">A VX_TYPE_ENUM of the vx_convert_policy_e enumeration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">padding_x</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Number of elements subtracted at each side in the x dimension of the output.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">padding_y</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Number of elements subtracted at each side in the y dimension of the output.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">rounding_policy</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">A VX_TYPE_ENUM of the vx_round_policy_e enumeration.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
-<h5 id="_vxsoftmaxlayer_3">vxSoftmaxLayer</h5>
+<h5 id="_vx_nn_roi_pool_params_t">vx_nn_roi_pool_params_t</h5>
 <div class="paragraph">
 <p>Input parameters for ROI pooling operation.</p>
 </div>
@@ -1340,6 +1420,24 @@ The legal string combinations are "KHR_NN_8" or "KHR_NN_8 KHR_NN_16".</p>
 } vx_nn_roi_pool_params_t;</code></pre>
 </div>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Data Field</th>
+<th class="tableblock halign-left valign-middle">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">pool_type</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Of type <a href="#vx_nn_pooling_type_e">vx_nn_pooling_type_e</a>. Only <a href="#VX_NN_POOLING_MAX">VX_NN_POOLING_MAX</a> pooling is supported.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -1810,7 +1908,7 @@ the equation for the layer is:</p>
 <li>
 <p><code>[in]</code> <em>inputs</em> - The input tensor data.
 Implementations must support input tensor data types indicated by the
-extension strings 'KHR_NN_8' or 'KHR_NN_8 KHR_NN_16'.</p>
+extension strings <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR_NN_16"</code>.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>function</em> - [static] Non-linear function (see
@@ -1831,9 +1929,6 @@ must be positive.</p>
 Output will have the same number of dimensions as input.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> <code>vx_node</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Returns:</strong> A node reference <code>vx_node</code>.
@@ -1938,7 +2033,7 @@ The dimension order is [width, height, #IFM, #batches]</p>
 <div class="content">
 <div class="paragraph">
 <p>Implementations must support input tensor data types indicated by the
-extension strings 'KHR_NN_8' or 'KHR_NN_8 KHR_NN_16'.
+extension strings <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR_NN_16"</code>.
 (Kernel parameter #0)</p>
 </div>
 </div>
@@ -1982,9 +2077,6 @@ Output tensor data type must be same as the inputs.
 (Kernel parameter #4)</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> <code>vx_node</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Returns:</strong> A node reference <code>vx_node</code>.
@@ -2052,8 +2144,7 @@ The relation between input to output is as follows:</p>
 <dl>
 <dt class="hdlist1"></dt>
 <dd>
-<p><span class="eq">width<sub>output</sub> = (width<sub>input</sub> - 1) upscale<sub>x</sub> - 2 padding<sub>x</sub><br>
-kernel<sub>x</sub> + a<sub>x</sub></span></p>
+<p><span class="eq">width<sub>output</sub> = (width<sub>input</sub> - 1) * upscale<sub>x</sub> - 2 * padding<sub>x</sub> + kernel<sub>x</sub> + a<sub>x</sub></span></p>
 </dd>
 </dl>
 </div>
@@ -2064,8 +2155,7 @@ kernel<sub>x</sub> + a<sub>x</sub></span></p>
 <dl>
 <dt class="hdlist1"></dt>
 <dd>
-<p><span class="eq">height<sub>output</sub> = (height<sub>input</sub> - 1) upscale<sub>y</sub> - 2 padding<sub>y</sub><br>
-kernel<sub>y</sub> + a<sub>y</sub></span></p>
+<p><span class="eq">height<sub>output</sub> = (height<sub>input</sub> - 1) * upscale<sub>y</sub> - 2 * padding<sub>y</sub> + kernel<sub>y</sub> + a<sub>y</sub></span></p>
 </dd>
 </dl>
 </div>
@@ -2116,7 +2206,7 @@ dimension for batch of inputs.
 Dimension layout is [width, height, #IFM, #batches].
 See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code>.
 Implementations must support input tensor data types indicated by the
-extension strings 'KHR_NN_8' or 'KHR_NN_8 KHR_NN_16'.
+extension strings <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR_NN_16"</code>.
 (Kernel parameter #0)</p>
 </li>
 <li>
@@ -2146,9 +2236,6 @@ The output has the same number of dimensions as the input.
 (Kernel parameter #4)</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> <code>vx_node</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Returns:</strong> A node reference <code>vx_node</code>.
@@ -2196,16 +2283,8 @@ The equation for Fully connected layer:</p>
 output.</p>
 </div>
 <div class="paragraph">
-<p><strong>Parameters</strong></p>
+<p>There two possible input tensor layouts:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>[in]</code> <em>graph</em> - The handle to the graph.</p>
-</li>
-<li>
-<p><code>[in]</code> <em>inputs</em> - The input tensor data.
-There two possible input layouts:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2218,9 +2297,6 @@ See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code></p>
 </li>
 </ol>
 </div>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <p>In both cases number of batches are optional and may be multidimensional.
 The second option is a special case to deal with convolution layer followed
@@ -2229,28 +2305,44 @@ The dimension order is [#IFM, #batches].
 See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code>.
 Note that batch may be multidimensional.
 Implementations must support input tensor data types indicated by the
-extension strings 'KHR_NN_8' or 'KHR_NN_8 KHR_NN_16'.
-  * <code>[in]</code> <em>weights</em> - [static] Number of dimensions is 2.
-    Dimensions are [#IFM, #OFM].
-    See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code>.</p>
+extension strings <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR_NN_16"</code>.</p>
 </div>
 <div class="paragraph">
-<p>Implementations must support input tensor data type same as the inputs.
-  * <code>[in]</code> <em>biases</em> - [static] Optional, ignored if NULL.
-    The biases have one dimension [#OFM].
-    Implementations must support input tensor data type same as the inputs.
-  * <code>[in]</code> <em>overflow_policy</em> - [static] A <code>VX_TYPE_ENUM</code> of the
-    <code>vx_convert_policy_e</code> enumeration.
-  * <code>[in]</code> <em>rounding_policy</em> - [static] A <code>VX_TYPE_ENUM</code> of the
-    <code>vx_round_policy_e</code> enumeration.
-  * <code>[out]</code> <em>outputs</em> - The output tensor data.
-    Output dimension layout is [#OFM,#batches].
-    See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code>, where #batches may be
-    multidimensional.
-    Output tensor data type must be same as the inputs.</p>
+<p><strong>Parameters</strong></p>
 </div>
-<div class="paragraph">
-<p><strong>Returns:</strong> <code>vx_node</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[in]</code> <em>graph</em> - The handle to the graph.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>inputs</em> - The input tensor data.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>weights</em> - [static] Number of dimensions is 2. Dimensions are [#IFM, #OFM].
+See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code>.  Implementations must support input tensor data type same as the inputs.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>biases</em> - [static] Optional, ignored if NULL.
+The biases have one dimension [#OFM].
+Implementations must support input tensor data type same as the inputs.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>overflow_policy</em> - [static] A <code>VX_TYPE_ENUM</code> of the
+<code>vx_convert_policy_e</code> enumeration.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>rounding_policy</em> - [static] A <code>VX_TYPE_ENUM</code> of the
+<code>vx_round_policy_e</code> enumeration.</p>
+</li>
+<li>
+<p><code>[out]</code> <em>outputs</em> - The output tensor data.
+Output dimension layout is [#OFM,#batches].
+See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code>, where #batches may be
+multidimensional.
+Output tensor data type must be same as the inputs.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong>Returns:</strong> A node reference <code>vx_node</code>.
@@ -2263,7 +2355,7 @@ Any possible errors preventing a successful creation should be checked using
 <div class="paragraph">
 <p>[Graph] Creates a Convolutional Network Normalization Layer Node.
 This function is optional for 8-bit extension with the extension string
-'KHR_NN_8'.</p>
+<code>"KHR_NN_8"</code>.</p>
 </div>
 <div id="vxNormalizationLayer" class="listingblock">
 <div class="content">
@@ -2303,8 +2395,8 @@ padding is added where necessary).</p>
 inputs is optional.Dimension layout is [width, height, IFM, #batches].
 See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code>.
 Implementations must support input tensor data types indicated by the
-extension strings 'KHR_NN_8 KHR_NN_16'.
-Since this function is optional for 'KHR_NN_8', so implementations only
+extension strings <code>"KHR_NN_8 KHR_NN_16"</code>.
+Since this function is optional for <code>"KHR_NN_8"</code>, so implementations only
 must support <code>VX_TYPE_INT16</code> with fixed_point_position 8.</p>
 </li>
 <li>
@@ -2329,9 +2421,6 @@ must be positive.</p>
 Output will have the same number of dimensions as input.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> <code>vx_node</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Returns:</strong> A node reference <code>vx_node</code>.
@@ -2391,7 +2480,7 @@ The first pixel of the down scale output is the first pixel in the input.</p>
 inputs is optional.Dimension layout is [width, height, #IFM, #batches].
 See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code> Implementations must
 support input tensor data types indicated by the extension strings
-'KHR_NN_8' or 'KHR_NN_8 KHR_NN_16'.</p>
+<code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR_NN_16"</code>.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>pooling_type</em> - [static] Either max pooling or average pooling
@@ -2422,9 +2511,6 @@ Output will have the same number of dimensions as input.
 Output tensor data type must be same as the inputs.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> <code>vx_node</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Returns:</strong> A node reference <code>vx_node</code>.
@@ -2475,7 +2561,7 @@ inputs is optional.
 Dimension layout is [width, height, #IFM, #batches].
 See <code>vxCreateTensor</code> and <code>vxCreateVirtualTensor</code>.
 Implementations must support input tensor data types indicated by the
-extension strings 'KHR_NN_8' or 'KHR_NN_8 KHR_NN_16'.
+extension strings <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR_NN_16"</code>.
 (Kernel parameter #0)</p>
 </li>
 <li>
@@ -2507,16 +2593,13 @@ dimensions.
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Returns:</strong> <code>vx_node</code>.</p>
-</div>
-<div class="paragraph">
 <p><strong>Returns:</strong> A node reference <code>vx_node</code>.
 Any possible errors preventing a successful creation should be checked using
 <code>vxGetStatus</code>.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_vxsoftmaxlayer_4">vxSoftmaxLayer</h5>
+<h5 id="_vxsoftmaxlayer">vxSoftmaxLayer</h5>
 <div class="paragraph">
 <p>[Graph] Creates a Convolutional Network Softmax Layer Node.</p>
 </div>
@@ -2561,7 +2644,7 @@ Softmax is calculated on the third dimension.
 Regarding the layout specification, see <code>vxCreateTensor</code> and
 <code>vxCreateVirtualTensor</code>.
 In all cases Implementations must support input tensor data types
-indicated by the extension strings 'KHR_NN_8' or 'KHR_NN_8 KHR_NN_16'.</p>
+indicated by the extension strings <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR_NN_16"</code>.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>outputs</em> - The output tensor.
@@ -2569,9 +2652,6 @@ Output will have the same number of dimensions as input.
 Output tensor data type must be same as the inputs.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> <code>vx_node</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Returns:</strong> A node reference <code>vx_node</code>.
@@ -2587,7 +2667,7 @@ Any possible errors preventing a successful creation should be checked using
 <div id="footer">
 <div id="footer-text">
 Version 1.2.1<br>
-Last updated 2018-05-14 15:48:15 PDT
+Last updated 2018-07-10 23:05:38 PDT
 </div>
 </div>
 

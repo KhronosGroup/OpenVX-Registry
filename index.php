@@ -24,9 +24,9 @@ include_once("../../assets/static_pages/khr_page_top.php");
   OpenVX 1.2 conformance tests: </p>
 <ul>
   <li>OpenVX 1.2.1 neural network extension
-    (<a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn.html">HTML</a>,
-    <a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn.pdf">PDF</a>)
-    (updated May 14, 2018).</li>
+    (<a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn_1_2_1.html">HTML</a>,
+    <a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn_1_2_1.pdf">PDF</a>)
+    (updated July 11, 2018).</li>
   <li>OpenVX 1.1.1 export and import extension
     (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
     <a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.pdf">PDF</a>)
