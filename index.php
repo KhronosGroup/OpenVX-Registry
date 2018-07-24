@@ -104,7 +104,7 @@ OpenVX 1.2.1 is identical to that of OpenVX 1.2.  The 1.2 headers, sample implem
 and conformance tests are still applicable to 1.2.1.  Some of the extension specs have
 also been regenerated with the new tool chain, with a similar ".1" suffix added to their
 version numbers.  The old versions of the specifications generated with the previous tool
-chain are available <a href="prev_tools.html">here</a>.
+chain are available <a href="prev_tools.php">here</a>.
 </p>
 
 <h3>Older Specifications</h3>
