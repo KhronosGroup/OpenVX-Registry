@@ -23,11 +23,11 @@ include_once("../../assets/static_pages/khr_page_top.php");
 <p>There are two KHR extensions to OpenVX that are supported by the
   OpenVX 1.2 conformance tests: </p>
 <ul>
-  <li>OpenVX 1.2.1 neural network extension
+  <li>OpenVX 1.2.1 Neural Network extension
     (<a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn_1_2_1.html">HTML</a>,
     <a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn_1_2_1.pdf">PDF</a>)
     (updated July 23, 2018).</li>
-  <li>OpenVX 1.1.1 export and import extension
+  <li>OpenVX 1.1.1 Export and Import extension
     (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
     <a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.pdf">PDF</a>)
       (updated July 11, 2018).</li>
@@ -52,19 +52,15 @@ include_once("../../assets/static_pages/khr_page_top.php");
 
 <h3> OpenVX Provisional Extensions </h3>
 <ul>
-  <li>Classifier extension (provisional, OpenVX 1.2)
+  <li>Classifier extension (provisional, OpenVX 1.2.1)
     (<a href="extensions/vx_khr_class/1.2.1/vx_khr_class_1_2_1.html">HTML</a>,
     <a href="extensions/vx_khr_class/1.2.1/vx_khr_class_1_2_1.pdf">PDF</a>)
-    (updated July 11, 2018).</li>
-  <li>Export and import extension (provisional, OpenVX 1.1)
-    (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
-    <a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.pdf">PDF</a>)
     (updated July 11, 2018).</li>
   <li>Import kernel extension (provisional, OpenVX 1.1, 1.2)
     (<a href="extensions/vx_khr_import_kernel/1.0/vx_khr_import_kernel_1_0.html">HTML</a>,
     <a href="extensions/vx_khr_import_kernel/1.0/vx_khr_import_kernel_1_0.pdf">PDF</a>)
     (updated March 8, 2018).</li>
-  <li>Installable client driver extension (provisional, OpenVX 1.0)
+  <li>Installable client driver extension (provisional, OpenVX 1.0.1)
     (<a href="extensions/vx_khr_icd/1.0.1/vx_khr_icd_1_0_1.html">HTML</a>,
     <a href="extensions/vx_khr_icd/1.0.1/vx_khr_icd_1_0_1.pdf">PDF</a>)
     (updated July 11, 2018).</li>
@@ -76,11 +72,11 @@ include_once("../../assets/static_pages/khr_page_top.php");
     (<a href="extensions/vx_khr_pipelining/html/index.html">HTML</a>,
     <a href="extensions/vx_khr_pipelining/OpenVX_Graph_Pipelining_Streaming_and_Batch_Processing_Extension_1_0.pdf">PDF</a>)
     (updated December, 2017).</li>
-  <li>S16 extension (provisional, OpenVX 1.1)
+  <li>S16 extension (provisional, OpenVX 1.1.1)
     (<a href="extensions/vx_khr_s16/1.1.1/vx_khr_s16_1_1_1.html">HTML</a>,
     <a href="extensions/vx_khr_s16/1.1.1/vx_khr_s16_1_1_1.pdf">PDF</a>)
     (updated July 15, 2018).</li>
-  <li>Tiling extension (provisional, OpenVX 1.0)
+  <li>Tiling extension (provisional, OpenVX 1.0.1)
     (<a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.html">HTML</a>,
     <a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.pdf">PDF</a>)
     (updated July 19, 2018).</li>
