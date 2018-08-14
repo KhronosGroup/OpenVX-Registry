@@ -69,9 +69,9 @@ include_once("../../assets/static_pages/khr_page_top.php");
     <a href="extensions/vx_khr_opencl_interop/1.0/vx_khr_opencl_interop_1_0.pdf">PDF</a>)
     (updated January 25, 2018).</li>
   <li>Pipelining, streaming,and batch processing extension (provisional, OpenVX 1.1 and 1.2)
-    (<a href="extensions/vx_khr_pipelining/html/index.html">HTML</a>,
-    <a href="extensions/vx_khr_pipelining/OpenVX_Graph_Pipelining_Streaming_and_Batch_Processing_Extension_1_0.pdf">PDF</a>)
-    (updated December, 2017).</li>
+    (<a href="extensions/vx_khr_pipelining/1.0.1/vx_khr_pipelining_1_0_1.html">HTML</a>,
+    <a href="extensions/vx_khr_pipelining/1.0.1/vx_khr_pipelining_1_0_1.pdf">PDF</a>)
+    (updated August 5, 2018).</li>
   <li>S16 extension (provisional, OpenVX 1.1.1)
     (<a href="extensions/vx_khr_s16/1.1.1/vx_khr_s16_1_1_1.html">HTML</a>,
     <a href="extensions/vx_khr_s16/1.1.1/vx_khr_s16_1_1_1.pdf">PDF</a>)
