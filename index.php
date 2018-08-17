@@ -11,7 +11,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
 
 <p>The current version of OpenVX is OpenVX 1.2.1:</p>
 <ul>
-  <li> OpenVX 1.2.1 specification (<a href="specs/1.2.1/html/index.html">HTML</a>,
+  <li> OpenVX 1.2.1 specification (<a href="specs/1.2.1/OpenVX_Specification_1_2_1.html">HTML</a>,
     <a href="specs/1.2.1/OpenVX_Specification_1_2_1.pdf">PDF</a>)
     (updated May 16, 2018).</li>
   <li> <a href="api/1.2/openvx-standard-headers-1.2.tar.bz2"> OpenVX 1.2 header
