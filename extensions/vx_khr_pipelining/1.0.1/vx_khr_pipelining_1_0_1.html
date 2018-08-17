@@ -843,7 +843,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">The Khronos OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Kedar Chitnis, Jesse Villareal, Radhakrishna Giduthuri, and Frank Brill</span><br>
 <span id="revnumber">version 1.0.1 (provisional),</span>
-<span id="revdate">Mon, 06 Aug 2018 02:31:04 +0000</span>
+<span id="revdate">Wed, 15 Aug 2018 06:03:21 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -2652,7 +2652,7 @@ Read-only. Use a <code>vx_enum</code> parameter. See
 </div>
 <div id="vxSetGraphScheduleConfig" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxSetGraphScheduleConfig(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxSetGraphScheduleConfig(
     vx_graph                                    graph,
     vx_enum                                     graph_schedule_mode,
     uint32_t                                    graph_parameters_list_size,
@@ -2852,7 +2852,7 @@ parameters</p>
 </div>
 <div id="vxGraphParameterEnqueueReadyRef" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxGraphParameterEnqueueReadyRef(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxGraphParameterEnqueueReadyRef(
     vx_graph                                    graph,
     vx_uint32                                   graph_parameter_index,
     vx_reference *                              refs,
@@ -2932,7 +2932,7 @@ valid graph parameter index</p>
 </div>
 <div id="vxGraphParameterDequeueDoneRef" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxGraphParameterDequeueDoneRef(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxGraphParameterDequeueDoneRef(
     vx_graph                                    graph,
     vx_uint32                                   graph_parameter_index,
     vx_reference *                              refs,
@@ -3021,7 +3021,7 @@ valid graph parameter index</p>
 </div>
 <div id="vxGraphParameterCheckDoneRef" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxGraphParameterCheckDoneRef(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxGraphParameterCheckDoneRef(
     vx_graph                                    graph,
     vx_uint32                                   graph_parameter_index,
     vx_uint32 *                                 num_refs);</code></pre>
@@ -3103,7 +3103,7 @@ graph parameter index</p>
 </div>
 <div id="vxStartGraphStreaming" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxStartGraphStreaming(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxStartGraphStreaming(
     vx_graph                                    graph);</code></pre>
 </div>
 </div>
@@ -3169,7 +3169,7 @@ reference.</p>
 </div>
 <div id="vxStopGraphStreaming" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxStopGraphStreaming(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxStopGraphStreaming(
     vx_graph                                    graph);</code></pre>
 </div>
 </div>
@@ -3560,7 +3560,7 @@ as well as user generated events.</p>
 </div>
 <div id="vxWaitEvent" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxWaitEvent(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxWaitEvent(
     vx_context                                  context,
     vx_event_t *                                event,
     vx_bool                                     do_not_block);</code></pre>
@@ -3622,7 +3622,7 @@ only checks for the condition</p>
 </div>
 <div id="vxEnableEvents" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxEnableEvents(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxEnableEvents(
     vx_context                                  context);</code></pre>
 </div>
 </div>
@@ -3657,7 +3657,7 @@ only checks for the condition</p>
 </div>
 <div id="vxDisableEvents" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxDisableEvents(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxDisableEvents(
     vx_context                                  context);</code></pre>
 </div>
 </div>
@@ -3697,7 +3697,7 @@ would be returned via <code><a href="#vxWaitEvent">vxWaitEvent</a></code> API un
 </div>
 <div id="vxSendUserEvent" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxSendUserEvent(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxSendUserEvent(
     vx_context                                  context,
     vx_uint32                                   id,
     <span class="directive">void</span> *                                      parameter);</code></pre>
@@ -3742,7 +3742,7 @@ by implementation. Returned to user as part
 </div>
 <div id="vxRegisterEvent" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxRegisterEvent(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxRegisterEvent(
     vx_reference                                ref,
     vx_event_type_e                             type,
     vx_uint32                                   param);</code></pre>
@@ -3804,7 +3804,7 @@ reference.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.1 (provisional)<br>
-Last updated 2018-08-05 19:21:37 PDT
+Last updated 2018-08-14 21:03:49 PDT
 </div>
 </div>
 

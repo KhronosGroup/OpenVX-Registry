@@ -816,14 +816,11 @@ table.CodeRay td.code>pre{padding:0}
 .CodeRay .change .change{color:#66f}
 .CodeRay .head .head{color:#f4f}
 </style>
-<!--
 <link rel="stylesheet" href="katex/katex.min.css">
 <script src="katex/katex.min.js"></script>
 <script src="katex/contrib/auto-render.min.js"></script>
--->
     <!-- Use KaTeX to render math once document is loaded, see
          https://github.com/Khan/KaTeX/tree/master/contrib/auto-render -->
-<!--
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         renderMathInElement(
@@ -838,9 +835,7 @@ table.CodeRay td.code>pre{padding:0}
             }
         );
     });
-</script>
--->
-</head>
+</script></head>
 <body class="book toc2 toc-left" style="max-width: 100;">
 <div id="header">
 <h1>The OpenVX<sup>&#8482;</sup> User Kernel Tiling Extension</h1>
@@ -848,7 +843,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">The Khronos OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Shorin Kyo, Thierry Lepley, Erik Rainey, Frank Brill, Andrew Garrard, Radhakrishna Giduthuri</span><br>
 <span id="revnumber">version 1.0.1 (provisional),</span>
-<span id="revdate">Thu, 19 Jul 2018 04:53:23 +0000</span>
+<span id="revdate">Wed, 15 Aug 2018 06:03:31 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -1393,8 +1388,8 @@ Gaussian Blur.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> gaussian_image_tiling_fast(<span class="directive">void</span> * VX_RESTRICT parameters[VX_RESTRICT],
-                                <span class="directive">void</span> * VX_RESTRICT tile_memory,
+<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> gaussian_image_tiling_fast(<span class="directive">void</span> * parameters[],
+                                <span class="directive">void</span> * tile_memory,
                                 vx_size tile_memory_size)
 {
     vx_uint32 x, y;
@@ -1440,8 +1435,8 @@ optimize their code in this example which uses two inputs:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> add_image_tiling(<span class="directive">void</span> * VX_RESTRICT parameters[VX_RESTRICT],
-                      <span class="directive">void</span> * VX_RESTRICT tile_memory,
+<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> add_image_tiling(<span class="directive">void</span> * parameters[],
+                      <span class="directive">void</span> * tile_memory,
                       vx_size tile_memory_size)
 {
     vx_uint32 i,j;
@@ -1475,8 +1470,8 @@ Firstly, a &#8220;fast&#8221; function:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> add_image_tiling_fast(<span class="directive">void</span> * VX_RESTRICT parameters[VX_RESTRICT],
-                           <span class="directive">void</span> * VX_RESTRICT tile_memory,
+<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> add_image_tiling_fast(<span class="directive">void</span> * parameters[],
+                           <span class="directive">void</span> * tile_memory,
                            vx_size tile_memory_size)
 {
    vx_uint32 i,j,ii,jj;
@@ -1525,8 +1520,8 @@ block.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> add_image_tiling_flexible(<span class="directive">void</span> * VX_RESTRICT parameters[VX_RESTRICT],
-                               <span class="directive">void</span> * VX_RESTRICT tile_memory,
+<pre class="CodeRay highlight"><code data-lang="c"><span class="directive">void</span> add_image_tiling_flexible(<span class="directive">void</span> * parameters[],
+                               <span class="directive">void</span> * tile_memory,
                                vx_size tile_memory_size)
 {
     vx_uint32 i,j;
@@ -1795,9 +1790,6 @@ environment.</p>
 <p><code><a href="#VX_MAX_TILING_PLANES">VX_MAX_TILING_PLANES</a></code></p>
 </li>
 <li>
-<p><code><a href="#VX_RESTRICT">VX_RESTRICT</a></code></p>
-</li>
-<li>
 <p><code><a href="#vxImageHeight">vxImageHeight</a></code></p>
 </li>
 <li>
@@ -1886,13 +1878,13 @@ environment.</p>
 </div>
 <div id="vx_image_description_t" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> vx_image_description_t {
-    vx_uint32      width;    <span class="comment">// width of the image</span>
-    vx_uint32      height;   <span class="comment">// height of the image</span>
-    vx_df_image    format;   <span class="comment">// vx_df_image_e of the image</span>
-    vx_uint32      planes;   <span class="comment">// number of planes in the image</span>
-    vx_enum        range;    <span class="comment">// vx_channel_range_e enumeration</span>
-    vx_enum        space;    <span class="comment">// vx_color_space_e enumeration</span>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_image_description_t {
+    vx_uint32      width;
+    vx_uint32      height;
+    vx_df_image    format;
+    vx_uint32      planes;
+    vx_enum        range;
+    vx_enum        space;
 } vx_image_description_t;</code></pre>
 </div>
 </div>
@@ -1904,11 +1896,11 @@ environment.</p>
 </div>
 <div id="vx_neighborhood_size_t" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> vx_neighborhood_size_t {
-    vx_int32    left;     <span class="comment">// left of the tile block</span>
-    vx_int32    right;    <span class="comment">// right of the tile block</span>
-    vx_int32    top;      <span class="comment">// top of the tile block</span>
-    vx_int32    bottom;   <span class="comment">// bottom of the tile block</span>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_neighborhood_size_t {
+    vx_int32    left;
+    vx_int32    right;
+    vx_int32    top;
+    vx_int32    bottom;
 } vx_neighborhood_size_t;</code></pre>
 </div>
 </div>
@@ -1924,9 +1916,9 @@ neighborhood surrounding the tile block.</p>
 </div>
 <div id="vx_tile_block_size_t" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> vx_tile_block_size_t {
-    vx_int32    width;      <span class="comment">// block width in pixels</span>
-    vx_int32    height;     <span class="comment">// block height in pixels</span>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_tile_block_size_t {
+    vx_int32    width;
+    vx_int32    height;
 } vx_tile_block_size_t;</code></pre>
 </div>
 </div>
@@ -1942,8 +1934,8 @@ dimensionality of the tile block.</p>
 </div>
 <div id="vx_tile_t" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> vx_tile_t {
-    vx_uint8* VX_RESTRICT         base[VX_MAX_TILING_PLANES];
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_tile_t {
+    vx_uint8*                     base[VX_MAX_TILING_PLANES];
     vx_uint32                     tile_x;
     vx_uint32                     tile_y;
     vx_imagepatch_addressing_t    addr[VX_MAX_TILING_PLANES];
@@ -2008,25 +2000,6 @@ dimensionality of the tile block.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_vx_restrict">VX_RESTRICT</h5>
-<div class="paragraph">
-<p>A platform wrapper for the restrict keyword.</p>
-</div>
-<div id="VX_RESTRICT" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#if</span> defined(_WIN32)
-<span class="preprocessor">#define</span> VX_RESTRICT
-<span class="preprocessor">#else</span>
-<span class="preprocessor">#if</span> defined(__cplusplus) || defined(ANDROID)
-<span class="preprocessor">#define</span> VX_RESTRICT     __restrict
-<span class="preprocessor">#else</span>
-<span class="preprocessor">#define</span> VX_RESTRICT     <span class="keyword">restrict</span>
-<span class="preprocessor">#endif</span>
-<span class="preprocessor">#endif</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect4">
 <h5 id="_vximageheight">vxImageHeight</h5>
 <div class="paragraph">
 <p>The full height of the tile&#8217;s parent image in pixels.</p>
@@ -2055,11 +2028,8 @@ dimensionality of the tile block.</p>
 <div id="vxImageOffset" class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> vxImageOffset(ptile, i, x, y, ox, oy) \
-   ((ptile)-&gt;addr[i].stride_y * (vx_int32)(((vx_int32)((oy)+(y)) * \
-    (vx_int32)(ptile)-&gt;addr[i].scale_y)/(vx_int32)VX_SCALE_UNITY)) \
-   + \
-   ((ptile)-&gt;addr[i].stride_x * (vx_int32)(((vx_int32)((ox)+(x)) * \
-    (vx_int32)(ptile)-&gt;addr[i].scale_x)/(vx_int32)VX_SCALE_UNITY))</code></pre>
+((ptile)-&gt;addr[i].stride_y * (vx_int32)(((vx_int32)((oy)+(y)) * (vx_int32)(ptile)-&gt;addr[i].scale_y)/(vx_int32)VX_SCALE_UNITY)) + \
+((ptile)-&gt;addr[i].stride_x * (vx_int32)(((vx_int32)((ox)+(x)) * (vx_int32)(ptile)-&gt;addr[i].scale_x)/(vx_int32)VX_SCALE_UNITY))</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2096,7 +2066,7 @@ dimensionality of the tile block.</p>
 <div id="vxImagePixel" class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> vxImagePixel(type, ptile, i, x, y, ox, oy) \
-   *((type *)(&amp;((vx_uint8 *)(ptile)-&gt;base[i])[vxImageOffset(ptile, i, x, y, ox, oy)]))</code></pre>
+*((type *)(&amp;((vx_uint8 *)(ptile)-&gt;base[i])[vxImageOffset(ptile, i, x, y, ox, oy)]))</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2379,8 +2349,8 @@ in pixels.</p>
 <div id="vx_tiling_kernel_f" class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="directive">void</span> (*vx_tiling_kernel_f)(
-            <span class="directive">void</span>* VX_RESTRICT parameters[],
-            <span class="directive">void</span>* VX_RESTRICT tile_memory,
+            <span class="directive">void</span>* parameters[],
+            <span class="directive">void</span>* tile_memory,
             vx_size tile_memory_size);</code></pre>
 </div>
 </div>
@@ -2429,9 +2399,9 @@ requested, 0.</p>
 </div>
 <div id="vx_border_tiling_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_border_tiling_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_border_tiling_e {
     VX_BORDER_MODE_SELF = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_BORDER) + <span class="hex">0x3</span>,
-} vx_border_tiling_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2456,20 +2426,14 @@ vxSetNodeAttribute with VX_NODE_BORDER.</p>
 </div>
 <div id="vx_kernel_attribute_tiling_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_kernel_attribute_tiling_e {
-    VX_KERNEL_INPUT_NEIGHBORHOOD
-                            = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_KERNEL) + <span class="hex">0x7</span>,
-    VX_KERNEL_OUTPUT_TILE_BLOCK_SIZE
-                            = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_KERNEL) + <span class="hex">0x8</span>,
-    VX_KERNEL_BORDER
-                            = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_KERNEL) + <span class="hex">0x9</span>,
-    VX_KERNEL_TILE_MEMORY_SIZE
-                            = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_KERNEL) + <span class="hex">0xA</span>,
-    VX_KERNEL_INPUT_TILE_BLOCK_SIZE
-                            = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_KERNEL) + <span class="hex">0xB</span>,
-    VX_KERNEL_OUTPUT_NEIGHBORHOOD
-                            = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_KERNEL) + <span class="hex">0xC</span>,
-} vx_kernel_attribute_tiling_e;</code></pre>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_kernel_attribute_tiling_e {
+    VX_KERNEL_INPUT_NEIGHBORHOOD = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_KERNEL) + <span class="hex">0x7</span>,
+    VX_KERNEL_OUTPUT_TILE_BLOCK_SIZE = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_KERNEL) + <span class="hex">0x8</span>,
+    VX_KERNEL_BORDER = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_KERNEL) + <span class="hex">0x9</span>,
+    VX_KERNEL_TILE_MEMORY_SIZE = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_KERNEL) + <span class="hex">0xA</span>,
+    VX_KERNEL_INPUT_TILE_BLOCK_SIZE = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_KERNEL) + <span class="hex">0xB</span>,
+    VX_KERNEL_OUTPUT_NEIGHBORHOOD = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_KERNEL) + <span class="hex">0xC</span>,
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2509,18 +2473,13 @@ determines the per tile memory allocation.</p>
 </div>
 <div id="vx_node_attribute_tiling_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_node_attribute_tiling_e {
-  VX_NODE_INPUT_NEIGHBORHOOD
-                                = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_NODE) + <span class="hex">0xB</span>,
-  VX_NODE_OUTPUT_TILE_BLOCK_SIZE
-                                = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_NODE) + <span class="hex">0xC</span>,
-  VX_NODE_TILE_MEMORY_SIZE
-                                = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_NODE) + <span class="hex">0xD</span>,
-  VX_NODE_INPUT_TILE_BLOCK_SIZE
-                                = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_NODE) + <span class="hex">0xE</span>,
-  VX_NODE_OUTPUT_NEIGHBORHOOD
-                                = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS,VX_TYPE_NODE) + <span class="hex">0xF</span>,
-} vx_node_attribute_tiling_e;</code></pre>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_node_attribute_tiling_e {
+    VX_NODE_INPUT_NEIGHBORHOOD = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_NODE) + <span class="hex">0xB</span>,
+    VX_NODE_OUTPUT_TILE_BLOCK_SIZE = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_NODE) + <span class="hex">0xC</span>,
+    VX_NODE_TILE_MEMORY_SIZE = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_NODE) + <span class="hex">0xD</span>,
+    VX_NODE_INPUT_TILE_BLOCK_SIZE = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_NODE) + <span class="hex">0xE</span>,
+    VX_NODE_OUTPUT_NEIGHBORHOOD = VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_NODE) + <span class="hex">0xF</span>,
+};</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -2569,7 +2528,7 @@ size of the tile local memory area.</p>
 </div>
 <div id="vxAddTilingKernel" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_kernel VX_API_ENTRY vxAddTilingKernel(
+<pre class="CodeRay highlight"><code data-lang="c">vx_kernel vxAddTilingKernel(
     vx_context                                  context,
     vx_char                                     name[VX_MAX_KERNEL_NAME],
     vx_enum                                     enumeration,
@@ -2656,7 +2615,7 @@ Note that the fast or flexible formula, but not both, can be NULL.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.1 (provisional)<br>
-Last updated 2018-07-18 21:51:44 PDT
+Last updated 2018-08-14 21:42:41 PDT
 </div>
 </div>
 

@@ -843,7 +843,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">The Khronos OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Tomer Schwartz, Mostafa Hagog, Radhakrishna Giduthuri</span><br>
 <span id="revnumber">version 1.2.1,</span>
-<span id="revdate">Mon, 23 Jul 2018 04:37:03 +0000</span>
+<span id="revdate">Wed, 15 Aug 2018 06:03:16 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -1298,7 +1298,7 @@ The legal string combinations are <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR
 </div>
 <div id="vx_nn_convolution_params_t" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> vx_nn_convolution_params_t {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_nn_convolution_params_t {
     vx_size    padding_x;
     vx_size    padding_y;
     vx_enum    overflow_policy;
@@ -1359,7 +1359,7 @@ The legal string combinations are <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR
 </div>
 <div id="vx_nn_deconvolution_params_t" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> vx_nn_deconvolution_params_t {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_nn_deconvolution_params_t {
     vx_size    padding_x;
     vx_size    padding_y;
     vx_enum    overflow_policy;
@@ -1415,7 +1415,7 @@ The legal string combinations are <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR
 </div>
 <div id="vx_nn_roi_pool_params_t" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> vx_nn_roi_pool_params_t {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_nn_roi_pool_params_t {
     vx_enum    pool_type;
 } vx_nn_roi_pool_params_t;</code></pre>
 </div>
@@ -1463,7 +1463,7 @@ The legal string combinations are <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR
 </div>
 <div id="vx_kernel_nn_ext_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_kernel_nn_ext_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_kernel_nn_ext_e {
     VX_KERNEL_CONVOLUTION_LAYER = VX_KERNEL_BASE(VX_ID_KHRONOS, VX_LIBRARY_KHR_NN_EXTENSION) + <span class="hex">0x0</span>,
     VX_KERNEL_FULLY_CONNECTED_LAYER = VX_KERNEL_BASE(VX_ID_KHRONOS, VX_LIBRARY_KHR_NN_EXTENSION) + <span class="hex">0x1</span>,
     VX_KERNEL_POOLING_LAYER = VX_KERNEL_BASE(VX_ID_KHRONOS, VX_LIBRARY_KHR_NN_EXTENSION) + <span class="hex">0x2</span>,
@@ -1472,7 +1472,7 @@ The legal string combinations are <code>"KHR_NN_8"</code> or <code>"KHR_NN_8 KHR
     VX_KERNEL_ACTIVATION_LAYER = VX_KERNEL_BASE(VX_ID_KHRONOS, VX_LIBRARY_KHR_NN_EXTENSION) + <span class="hex">0x5</span>,
     VX_KERNEL_ROI_POOLING_LAYER = VX_KERNEL_BASE(VX_ID_KHRONOS, VX_LIBRARY_KHR_NN_EXTENSION) + <span class="hex">0x6</span>,
     VX_KERNEL_DECONVOLUTION_LAYER = VX_KERNEL_BASE(VX_ID_KHRONOS, VX_LIBRARY_KHR_NN_EXTENSION) + <span class="hex">0x7</span>,
-} vx_kernel_nn_ext_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1578,7 +1578,7 @@ Neural Network Extension Deconvolution Kernel.</p>
 </div>
 <div id="vx_nn_activation_function_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_nn_activation_function_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_nn_activation_function_e {
     VX_NN_ACTIVATION_LOGISTIC = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_ACTIVATION_FUNCTION_TYPE) + <span class="hex">0x0</span>,
     VX_NN_ACTIVATION_HYPERBOLIC_TAN = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_ACTIVATION_FUNCTION_TYPE) + <span class="hex">0x1</span>,
     VX_NN_ACTIVATION_RELU = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_ACTIVATION_FUNCTION_TYPE) + <span class="hex">0x2</span>,
@@ -1588,7 +1588,7 @@ Neural Network Extension Deconvolution Kernel.</p>
     VX_NN_ACTIVATION_SQUARE = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_ACTIVATION_FUNCTION_TYPE) + <span class="hex">0x6</span>,
     VX_NN_ACTIVATION_SQRT = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_ACTIVATION_FUNCTION_TYPE) + <span class="hex">0x7</span>,
     VX_NN_ACTIVATION_LINEAR = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_ACTIVATION_FUNCTION_TYPE) + <span class="hex">0x8</span>,
-} vx_nn_activation_function_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -1705,12 +1705,12 @@ Neural Network Extension Deconvolution Kernel.</p>
 </div>
 <div id="vx_nn_enum_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_nn_enum_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_nn_enum_e {
     VX_ENUM_NN_ROUNDING_TYPE = <span class="hex">0x1A</span>,
     VX_ENUM_NN_POOLING_TYPE = <span class="hex">0x1B</span>,
     VX_ENUM_NN_NORMALIZATION_TYPE = <span class="hex">0x1C</span>,
     VX_ENUM_NN_ACTIVATION_FUNCTION_TYPE = <span class="hex">0x1D</span>,
-} vx_nn_enum_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1741,10 +1741,10 @@ Neural Network Extension Deconvolution Kernel.</p>
 </div>
 <div id="vx_nn_norm_type_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_nn_norm_type_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_nn_norm_type_e {
     VX_NN_NORMALIZATION_SAME_MAP = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_NORMALIZATION_TYPE) + <span class="hex">0x0</span>,
     VX_NN_NORMALIZATION_ACROSS_MAPS = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_NORMALIZATION_TYPE) + <span class="hex">0x1</span>,
-} vx_nn_norm_type_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1770,10 +1770,10 @@ Normalization is done across different IFMs.</p>
 </div>
 <div id="vx_nn_pooling_type_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_nn_pooling_type_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_nn_pooling_type_e {
     VX_NN_POOLING_MAX = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_POOLING_TYPE) + <span class="hex">0x0</span>,
     VX_NN_POOLING_AVG = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_POOLING_TYPE) + <span class="hex">0x1</span>,
-} vx_nn_pooling_type_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1800,10 +1800,10 @@ Normalization is done across different IFMs.</p>
 </div>
 <div id="vx_nn_rounding_type_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_nn_rounding_type_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_nn_rounding_type_e {
     VX_NN_DS_SIZE_ROUNDING_FLOOR = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_ROUNDING_TYPE) + <span class="hex">0x0</span>,
     VX_NN_DS_SIZE_ROUNDING_CEILING = VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_NN_ROUNDING_TYPE) + <span class="hex">0x1</span>,
-} vx_nn_rounding_type_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1837,11 +1837,11 @@ ceil rounding</p>
 </div>
 <div id="vx_nn_type_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_nn_type_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_nn_type_e {
     VX_TYPE_NN_CONVOLUTION_PARAMS = <span class="hex">0x025</span>,
     VX_TYPE_NN_DECONVOLUTION_PARAMS = <span class="hex">0x026</span>,
     VX_TYPE_NN_ROI_POOL_PARAMS = <span class="hex">0x027</span>,
-} vx_nn_type_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1888,7 +1888,7 @@ the equation for the layer is:</p>
 </div>
 <div id="vxActivationLayer" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_node VX_API_ENTRY vxActivationLayer(
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxActivationLayer(
     vx_graph                                    graph,
     vx_tensor                                   inputs,
     vx_enum                                     function,
@@ -1943,7 +1943,7 @@ Any possible errors preventing a successful creation should be checked using
 </div>
 <div id="vxConvolutionLayer" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_node VX_API_ENTRY vxConvolutionLayer(
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxConvolutionLayer(
     vx_graph                                    graph,
     vx_tensor                                   inputs,
     vx_tensor                                   weights,
@@ -2091,7 +2091,7 @@ Any possible errors preventing a successful creation should be checked using
 </div>
 <div id="vxDeconvolutionLayer" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_node VX_API_ENTRY vxDeconvolutionLayer(
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxDeconvolutionLayer(
     vx_graph                                    graph,
     vx_tensor                                   inputs,
     vx_tensor                                   weights,
@@ -2250,7 +2250,7 @@ Any possible errors preventing a successful creation should be checked using
 </div>
 <div id="vxFullyConnectedLayer" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_node VX_API_ENTRY vxFullyConnectedLayer(
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxFullyConnectedLayer(
     vx_graph                                    graph,
     vx_tensor                                   inputs,
     vx_tensor                                   weights,
@@ -2359,7 +2359,7 @@ This function is optional for 8-bit extension with the extension string
 </div>
 <div id="vxNormalizationLayer" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_node VX_API_ENTRY vxNormalizationLayer(
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxNormalizationLayer(
     vx_graph                                    graph,
     vx_tensor                                   inputs,
     vx_enum                                     type,
@@ -2435,7 +2435,7 @@ Any possible errors preventing a successful creation should be checked using
 </div>
 <div id="vxPoolingLayer" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_node VX_API_ENTRY vxPoolingLayer(
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxPoolingLayer(
     vx_graph                                    graph,
     vx_tensor                                   inputs,
     vx_enum                                     pooling_type,
@@ -2525,7 +2525,7 @@ Any possible errors preventing a successful creation should be checked using
 </div>
 <div id="vxROIPoolingLayer" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_node VX_API_ENTRY vxROIPoolingLayer(
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxROIPoolingLayer(
     vx_graph                                    graph,
     vx_tensor                                   input_data,
     vx_tensor                                   input_rois,
@@ -2605,7 +2605,7 @@ Any possible errors preventing a successful creation should be checked using
 </div>
 <div id="vxSoftmaxLayer" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_node VX_API_ENTRY vxSoftmaxLayer(
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxSoftmaxLayer(
     vx_graph                                    graph,
     vx_tensor                                   inputs,
     vx_tensor                                   outputs);</code></pre>
@@ -2667,7 +2667,7 @@ Any possible errors preventing a successful creation should be checked using
 <div id="footer">
 <div id="footer-text">
 Version 1.2.1<br>
-Last updated 2018-07-22 21:36:59 PDT
+Last updated 2018-08-14 21:03:49 PDT
 </div>
 </div>
 

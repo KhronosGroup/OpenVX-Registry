@@ -816,14 +816,11 @@ table.CodeRay td.code>pre{padding:0}
 .CodeRay .change .change{color:#66f}
 .CodeRay .head .head{color:#f4f}
 </style>
-<!--
 <link rel="stylesheet" href="katex/katex.min.css">
 <script src="katex/katex.min.js"></script>
 <script src="katex/contrib/auto-render.min.js"></script>
--->
     <!-- Use KaTeX to render math once document is loaded, see
          https://github.com/Khan/KaTeX/tree/master/contrib/auto-render -->
-<!--
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         renderMathInElement(
@@ -838,9 +835,7 @@ table.CodeRay td.code>pre{padding:0}
             }
         );
     });
-</script>
--->
-</head>
+</script></head>
 <body class="book toc2 toc-left" style="max-width: 100;">
 <div id="header">
 <h1>The OpenVX<sup>&#8482;</sup> Classifier Extension</h1>
@@ -848,7 +843,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">The Khronos OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Tomer Schwartz, Radhakrishna Giduthuri</span><br>
 <span id="revnumber">version 1.2.1 (provisional),</span>
-<span id="revdate">Wed, 11 Jul 2018 06:06:43 +0000</span>
+<span id="revdate">Wed, 15 Aug 2018 06:03:09 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -1077,7 +1072,7 @@ format.</p>
 </div>
 <div id="vx_classifier_model" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_classifier_model *vx_classifier_model</code></pre>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_classifier_model *vx_classifier_model;</code></pre>
 </div>
 </div>
 </div>
@@ -1094,9 +1089,9 @@ binary format.</p>
 </div>
 <div id="vx_classifier_model_format_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_classifier_model_format_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_classifier_model_format_e {
     VX_CLASSIFIER_MODEL_UNDEFINED = VX_ENUM_BASE( VX_ID_KHRONOS, VX_ENUM_CLASSIFIER_MODEL ) + <span class="hex">0x0</span>,
-} vx_classifier_model_format_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1120,9 +1115,9 @@ behaviour.</p>
 </div>
 <div id="vx_classifier_type_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">enum</span> vx_classifier_type_e {
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_classifier_type_e {
     VX_TYPE_CLASSIFIER_MODEL = <span class="hex">0x02C</span>,
-} vx_classifier_type_e;</code></pre>
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1150,7 +1145,7 @@ It cannot be changed during graph execution.</p>
 </div>
 <div id="vxImportClassifierModel" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL  vx_classifier_model VX_API_ENTRY vxImportClassifierModel(
+<pre class="CodeRay highlight"><code data-lang="c"> vx_classifier_model vxImportClassifierModel(
     vx_context                                  context,
     vx_enum                                     format,
     <span class="directive">const</span> vx_uint8*                             ptr,
@@ -1197,7 +1192,7 @@ After returning from this function the reference is zeroed/cleared.</p>
 </div>
 <div id="vxReleaseClassifierModel" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxReleaseClassifierModel(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxReleaseClassifierModel(
     vx_classifier_model*                        model);</code></pre>
 </div>
 </div>
@@ -1263,7 +1258,7 @@ classification for each scan-window.</p>
 </div>
 <div id="vxScanClassifierNode" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_node VX_API_ENTRY vxScanClassifierNode(
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxScanClassifierNode(
     vx_graph                                    graph,
     vx_tensor                                   input_feature_map,
     vx_classifier_model                         model,
