@@ -843,7 +843,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">The Khronos OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Steve Ramm, Radhakrishna Giduthuri</span><br>
 <span id="revnumber">version 1.1.1,</span>
-<span id="revdate">Wed, 11 Jul 2018 05:09:59 +0000</span>
+<span id="revdate">Wed, 15 Aug 2018 06:03:11 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -1224,7 +1224,7 @@ the existing API</p>
 <div class="content">
 <div id="vxSetReferenceName" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxSetReferenceName(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxSetReferenceName(
     vx_reference                                ref,
     <span class="directive">const</span> vx_char*                              name);</code></pre>
 </div>
@@ -1351,7 +1351,7 @@ from the import object.</p>
 </div>
 <div id="vxExportObjectsToMemory" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxExportObjectsToMemory(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxExportObjectsToMemory(
     vx_context                                  context,
     vx_size                                     numrefs,
     <span class="directive">const</span> vx_reference*                         refs,
@@ -1625,7 +1625,7 @@ memory.</p>
 </div>
 <div id="vxReleaseExportedMemory" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxReleaseExportedMemory(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxReleaseExportedMemory(
     vx_context                                  context,
     <span class="directive">const</span> vx_uint8**                            ptr);</code></pre>
 </div>
@@ -1753,7 +1753,7 @@ Import is a container of OpenVX objects, which may be retreived by name.</p>
 </div>
 <div id="vx_import" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_import *vx_import</code></pre>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_import *vx_import;</code></pre>
 </div>
 </div>
 </div>
@@ -1767,7 +1767,7 @@ Import is a container of OpenVX objects, which may be retreived by name.</p>
 </div>
 <div id="vxGetImportReferenceByName" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_reference VX_API_ENTRY vxGetImportReferenceByName(
+<pre class="CodeRay highlight"><code data-lang="c">vx_reference vxGetImportReferenceByName(
     vx_import                                   import,
     <span class="directive">const</span> vx_char*                              name);</code></pre>
 </div>
@@ -1851,7 +1851,7 @@ release function to release a reference obtained by this method.</p>
 </div>
 <div id="vxImportObjectsFromMemory" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_import VX_API_ENTRY vxImportObjectsFromMemory(
+<pre class="CodeRay highlight"><code data-lang="c">vx_import vxImportObjectsFromMemory(
     vx_context                                  context,
     vx_size                                     numrefs,
     vx_reference*                               refs,
@@ -2041,7 +2041,7 @@ required.</p>
 </div>
 <div id="vxReleaseImport" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">VX_API_CALL vx_status VX_API_ENTRY vxReleaseImport(
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxReleaseImport(
     vx_import*                                  import);</code></pre>
 </div>
 </div>
@@ -2103,7 +2103,7 @@ object.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.1.1<br>
-Last updated 2018-07-10 22:09:57 PDT
+Last updated 2018-08-14 21:03:49 PDT
 </div>
 </div>
 
