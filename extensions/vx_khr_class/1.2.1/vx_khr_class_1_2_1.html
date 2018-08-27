@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<meta name="author" content="The Khronos OpenVX Working Group, Editors: Steve Ramm, Radhakrishna Giduthuri">
-<title>The OpenVX&#8482; Export and Import Extension</title>
+<meta name="author" content="The Khronos OpenVX Working Group, Editors: Tomer Schwartz, Radhakrishna Giduthuri">
+<title>The OpenVX&#8482; Classifier Extension</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -838,49 +838,36 @@ table.CodeRay td.code>pre{padding:0}
 </script></head>
 <body class="book toc2 toc-left" style="max-width: 100;">
 <div id="header">
-<h1>The OpenVX<sup>&#8482;</sup> Export and Import Extension</h1>
+<h1>The OpenVX<sup>&#8482;</sup> Classifier Extension</h1>
 <div class="details">
 <span id="author" class="author">The Khronos OpenVX Working Group</span><br>
-<span id="author2" class="author">Editors: Steve Ramm, Radhakrishna Giduthuri</span><br>
-<span id="revnumber">version 1.1.1,</span>
-<span id="revdate">Wed, 15 Aug 2018 06:03:11 +0000</span>
+<span id="author2" class="author">Editors: Tomer Schwartz, Radhakrishna Giduthuri</span><br>
+<span id="revnumber">version 1.2.1 (provisional),</span>
+<span id="revdate">Wed, 15 Aug 2018 06:03:09 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_export_and_import_extension_to_openvx_1_1">1. Export and Import Extension to OpenVX 1.1</a>
+<li><a href="#_classifiers_extension">1. Classifiers Extension</a>
 <ul class="sectlevel2">
-<li><a href="#sec_purpose">1.1. Purpose</a></li>
-<li><a href="#sec_usecases">1.2. Use Case</a></li>
-<li><a href="#sec_acknowledge">1.3. Acknowledgements</a></li>
+<li><a href="#sec_acknowledgements">1.1. Acknowledgements</a></li>
+<li><a href="#sec_background">1.2. Background and Terminology</a></li>
+<li><a href="#sec_kernel_names">1.3. Kernel Names</a></li>
 </ul>
 </li>
-<li><a href="#page_requirements_requirements">2. Requirements</a>
+<li><a href="#module_documentation">2. Module Documentation</a>
 <ul class="sectlevel2">
-<li><a href="#sec_import">2.1. Import and Export of Objects</a></li>
-<li><a href="#sec_creation">2.2. Creation of Objects Upon Import</a></li>
-<li><a href="#sec_Imandexp">2.3. Import and Export of Data Values For Objects To Be Created By The Framework</a></li>
-<li><a href="#sec_createdapp">2.4. Import and Export of Values For Objects To Be Created By The Application</a></li>
-<li><a href="#sec_IData">2.5. Import and Export of Meta Data</a></li>
-<li><a href="#sec_restrictions">2.6. Restrictions Upon What References May Be Exported</a></li>
-<li><a href="#sec_access">2.7. Access To Object References In The Imported Object</a></li>
-<li><a href="#sec_deployment">2.8. "Deployment" Feature Sub-set</a></li>
-</ul>
-</li>
-<li><a href="#module_documentation">3. Module Documentation</a>
-<ul class="sectlevel2">
-<li><a href="#group_export">3.1. Export To Memory API</a>
+<li><a href="#group_object_classifier_model">2.1. Group_object_classifier_model</a>
 <ul class="sectlevel3">
-<li><a href="#_macros">3.1.1. Macros</a></li>
-<li><a href="#_functions">3.1.2. Functions</a></li>
+<li><a href="#_typedefs">2.1.1. Typedefs</a></li>
+<li><a href="#_enumerations">2.1.2. Enumerations</a></li>
+<li><a href="#_functions">2.1.3. Functions</a></li>
 </ul>
 </li>
-<li><a href="#group_import">3.2. Import Objects From Memory API</a>
+<li><a href="#group_vision_function_classifier">2.2. Scan Classifier</a>
 <ul class="sectlevel3">
-<li><a href="#_macros_2">3.2.1. Macros</a></li>
-<li><a href="#_typedefs">3.2.2. Typedefs</a></li>
-<li><a href="#_functions_2">3.2.3. Functions</a></li>
+<li><a href="#_functions_2">2.2.1. Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -944,35 +931,10 @@ for identification and belong to their respective owners.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_export_and_import_extension_to_openvx_1_1">1. Export and Import Extension to OpenVX 1.1</h2>
+<h2 id="_classifiers_extension">1. Classifiers Extension</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="sec_purpose">1.1. Purpose</h3>
-<div class="paragraph">
-<p>Provide a way of exporting and importing pre-verified graphs or other
-objects, in vendor-specific formats.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec_usecases">1.2. Use Case</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Embedded systems using fixed graphs, to minimise the amount of code
-required.</p>
-</li>
-<li>
-<p>Safety-critical systems where the OpenVX library does not have a node
-API.</p>
-</li>
-<li>
-<p>CNN extensions which require the ability to import binary objects.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec_acknowledge">1.3. Acknowledgements</h3>
+<h3 id="sec_acknowledgements">1.1. Acknowledgements</h3>
 <div class="paragraph">
 <p>This specification would not be possible without the contributions from this
 partial list of the following individuals from the Khronos Working Group and
@@ -990,13 +952,55 @@ the companies that they represented at the time:</p>
 <p>Thierry Lepley - Cadence Design Systems</p>
 </li>
 <li>
-<p>Steve Ramm - Imagination Technologies</p>
-</li>
-<li>
 <p>Tomer Schwartz - Intel</p>
 </li>
 <li>
-<p>Jesse Villareal - Texas Instruments</p>
+<p>Victor Eruhimov - Itseez3D</p>
+</li>
+<li>
+<p>Jesse Villarreal - Texas Instruments</p>
+</li>
+<li>
+<p>Xin Wang - Verisilicon</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec_background">1.2. Background and Terminology</h3>
+<div class="paragraph">
+<p>Classification in computer vision is the process of categorizing an image
+into a finite set of classes or labels.
+The process normally involves recognition of the dominant content in an
+image scene.
+The dominant content should get the strongest confidence score irrespective
+of the transformation of that content such as scaling, location or rotation.</p>
+</div>
+<div class="paragraph">
+<p>In this extension we enable the usage of classification methods on an image
+as a specific class detector.
+Possible methods can be cascade, SVM, etc.
+We do not standardize each of these methods, but rather enable their
+deployment in a standard way.
+We add to OpenVX a method to import an abstract model:
+<code><a href="#vx_classifier_model">vx_classifier_model</a></code>.
+The classifier model can be any kind of classifying technology, and the
+import API can import any kind of file format.
+As an example, a vendor can implement in <code><a href="#vxImportClassifierModel">vxImportClassifierModel</a></code> a
+parser of the OpenCV cascade XML, and create a cascade classification model
+similar to the one used in OpenCV.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec_kernel_names">1.3. Kernel Names</h3>
+<div class="paragraph">
+<p>When using <code>vxGetKernelByName</code> the following are strings specifying the
+Classifier extension kernel names:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>org.khronos.clasifier_extension.scan_classifier</p>
 </li>
 </ul>
 </div>
@@ -1004,701 +1008,20 @@ the companies that they represented at the time:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="page_requirements_requirements">2. Requirements</h2>
+<h2 id="module_documentation">2. Module Documentation</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="sec_import">2.1. Import and Export of Objects</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>2.1.1</strong> Application must be able to specify which objects are to be
-exported.</p>
-</li>
-<li>
-<p><strong>2.1.2</strong> The framework will also export any other objects required; for
-example, if a graph is to be exported then all components of that graph
-will also be exported even if their references were not given.</p>
-</li>
-<li>
-<p><strong>2.1.3</strong> Upon Import, only those objects that were specified for export
-will be visible in the imported entity; all other objects may be present
-but are not directly accessible.
-For example, a pyramid object may be exported, in which case the levels
-of the pyramid will be available in the usual way.
-As another example, an image that is part of a pyramid is exported.
-Since an image has no API that allows accessing the pyramid of which it
-is part, then there is no requirement to export the rest of the pyramid.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec_creation">2.2. Creation of Objects Upon Import</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>2.2.1</strong> To make it possible to implement certain scenarios, for example
-when an image needs to be created in a different way in the import
-environment than the export environment, certain objects may be created
-by the application and passed to the import routine.
-These objects need to be specified at the time of export, and provided
-again at the time of import.</p>
-</li>
-<li>
-<p><strong>2.2.2</strong> All other required objects will be created by the framework upon
-import.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec_Imandexp">2.3. Import and Export of Data Values For Objects To Be Created By The Framework</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>2.3.1</strong> Some objects may contain data values (as distinct from Meta
-Data) that require preservation across the export and import routines.
-The application can specify this at the time of export; those objects
-which are listed (by giving references) for export will then either be
-stripped of data values or have their data values entirely exported.</p>
-</li>
-<li>
-<p><strong>2.3.2</strong> For those objects which are <strong>not</strong> listed, the following rules
-apply:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>2.3.2.1</strong> In any one graph, if an object is not connected as an output
-parameter then its data values will be exported (and imported).</p>
-</li>
-<li>
-<p><strong>2.3.2.2</strong> Where the object in (1) is a composite object such as a
-Pyramid or ObjectArray, then rule (1) applies to all sub-objects by
-definition.</p>
-</li>
-<li>
-<p><strong>2.3.2.3</strong> Where the object in (1) is a sub-object such as a Region Of
-Interest or member of an ObjectArray, and the composite object does not
-meet the conditions of rule (1), then rule (1) applies to the
-sub-object only.</p>
-</li>
-<li>
-<p><strong>2.3.2.4</strong> When objects are imported, the exported data values are
-assigned.
-However, if parts of the data were not defined at the time of export,
-then there is no guarantee that upon import the same values will be
-present.
-For example, consider an image where values had been written only to
-some (rectangular) part of the image before export.
-After import, only this part of the image will be guaranteed to contain
-the same values; those parts which were undefined before will be set to
-the default value for the data field.
-In the absence of any other definition the default value is zero.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>2.3.3</strong> For those objects which <strong>are</strong> listed, then:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>2.3.3.1</strong> If the application requires, all defined values shall be
-exported.</p>
-</li>
-<li>
-<p><strong>2.3.3.2</strong> The application requires, no values need be exported.
-The behavior here is as though no values had been defined (written) for
-the object.</p>
-</li>
-<li>
-<p><strong>2.3.3.3</strong> Areas of undefined values will remain undefined (and possibly
-containing different random values) upon import.</p>
-</li>
-<li>
-<p><strong>2.3.3.4</strong> All values are initialized upon import.
-If data was not defined, then it is set to the default value for the
-data field.
-In the absence of any other definition the default value is zero.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec_createdapp">2.4. Import and Export of Values For Objects To Be Created By The Application</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>2.4.1</strong> Objects created by the application before import of the binary
-object must have their data values defined by the application before the
-import operation.</p>
-</li>
-<li>
-<p><strong>2.4.2</strong> Sometimes changing the value stored in an object that is an
-input parameter of a verified graph will require that the graph is
-verified again before execution.
-If such an object is listed as to be supplied by the application, then
-the export operation will fail.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec_IData">2.5. Import and Export of Meta Data</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>2.5.1</strong> For all objects that are visible in the import, all query-able
-Meta Data must appear the same after import as before export.</p>
-</li>
-<li>
-<p><strong>2.5.2</strong> Objects created by the application before import and provided to
-the import API must match in type, size, etc.
-and therefore the export must export sufficient information for this
-check to be done.</p>
-</li>
-<li>
-<p><strong>2.5.3</strong> An Import may fail if the application-provided objects do not
-match those given at the time of export.</p>
-</li>
-<li>
-<p><strong>2.5.4</strong> Graphs with delays that are registered for auto-ageing at the
-time of export will be in the same condition after import of the
-objects.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec_restrictions">2.6. Restrictions Upon What References May Be Exported</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>2.6.1</strong> Export will fail if a <code>vx_context</code> is given in a list to export.</p>
-</li>
-<li>
-<p><strong>2.6.2</strong> Export will fail if a <code><a href="#vx_import">vx_import</a></code> is given in a list to
-export.
-(<code><a href="#vx_import">vx_import</a></code> is the type of the object returned by the import
-functions).</p>
-</li>
-<li>
-<p><strong>2.6.3</strong> Export will fail if a reference to a virtual object is given in
-the list to export.</p>
-</li>
-<li>
-<p><strong>2.6.4</strong> Export will fail if a <code>vx_node</code>, <code>vx_kernel</code>, or <code>vx_parameter</code>
-is given in the list to export.</p>
-</li>
-<li>
-<p><strong>2.6.5</strong> Export is otherwise defined for &#8220;objects&#8221; in the OpenVX 1.1
-specification.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec_access">2.7. Access To Object References In The Imported Object</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>2.7.1</strong> References are obtained from the import API for those objects
-whose references were listed at the time of export.
-These are not the same objects; they are equivalent objects created by
-the framework at import time.
-The implementation guarantees that references will be available and
-valid for all objects listed at the time of export, or the import will
-fail.</p>
-</li>
-<li>
-<p><strong>2.7.2</strong> References additionally may be obtained using a name given to an
-object before export.</p>
-</li>
-<li>
-<p><strong>2.7.3</strong> Before export, objects may be named for retrieval by name using
-the existing API</p>
-<div class="openblock">
-<div class="content">
-<div id="vxSetReferenceName" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">vx_status vxSetReferenceName(
-    vx_reference                                ref,
-    <span class="directive">const</span> vx_char*                              name);</code></pre>
-</div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p><strong>2.7.4</strong> Export will fail if duplicate names are found for listed
-references.</p>
-</li>
-<li>
-<p><strong>2.7.5</strong> Import will fail if duplicate names are found in the import
-object.</p>
-</li>
-<li>
-<p><strong>2.7.6</strong> If references are obtained by name, only those objects whose
-references were listed at the time of export can be found by name.</p>
-</li>
-<li>
-<p><strong>2.7.7</strong> A <code>vx_node</code>, <code>vx_kernel</code>, or <code>vx_parameter</code> cannot be obtained
-from the import object.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec_deployment">2.8. "Deployment" Feature Sub-set</h3>
+<h3 id="group_object_classifier_model">2.1. Group_object_classifier_model</h3>
 <div class="paragraph">
-<p>The deployment feature subset consists of the following APIs:
-<a href="#group_import">Import Objects From Memory API</a> .</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="module_documentation">3. Module Documentation</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="group_export">3.1. Export To Memory API</h3>
-<div class="paragraph">
-<p>Export objects to a location in memory.</p>
+<p>An Opaque object that contain a classifier model.
+The model can be cascade model or SVM model or any other machine learning
+model.</p>
 </div>
 <div class="paragraph">
-<p><strong>Macros</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code></p>
-</li>
-<li>
-<p><code><a href="#VX_IX_USE_EXPORT_VALUES">VX_IX_USE_EXPORT_VALUES</a></code></p>
-</li>
-<li>
-<p><code><a href="#VX_IX_USE_NO_EXPORT_VALUES">VX_IX_USE_NO_EXPORT_VALUES</a></code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Functions</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code></p>
-</li>
-<li>
-<p><code><a href="#vxReleaseExportedMemory">vxReleaseExportedMemory</a></code></p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="_macros">3.1.1. Macros</h4>
-<div class="sect4">
-<h5 id="_vx_ix_use_application_create">VX_IX_USE_APPLICATION_CREATE</h5>
-<div class="paragraph">
-<p>How to export and import an object.</p>
-</div>
-<div id="VX_IX_USE_APPLICATION_CREATE" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_IX_USE_APPLICATION_CREATE      (VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_IX_USE) + <span class="hex">0x0</span>)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The application will create the object before import.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_vx_ix_use_export_values">VX_IX_USE_EXPORT_VALUES</h5>
-<div class="paragraph">
-<p>How to export and import an object.</p>
-</div>
-<div id="VX_IX_USE_EXPORT_VALUES" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_IX_USE_EXPORT_VALUES           (VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_IX_USE) + <span class="hex">0x1</span>)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Data values are exported and restored upon import.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_vx_ix_use_no_export_values">VX_IX_USE_NO_EXPORT_VALUES</h5>
-<div class="paragraph">
-<p>How to export and import an object.</p>
-</div>
-<div id="VX_IX_USE_NO_EXPORT_VALUES" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_IX_USE_NO_EXPORT_VALUES        (VX_ENUM_BASE(VX_ID_KHRONOS, VX_ENUM_IX_USE) + <span class="hex">0x2</span>)</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Data values are not exported.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_functions">3.1.2. Functions</h4>
-<div class="sect4">
-<h5 id="_vxexportobjectstomemory">vxExportObjectsToMemory</h5>
-<div class="paragraph">
-<p>Exports selected objects to memory in a vendor-specific format.</p>
-</div>
-<div id="vxExportObjectsToMemory" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">vx_status vxExportObjectsToMemory(
-    vx_context                                  context,
-    vx_size                                     numrefs,
-    <span class="directive">const</span> vx_reference*                         refs,
-    <span class="directive">const</span> vx_enum*                              uses,
-    <span class="directive">const</span> vx_uint8**                            ptr,
-    vx_size*                                    length);</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>A list of references in the given context is supplied to this function, and
-all information required to re-create these is stored in memory in such a
-way that those objects may be re-created with the corresponding import
-function, according to the usage specified by the <em>uses</em> parameter.</p>
-</div>
-<div class="paragraph">
-<p>The information must be context independent in that it may be written to
-external storage for later retreival with another instantiation of a
-compatible implementation.</p>
-</div>
-<div class="paragraph">
-<p>The list of objects to export may contain only valid references (i.e.
-vxGetStatus() will return VX_SUCCESS) to <code>vx_graph</code> and non-virtual data
-objects or the function will fail.
-(Specifically not <code>vx_context</code>, <code><a href="#vx_import">vx_import</a></code>, <code>vx_node</code>, <code>vx_kernel</code>,
-<code>vx_parameter</code> or <code>vx_meta_format</code>)</p>
-</div>
-<div class="paragraph">
-<p>Some node creation functions take C parameters rather than OpenVX data
-objects (such as the <em>gradient_size</em> parameter of <code>vxHarrisCornersNode</code> that
-is provided as a <code>vx_int32</code>), because these are intended to be fixed at node
-creation time; nevertheless OpenVX data objects may be assigned to them, for
-example if the <code>vxCreateGenericNode</code> API is used.
-A data object corresponding to a node parameter that is intended to be fixed
-at node creation time must not be in the list of exported objects nor
-attached as a graph parameter or the export operation will fail.</p>
-</div>
-<div class="paragraph">
-<p>The <em>uses</em> array specifies how the objects in the corresponding <em>refs</em> array
-will be exported.
-A data object will always have its meta-data (e.g. dimensions and format of
-an image) exported, and optionally may have its data (e.g. pixel values)
-exported, and additionally you can decide whether the importing application
-will create data objects to replace those attached to graphs, or if the
-implementation will automatically create them.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Enumeration for <em>uses</em></th>
-<th class="tableblock halign-left valign-middle">Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Export sufficient data to check that an application-supplied object is compatible when the data is later imported.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_EXPORT_VALUES">VX_IX_USE_EXPORT_VALUES</a></code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Export complete information (for example image data or value of a scalar).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_NO_EXPORT_VALUES">VX_IX_USE_NO_EXPORT_VALUES</a></code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Export meta-data only; the importing application will set values as applicable</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Note</div>
-<div class="paragraph">
-<p>The <code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code> value must be given for
-images created from handles, or the the export operation will fail.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The values in <em>uses</em> are applicable only for data objects and are ignored
-for <code>vx_graph</code> objects.</p>
-</div>
-<div class="paragraph">
-<p>If the list <em>refs</em> contains <code>vx_graph</code> objects, these graphs will be
-verified during the export operation and the export operation will fail if
-verification fails; when successfully exported graphs are subsequently
-imported they will appear as verified.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Note</div>
-<div class="paragraph">
-<p>The implementation may also choose to re-verify any previously verified
-graphs and apply optimisations based upon which references are to be
-exported and how.</p>
-</div>
-<div class="paragraph">
-<p>Any data objects attached to a graph that are hidden, i.e. their references
-are not in the list <em>refs</em>, may be treated by the implementation as virtual
-objects, since they can never be visible when the graph is subsequently
-imported.</p>
-</div>
-<div class="paragraph">
-<p>Note that imported graphs cannot become unverified.
-Attempts to change the graph that might normally cause the graph to be
-unverified, e.g. calling vxSetGraphParameterByIndex with an object with
-different metadata, will fail.</p>
-</div>
-<div class="paragraph">
-<p>The implementation should make sure that all permissible changes of exported
-objects are possible without re-verification.
-For example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A uniform image may be swapped for a non-uniform image, so corresponding
-optimisations should be inhibited if a uniform image appears in the
-<em>refs</em> list</p>
-</li>
-<li>
-<p>An image that is a region of interest of another image may be similarly
-replaced by any other image of matching size and format, and vice-versa</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>If a graph is exported that has delays registered for auto-aging, then this
-information is also exported.</p>
-</div>
-<div class="paragraph">
-<p>If the function is called with NULL for any of its parameters, this is an
-error.</p>
-</div>
-<div class="paragraph">
-<p>The reference counts of objects as visible to the calling application will
-not be affected by calling this function.</p>
-</div>
-<div class="paragraph">
-<p>The export operation will fail if more than one object whose reference is
-listed at <em>refs</em> has been given the same non-zero length name (via
-<code>vxSetReferenceName</code>).</p>
-</div>
-<div class="paragraph">
-<p>If a graph listed for export has any graph parameters not listed at <em>refs</em>,
-then the export operation will fail.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Note</div>
-<div class="paragraph">
-<p>The order of the references supplied in the <em>refs</em> array will be the order
-in which the framwork will supply references for the corresponding import
-operation with <code><a href="#vxImportObjectsFromMemory">vxImportObjectsFromMemory</a></code>.</p>
-</div>
-<div class="paragraph">
-<p>The same length of <em>uses</em> array, containing the same values, and the same
-value of <em>numrefs</em>, must be supplied for the corresponding import operation.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>For objects not listed in <em>refs</em>, the following rules apply:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>In any one graph, if an object is not connected as an output of a node
-in a graph being exported then its data values will be exported (for
-subsequent import).</p>
-</li>
-<li>
-<p>Where the object in (1) is a composite object (such as a pyramid) then
-rule (1) applies to all of its sub-objects.</p>
-</li>
-<li>
-<p>Where the object in (1) is a sub-object such as a region of interest,
-and the composite object (in this case the parent image) does not meet
-the conditions of rule (1), then rule (1) applies to the sub-object
-only.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Parameters</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>[in]</code> <em>context</em> - context from which to export objects, must be valid
-.</p>
-</li>
-<li>
-<p><code>[in]</code> <em>numrefs</em> - number of references to export.</p>
-</li>
-<li>
-<p><code>[in]</code> <em>refs</em> - references to export.
-This is an array of length numrefs populated with the references to
-export.</p>
-</li>
-<li>
-<p><code>[in]</code> <em>uses</em> - how to export the references.
-This is an array of length numrefs containing values as described
-above.</p>
-</li>
-<li>
-<p><code>[out]</code> <em>ptr</em> - returns pointer to binary buffer.
-On error this is set to NULL.</p>
-</li>
-<li>
-<p><code>[out]</code> <em>length</em> - number of bytes at *ptr.
-On error this is set to zero.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> A <code>vx_status</code> value.</p>
-</div>
-<div class="paragraph">
-<p><strong>Return Values</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#VX_SUCCESS">VX_SUCCESS</a></code> - If no errors occurred and the objects were
-sucessfully exported.
-An error is indicated when the return value is not VX_SUCCESS.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>An implementation may provide several different return values to give useful
-diagnostic information in the event of failure to export, but these are not
-required to indicate possible recovery mechanisms, and for safety critical
-use assume errors are not recoverable.</p>
-</div>
-<div class="paragraph">
-<p><strong>Postcondition:</strong> <code><a href="#vxReleaseExportedMemory">vxReleaseExportedMemory</a></code> is used to deallocate the
-memory.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_vxreleaseexportedmemory">vxReleaseExportedMemory</h5>
-<div class="paragraph">
-<p>Releases memory allocated for a binary export when it is no longer required.</p>
-</div>
-<div id="vxReleaseExportedMemory" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">vx_status vxReleaseExportedMemory(
-    vx_context                                  context,
-    <span class="directive">const</span> vx_uint8**                            ptr);</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This function releases memory allocated by
-<code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.</p>
-</div>
-<div class="paragraph">
-<p><strong>Parameters</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>[in]</code> <em>context</em> - The context for which <code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code> was
-called.</p>
-</li>
-<li>
-<p><code>[inout]</code> <em>ptr</em> - A pointer previously set by calling
-<code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.
-The function will fail if <code>*ptr</code> does not contain an address of memory
-previously allocated by <code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Postcondition:</strong> After returning from sucessfully from this function *ptr is
-set to NULL.</p>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> A <code>vx_status</code> value.</p>
-</div>
-<div class="paragraph">
-<p><strong>Return Values</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#VX_SUCCESS">VX_SUCCESS</a></code> - If no errors occurred and the memory was sucessfully
-released.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>An error is indicated when the return value is not VX_SUCCESS.</p>
-</div>
-<div class="paragraph">
-<p>An implementation may provide several different return values to give useful
-diagnostic information in the event of failure to export, but these are not
-required to indicate possible recovery mechanisms, and for safety critical
-use assume errors are not recoverable.</p>
-</div>
-<div class="paragraph">
-<p><strong>Precondition:</strong> <code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code> is used to allocate the
-memory.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="group_import">3.2. Import Objects From Memory API</h3>
-<div class="paragraph">
-<p>Import objects from memory.</p>
-</div>
-<div class="paragraph">
-<p><strong>Macros</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="#VX_TYPE_IMPORT">VX_TYPE_IMPORT</a></code></p>
-</li>
-</ul>
+<p>The Object is created by importing data from a binary format.
+The specification will not define such a format.
+Extensions to the specification will be added in order to define such binary
+formats.</p>
 </div>
 <div class="paragraph">
 <p><strong>Typedefs</strong></p>
@@ -1706,7 +1029,20 @@ memory.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><a href="#vx_import">vx_import</a></code></p>
+<p><code><a href="#vx_classifier_model">vx_classifier_model</a></code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Enumerations</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#vx_classifier_model_format_e">vx_classifier_model_format_e</a></code></p>
+</li>
+<li>
+<p><code><a href="#vx_classifier_type_e">vx_classifier_type_e</a></code></p>
 </li>
 </ul>
 </div>
@@ -1716,341 +1052,149 @@ memory.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><a href="#vxGetImportReferenceByName">vxGetImportReferenceByName</a></code></p>
+<p><code><a href="#vxImportClassifierModel">vxImportClassifierModel</a></code></p>
 </li>
 <li>
-<p><code><a href="#vxImportObjectsFromMemory">vxImportObjectsFromMemory</a></code></p>
-</li>
-<li>
-<p><code><a href="#vxReleaseImport">vxReleaseImport</a></code></p>
+<p><code><a href="#vxReleaseClassifierModel">vxReleaseClassifierModel</a></code></p>
 </li>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_macros_2">3.2.1. Macros</h4>
+<h4 id="_typedefs">2.1.1. Typedefs</h4>
 <div class="sect4">
-<h5 id="_vx_type_import">VX_TYPE_IMPORT</h5>
+<h5 id="_vx_classifier_model">vx_classifier_model</h5>
 <div class="paragraph">
-<p>The Object Type Enumeration for import.</p>
+<p>classification model to be used in <code><a href="#vxScanClassifierNode">vxScanClassifierNode</a></code>.
+The classification models are loadable by undefined binary format see
+<code><a href="#vxImportClassifierModel">vxImportClassifierModel</a></code>.
+Extensions will be added to the specification, to support a defined binary
+format.</p>
 </div>
-<div id="VX_TYPE_IMPORT" class="listingblock">
+<div id="vx_classifier_model" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_TYPE_IMPORT                    <span class="hex">0x814</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>A <code><a href="#vx_import">vx_import</a></code>.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_typedefs">3.2.2. Typedefs</h4>
-<div class="sect4">
-<h5 id="_vx_import">vx_import</h5>
-<div class="paragraph">
-<p>The Import Object.
-Import is a container of OpenVX objects, which may be retreived by name.</p>
-</div>
-<div id="vx_import" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_import *vx_import;</code></pre>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_classifier_model *vx_classifier_model;</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_functions_2">3.2.3. Functions</h4>
+<h4 id="_enumerations">2.1.2. Enumerations</h4>
 <div class="sect4">
-<h5 id="_vxgetimportreferencebyname">vxGetImportReferenceByName</h5>
+<h5 id="_vx_classifier_model_format_e">vx_classifier_model_format_e</h5>
 <div class="paragraph">
-<p>Get a reference from the import object by name.</p>
+<p>Classifier model format enums.
+In the main specification only undefined binary format is supported.
+Extensions to the specification will be added in order to support specific
+binary format.</p>
 </div>
-<div id="vxGetImportReferenceByName" class="listingblock">
+<div id="vx_classifier_model_format_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">vx_reference vxGetImportReferenceByName(
-    vx_import                                   import,
-    <span class="directive">const</span> vx_char*                              name);</code></pre>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_classifier_model_format_e {
+    VX_CLASSIFIER_MODEL_UNDEFINED = VX_ENUM_BASE( VX_ID_KHRONOS, VX_ENUM_CLASSIFIER_MODEL ) + <span class="hex">0x0</span>,
+};</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>All accessible references of the import object created using
-<code><a href="#vxImportObjectsFromMemory">vxImportObjectsFromMemory</a></code> are in the array <em>refs</em>, which is populated
-partly by the application before import, and partly by the framework.
-However, it may be more convenient to access the references in the import
-object without referring to this array, for example if the import object is
-passed as a parameter to another function.
-In this case, references may be retreived by name, assuming that
-<code>vxSetReferenceName</code> was called to assign a name to the reference.
-This function searches the given import for the given name and returns the
-associated reference.</p>
-</div>
-<div class="paragraph">
-<p>The reference may have been named either before export or after
-import.</p>
-</div>
-<div class="paragraph">
-<p>If more than one reference exists in the import with the given name, this is
-an error.</p>
-</div>
-<div class="paragraph">
-<p>Only references in the array <em>refs</em> after calling
-<code><a href="#vxImportObjectsFromMemory">vxImportObjectsFromMemory</a></code> may be retrieved using this function.</p>
-</div>
-<div class="paragraph">
-<p>A reference to a named object may be obtained from a valid import object
-using this API even if all other references to the object have been
-released.</p>
-</div>
-<div class="paragraph">
-<p><strong>Parameters</strong></p>
+<p><strong>Enumerator</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>[in]</code> <em>import</em> - The import object in which to find the name; the
-function will fail if this parameter is not valid.</p>
-</li>
-<li>
-<p><code>[in]</code> <em>name</em> - The name to find, points to a string of at least one and
-less than VX_MAX_REFERENCE_NAME bytes followed by a zero byte; the
-function will fail if this is not valid.</p>
+<p><a id="VX_CLASSIFIER_MODEL_UNDEFINED"></a> <code>VX_CLASSIFIER_MODEL_UNDEFINED</code> -
+Undefined binary format.
+Using this enumeration will result in an implementation defined
+behaviour.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><strong>Returns:</strong> A <code>vx_reference</code>.</p>
-</div>
-<div class="paragraph">
-<p>Calling <code>vxGetStatus</code> with the reference as a parameter will return
-VX_SUCCESS if the function was successful.
-:
-Another value is given to indicate that there was an error.</p>
-</div>
-<div class="paragraph">
-<p>On success, the reference count of the object in question is
-incremented.</p>
-</div>
-<div class="paragraph">
-<p>An implementation may provide several different error codes to give useful
-diagnostic information in the event of failure to retrieve a reference, but
-these are not required to indicate possibly recovery mechanisms, and for
-safety critical use assume errors are not recoverable.</p>
-</div>
-<div class="paragraph">
-<p><strong>Precondition:</strong> <code>vxSetReferenceName</code> was used to name the reference.</p>
-</div>
-<div class="paragraph">
-<p><strong>Postcondition:</strong> use <code>ref vxReleaseReference</code> or appropriate specific
-release function to release a reference obtained by this method.</p>
-</div>
 </div>
 <div class="sect4">
-<h5 id="_vximportobjectsfrommemory">vxImportObjectsFromMemory</h5>
+<h5 id="_vx_classifier_type_e">vx_classifier_type_e</h5>
 <div class="paragraph">
-<p>Imports objects into a context from a vendor-specific format in memory.</p>
+<p>The type enumeration lists all classifier extension types.</p>
 </div>
-<div id="vxImportObjectsFromMemory" class="listingblock">
+<div id="vx_classifier_type_e" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">vx_import vxImportObjectsFromMemory(
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_classifier_type_e {
+    VX_TYPE_CLASSIFIER_MODEL = <span class="hex">0x02C</span>,
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Enumerator</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a id="VX_TYPE_CLASSIFER_MODEL"></a> <code>VX_TYPE_CLASSIFER_MODEL</code> - A
+<code><a href="#vx_classifier_model">vx_classifier_model</a></code> type.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_functions">2.1.3. Functions</h4>
+<div class="sect4">
+<h5 id="_vximportclassifiermodel">vxImportClassifierModel</h5>
+<div class="paragraph">
+<p>Creates an opaque reference classifier model This function creates a
+classifier model to be used in <code><a href="#vxScanClassifierNode">vxScanClassifierNode</a></code>.
+The object classifier object is a read-only constant object.
+It cannot be changed during graph execution.</p>
+</div>
+<div id="vxImportClassifierModel" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"> vx_classifier_model vxImportClassifierModel(
     vx_context                                  context,
-    vx_size                                     numrefs,
-    vx_reference*                               refs,
-    <span class="directive">const</span> vx_enum*                              uses,
+    vx_enum                                     format,
     <span class="directive">const</span> vx_uint8*                             ptr,
     vx_size                                     length);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This function imports objects from a memory blob previously created using
-<code><a href="#vxExportObjectsToMemory">vxExportObjectsToMemory</a></code>.</p>
-</div>
-<div class="paragraph">
-<p>A pointer to memory is given where a list of references is stored, together
-with the list of uses which describes how the references are used.
-The number of references given and the list of uses must match that given
-upon export, or this function will not be sucessful.</p>
-</div>
-<div class="paragraph">
-<p>The <em>uses</em> array specifies how the objects in the corresponding <em>refs</em> array
-will be imported:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The application must create the object and supply the reference; the meta-data of the object must match exactly the meta-data of the object when it was exported, except that the name need not match.  If the supplied reference has a different name to that stored, the supplied name is used.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_EXPORT_VALUES">VX_IX_USE_EXPORT_VALUES</a></code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The implementation will create the object and set the data in it. Any data not defined at the time of export of the object will be set to a default value (zero in the absence of any other definition) upon import.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><a href="#VX_IX_USE_NO_EXPORT_VALUES">VX_IX_USE_NO_EXPORT_VALUES</a></code></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The implementation will create the object and the importing application will set values as applicable.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>References are obtained from the import API for those objects whose
-references were listed at the time of export.
-These are not the same objects; they are equivalent objects created by the
-framework at import time.
-The implementation guarantees that references will be available and valid
-for all objects listed at the time of export, or the import will
-fail.</p>
-</div>
-<div class="paragraph">
-<p>The import operation will fail if more than one object whose reference is
-listed at <em>refs</em> has been given the same non-zero length name (via
-<code>vxSetReferenceName</code>).</p>
-</div>
-<div class="paragraph">
-<p>The import will be unsuccessful if any of the parameters supplied is
-NULL.</p>
-</div>
-<div class="paragraph">
-<p>After completion of the function the memory at <em>ptr</em> may be deallocated by
-the application as it will not be used by any of the created objects.</p>
-</div>
-<div class="paragraph">
-<p>Any delays imported with graphs for which they are registered for auto-aging
-remain registered for auto-aging.</p>
-</div>
-<div class="paragraph">
-<p>After import, a graph must execute with exactly the same effect with respect
-to its visible parameters as before export.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Note</div>
-<div class="paragraph">
-<p>The <em>refs</em> array must be the correct length to hold all references of the
-import; this will be the same length that was supplied at the time of
-export.
-Only references for objects created by the application, where the
-corresponding <em>uses</em> entry is <code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code> should be
-filled in by the application; all other entries will be supplied by the
-framework and may be initialised by the application to NULL.
-The <em>uses</em> array must have the identical length and content as given at the
-time of export, and the value of <em>numrefs</em> must also match; these measures
-increase confidence that the import contains the correct data.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Note</div>
-<div class="paragraph">
-<p>Graph parameters may be changed after import by using the
-<code>vxSetGraphParameterByIndex</code> API, and images may also be changed by using
-the <code>vxSwapImageHandle</code> API.
-When <code>vxSetGraphParameterByIndex</code> is used, the framework will check that the
-new parameter is of the correct type to run with the graph, which cannot be
-re-verified.
-If the reference supplied is not suitable, an error will be returned, but
-there may be circumstances where changing graph parameters for unsuitable
-ones is not detected and could lead to implementation-dependent behaviour;
-one such circumstance is when the new parameters are images corresponding to
-overlapping regions of interest.
-The user should avoid these circumstances.
-In other words,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The meta data of the new graph parameter must match the meta data of the
-graph parameter it replaces.</p>
-</li>
-<li>
-<p>A graph parameter must not be NULL.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
 <p><strong>Parameters</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>[in]</code> <em>context</em> - context into which to import objects, must be valid</p>
+<p><code>[in]</code> <em>context</em> - Reference to the context where to create the
+ClassifierModel.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>numrefs</em> - number of references to import, must match export</p>
+<p><code>[in]</code> <em>format</em> - The binary format which contain the classifier model.
+See <code><a href="#vx_classifier_model_format_e">vx_classifier_model_format_e</a></code>.
+Currently only undefined binary format is supported.
+Extensions will be added to the specification, to support a
+classification model defined binary format.</p>
 </li>
 <li>
-<p><code>[inout]</code> <em>refs</em> - references imported or application-created data which must match meta-data of the export</p>
+<p><code>[in]</code> <em>ptr</em> - A memory pointer to the binary format.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>uses</em> - how to import the references, must match export values</p>
-</li>
-<li>
-<p><code>[in]</code> <em>ptr</em> - pointer to binary buffer containing a valid binary export</p>
-</li>
-<li>
-<p><code>[in]</code> <em>length</em> - number of bytes at *ptr, i.e. the length of the export</p>
+<p><code>[in]</code> <em>length</em> - size in bytes of binary format data.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Returns:</strong> A <code><a href="#vx_import">vx_import</a></code>.
-Calling <code>vxGetStatus</code> with the <code>vx_import</code> as a parameter will return
-VX_SUCCESS if the function was successful.</p>
-</div>
-<div class="paragraph">
-<p>Another value is given to indicate that there was an error.</p>
-</div>
-<div class="paragraph">
-<p>An implementation may provide several different error codes to give useful
-diagnostic information in the event of failure to import objects, but these
-are not required to indicate possibly recovery mechanisms, and for safety
-critical use assume errors are not recoverable.</p>
-</div>
-<div class="paragraph">
-<p><strong>Postcondition:</strong> <code><a href="#vxReleaseImport">vxReleaseImport</a></code> is used to release the import object.</p>
-</div>
-<div class="paragraph">
-<p><strong>Postcondition:</strong> Use <code>vxReleaseReference</code> or an appropriate specific release
-function to release the references in the array refs when they are no longer
-required.</p>
+<p><strong>Returns:</strong> A ClassifierModel reference <code><a href="#vx_classifier_model">vx_classifier_model</a></code>.
+Any possible errors preventing a successful creation should be checked using
+<code>vxGetStatus</code>.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_vxreleaseimport">vxReleaseImport</h5>
+<h5 id="_vxreleaseclassifiermodel">vxReleaseClassifierModel</h5>
 <div class="paragraph">
-<p>Releases an import object when no longer required.</p>
+<p>Releases a reference of an ClassifierModel object.
+The object may not be garbage collected until its total reference and its
+contained objects count is zero.
+After returning from this function the reference is zeroed/cleared.</p>
 </div>
-<div id="vxReleaseImport" class="listingblock">
+<div id="vxReleaseClassifierModel" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">vx_status vxReleaseImport(
-    vx_import*                                  import);</code></pre>
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxReleaseClassifierModel(
+    vx_classifier_model*                        model);</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>This function releases the reference to the import object.</p>
-</div>
-<div class="paragraph">
-<p>Other objects including those imported at the time of creation of the import
-object are unaffected.</p>
 </div>
 <div class="paragraph">
 <p><strong>Parameters</strong></p>
@@ -2058,17 +1202,12 @@ object are unaffected.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>[inout]</code> <em>import</em> - The pointer to the reference to the import
-object.</p>
+<p><code>[in]</code> <em>model</em> - The pointer to the ClassifierModel to release.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Postcondition:</strong> After returning sucessfully from this function the
-reference is zeroed.</p>
-</div>
-<div class="paragraph">
-<p><strong>Returns:</strong> A <code>vx_status</code> value.</p>
+<p><strong>Returns:</strong> A <code>vx_status_e</code> enumeration.</p>
 </div>
 <div class="paragraph">
 <p><strong>Return Values</strong></p>
@@ -2076,23 +1215,138 @@ reference is zeroed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><a href="#VX_SUCCESS">VX_SUCCESS</a></code> - If no errors occurred and the import was sucessfully
-released.</p>
+<p>&lt;tt&gt; -</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="group_vision_function_classifier">2.2. Scan Classifier</h3>
 <div class="paragraph">
-<p>An error is indicated when the return value is not VX_SUCCESS.</p>
+<p>Scans a feature-map (input_feature_map) and do the classification for each
+scan-window.</p>
 </div>
 <div class="paragraph">
-<p>An implementation may provide several different return values to give useful
-diagnostic information in the event of failure to export, but these are not
-required to indicate possibly recovery mechanisms, and for safety critical
-use assume errors are not recoverable.</p>
+<p>This function scans a feature-map.
+Each window in the feature map is classified by a classification model.
+The classification models are loadable by undefined binary format see
+<code><a href="#vxImportClassifierModel">vxImportClassifierModel</a></code>.
+Extensions will be added to the specification, to support a defined binary
+format.
+Classification models can be any machine learning classification method.
+Examples are Cascade, SVM, and Neural Networks.</p>
 </div>
 <div class="paragraph">
-<p><strong>Precondition:</strong> <code><a href="#vxImportObjectsFromMemory">vxImportObjectsFromMemory</a></code> is used to create an import
-object.</p>
+<p><strong>Functions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#vxScanClassifierNode">vxScanClassifierNode</a></code></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_functions_2">2.2.1. Functions</h4>
+<div class="sect4">
+<h5 id="_vxscanclassifiernode">vxScanClassifierNode</h5>
+<div class="paragraph">
+<p>[Graph] Scans a feature-map (input_feature_map) and detect the
+classification for each scan-window.</p>
+</div>
+<div id="vxScanClassifierNode" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">vx_node vxScanClassifierNode(
+    vx_graph                                    graph,
+    vx_tensor                                   input_feature_map,
+    vx_classifier_model                         model,
+    vx_int32                                    scanwindow_width,
+    vx_int32                                    scanwindow_height,
+    vx_int32                                    step_x,
+    vx_int32                                    step_y,
+    vx_array                                    object_confidences,
+    vx_array                                    object_rectangles,
+    vx_scalar                                   num_objects);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[in]</code> <em>graph</em> - The reference to the graph</p>
+</li>
+<li>
+<p><code>[in]</code> <em>input_feature_map</em> - The Feature-map, example is the output of
+<code>vxHOGFeaturesNode</code>.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>model</em> - The pre-trained model loaded.
+Loaded using <code><a href="#vxImportClassifierModel">vxImportClassifierModel</a></code></p>
+</li>
+<li>
+<p><code>[in]</code> <em>scan_window_width</em> - Width of the scan window</p>
+</li>
+<li>
+<p><code>[in]</code> <em>scan_window_height</em> - Height of the scan window</p>
+</li>
+<li>
+<p><code>[in]</code> <em>step_x</em> - Horizontal step-size (along x-axis)</p>
+</li>
+<li>
+<p><code>[in]</code> <em>step_y</em> - Vertical step-size (along y-axis)</p>
+</li>
+<li>
+<p><code>[out]</code> <em>object_confidences</em> - [Optional] An array of confidences measure,
+the measure is of type <code>VX_TYPE_UINT16</code>.
+The confidence measure is defined by the extensions which define
+classification model with defined binary format.
+This output can be used as class index as well.
+In case we detect several different classes in single execution.
+The output will be an array of indexes of the classes.</p>
+</li>
+<li>
+<p><code>[out]</code> <em>object_rectangles</em> - An array of object positions, in
+<code>VX_TYPE_RECTANGLE</code></p>
+</li>
+<li>
+<p><code>[out]</code> <em>num_objects</em> - [optional] The number of object detected in a
+<code>VX_SIZE</code> scalar</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
+<div class="paragraph">
+<p>The border mode <code>VX_NODE_BORDER</code> value <code>VX_BORDER_UNDEFINED</code> is supported.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Returns:</strong> <code>vx_node</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Return Values</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>vx_node</code> - A node reference.
+Any possible errors preventing a successful creation should be checked
+using <code>vxGetStatus</code></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2102,8 +1356,8 @@ object.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.1.1<br>
-Last updated 2018-08-14 21:03:49 PDT
+Version 1.2.1 (provisional)<br>
+Last updated 2018-07-10 21:07:07 PDT
 </div>
 </div>
 
