@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xmlns = The default location to find unknown elem/attr -->
+<!-- xmlns:vx = A specific name for our namespace (same as default) -->
+<!-- xmlns:xs = The location of the "schema" (xs) namespace -->
+<!-- targetNamespace = When we define elem/attr here they go into this namespace -->
+<!-- Elements have to be fully qualified in their namespaces -->
+<!-- Attributes do not have to be fully qualified in their namespaces -->
+<xs:schema xmlns="https://www.khronos.org/registry/vx/schema" targetNamespace="https://www.khronos.org/registry/vx/schema" xmlns:vx="https://www.khronos.org/registry/vx/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- TYPEDEFS -->
+	<xs:attributeGroup name="referrable">
+		<xs:annotation>
+			<xs:documentation> All referrable OpenVX objects have a reference attribute.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="reference" type="xs:nonNegativeInteger" use="required" />
+		<xs:attribute name="name" type="xs:string" use="optional" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="indexable">
+		<xs:attribute name="index" type="xs:nonNegativeInteger" use="required" />
+	</xs:attributeGroup>
+	<xs:complexType name="openvx.type">
+		<xs:sequence>
+			<xs:sequence>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="library" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="struct" minOccurs="0" maxOccurs="unbounded" />
+				</xs:choice>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="graph" minOccurs="1" maxOccurs="unbounded" />
+					<xs:element ref="scalar" minOccurs="1" maxOccurs="unbounded" />
+					<xs:element ref="array" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="image" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="lut" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="matrix" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="delay" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="object_array" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="distribution" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="convolution" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="remap" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="pyramid" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element ref="threshold" minOccurs="0" maxOccurs="unbounded" />
+				</xs:choice>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute name="references" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation> The Overall OpenVX tag indicates how many references are contained inside. This counts all data types plus graphs plus nodes.
+								All reference values in this document shall be bound from 0 to "references"-1 (any order).
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="graph.parameter.type">
+		<xs:attribute name="node" type="xs:nonNegativeInteger" use="required">
+			<xs:annotation>
+				<xs:documentation> This is the reference of the node which contains the parameter.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="parameter" type="xs:nonNegativeInteger" use="required">
+			<xs:annotation>
+				<xs:documentation> This is the index of the parameter on the node.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="index" type="xs:nonNegativeInteger" use="required">
+			<xs:annotation>
+				<xs:documentation> This is the index of the graph parameter as it relates to the graph, not the node parameter.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="graph.type">
+		<xs:sequence>
+			<xs:element ref="node" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="parameter" type="graph.parameter.type" minOccurs="0" maxOccurs="unbounded" />
+			<!-- These are the virtual objects which are tied to the graph -->
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="image" type="virtual.image.type" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="array" type="virtual.array.type" minOccurs="0" maxOccurs="unbounded" />
+					<xs:element name="pyramid" type="virtual.pyramid.type" minOccurs="0" maxOccurs="unbounded" />
+				</xs:choice>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attribute name="nodes" type="xs:positiveInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation> Graphs may optional hint about how many nodes are listed inside.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="node.type">
+		<xs:sequence>
+			<xs:element name="kernel" type="kernel.type" minOccurs="1" maxOccurs="1" />
+			<xs:element name="parameter" type="parameter.type" minOccurs="1" maxOccurs="10" />
+			<xs:element name="borderconst" type="hex.4.string.type" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute name="bordermode" type="bordermode.type" use="optional" default="UNDEFINED" />
+		<xs:attribute name="is_replicated" type="xs:boolean" use="optional" default="false" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="parameter.type">
+		<xs:attribute name="index" type="index.type" use="required" />
+		<xs:attribute name="reference" type="xs:nonNegativeInteger" use="required" />
+		<xs:attribute name="replicate_flag" type="xs:boolean" use="optional" default="false"/>
+	</xs:complexType>
+	<xs:simpleType name="kernel.type">
+		<xs:annotation>
+			<xs:documentation> Kernel Names must match a "dotted hierarchy" pattern of at least 1 level. Example: org.khronos.vision.sobel3x3 - pass Example:
+				my.kernelname - pass Example: kernelname - fail
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9A-Za-z_-]+(\.[0-9A-Za-z_-]+)+" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="bordermode.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="UNDEFINED" />
+			<xs:enumeration value="CONSTANT" />
+			<xs:enumeration value="REPLICATE" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="df_image.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VIRT" />
+			<xs:enumeration value="RGB2" />
+			<xs:enumeration value="RGBA" />
+			<xs:enumeration value="NV12" />
+			<xs:enumeration value="NV21" />
+			<xs:enumeration value="UYVY" />
+			<xs:enumeration value="YUYV" />
+			<xs:enumeration value="IYUV" />
+			<xs:enumeration value="YUV4" />
+			<xs:enumeration value="U008" />
+			<xs:enumeration value="U016" />
+			<xs:enumeration value="S016" />
+			<xs:enumeration value="U032" />
+			<xs:enumeration value="S032" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="df_image.list.type">
+		<xs:list itemType="df_image.type" />
+	</xs:simpleType>
+	<xs:simpleType name="colorspace.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BT601_525" />
+			<xs:enumeration value="BT601_625" />
+			<xs:enumeration value="BT709" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="colorrange.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FULL" />
+			<xs:enumeration value="RESTRICTED" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="invalid.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VX_TYPE_INVALID" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="atomic.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VX_TYPE_CHAR" />
+			<xs:enumeration value="VX_TYPE_UINT8" />
+			<xs:enumeration value="VX_TYPE_INT8" />
+			<xs:enumeration value="VX_TYPE_UINT16" />
+			<xs:enumeration value="VX_TYPE_INT16" />
+			<xs:enumeration value="VX_TYPE_UINT32" />
+			<xs:enumeration value="VX_TYPE_INT32" />
+			<xs:enumeration value="VX_TYPE_UINT64" />
+			<xs:enumeration value="VX_TYPE_INT64" />
+			<xs:enumeration value="VX_TYPE_FLOAT32" />
+			<xs:enumeration value="VX_TYPE_FLOAT64" />
+			<xs:enumeration value="VX_TYPE_ENUM" />
+			<xs:enumeration value="VX_TYPE_SIZE" />
+			<xs:enumeration value="VX_TYPE_DF_IMAGE" />
+			<xs:enumeration value="VX_TYPE_BOOL" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="scalar.type">
+		<xs:choice>
+			<xs:element name="char" type="char.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="uint8" type="uint8.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="uint16" type="uint16.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="uint32" type="uint32.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="uint64" type="uint64.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="int8" type="int8.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="int16" type="int16.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="int32" type="int32.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="int64" type="int64.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="float32" type="float32.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="float64" type="float64.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="enum" type="int32.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="df_image" type="df_image.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="size" type="uint64.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="bool" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+		</xs:choice>
+		<xs:attribute name="elemType" type="atomic.type" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:simpleType name="struct.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VX_TYPE_KEYPOINT" />
+			<xs:enumeration value="VX_TYPE_RECTANGLE" />
+			<xs:enumeration value="VX_TYPE_COORDINATES2D" />
+			<xs:enumeration value="VX_TYPE_COORDINATES3D" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="object.type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VX_TYPE_ARRAY" />
+			<xs:enumeration value="VX_TYPE_IMAGE" />
+			<xs:enumeration value="VX_TYPE_LUT" />
+			<xs:enumeration value="VX_TYPE_MATRIX" />
+			<xs:enumeration value="VX_TYPE_DELAY" />
+			<xs:enumeration value="VX_TYPE_OBJECT_ARRAY" />
+			<xs:enumeration value="VX_TYPE_DISTRIBUTION" />
+			<xs:enumeration value="VX_TYPE_CONVOLUTION" />
+			<xs:enumeration value="VX_TYPE_SCALAR" />
+			<xs:enumeration value="VX_TYPE_THRESHOLD" />
+			<xs:enumeration value="VX_TYPE_PYRAMID" />
+			<xs:enumeration value="VX_TYPE_REMAP" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="index.type">
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxExclusive value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="hex.type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([a-fA-F0-9][a-fA-F0-9])+" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="char.type">
+		<xs:restriction base="xs:string">
+			<xs:length value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="int8.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:byte" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="uint8.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedByte" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="int16.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:short" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="uint16.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedShort" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="int32.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:int" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="uint32.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedInt" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="int64.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:long" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="uint64.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedLong" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="float32.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:float" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="float64.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:double" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="enum.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:int" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="size.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedLong" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="bool.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean" />
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="user.struct.type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="USER_STRUCT_[0-9]+" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="user.struct.type.ext">
+		<xs:simpleContent>
+			<xs:extension base="user.struct.type">
+				<xs:attribute name="size" type="xs:positiveInteger" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="array.type.type">
+		<xs:union memberTypes="atomic.type struct.type user.struct.type" />
+	</xs:simpleType>
+	<xs:simpleType name="virtual.array.type.type">
+		<xs:union memberTypes="invalid.type array.type.type" />
+	</xs:simpleType>
+	<xs:complexType name="array.type">
+		<xs:choice>
+			<xs:element name="char" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="uint8" type="uint8.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="uint16" type="uint16.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="uint32" type="uint32.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="uint64" type="uint64.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="int8" type="int8.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="int16" type="int16.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="int32" type="int32.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="int64" type="int64.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="float32" type="float32.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="float64" type="float64.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="enum" type="int32.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="df_image" type="df_image.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="bool" type="bool.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="size" type="uint64.list.type" minOccurs="0" maxOccurs="1" />
+			<xs:element name="keypoint" type="keypoint.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="coordinates2d" type="coordinates2d.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="coordinates3d" type="coordinates3d.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="rectangle" type="rectangle.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="user" type="uint8.list.type" minOccurs="0" maxOccurs="unbounded" />
+		</xs:choice>
+		<xs:attribute name="capacity" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="elemType" type="array.type.type" use="required" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="virtual.array.type">
+		<xs:attribute name="capacity" type="xs:nonNegativeInteger" default="0" />
+		<xs:attribute name="elemType" type="virtual.array.type.type" default="VX_TYPE_INVALID" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:simpleType name="planeindex.type">
+		<xs:restriction base="xs:unsignedInt">
+			<xs:maxExclusive value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="image_addressable">
+		<xs:attribute name="x" type="xs:unsignedInt" use="required" />
+		<xs:attribute name="y" type="xs:unsignedInt" use="required" />
+	</xs:attributeGroup>
+	<xs:complexType name="image.uint8.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedByte">
+				<xs:attributeGroup ref="image_addressable" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="image.uint16.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedShort">
+				<xs:attributeGroup ref="image_addressable" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="image.uint32.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedInt">
+				<xs:attributeGroup ref="image_addressable" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="image.int16.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:short">
+				<xs:attributeGroup ref="image_addressable" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="image.int32.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:int">
+				<xs:attributeGroup ref="image_addressable" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="bool.list.type">
+		<xs:list itemType="xs:boolean" />
+	</xs:simpleType>
+	<xs:simpleType name="uint8.list.type">
+		<xs:list itemType="xs:unsignedByte" />
+	</xs:simpleType>
+	<xs:simpleType name="uint16.list.type">
+		<xs:list itemType="xs:unsignedShort" />
+	</xs:simpleType>
+	<xs:simpleType name="uint32.list.type">
+		<xs:list itemType="xs:unsignedInt" />
+	</xs:simpleType>
+	<xs:simpleType name="uint64.list.type">
+		<xs:list itemType="xs:unsignedLong" />
+	</xs:simpleType>
+	<xs:simpleType name="int8.list.type">
+		<xs:list itemType="xs:byte" />
+	</xs:simpleType>
+	<xs:simpleType name="int16.list.type">
+		<xs:list itemType="xs:short" />
+	</xs:simpleType>
+	<xs:simpleType name="int32.list.type">
+		<xs:list itemType="xs:int" />
+	</xs:simpleType>
+	<xs:simpleType name="int64.list.type">
+		<xs:list itemType="xs:long" />
+	</xs:simpleType>
+	<xs:simpleType name="float32.list.type">
+		<xs:list itemType="xs:float" />
+	</xs:simpleType>
+	<xs:simpleType name="float64.list.type">
+		<xs:list itemType="xs:double" />
+	</xs:simpleType>
+	<xs:simpleType name="tuple.2.uint8.type">
+		<xs:restriction base="uint8.list.type">
+			<xs:length value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tuple.3.uint8.type">
+		<xs:restriction base="uint8.list.type">
+			<xs:length value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tuple.4.uint8.type">
+		<xs:restriction base="uint8.list.type">
+			<xs:length value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tuple.4.uint32.type">
+		<xs:restriction base="uint32.list.type">
+			<xs:length value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tuple.2.int32.type">
+		<xs:restriction base="int32.list.type">
+			<xs:length value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tuple.3.int32.type">
+		<xs:restriction base="int32.list.type">
+			<xs:length value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tuple.2.uint32.type">
+		<xs:restriction base="uint32.list.type">
+			<xs:length value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tuple.3.uint32.type">
+		<xs:restriction base="uint32.list.type">
+			<xs:length value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="hex.3.string.type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\#[0-9A-Fa-f]{6}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="rgb.string.type">
+		<xs:union memberTypes="hex.3.string.type tuple.3.uint8.type" />
+	</xs:simpleType>
+	<xs:simpleType name="hex.4.string.type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\#[0-9A-Fa-f]{8}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="rgba.string.type">
+		<xs:union memberTypes="hex.4.string.type tuple.4.uint8.type" />
+	</xs:simpleType>
+	<xs:complexType name="image.rgb.type">
+		<xs:simpleContent>
+			<xs:extension base="rgb.string.type">
+				<xs:attributeGroup ref="image_addressable" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="image.rgba.type">
+		<xs:simpleContent>
+			<xs:extension base="rgba.string.type">
+				<xs:attributeGroup ref="image_addressable" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="image.422.type">
+		<xs:simpleContent>
+			<xs:extension base="tuple.2.uint8.type">
+				<xs:attributeGroup ref="image_addressable" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="rectangle.type">
+		<xs:sequence>
+			<xs:element name="start_x" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+			<xs:element name="start_y" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+			<xs:element name="end_x" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+			<xs:element name="end_y" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="coordinates2d.type">
+		<xs:sequence>
+			<xs:element name="x" type="xs:unsignedInt" minOccurs="1" maxOccurs="1" />
+			<xs:element name="y" type="xs:unsignedInt" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="coordinates3d.type">
+		<xs:sequence>
+			<xs:element name="x" type="xs:unsignedInt" minOccurs="1" maxOccurs="1" />
+			<xs:element name="y" type="xs:unsignedInt" minOccurs="1" maxOccurs="1" />
+			<xs:element name="z" type="xs:unsignedInt" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="image.pixel.type">
+		<xs:choice>
+			<xs:element name="uint8" type="image.uint8.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="uint16" type="image.uint16.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="uint32" type="image.uint32.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="int16" type="image.int16.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="int32" type="image.int32.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="rgb" type="image.rgb.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="rgba" type="image.rgba.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="yuv" type="image.422.type" minOccurs="0" maxOccurs="unbounded" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="uniform.image.pixel.type">
+		<xs:choice>
+			<xs:element name="uint8" type="xs:unsignedByte" minOccurs="1" maxOccurs="1" />
+			<xs:element name="uint16" type="xs:unsignedShort" minOccurs="1" maxOccurs="1" />
+			<xs:element name="uint32" type="xs:unsignedInt" minOccurs="1" maxOccurs="1" />
+			<xs:element name="int16" type="xs:short" minOccurs="1" maxOccurs="1" />
+			<xs:element name="int32" type="xs:int" minOccurs="1" maxOccurs="1" />
+			<xs:element name="rgb" type="rgb.string.type" minOccurs="1" maxOccurs="1" />
+			<xs:element name="rgba" type="rgba.string.type" minOccurs="1" maxOccurs="1" />
+			<xs:element name="yuv" type="tuple.3.uint8.type" minOccurs="1" maxOccurs="1" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="image.rectangle.type">
+		<xs:complexContent>
+			<xs:extension base="rectangle.type">
+				<xs:sequence>
+					<xs:element name="pixels" type="image.pixel.type" minOccurs="1" maxOccurs="unbounded" >
+						<xs:unique name="image_pixels_key">
+							<xs:selector xpath=".//vx:uint8|.//vx:uint16|.//vx:uint32|.//vx:int16|.//vx:int32|.//vx:rgb|.//vx:rgba|.//vx:yuv" />
+							<xs:field xpath="@x" />
+							<xs:field xpath="@y" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="plane" type="planeindex.type" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="image.roi.type">
+		<xs:sequence>
+			<xs:element name="roi" type="image.roi.type" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="start_x" type="xs:unsignedInt" use="required" />
+		<xs:attribute name="start_y" type="xs:unsignedInt" use="required" />
+		<xs:attribute name="end_x" type="xs:unsignedInt" use="required" />
+		<xs:attribute name="end_y" type="xs:unsignedInt" use="required" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="image.type">
+		<xs:sequence>
+			<xs:element name="roi" type="image.roi.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:choice>
+				<xs:element name="uniform" type="uniform.image.pixel.type" minOccurs="0" maxOccurs="1" />
+				<xs:element name="rectangle" type="image.rectangle.type" minOccurs="0" maxOccurs="unbounded" />
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="width" type="xs:positiveInteger" default="320" />
+		<xs:attribute name="height" type="xs:positiveInteger" default="240" />
+		<xs:attribute name="format" type="df_image.type" default="U008" />
+		<xs:attribute name="colorspace" type="colorspace.type" use="optional" default="BT709" />
+		<xs:attribute name="colorrange" type="colorrange.type" use="optional" default="FULL" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="virtual.image.type">
+		<xs:attribute name="width" type="xs:nonNegativeInteger" default="0" />
+		<xs:attribute name="height" type="xs:nonNegativeInteger" default="0" />
+		<xs:attribute name="format" type="df_image.type" default="VIRT" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="pyramid.image.type">
+		<xs:complexContent>
+			<xs:extension base="image.type">
+				<xs:attribute name="level" type="xs:nonNegativeInteger" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="pyramid.type">
+		<xs:complexContent>
+			<xs:extension base="image.type">
+				<xs:sequence>
+					<xs:element name="image" type="pyramid.image.type" minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+				<xs:attribute name="levels" type="xs:positiveInteger" default="4" />
+				<xs:attribute name="scale" type="xs:float" default="0.5" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="virtual.pyramid.type">
+		<xs:complexContent>
+			<xs:extension base="virtual.image.type">
+				<xs:attribute name="levels" type="xs:positiveInteger" default="4" />
+				<xs:attribute name="scale" type="xs:float" default="0.5" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="lut.count.type">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="256" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="indexed.uint8.type">
+		<xs:complexContent>
+			<xs:extension base="uint8.type">
+				<xs:attributeGroup ref="indexable" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="lut.type">
+		<xs:sequence>
+			<xs:element name="uint8" type="indexed.uint8.type" minOccurs="0" maxOccurs="256" />
+		</xs:sequence>
+		<xs:attribute name="count" type="lut.count.type" default="256" />
+		<xs:attribute name="elemType" type="atomic.type" default="VX_TYPE_UINT8" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="mat.int32.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:int">
+				<xs:attribute name="row" type="xs:nonNegativeInteger" use="required" />
+				<xs:attribute name="column" type="xs:nonNegativeInteger" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="mat.f32.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:float">
+				<xs:attribute name="row" type="xs:nonNegativeInteger" use="required" />
+				<xs:attribute name="column" type="xs:nonNegativeInteger" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="matrix.type">
+		<xs:choice>
+			<xs:element name="int32" type="mat.int32.type" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="float32" type="mat.f32.type" minOccurs="0" maxOccurs="unbounded" />
+		</xs:choice>
+		<xs:attribute name="rows" type="xs:positiveInteger" default="1" />
+		<xs:attribute name="columns" type="xs:positiveInteger" default="1" />
+		<xs:attribute name="elemType" default="VX_TYPE_FLOAT32">
+			<xs:simpleType>
+				<xs:restriction base="atomic.type">
+					<xs:enumeration value="VX_TYPE_INT32" />
+					<xs:enumeration value="VX_TYPE_FLOAT32" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="delay.type">
+		<xs:choice>
+			<xs:element ref="image" maxOccurs="unbounded" />
+			<xs:element ref="array" maxOccurs="unbounded" />
+			<xs:element ref="lut" maxOccurs="unbounded" />
+			<xs:element ref="matrix" maxOccurs="unbounded" />
+			<xs:element ref="distribution" maxOccurs="unbounded" />
+			<xs:element ref="convolution" maxOccurs="unbounded" />
+			<xs:element ref="pyramid" maxOccurs="unbounded" />
+			<xs:element ref="threshold" maxOccurs="unbounded" />
+			<xs:element ref="remap" maxOccurs="unbounded" />
+			<xs:element ref="scalar" maxOccurs="unbounded" />
+			<xs:element ref="object_array" maxOccurs="unbounded" />
+		</xs:choice>
+		<xs:attribute name="objType">
+			<xs:simpleType>
+				<xs:restriction base="object.type">
+					<!-- delays can not contain delays -->
+					<xs:enumeration value="VX_TYPE_ARRAY" />
+					<xs:enumeration value="VX_TYPE_IMAGE" />
+					<xs:enumeration value="VX_TYPE_LUT" />
+					<xs:enumeration value="VX_TYPE_MATRIX" />
+					<xs:enumeration value="VX_TYPE_DISTRIBUTION" />
+					<xs:enumeration value="VX_TYPE_CONVOLUTION" />
+					<xs:enumeration value="VX_TYPE_PYRAMID" />
+					<xs:enumeration value="VX_TYPE_THRESHOLD" />
+					<xs:enumeration value="VX_TYPE_SCALAR" />
+					<xs:enumeration value="VX_TYPE_REMAP" />
+					<xs:enumeration value="VX_TYPE_OBJECT_ARRAY" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="object_array.type">
+		<xs:choice>
+			<xs:element ref="image" maxOccurs="unbounded" />
+			<xs:element ref="array" maxOccurs="unbounded" />
+			<xs:element ref="lut" maxOccurs="unbounded" />
+			<xs:element ref="matrix" maxOccurs="unbounded" />
+			<xs:element ref="distribution" maxOccurs="unbounded" />
+			<xs:element ref="convolution" maxOccurs="unbounded" />
+			<xs:element ref="pyramid" maxOccurs="unbounded" />
+			<xs:element ref="threshold" maxOccurs="unbounded" />
+			<xs:element ref="remap" maxOccurs="unbounded" />
+			<xs:element ref="scalar" maxOccurs="unbounded" />
+		</xs:choice>
+		<xs:attribute name="objType">
+			<xs:simpleType>
+				<xs:restriction base="object.type">
+					<!-- object_array can not contain object_arrays or delays -->
+					<xs:enumeration value="VX_TYPE_ARRAY" />
+					<xs:enumeration value="VX_TYPE_IMAGE" />
+					<xs:enumeration value="VX_TYPE_LUT" />
+					<xs:enumeration value="VX_TYPE_MATRIX" />
+					<xs:enumeration value="VX_TYPE_DISTRIBUTION" />
+					<xs:enumeration value="VX_TYPE_CONVOLUTION" />
+					<xs:enumeration value="VX_TYPE_PYRAMID" />
+					<xs:enumeration value="VX_TYPE_THRESHOLD" />
+					<xs:enumeration value="VX_TYPE_SCALAR" />
+					<xs:enumeration value="VX_TYPE_REMAP" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="count" type="xs:positiveInteger" use="required" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="freq.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:unsignedInt">
+				<xs:attribute name="bin" type="xs:nonNegativeInteger" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="distribution.type">
+		<xs:sequence>
+			<xs:element name="frequency" type="freq.type" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="bins" type="xs:positiveInteger" default="16" />
+		<xs:attribute name="offset" type="xs:nonNegativeInteger" default="0" />
+		<xs:attribute name="range" type="xs:positiveInteger" default="256" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="coeff16.type">
+		<xs:simpleContent>
+			<xs:extension base="xs:short">
+				<xs:attribute name="row" type="xs:nonNegativeInteger" use="required" />
+				<xs:attribute name="column" type="xs:nonNegativeInteger" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="convolution.type">
+		<xs:sequence>
+			<xs:element name="int16" type="coeff16.type" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="rows" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="columns" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="scale" type="xs:unsignedInt" default="1" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="remap_point.type">
+		<xs:attribute name="src_x" type="xs:float" use="required" />
+		<xs:attribute name="src_y" type="xs:float" use="required" />
+		<xs:attribute name="dst_x" type="xs:unsignedInt" use="required" />
+		<xs:attribute name="dst_y" type="xs:unsignedInt" use="required" />
+	</xs:complexType>
+	<xs:complexType name="remap.type">
+		<xs:sequence>
+			<xs:element name="point" type="remap_point.type" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="src_width" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="src_height" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="dst_width" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="dst_height" type="xs:positiveInteger" use="required" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:simpleType name="signed_or_unsigned_int.type">
+		<xs:restriction base="xs:long">
+			<xs:minInclusive value="-2147483648" />
+			<xs:maxInclusive value="4294967295" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="threshold.type">
+		<xs:choice>
+			<xs:element name="binary" type="signed_or_unsigned_int.type" maxOccurs="1" />
+			<xs:element name="range" maxOccurs="1">
+				<xs:complexType>
+					<xs:attribute name="lower" type="signed_or_unsigned_int.type" />
+					<xs:attribute name="upper" type="signed_or_unsigned_int.type" />
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="elemType" default="VX_TYPE_UINT8">
+			<xs:simpleType>
+				<xs:restriction base="atomic.type">
+					<xs:enumeration value="VX_TYPE_UINT8" />
+					<xs:enumeration value="VX_TYPE_INT8" />
+					<xs:enumeration value="VX_TYPE_UINT16" />
+					<xs:enumeration value="VX_TYPE_INT16" />
+					<xs:enumeration value="VX_TYPE_UINT32" />
+					<xs:enumeration value="VX_TYPE_INT32" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="true_value"  type="signed_or_unsigned_int.type" />
+		<xs:attribute name="false_value" type="signed_or_unsigned_int.type" />
+		<xs:attributeGroup ref="referrable" />
+	</xs:complexType>
+	<xs:complexType name="keypoint.type">
+		<xs:sequence>
+			<xs:element name="x" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1" />
+			<xs:element name="y" type="xs:nonNegativeInteger" minOccurs="1" maxOccurs="1" />
+			<xs:element name="strength" type="xs:float" minOccurs="1" maxOccurs="1" />
+			<xs:element name="scale" type="xs:float" default="1.0" minOccurs="0" maxOccurs="1" />
+			<xs:element name="orientation" type="xs:float" default="0.0" minOccurs="0" maxOccurs="1" />
+			<xs:element name="tracking_status" type="xs:nonNegativeInteger" default="1" minOccurs="0" maxOccurs="1" />
+			<xs:element name="error" type="xs:float" default="0.0" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ELEMENT DEFS AND KEYS -->
+	<xs:element name="openvx" type="openvx.type">
+		<xs:key name="reference_key">
+			<xs:selector
+				xpath="./vx:graph|.//vx:node|./vx:scalar|.//vx:array|.//vx:image|./vx:distribution|./vx:delay|./vx:object_array|./vx:lut|.//vx:pyramid|./vx:threshold|./vx:matrix|./vx:convolution|./vx:remap" />
+			<xs:field xpath="@reference" />
+		</xs:key>
+		<!-- Parameters must reference declared objects -->
+		<xs:keyref name="parameter_keyref" refer="reference_key">
+			<xs:selector xpath="./vx:graph/vx:node/vx:parameter" />
+			<xs:field xpath="@reference" />
+		</xs:keyref>
+		<!-- Graph parameter node references must refer to nodes (ideally within the same graph ) -->
+		<xs:keyref name="gp_node_keyref" refer="reference_key">
+			<xs:selector xpath="./vx:graph/vx:parameter" />
+			<xs:field xpath="@node" />
+		</xs:keyref>
+	</xs:element>
+	<xs:element name="graph" type="graph.type">
+		<!-- Graph parameter indexes must be unique, but only within a Graph -->
+		<xs:key name="gp_index_key">
+			<xs:selector xpath="./vx:parameter" />
+			<xs:field xpath="@index" />
+		</xs:key>
+		<!-- Graph parameters must refer to node parameter indexes <xs:keyref name="gp_param_keyref" refer="parameter_id_key"> <xs:selector xpath="./vx:parameter" /> <xs:field 
+			xpath="@parameter" /> </xs:keyref> -->
+	</xs:element>
+	<xs:element name="node" type="node.type">
+		<xs:key name="parameter_id_key">
+			<xs:selector xpath="./vx:parameter" />
+			<xs:field xpath="@index" />
+		</xs:key>
+	</xs:element>
+	<xs:element name="library" type="xs:string" />
+	<xs:element name="struct" type="user.struct.type.ext" />
+	<xs:element name="scalar" type="scalar.type" />
+	<xs:element name="array" type="array.type" />
+	<xs:element name="image" type="image.type" />
+	<xs:element name="lut" type="lut.type" />
+	<xs:element name="matrix" type="matrix.type">
+		<xs:key name="matrix_key">
+			<xs:selector xpath="./vx:int32|./vx:float32" />
+			<xs:field xpath="@row" />
+			<xs:field xpath="@column" />
+		</xs:key>
+	</xs:element>
+	<xs:element name="delay" type="delay.type" />
+	<xs:element name="object_array" type="object_array.type" />
+	<xs:element name="distribution" type="distribution.type">
+		<xs:key name="freq_key">
+			<xs:selector xpath="./vx:frequency" />
+			<xs:field xpath="@bin" />
+		</xs:key>
+	</xs:element>
+	<xs:element name="convolution" type="convolution.type">
+		<xs:key name="convolution_key">
+			<xs:selector xpath="./vx:coeff16" />
+			<xs:field xpath="@row" />
+			<xs:field xpath="@column" />
+		</xs:key>
+	</xs:element>
+	<xs:element name="remap" type="remap.type">
+		<xs:key name="remap_key">
+			<xs:selector xpath="./vx:point" />
+			<!-- Destintation Points must be unique -->
+			<xs:field xpath="@dst_x" />
+			<xs:field xpath="@dst_y" />
+		</xs:key>
+	</xs:element>
+	<xs:element name="pyramid" type="pyramid.type" />
+	<xs:element name="threshold" type="threshold.type" />
+</xs:schema>
