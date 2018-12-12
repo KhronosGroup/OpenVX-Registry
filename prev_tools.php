@@ -49,7 +49,16 @@ include_once("../../assets/static_pages/khr_page_top.php");
   <li>OpenVX 1.0 Tiling extension
     (<a href="extensions/vx_khr_tiling/1.0/html/index.html">HTML</a>,
     <a href="extensions/vx_khr_tiling/1.0/OpenVX_Tiling_Extension_1_0.pdf">PDF</a>)
-      (updated January, 2015).</li>
+    (updated January, 2015).</li>
+  <li>OpenVX 1.0 XML schema extension
+    (<a href="extensions/vx_khr_xml/1.0/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_xml/1.0/OpenVX_XML_Schema_Extension_1_0.pdf">PDF</a>)
+    (updated February 4, 2015).
+    <ul>
+      <li>The XML extension incorporates the
+        <a href="schema/openvx-1-0.xsd">OpenVX XML Schema</a> document.
+    </ul>
+  </li>
 </ul>
 
 <?php include_once("../../assets/static_pages/khr_page_bottom.php"); ?>

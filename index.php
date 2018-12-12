@@ -80,13 +80,16 @@ include_once("../../assets/static_pages/khr_page_top.php");
     (<a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.html">HTML</a>,
     <a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.pdf">PDF</a>)
     (updated August 15, 2018).</li>
-  <li>XML schema extension (provisional, OpenVX 1.0)
-    (<a href="extensions/vx_khr_xml/1.0/html/index.html">HTML</a>,
-    <a href="extensions/vx_khr_xml/1.0/OpenVX_XML_Schema_Extension_1_0.pdf">PDF</a>)
-    (updated February 4, 2015).
+  <li>XML extension (provisional, OpenVX 1.1)
+    (<a href="extensions/vx_khr_xml/1.1/vx_khr_xml_1_1.html">HTML</a>,
+    <a href="extensions/vx_khr_xml/1.1/vx_khr_xml_1_1.pdf">PDF</a>)
+    (updated December 10, 2018).
     <ul>
-      <li>The XML extension incorporates the
-        <a href="schema/openvx-1-0.xsd">OpenVX XML Schema</a> document.
+      <li>The XML extension references the
+        <a href="schema/index.php">OpenVX XML Schema</a> documents.
+      <li>An OpenVX XML User Guide is available for additional information 
+	(<a href="extensions/vx_khr_xml/1.1/vx_khr_xml_ug_1_1.html">HTML</a>,
+	<a href="extensions/vx_khr_xml/1.1/vx_khr_xml_ug_1_1.pdf">PDF</a>).
     </ul>
   </li>
 
@@ -143,6 +146,15 @@ improved 1.1 and 1.2 specifications. New submissions for conformance testing of
     (<a href="extensions/vx_khr_nn/1.1/html/index.html">HTML</a>,
     <a href="extensions/vx_khr_nn/1.1/OpenVX_NN_Extension_1_1.pdf">PDF</a>)
     (updated September, 2016).</li>
+  <li>XML schema extension (provisional, OpenVX 1.0)
+    (<a href="extensions/vx_khr_xml/1.0/html/index.html">HTML</a>,
+    <a href="extensions/vx_khr_xml/1.0/OpenVX_XML_Schema_Extension_1_0.pdf">PDF</a>)
+    (updated February 4, 2015).
+    <ul>
+      <li>The 1.0 XML extension incorporates the
+        <a href="schema/openvx-1-0.xsd">OpenVX XML Schema 1.0</a> document.
+    </ul>
+  </li>
 </ul>
 
 <p><b>OpenVX 1.0 (withdrawn)</b></p>
