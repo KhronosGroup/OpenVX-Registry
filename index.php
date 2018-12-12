@@ -13,7 +13,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
 <ul>
   <li> OpenVX 1.2.1 specification (<a href="specs/1.2.1/OpenVX_Specification_1_2_1.html">HTML</a>,
     <a href="specs/1.2.1/OpenVX_Specification_1_2_1.pdf">PDF</a>)
-    (updated August 16, 2018).</li>
+    (updated November 27, 2018).</li>
   <li> <a href="api/1.2/openvx-standard-headers-1.2.tar.bz2"> OpenVX 1.2 header
     package </a> (updated October 20, 2017).</li>
   <li> <a href="sample/openvx_sample_1.2.tar.bz2">OpenVX 1.2 sample code</a>
