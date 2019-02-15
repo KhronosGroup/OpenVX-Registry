@@ -52,6 +52,10 @@ include_once("../../assets/static_pages/khr_page_top.php");
 
 <h3> OpenVX Provisional Extensions </h3>
 <ul>
+  <li>Buffer aliasing extension (provisional, OpenVX 1.1, 1.2)
+    (<a href="extensions/vx_khr_buffer_aliasing/1.0/vx_khr_buffer_aliasing_1_0.html">HTML</a>,
+    <a href="extensions/vx_khr_buffer_aliasing/1.0/vx_khr_buffer_aliasing_1_0.pdf">PDF</a>)
+    (updated February 13, 2019).</li>
   <li>Classifier extension (provisional, OpenVX 1.2.1)
     (<a href="extensions/vx_khr_class/1.2.1/vx_khr_class_1_2_1.html">HTML</a>,
     <a href="extensions/vx_khr_class/1.2.1/vx_khr_class_1_2_1.pdf">PDF</a>)
@@ -80,6 +84,10 @@ include_once("../../assets/static_pages/khr_page_top.php");
     (<a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.html">HTML</a>,
     <a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.pdf">PDF</a>)
     (updated August 15, 2018).</li>
+  <li>User data object extension (provisional, OpenVX 1.1, 1.2)
+    (<a href="extensions/vx_khr_user_data_object/1.0/vx_khr_user_data_object_1_0.html">HTML</a>,
+    <a href="extensions/vx_khr_user_data_object/1.0/vx_khr_user_data_object_1_0.pdf">PDF</a>)
+    (updated February 13, 2019).</li>
   <li>XML extension (provisional, OpenVX 1.1)
     (<a href="extensions/vx_khr_xml/1.1/vx_khr_xml_1_1.html">HTML</a>,
     <a href="extensions/vx_khr_xml/1.1/vx_khr_xml_1_1.pdf">PDF</a>)
