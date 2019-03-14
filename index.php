@@ -61,9 +61,9 @@ include_once("../../assets/static_pages/khr_page_top.php");
     <a href="extensions/vx_khr_class/1.2.1/vx_khr_class_1_2_1.pdf">PDF</a>)
     (updated August 15, 2018).</li>
   <li>Import kernel extension (provisional, OpenVX 1.1, 1.2)
-    (<a href="extensions/vx_khr_import_kernel/1.0/vx_khr_import_kernel_1_0.html">HTML</a>,
-    <a href="extensions/vx_khr_import_kernel/1.0/vx_khr_import_kernel_1_0.pdf">PDF</a>)
-    (updated March 8, 2018).</li>
+    (<a href="extensions/vx_khr_import_kernel/1.1/vx_khr_import_kernel_1_1.html">HTML</a>,
+    <a href="extensions/vx_khr_import_kernel/1.1/vx_khr_import_kernel_1_1.pdf">PDF</a>)
+    (updated March 8, 2019).</li>
   <li>Installable client driver extension (provisional, OpenVX 1.0.1)
     (<a href="extensions/vx_khr_icd/1.0.1/vx_khr_icd_1_0_1.html">HTML</a>,
     <a href="extensions/vx_khr_icd/1.0.1/vx_khr_icd_1_0_1.pdf">PDF</a>)
@@ -132,6 +132,10 @@ chain are available <a href="prev_tools.php">here</a>.
     (<a href="extensions/vx_khr_ix/1.1/html/index.html">HTML</a>,
     <a href="extensions/vx_khr_ix/1.1/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
       (updated April 27, 2017).</li>
+  <li>Import kernel extension
+    (<a href="extensions/vx_khr_import_kernel/1.0/vx_khr_import_kernel_1_0.html">HTML</a>,
+    <a href="extensions/vx_khr_import_kernel/1.0/vx_khr_import_kernel_1_0.pdf">PDF</a>)
+    (updated March 8, 2018).</li>
   <li> <a href="api/1.1/openvx-extension-headers-1.1.tar.bz2"> OpenVX
       1.1 extension header package </a> (updated April 27, 2017).</li>
 </ul>
