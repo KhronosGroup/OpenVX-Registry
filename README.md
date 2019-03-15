@@ -7,6 +7,12 @@ It is also used as a backing store for the web view of the registry at
 https://www.khronos.org/registry/vx/ ; commits to the master branch of this
 repository will be reflected there.
 
+Please do not file issues against the OpenVX API, extensions, or headers in
+this repository. Such issues should be filed in the separate
+https://github.com/KhronosGroup/OpenVX-api-docs repository. The only issues
+appropriate for this repository are regarding technical problems such as
+broken links, missing content, etc.
+
 In the past, the OpenVX registry was maintained in a public Subversion
 repository. The history in that repository has not been imported to github,
 but it is still available at

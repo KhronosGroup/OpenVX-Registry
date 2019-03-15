@@ -95,9 +95,9 @@ include_once("../../assets/static_pages/khr_page_top.php");
     <ul>
       <li>The XML extension references the
         <a href="schema/index.php">OpenVX XML Schema</a> documents.
-      <li>An OpenVX XML User Guide is available for additional information 
-	(<a href="extensions/vx_khr_xml/1.1/vx_khr_xml_ug_1_1.html">HTML</a>,
-	<a href="extensions/vx_khr_xml/1.1/vx_khr_xml_ug_1_1.pdf">PDF</a>).
+      <li>An OpenVX XML User Guide is available for additional information
+        (<a href="extensions/vx_khr_xml/1.1/vx_khr_xml_ug_1_1.html">HTML</a>,
+        <a href="extensions/vx_khr_xml/1.1/vx_khr_xml_ug_1_1.pdf">PDF</a>).
     </ul>
   </li>
 
@@ -190,18 +190,17 @@ improved 1.1 and 1.2 specifications. New submissions for conformance testing of
 
 <hr>
 
-<h4>Providing Feedback on the Registry</h4>
+<h4>Providing Feedback on OpenVX</h4>
 
-<p> Khronos welcomes comments and bug reports. To provide feedback on the
-    OpenVX registry itself (such as reporting missing content, bad links,
-    etc.), file an issue in the <a
+<p> To provide feedback or file issues with the OpenVX API, extensions, and
+    headers, file an issue in the <a
+    href="https://github.com/KhronosGroup/OpenVX-api-docs">
+    KhronosGroup/OpenVX-api-docs </a> Github project, where the
+    Specification source documents are hosted. </p>
+
+<p> To provide feedback on the OpenVX registry itself (such as reporting
+    missing content, bad links, etc.), file an issue in the <a
     href="https://github.com/KhronosGroup/OpenVX-Registry/issues">
     OpenVX-Registry </a> Github project. </p>
-
-<p> For the OpenVX API, extensions, and headers, file a bug on the <a
-    href="http://www.khronos.org/bugzilla/"> Khronos Bugzilla </a>. Make
-    sure to fill in the &quot;Product&quot; field in the bug entry form as
-    &quot;OpenVX&quot;, and pick appropriate values for the Component and
-    other fields. </p>
 
 <?php include_once("../../assets/static_pages/khr_page_bottom.php"); ?>
