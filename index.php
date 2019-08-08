@@ -4,42 +4,45 @@ $static_title = 'Khronos OpenVX Registry';
 include_once("../../assets/static_pages/khr_page_top.php");
 ?>
 
-<p>The OpenVX registry contains specifications of the core API, headers,
-  extensions, and related documentation.</p>
+<p>The OpenVX registry contains specifications of the core API, headers, extensions, and related documentation.</p>
 
 <h3>OpenVX API Specification, Headers, and Documentation</h3>
 
-<p>The current version of OpenVX is OpenVX 1.2.1:</p>
-<ul>
-  <li> OpenVX 1.2.1 specification (<a href="specs/1.2.1/OpenVX_Specification_1_2_1.html">HTML</a>,
-    <a href="specs/1.2.1/OpenVX_Specification_1_2_1.pdf">PDF</a>)
-    (updated November 27, 2018).</li>
-  <li> <a href="api/1.2/openvx-standard-headers-1.2.tar.bz2"> OpenVX 1.2 header
-    package </a> (updated October 20, 2017).</li>
-  <li> <a href="sample/openvx_sample_1.2.tar.bz2">OpenVX 1.2 sample code</a>
-    (updated January 17, 2018). </p>
-</ul>
+<p>The current version of OpenVX is OpenVX 1.3.0:</p>
+  <ul>
+    <li> OpenVX 1.3.0 specification (<a href="specs/1.3/OpenVX_Specification_1_3.html">HTML</a>,
+      <a href="specs/1.3/OpenVX_Specification_1_3.pdf">PDF</a>)
+        (updated August 08, 2019).
+    </li>
+    <li> <a href="api/1.3/openvx-standard-headers-1.3.tar.bz2"> OpenVX 1.3 header package </a> 
+    (updated August 08, 2019).
+    </li>
+  </ul>
 
-<p>There are two KHR extensions to OpenVX that are supported by the
-  OpenVX 1.2 conformance tests: </p>
-<ul>
-  <li>OpenVX 1.2.1 Neural Network extension
-    (<a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn_1_2_1.html">HTML</a>,
-    <a href="extensions/vx_khr_nn/1.2.1/vx_khr_nn_1_2_1.pdf">PDF</a>)
-    (updated August 15, 2018).</li>
-  <li>OpenVX 1.1.1 Export and Import extension
-    (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
-    <a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.pdf">PDF</a>)
-      (updated August 15, 2018).</li>
-    <ul>
-      <li>This extension designed for OpenVX 1.1 is valid without change for OpenVX 1.2(.1).</li>
-    </ul>
-  <li> <a href="api/1.2/openvx-extension-headers-1.2.tar.bz2"> OpenVX 1.2
-      extension header package </a> (updated November 8, 2017).
+<p>There are two KHR extensions to OpenVX that are supported by the OpenVX 1.3 conformance tests: </p>
+  <ul>
+    <li>OpenVX 1.3 Feature Sets extension
+      (<a href="extensions/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html">HTML</a>,
+      <a href="extensions/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf">PDF</a>)
+      (updated August 08, 2019).
+    </li>
+    <li>OpenVX 1.3 Neural Network extension
+      (<a href="extensions/vx_khr_nn/1.3/html/vx_khr_nn_1_3.html">HTML</a>,
+      <a href="extensions/vx_khr_nn/1.3/vx_khr_nn_1_3.pdf">PDF</a>)
+      (updated August 08, 2019).
+    </li>
+    <li>OpenVX 1.3 Import Kernels extension
+      (<a href="extensions/vx_khr_import_kernel/1.3/html/vx_khr_import_kernel_1_3.html">HTML</a>,
+      <a href="extensions/vx_khr_import_kernel/1.3/vx_khr_import_kernel_1_3.pdf">PDF</a>)
+      (updated August 08, 2019).
+    </li>
+    <li> 
+      <a href="api/1.3/openvx-extension-headers-1.3.tar.bz2"> OpenVX 1.3 extension header package </a> (updated August 08, 2019).
+    </li>
     <ul>
       <li>
-        This package contains header files for these officially supported
-        extensions <em>and</em> for the provisional extensions listed below.</li>
+        This package contains header files for these officially supported extensions <em>and</em> for the provisional extensions listed below.
+      </li>
     </ul>
 </ul>
 
@@ -117,6 +120,28 @@ chain are available <a href="prev_tools.php">here</a>.
 <h3>Older Specifications</h3>
 
 <p>Older versions of the OpenVX specification provided for reference.</p>
+
+<p><b>OpenVX 1.2</b></p>
+<ul>
+  <li>OpenVX 1.2 specification
+    (<a href="specs/1.2/html/index.html">HTML</a>,
+    <a href="specs/1.2/OpenVX_Specification_1_2.pdf">PDF</a>)
+    (updated Oct 11 2017).</li>
+  <li><a href="api/1.2/openvx-standard-headers-1.2.tar.bz2">OpenVX 1.2 header
+      package </a> (updated Oct 11 2017).
+  <li> <a href="sample/openvx_sample_1.2.tar.bz2">OpenVX 1.2 sample code</a>
+    (updated Oct 11 2017).
+  <li>OpenVX 1.1.1 export and import extension
+    (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
+    <a href="extensions/vx_khr_ix/1.1.1/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
+      (updated Aug 15 2018).</li>
+  <li>Import kernel extension
+    (<a href="extensions/vx_khr_import_kernel/1.1/vx_khr_import_kernel_1_1.html">HTML</a>,
+    <a href="extensions/vx_khr_import_kernel/1.1/vx_khr_import_kernel_1_1.pdf">PDF</a>)
+    (updated March 8, 2019).</li>
+  <li> <a href="api/1.1/openvx-extension-headers-1.1.tar.bz2"> OpenVX
+      1.1 extension header package </a> (updated April 27, 2017).</li>
+</ul>
 
 <p><b>OpenVX 1.1</b></p>
 <ul>
