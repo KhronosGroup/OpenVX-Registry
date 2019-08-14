@@ -8,30 +8,31 @@ include_once("../../assets/static_pages/khr_page_top.php");
 
 <h3>OpenVX API Specification, Headers, and Documentation</h3>
 
-<p>The current version of OpenVX is OpenVX 1.3.0:</p>
+<p>The current version of OpenVX is OpenVX 1.3:</p>
   <ul>
-    <li> OpenVX 1.3.0 specification (<a href="specs/1.3/OpenVX_Specification_1_3.html">HTML</a>,
+    <li> OpenVX 1.3 specification (<a href="specs/1.3/OpenVX_Specification_1_3.html">HTML</a>,
       <a href="specs/1.3/OpenVX_Specification_1_3.pdf">PDF</a>)
         (updated August 08, 2019).
+    </li>
+    <li>OpenVX 1.3 Feature Sets
+      (<a href="extensions/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html">HTML</a>,
+      <a href="extensions/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf">PDF</a>)
+      (updated August 08, 2019).
     </li>
     <li> <a href="api/1.3/openvx-standard-headers-1.3.tar.bz2"> OpenVX 1.3 header package </a> 
     (updated August 08, 2019).
     </li>
   </ul>
 
-<p>There are two KHR extensions to OpenVX that are supported by the OpenVX 1.3 conformance tests: </p>
+<h3>OpenVX KHR Extensions</h3>
+
   <ul>
-    <li>OpenVX 1.3 Feature Sets extension
-      (<a href="extensions/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html">HTML</a>,
-      <a href="extensions/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf">PDF</a>)
-      (updated August 08, 2019).
-    </li>
-    <li>OpenVX 1.3 Neural Network extension
+    <li>OpenVX KHR Neural Network Extension 1.3 (vx_khr_nn)
       (<a href="extensions/vx_khr_nn/1.3/html/vx_khr_nn_1_3.html">HTML</a>,
       <a href="extensions/vx_khr_nn/1.3/vx_khr_nn_1_3.pdf">PDF</a>)
       (updated August 08, 2019).
     </li>
-    <li>OpenVX 1.3 Import Kernels extension
+    <li>OpenVX Import Kernels extension
       (<a href="extensions/vx_khr_import_kernel/1.3/html/vx_khr_import_kernel_1_3.html">HTML</a>,
       <a href="extensions/vx_khr_import_kernel/1.3/vx_khr_import_kernel_1_3.pdf">PDF</a>)
       (updated August 08, 2019).
