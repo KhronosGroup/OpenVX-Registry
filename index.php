@@ -10,13 +10,13 @@ include_once("../../assets/static_pages/khr_page_top.php");
 
 <p>The current version of OpenVX is OpenVX 1.3:</p>
   <ul>
-    <li> OpenVX 1.3 specification (<a href="specs/1.3/OpenVX_Specification_1_3.html">HTML</a>,
+    <li>OpenVX 1.3 specification (<a href="specs/1.3/OpenVX_Specification_1_3.html">HTML</a>,
       <a href="specs/1.3/OpenVX_Specification_1_3.pdf">PDF</a>)
         (updated August 08, 2019).
     </li>
     <li>OpenVX 1.3 Feature Sets
-      (<a href="extensions/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html">HTML</a>,
-      <a href="extensions/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf">PDF</a>)
+      (<a href="specs/1.3/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html">HTML</a>,
+      <a href="specs/1.3/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf">PDF</a>)
       (updated August 08, 2019).
     </li>
     <li> <a href="api/1.3/openvx-standard-headers-1.3.tar.bz2"> OpenVX 1.3 header package </a> 
@@ -25,17 +25,21 @@ include_once("../../assets/static_pages/khr_page_top.php");
   </ul>
 
 <h3>OpenVX KHR Extensions</h3>
-
   <ul>
     <li>OpenVX KHR Neural Network Extension 1.3 (vx_khr_nn)
       (<a href="extensions/vx_khr_nn/1.3/html/vx_khr_nn_1_3.html">HTML</a>,
       <a href="extensions/vx_khr_nn/1.3/vx_khr_nn_1_3.pdf">PDF</a>)
       (updated August 08, 2019).
     </li>
-    <li>OpenVX Import Kernels extension
+    <li>OpenVX KHR Import Kernels Extension 1.3 (vx_khr_import_kernel)
       (<a href="extensions/vx_khr_import_kernel/1.3/html/vx_khr_import_kernel_1_3.html">HTML</a>,
       <a href="extensions/vx_khr_import_kernel/1.3/vx_khr_import_kernel_1_3.pdf">PDF</a>)
       (updated August 08, 2019).
+    </li>
+    <li>OpenVX KHR Pipelining Extension 1.1 (vx_khr_pipelining)
+      (<a href="extensions/vx_khr_pipelining/1.1/html/vx_khr_pipelining_1_1_0.html">HTML</a>,
+      <a href="extensions/vx_khr_pipelining/1.1/vx_khr_pipelining_1_1_0.pdf">PDF</a>)
+      (updated April 10, 2019).
     </li>
     <li> 
       <a href="api/1.3/openvx-extension-headers-1.3.tar.bz2"> OpenVX 1.3 extension header package </a> (updated August 08, 2019).
@@ -47,52 +51,61 @@ include_once("../../assets/static_pages/khr_page_top.php");
     </ul>
 </ul>
 
-<p>The current Safety Critical version of OpenVX is OpenVX1.1 SC:</p>
+<p>The current Safety Critical version of OpenVX is OpenVX_SC 1.1:</p>
 <ul>
-  <li>OpenVX 1.1 SC specification (<a href="specs/1.1_SC/html/index.html">HTML</a>,
+  <li>OpenVX Safety Critical Specification 1.1 (<a href="specs/1.1_SC/html/index.html">HTML</a>,
     <a href="specs/1.1_SC/OpenVX_Specification_SC_1_1.pdf">PDF</a>)
     (updated March 8, 2017).</li>
 </ul>
 
 <h3> OpenVX Provisional Extensions </h3>
 <ul>
-  <li>Buffer aliasing extension (provisional, OpenVX 1.1, 1.2)
+  <li>OpenVX KHR Buffer Aliasing Extension 1.0 (vx_khr_buffer_aliasing) [provisional, OpenVX 1.1, 1.2]
     (<a href="extensions/vx_khr_buffer_aliasing/1.0/vx_khr_buffer_aliasing_1_0.html">HTML</a>,
     <a href="extensions/vx_khr_buffer_aliasing/1.0/vx_khr_buffer_aliasing_1_0.pdf">PDF</a>)
-    (updated February 13, 2019).</li>
-  <li>Classifier extension (provisional, OpenVX 1.2.1)
+    (updated February 13, 2019).
+  </li>
+  <li>OpenVX KHR Classifier Extension 1.2.1 (vx_khr_class) [provisional, OpenVX 1.2.1]
     (<a href="extensions/vx_khr_class/1.2.1/vx_khr_class_1_2_1.html">HTML</a>,
     <a href="extensions/vx_khr_class/1.2.1/vx_khr_class_1_2_1.pdf">PDF</a>)
-    (updated August 15, 2018).</li>
-  <li>Import kernel extension (provisional, OpenVX 1.1, 1.2)
+    (updated August 15, 2018).
+  </li>
+  <li>OpenVX KHR Import Kernel Extension 1.1 (vx_khr_import_kernel) [provisional, OpenVX 1.1, 1.2]
     (<a href="extensions/vx_khr_import_kernel/1.1/vx_khr_import_kernel_1_1.html">HTML</a>,
     <a href="extensions/vx_khr_import_kernel/1.1/vx_khr_import_kernel_1_1.pdf">PDF</a>)
-    (updated March 8, 2019).</li>
-  <li>Installable client driver extension (provisional, OpenVX 1.0.1)
+    (updated March 8, 2019).
+  </li>
+  <li>OpenVX KHR Installable Client Driver Extension 1.0.1 (vx_khr_icd) [provisional, OpenVX 1.0.1]
     (<a href="extensions/vx_khr_icd/1.0.1/vx_khr_icd_1_0_1.html">HTML</a>,
     <a href="extensions/vx_khr_icd/1.0.1/vx_khr_icd_1_0_1.pdf">PDF</a>)
-    (updated August 15, 2018).</li>
-  <li>OpenCL interop extension (provisional, OpenVX 1.1, 1.2)
+    (updated August 15, 2018).
+  </li>
+  <li>OpenVX KHR OpenCL Interop Extension 1.0 (vx_khr_opencl_interop) [provisional, OpenVX 1.1, 1.2]
     (<a href="extensions/vx_khr_opencl_interop/1.0/vx_khr_opencl_interop_1_0.html">HTML</a>,
     <a href="extensions/vx_khr_opencl_interop/1.0/vx_khr_opencl_interop_1_0.pdf">PDF</a>)
-    (updated January 25, 2018).</li>
-  <li>Pipelining, streaming,and batch processing extension (provisional, OpenVX 1.1 and 1.2)
+    (updated January 25, 2018).
+  </li>
+  <li>OpenVX KHR Pipelining, Streaming, And Batch Processing Extension 1.0.1 (vx_khr_pipelining) [provisional, OpenVX 1.1 and 1.2]
     (<a href="extensions/vx_khr_pipelining/1.0.1/vx_khr_pipelining_1_0_1.html">HTML</a>,
     <a href="extensions/vx_khr_pipelining/1.0.1/vx_khr_pipelining_1_0_1.pdf">PDF</a>)
-    (updated August 15, 2018).</li>
-  <li>S16 extension (provisional, OpenVX 1.1.1)
+    (updated August 15, 2018).
+  </li>
+  <li>OpenVX KHR S16 Extension 1.1.1 (vx_khr_s16) [provisional, OpenVX 1.1.1]
     (<a href="extensions/vx_khr_s16/1.1.1/vx_khr_s16_1_1_1.html">HTML</a>,
     <a href="extensions/vx_khr_s16/1.1.1/vx_khr_s16_1_1_1.pdf">PDF</a>)
-    (updated August 15, 2018).</li>
-  <li>Tiling extension (provisional, OpenVX 1.0.1)
+    (updated August 15, 2018).
+  </li>
+  <li>OpenVX KHR Tiling Extension 1.0.1 (vx_khr_tiling) [provisional, OpenVX 1.0.1]
     (<a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.html">HTML</a>,
     <a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.pdf">PDF</a>)
-    (updated August 15, 2018).</li>
-  <li>User data object extension (provisional, OpenVX 1.1, 1.2)
+    (updated August 15, 2018).
+  </li>
+  <li>OpenVX KHR User Data Object Extension 1.0 (vx_khr_user_data_object) [provisional, OpenVX 1.1, 1.2]
     (<a href="extensions/vx_khr_user_data_object/1.0/vx_khr_user_data_object_1_0.html">HTML</a>,
     <a href="extensions/vx_khr_user_data_object/1.0/vx_khr_user_data_object_1_0.pdf">PDF</a>)
-    (updated February 13, 2019).</li>
-  <li>XML extension (provisional, OpenVX 1.1)
+    (updated February 13, 2019).
+  </li>
+  <li>OpenVX KHR XML Extension 1.1 (vx_khr_xml) [provisional, OpenVX 1.1]
     (<a href="extensions/vx_khr_xml/1.1/vx_khr_xml_1_1.html">HTML</a>,
     <a href="extensions/vx_khr_xml/1.1/vx_khr_xml_1_1.pdf">PDF</a>)
     (updated December 10, 2018).
@@ -104,7 +117,6 @@ include_once("../../assets/static_pages/khr_page_top.php");
         <a href="extensions/vx_khr_xml/1.1/vx_khr_xml_ug_1_1.pdf">PDF</a>).
     </ul>
   </li>
-
 </ul>
 
 <h3>Tool Chain Change</h3>
@@ -121,6 +133,20 @@ chain are available <a href="prev_tools.php">here</a>.
 <h3>Older Specifications</h3>
 
 <p>Older versions of the OpenVX specification provided for reference.</p>
+
+<p><b>OpenVX 1.2.1</b></p>
+<ul>
+  <li>OpenVX 1.2.1 specification (<a href="specs/1.2.1/OpenVX_Specification_1_2_1.html">HTML</a>,
+      <a href="specs/1.2.1/OpenVX_Specification_1_2_1.pdf">PDF</a>)
+      (updated November 27, 2018).
+  </li>
+  <li><a href="api/1.2/openvx-standard-headers-1.2.tar.bz2"> OpenVX 1.2 header
+      package </a> (updated October 20, 2017).
+  </li>
+  <li><a href="sample/openvx_sample_1.2.tar.bz2">OpenVX 1.2 sample code</a>
+      (updated January 17, 2018). </p>
+  </li>
+</ul>
 
 <p><b>OpenVX 1.2</b></p>
 <ul>
