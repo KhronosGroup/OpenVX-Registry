@@ -10,7 +10,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
 
 <p>The current version of OpenVX is OpenVX 1.3:</p>
   <ul>
-    <li>OpenVX 1.3 specification (<a href="specs/1.3/OpenVX_Specification_1_3.html">HTML</a>,
+    <li>OpenVX 1.3 specification (<a href="specs/1.3/html/OpenVX_Specification_1_3.html">HTML</a>,
       <a href="specs/1.3/OpenVX_Specification_1_3.pdf">PDF</a>)
         (updated August 08, 2019).
     </li>
@@ -51,11 +51,11 @@ include_once("../../assets/static_pages/khr_page_top.php");
     </ul>
 </ul>
 
-<p>The current Safety Critical version of OpenVX is OpenVX_SC 1.1:</p>
+<p>The current Safety Critical version of OpenVX is OpenVX_SC 1.3:</p>
 <ul>
-  <li>OpenVX Safety Critical Specification 1.1 (<a href="specs/1.1_SC/html/index.html">HTML</a>,
-    <a href="specs/1.1_SC/OpenVX_Specification_SC_1_1.pdf">PDF</a>)
-    (updated March 8, 2017).</li>
+  <li>OpenVX Safety Critical Specification 1.3 is published with in the Feature Set document(<a href="specs/1.3/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html">HTML</a>,
+    <a href="specs/1.3/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.pdf">PDF</a>)
+    (updated August 08, 2019).</li>
 </ul>
 
 <h3> OpenVX Provisional Extensions </h3>
@@ -132,7 +132,15 @@ chain are available <a href="prev_tools.php">here</a>.
 
 <h3>Older Specifications</h3>
 
-<p>Older versions of the OpenVX specification provided for reference.</p>
+<p>Older versions of Safety Critical specification provided for reference</p>
+<ul>
+  <li>OpenVX 1.1 SC specification (<a href="specs/1.1_SC/html/index.html">HTML</a>,
+    <a href="specs/1.1_SC/OpenVX_Specification_SC_1_1.pdf">PDF</a>)
+    (updated March 8, 2017).
+  </li>
+</ul>
+
+<p>Older versions of the OpenVX specification provided for reference</p>
 
 <p><b>OpenVX 1.2.1</b></p>
 <ul>
