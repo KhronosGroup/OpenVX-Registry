@@ -178,7 +178,7 @@ chain are available <a href="prev_tools.php">here</a>.
   </li>
   <li>OpenVX 1.1.1 export and import extension
       (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
-      <a href="extensions/vx_khr_ix/1.1.1/OpenVX_Export_and_Import_Extension_1_1.pdf">PDF</a>)
+      <a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.pdf">PDF</a>)
       (updated Aug 15 2018).
   </li>
   <li>Import kernel extension
@@ -282,11 +282,13 @@ improved 1.1 and 1.2 specifications. New submissions for conformance testing of
     headers, file an issue in the <a
     href="https://github.com/KhronosGroup/OpenVX-api-docs">
     KhronosGroup/OpenVX-api-docs </a> Github project, where the
-    Specification source documents are hosted. </p>
+    Specification source documents are hosted.
+</p>
 
 <p> To provide feedback on the OpenVX registry itself (such as reporting
     missing content, bad links, etc.), file an issue in the <a
     href="https://github.com/KhronosGroup/OpenVX-Registry/issues">
-    OpenVX-Registry </a> Github project. </p>
+    OpenVX-Registry </a> Github project. 
+</p>
 
 <?php include_once("../../assets/static_pages/khr_page_bottom.php"); ?>
