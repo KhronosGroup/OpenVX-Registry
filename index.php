@@ -123,16 +123,6 @@ include_once("../../assets/static_pages/khr_page_top.php");
   </li>
 </ul>
 
-<h4>NOTE: Tool Chain Change</h4>
-<p>
-<font size="-1">Beginning with version 1.2.1, the OpenVX specification was generated via a different tool
-chain from previous versions.  Although the formatting is different, the content of
-OpenVX 1.2.1 is identical to that of OpenVX 1.2.  The 1.2 headers, sample implementation,
-and conformance tests are still applicable to 1.2.1.  Some of the extension specs have
-also been regenerated with the new tool chain, with a similar ".1" suffix added to their
-version numbers.</font>
-</p>
-
 <h3>Older Specifications</h3>
 
 <p>Older versions of the OpenVX specification provided for reference</p>
@@ -150,6 +140,16 @@ version numbers.</font>
       (updated January 17, 2018).
   </li>
 </ul>
+
+<h5>NOTE: Tool Chain Change</h5>
+<p>
+<font size="-1">Beginning with version 1.2.1, the OpenVX specification was generated via a different tool
+chain from previous versions.  Although the formatting is different, the content of
+OpenVX 1.2.1 is identical to that of OpenVX 1.2.  The 1.2 headers, sample implementation,
+and conformance tests are still applicable to 1.2.1.  Some of the extension specs have
+also been regenerated with the new tool chain, with a similar ".1" suffix added to their
+version numbers.</font>
+</p>
 
 <h4>OpenVX 1.2</h4>
 <ul>
