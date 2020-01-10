@@ -1,7 +1,7 @@
 <?php
 $static_title = 'Khronos OpenVX XML Schema';
 
-include_once("../../assets/static_pages/khr_page_top.php");
+include_once("../../../assets/static_pages/khr_page_top.php");
 ?>
 
 <h3>OpenVX XML Schema</h3>
@@ -13,6 +13,6 @@ include_once("../../assets/static_pages/khr_page_top.php");
 </ul>
 
 
-<?php include_once("../../assets/static_pages/khr_page_bottom.php"); ?>
+<?php include_once("../../../assets/static_pages/khr_page_bottom.php"); ?>
 </body>
 </html>
