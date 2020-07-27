@@ -50,7 +50,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
         (updated August 15, 2018).
     </li>
     <li>OpenVX 1.3 <a href="api/1.3/openvx-extension-headers-1.3.tar.bz2">extension header package</a> 
-        (updated August 08, 2019).
+        (updated July 07, 2020).
     </li>
     <ul>
       <li>
@@ -137,6 +137,8 @@ include_once("../../assets/static_pages/khr_page_top.php");
         <a href="specs/1.3/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf">PDF</a>).
     </li>
     <li>OpenVX 1.3 <a href="api/1.3_08Aug2019/openvx-standard-headers-1.3.tar.bz2">header package</a>.
+    <li>OpenVX 1.3 <a href="api/1.3_08Aug2019/openvx-extension-headers-1.3.tar.bz2">extension header package</a>.
+    </li>
     </li>
 </ul>
 
