@@ -12,23 +12,23 @@ include_once("../../assets/static_pages/khr_page_top.php");
   <ul>
     <li>OpenVX 1.3 specification (<a href="specs/1.3/html/OpenVX_Specification_1_3.html">HTML</a>,
         <a href="specs/1.3/OpenVX_Specification_1_3.pdf">PDF</a>)
-        (updated August 08, 2019).
+        (updated July 07, 2020).
     </li>
     <li>OpenVX 1.3 Feature Sets
-        (<a href="specs/1.3/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html">HTML</a>,
-        <a href="specs/1.3/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf">PDF</a>)
-        (updated August 08, 2019).
+        (<a href="specs/1.3/vx_khr_feature_sets/1.1/html/vx_khr_feature_sets_1_1.html">HTML</a>,
+        <a href="specs/1.3/vx_khr_feature_sets/1.1/vx_khr_feature_sets_1_1.pdf">PDF</a>)
+        (updated July 07, 2020).
     </li>
     <li>OpenVX 1.3 <a href="api/1.3/openvx-standard-headers-1.3.tar.bz2">header package</a> 
-        (updated August 08, 2019).
+        (updated July 07, 2020).
     </li>
   </ul>
 
 <p>The current version of OpenVX Safety Critical Specification: <b>OpenVX_SC 1.3</b> </p>
 <ul>
-  <li>OpenVX Safety Critical Specification 1.3 is published with-in the Feature Set document (<a href="specs/1.3/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html#_safety_critical_deployment_feature_set">HTML</a>,
-      <a href="specs/1.3/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf">PDF</a>)
-      (updated August 08, 2019).</li>
+  <li>OpenVX Safety Critical Specification 1.3 is published with-in the Feature Set document (<a href="specs/1.3/vx_khr_feature_sets/1.1/html/vx_khr_feature_sets_1_1.html#_safety_critical_deployment_feature_set">HTML</a>,
+      <a href="specs/1.3/vx_khr_feature_sets/1.1/vx_khr_feature_sets_1_1.pdf">PDF</a>)
+      (updated July 07, 2020).</li>
 </ul>
 
 <h3>OpenVX KHR Extensions</h3>
@@ -50,7 +50,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
         (updated August 15, 2018).
     </li>
     <li>OpenVX 1.3 <a href="api/1.3/openvx-extension-headers-1.3.tar.bz2">extension header package</a> 
-        (updated August 08, 2019).
+        (updated July 07, 2020).
     </li>
     <ul>
       <li>
@@ -126,6 +126,21 @@ include_once("../../assets/static_pages/khr_page_top.php");
 <h3>Older Specifications</h3>
 
 <p>Older versions of the OpenVX specification provided for reference</p>
+
+<h4>OpenVX 1.3 (August 08, 2019)</h4>
+<ul>
+    <li>OpenVX 1.3 specification (<a href="specs/1.3_08Aug2019/html/OpenVX_Specification_1_3.html">HTML</a>,
+        <a href="specs/1.3_08Aug2019/OpenVX_Specification_1_3.pdf">PDF</a>).
+    </li>
+    <li>OpenVX 1.3 Feature Sets
+        (<a href="specs/1.3/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html">HTML</a>,
+        <a href="specs/1.3/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf">PDF</a>).
+    </li>
+    <li>OpenVX 1.3 <a href="api/1.3_08Aug2019/openvx-standard-headers-1.3.tar.bz2">header package</a>.
+    </li>
+    <li>OpenVX 1.3 <a href="api/1.3_08Aug2019/openvx-extension-headers-1.3.tar.bz2">extension header package</a>.
+    </li>
+</ul>
 
 <h4>OpenVX 1.2.1</h4>
 <ul>

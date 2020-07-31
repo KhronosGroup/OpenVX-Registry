@@ -843,7 +843,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Editor: Radhakrishna Giduthuri, Intel</span><br>
 <span id="author2" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="revnumber">version 1.3,</span>
-<span id="revdate">Tue, 07 Jul 2020 17:41:28 +0000</span>
+<span id="revdate">Thu, 08 Aug 2019 20:26:04 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -1615,9 +1615,8 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_vx_version_1_0">4.2.21. VX_VERSION_1_0</a></li>
 <li><a href="#_vx_version_1_1">4.2.22. VX_VERSION_1_1</a></li>
 <li><a href="#_vx_version_1_2">4.2.23. VX_VERSION_1_2</a></li>
-<li><a href="#_vx_version_1_3">4.2.24. VX_VERSION_1_3</a></li>
-<li><a href="#_vx_version_major">4.2.25. VX_VERSION_MAJOR</a></li>
-<li><a href="#_vx_version_minor">4.2.26. VX_VERSION_MINOR</a></li>
+<li><a href="#_vx_version_major">4.2.24. VX_VERSION_MAJOR</a></li>
+<li><a href="#_vx_version_minor">4.2.25. VX_VERSION_MINOR</a></li>
 </ul>
 </li>
 <li><a href="#_typedefs">4.3. Typedefs</a>
@@ -2367,7 +2366,6 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </li>
 <li><a href="#bibliography">8. Bibliography</a></li>
-<li><a href="#discontinued_requirement_ids">9. List of Discontinued Requirement Identifiers</a></li>
 </ul>
 </div>
 </div>
@@ -2380,7 +2378,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="paragraph">
-<p>Copyright 2013-2020 The Khronos Group Inc.</p>
+<p>Copyright 2013-2019 The Khronos Group Inc.</p>
 </div>
 <div class="paragraph">
 <p>This specification is protected by copyright laws and contains material
@@ -2583,8 +2581,7 @@ requirements tags of the specific feature and its dependencies.</p>
 covering the entire OpenVX API. In order to offer this option while still managing the API to prevent
 excessive fragmentation regarding which implementations offer which features,
 the companion feature set document (&#8220;vx_khr_feature_sets&#8221;) defines a collection of &#8220;feature sets&#8221;
-that form coherent and useful subsets of the OpenVX API. Refer to the
-<a href="https://www.khronos.org/registry/OpenVX">Khronos OpenVX Registry</a>
+that form coherent and useful subsets of the OpenVX API. Refer to the Khronos OpenVX registry for
 for this document.</p>
 </div>
 </div>
@@ -3052,7 +3049,7 @@ While multiple clients may connect to the OpenVX context, all data are
 private in that the references that refer to data objects are given only
 to the creating party.
 The results of calling an OpenVX function on data objects created in
-different contexts are implementation-defined.</p>
+different contexts are implementation depedent.</p>
 </li>
 <li>
 <p><a href="#group_kernel">Object: Kernel</a> - A Kernel in OpenVX is the abstract representation of
@@ -6151,10 +6148,6 @@ example a <code><a href="#vx_node">vx_node</a></code> attribute from <code><a hr
    VX_NODE_TI_NEWTHING = VX_ATTRIBUTE_BASE(VX_ID_TI, VX_TYPE_NODE) + <span class="hex">0x0</span>,
 };</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>Some objects support APIs to set attributes even though all their attributes are
-specified as read-only in this specification. These APIs are meant for extending attributes.</p>
 </div>
 </div>
 <div class="sect3">
@@ -11545,8 +11538,7 @@ and gradient orientation histograms.</p>
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxuHOGCells(
     vx_context                                  context,
     vx_image                                    input,
-    vx_int32                                    cell_width,
-    vx_int32                                    cell_height,
+    vx_int32                                    cell_size,
     vx_int32                                    num_bins,
     vx_tensor                                   magnitudes,
     vx_tensor                                   bins);</code></pre>
@@ -18491,9 +18483,6 @@ definition of fixed width types.</p>
 <p><code><a href="#VX_VERSION_1_2">VX_VERSION_1_2</a></code></p>
 </li>
 <li>
-<p><code><a href="#VX_VERSION_1_3">VX_VERSION_1_3</a></code></p>
-</li>
-<li>
 <p><code><a href="#VX_VERSION_MAJOR">VX_VERSION_MAJOR</a></code></p>
 </li>
 <li>
@@ -19073,7 +19062,7 @@ bytes of an enumeration.</p>
 </div>
 <div id="VX_VERSION" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_VERSION                        VX_VERSION_1_3</code></pre>
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_VERSION                        VX_VERSION_1_2</code></pre>
 </div>
 </div>
 </div>
@@ -19111,18 +19100,7 @@ bytes of an enumeration.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_vx_version_1_3">4.2.24. VX_VERSION_1_3</h4>
-<div class="paragraph">
-<p>Defines the predefined version number for 1.3.</p>
-</div>
-<div id="VX_VERSION_1_3" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_VERSION_1_3                    (VX_VERSION_MAJOR(<span class="integer">1</span>) | VX_VERSION_MINOR(<span class="integer">3</span>))</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_vx_version_major">4.2.25. VX_VERSION_MAJOR</h4>
+<h4 id="_vx_version_major">4.2.24. VX_VERSION_MAJOR</h4>
 <div class="paragraph">
 <p>Defines the major version number macro.</p>
 </div>
@@ -19133,7 +19111,7 @@ bytes of an enumeration.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_vx_version_minor">4.2.26. VX_VERSION_MINOR</h4>
+<h4 id="_vx_version_minor">4.2.25. VX_VERSION_MINOR</h4>
 <div class="paragraph">
 <p>Defines the minor version number macro.</p>
 </div>
@@ -20729,20 +20707,20 @@ may be returned from the API.</p>
 <li>
 <p><a id="VX_REFERENCE_COUNT"></a> <code>VX_REFERENCE_COUNT</code> - Returns the reference
 count of the object <code>[<strong>REQ-0532</strong>]</code><a id="REQ-0532"></a>.
-Read-only <code>[<strong>REQ-1983</strong>]</code><a id="REQ-1983"></a>.
+Read-only.
 Use a <code><a href="#vx_uint32">vx_uint32</a></code> parameter.</p>
 </li>
 <li>
 <p><a id="VX_REFERENCE_TYPE"></a> <code>VX_REFERENCE_TYPE</code> - Returns the <code><a href="#vx_type_e">vx_type_e</a></code>
 of the reference <code>[<strong>REQ-0533</strong>]</code><a id="REQ-0533"></a>.
-Read-only <code>[<strong>REQ-1984</strong>]</code><a id="REQ-1984"></a>.
+Read-only.
 Use a <code><a href="#vx_enum">vx_enum</a></code> parameter.</p>
 </li>
 <li>
 <p><a id="VX_REFERENCE_NAME"></a> <code>VX_REFERENCE_NAME</code> - Used to query the reference
 for its name <code>[<strong>REQ-0534</strong>]</code><a id="REQ-0534"></a>.
 This attribute can be set via the <code><a href="#vxSetReferenceName">vxSetReferenceName</a></code> function.
-Read-write <code>[<strong>REQ-1985</strong>]</code><a id="REQ-1985"></a>.
+Read-write.
 Use a *<code><a href="#vx_char">vx_char</a></code> parameter.</p>
 </li>
 </ul>
@@ -21320,14 +21298,14 @@ than the value returned by this attribute.</p>
 <li>
 <p><a id="VX_CONTEXT_OPTICAL_FLOW_MAX_WINDOW_DIMENSION"></a>
 <code>VX_CONTEXT_OPTICAL_FLOW_MAX_WINDOW_DIMENSION</code> - The maximum window
-dimension of the <a href="#group_vision_function_opticalflowpyrlk">Optical Flow Pyramid (LK)</a> kernel <code>[<strong>REQ-0561</strong>]</code><a id="REQ-0561"></a>.
-The value of this attribute shall be equal to or greater than '9' <code>[<strong>REQ-0562</strong>]</code><a id="REQ-0562"></a>.
-Read-only <code>[<strong>REQ-1986</strong>]</code><a id="REQ-1986"></a>.
-Use a <code><a href="#vx_size">vx_size</a></code> parameter.</p>
+dimension of the <a href="#OpticalFlowPyrLK">[OpticalFlowPyrLK]</a> kernel <code>[<strong>REQ-0561</strong>]</code><a id="REQ-0561"></a>.
+The value of this attribute shall be equal to or greater than '9' <code>[<strong>REQ-0562</strong>]</code><a id="REQ-0562"></a>.</p>
 <div class="openblock">
 <div class="content">
 <div class="paragraph">
-<p><strong>See also:</strong> <code><a href="#vxOpticalFlowPyrLKNode">vxOpticalFlowPyrLKNode</a></code>.</p>
+<p><strong>See also:</strong> <code><a href="#VX_KERNEL_OPTICAL_FLOW_PYR_LK">VX_KERNEL_OPTICAL_FLOW_PYR_LK</a></code>.
+Read-only.
+Use a <code><a href="#vx_size">vx_size</a></code> parameter.</p>
 </div>
 </div>
 </div>
@@ -21339,7 +21317,7 @@ border mode for immediate mode functions.</p>
 <div class="content">
 <div class="paragraph">
 <p>Graph mode functions are unaffected by this attribute.
-Read-write <code>[<strong>REQ-1987</strong>]</code><a id="REQ-1987"></a>.
+Read-write.
 Use a pointer to a <code><a href="#vx_border_t">vx_border_t</a></code> structure as parameter.</p>
 </div>
 <div class="admonitionblock note">
@@ -21379,7 +21357,7 @@ Use a <code><a href="#vx_kernel_info_t">vx_kernel_info_t</a></code> array.</p>
 <p><a id="VX_CONTEXT_IMMEDIATE_BORDER_POLICY"></a>
 <code>VX_CONTEXT_IMMEDIATE_BORDER_POLICY</code> - The unsupported border mode
 policy for immediate mode functions.
-Read-write <code>[<strong>REQ-1988</strong>]</code><a id="REQ-1988"></a>.</p>
+Read-Write.</p>
 <div class="openblock">
 <div class="content">
 <div class="paragraph">
@@ -21419,7 +21397,7 @@ See <code><a href="#vxNonLinearFilterNode">vxNonLinearFilterNode</a></code>.</p>
 <p>The implementation must support all dimensions (height or width, not
 necessarily the same) up to the value of this attribute.
 The lowest value that must be supported for this attribute is 9.
-Read-only <code>[<strong>REQ-1989</strong>]</code><a id="REQ-1989"></a>.
+Read-only.
 Use a <code><a href="#vx_size">vx_size</a></code> parameter.</p>
 </div>
 </div>
@@ -21925,13 +21903,13 @@ Also see <code><a href="#vx_graph_state_e">vx_graph_state_e</a></code>.</p>
 <li>
 <p><a id="VX_GRAPH_NUMNODES"></a> <code>VX_GRAPH_NUMNODES</code> - Returns the number of nodes
 in a graph.
-Read-only <code>[<strong>REQ-1990</strong>]</code><a id="REQ-1990"></a>.
+Read-only.
 Use a <code><a href="#vx_uint32">vx_uint32</a></code> parameter.</p>
 </li>
 <li>
 <p><a id="VX_GRAPH_PERFORMANCE"></a> <code>VX_GRAPH_PERFORMANCE</code> - Returns the overall
 performance of the graph.
-Read-only <code>[<strong>REQ-1991</strong>]</code><a id="REQ-1991"></a>.
+Read-only.
 Use a <code><a href="#vx_perf_t">vx_perf_t</a></code> parameter.
 The accuracy of timing information is platform dependent.</p>
 <div class="openblock">
@@ -21958,12 +21936,11 @@ See <code><a href="#vx_directive_e">vx_directive_e</a></code></p>
 <li>
 <p><a id="VX_GRAPH_NUMPARAMETERS"></a> <code>VX_GRAPH_NUMPARAMETERS</code> - Returns the number
 of explicitly declared parameters on the graph.
-Read-only <code>[<strong>REQ-1992</strong>]</code><a id="REQ-1992"></a>.
+Read-only.
 Use a <code><a href="#vx_uint32">vx_uint32</a></code> parameter.</p>
 </li>
 <li>
 <p><a id="VX_GRAPH_STATE"></a> <code>VX_GRAPH_STATE</code> - Returns the state of the graph.
-Read-only <code>[<strong>REQ-1993</strong>]</code><a id="REQ-1993"></a>.
 See <code><a href="#vx_graph_state_e">vx_graph_state_e</a></code> enum.</p>
 </li>
 </ul>
@@ -22396,9 +22373,6 @@ points <code>[<strong>REQ-0644</strong>]</code><a id="REQ-0644"></a>.</p>
 <p><code><a href="#VX_ERROR_INVALID_REFERENCE">VX_ERROR_INVALID_REFERENCE</a></code> - graph is not a valid <code><a href="#vx_graph">vx_graph</a></code>
 reference.</p>
 </li>
-<li>
-<p><code><a href="#VX_ERROR_NOT_SUPPORTED">VX_ERROR_NOT_SUPPORTED</a></code> - If the attribute is not settable.</p>
-</li>
 </ul>
 </div>
 </div>
@@ -22693,7 +22667,7 @@ Use a <code><a href="#vx_size">vx_size</a></code> parameter.</p>
 <li>
 <p><a id="VX_NODE_LOCAL_DATA_PTR"></a> <code>VX_NODE_LOCAL_DATA_PTR</code> - Indicates the
 pointer kernel local memory area <code>[<strong>REQ-0666</strong>]</code><a id="REQ-0666"></a>.
-Read-write <code>[<strong>REQ-0667</strong>]</code><a id="REQ-0667"></a>.
+Read-Write <code>[<strong>REQ-0667</strong>]</code><a id="REQ-0667"></a>.
 Can be written only at user-node (de)initialization if
 <code><a href="#VX_KERNEL_LOCAL_DATA_SIZE">VX_KERNEL_LOCAL_DATA_SIZE</a></code> == 0.
 Use a void * parameter.</p>
@@ -23019,9 +22993,6 @@ reference.</p>
 <li>
 <p><code><a href="#VX_ERROR_INVALID_PARAMETERS">VX_ERROR_INVALID_PARAMETERS</a></code> - size is not correct for the type
 needed.</p>
-</li>
-<li>
-<p><code><a href="#VX_ERROR_NOT_SUPPORTED">VX_ERROR_NOT_SUPPORTED</a></code> - If the attribute is not settable.</p>
 </li>
 </ul>
 </div>
@@ -24057,7 +24028,7 @@ Use a <code><a href="#vx_uint32">vx_uint32</a></code> parameter.</p>
 <li>
 <p><a id="VX_CONVOLUTION_SIZE"></a> <code>VX_CONVOLUTION_SIZE</code> - The total size of the
 convolution matrix in bytes.
-Read-only <code>[<strong>REQ-1994</strong>]</code><a id="REQ-1994"></a>.
+Read-only.
 Use a <code><a href="#vx_size">vx_size</a></code> parameter.</p>
 </li>
 </ul>
@@ -24376,9 +24347,6 @@ Use a <code><a href="#vx_convolution_attribute_e">vx_convolution_attribute_e</a>
 <li>
 <p><code><a href="#VX_ERROR_INVALID_REFERENCE">VX_ERROR_INVALID_REFERENCE</a></code> - conv is not a valid
 <code><a href="#vx_convolution">vx_convolution</a></code> reference.</p>
-</li>
-<li>
-<p><code><a href="#VX_ERROR_NOT_SUPPORTED">VX_ERROR_NOT_SUPPORTED</a></code> - If the attribute is not settable.</p>
 </li>
 </ul>
 </div>
@@ -26593,9 +26561,6 @@ reference.</p>
 <p><code><a href="#VX_ERROR_INVALID_PARAMETERS">VX_ERROR_INVALID_PARAMETERS</a></code> - If any of the other parameters are
 incorrect.</p>
 </li>
-<li>
-<p><code><a href="#VX_ERROR_NOT_SUPPORTED">VX_ERROR_NOT_SUPPORTED</a></code> - If the attribute is not settable.</p>
-</li>
 </ul>
 </div>
 </div>
@@ -27143,6 +27108,25 @@ The value of <code><a href="#VX_LUT_OFFSET">VX_LUT_OFFSET</a></code> is equal to
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
+<div class="paragraph">
+<p><em>data_type</em> can only be <code><a href="#VX_TYPE_UINT8">VX_TYPE_UINT8</a></code> or <code><a href="#VX_TYPE_INT16">VX_TYPE_INT16</a></code>.
+If <em>data_type</em> is <code><a href="#VX_TYPE_UINT8">VX_TYPE_UINT8</a></code>, <em>count</em> should not be greater than
+256 <code>[<strong>REQ-1092</strong>]</code><a id="REQ-1092"></a>.
+If <em>data_type</em> is <code><a href="#VX_TYPE_INT16">VX_TYPE_INT16</a></code>, <em>count</em> should not be greater than
+65536 <code>[<strong>REQ-1093</strong>]</code><a id="REQ-1093"></a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p><strong>Returns:</strong> An LUT reference <code><a href="#vx_lut">vx_lut</a></code> <code>[<strong>REQ-1094</strong>]</code><a id="REQ-1094"></a>.
 Any possible errors preventing a successful creation should be checked using
@@ -27596,7 +27580,7 @@ Use a <code><a href="#vx_coordinates2d_t">vx_coordinates2d_t</a></code> paramete
 <li>
 <p><a id="VX_MATRIX_PATTERN"></a> <code>VX_MATRIX_PATTERN</code> - The pattern of the matrix.
 See <code><a href="#vx_pattern_e">vx_pattern_e</a></code>.
-Read-only <code>[<strong>REQ-1995</strong>]</code><a id="REQ-1995"></a>.
+Read-only.
 Use a <code><a href="#vx_enum">vx_enum</a></code> parameter.
 If the matrix was created via <code><a href="#vxCreateMatrixFromPattern">vxCreateMatrixFromPattern</a></code> or
 <code><a href="#vxCreateMatrixFromPatternAndOrigin">vxCreateMatrixFromPatternAndOrigin</a></code>, the attribute corresponds to
@@ -28588,7 +28572,7 @@ Use a <code><a href="#vx_uint32">vx_uint32</a></code> parameter.</p>
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxCopyRemapPatch(
     vx_remap                                    remap,
     <span class="directive">const</span> vx_rectangle_t*                       rect,
-    vx_size                                     user_stride_y,
+    vx_size*                                    user_stride_y,
     <span class="directive">void</span>*                                       user_ptr,
     vx_enum                                     user_coordinate_type,
     vx_enum                                     usage,
@@ -30374,9 +30358,6 @@ Use a <code><a href="#vx_threshold_attribute_e">vx_threshold_attribute_e</a></co
 <li>
 <p><code><a href="#VX_ERROR_INVALID_REFERENCE">VX_ERROR_INVALID_REFERENCE</a></code> - thresh is not a valid
 <code><a href="#vx_threshold">vx_threshold</a></code> reference.</p>
-</li>
-<li>
-<p><code><a href="#VX_ERROR_NOT_SUPPORTED">VX_ERROR_NOT_SUPPORTED</a></code> - If the attribute is not settable.</p>
 </li>
 </ul>
 </div>
@@ -35183,7 +35164,7 @@ See <code><a href="#vx_status_e">vx_status_e</a></code> for the list of possible
     vx_reference                                ref,
     vx_status                                   status,
     <span class="directive">const</span> <span class="predefined-type">char</span>*                                 message,
-                                                ...);</code></pre>
+    );</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -36688,9 +36669,6 @@ be altered.</p>
 <p><code><a href="#VX_ERROR_INVALID_REFERENCE">VX_ERROR_INVALID_REFERENCE</a></code> - kernel is not a valid <code><a href="#vx_kernel">vx_kernel</a></code>
 reference.</p>
 </li>
-<li>
-<p><code><a href="#VX_ERROR_NOT_SUPPORTED">VX_ERROR_NOT_SUPPORTED</a></code> - If the attribute is not settable.</p>
-</li>
 </ul>
 </div>
 </div>
@@ -37372,43 +37350,11 @@ Pattern Analysis and Machine Intelligence, 32:105b119, October 2010.</p>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="discontinued_requirement_ids">9. List of Discontinued Requirement Identifiers</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Requirement Identifier</th>
-<th class="tableblock halign-left valign-top">OpenVX Specification Revision</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-1092</strong>]</code><a id="REQ-1092"></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-1093</strong>]</code><a id="REQ-1093"></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Refer to the
-<a href="https://www.khronos.org/registry/OpenVX">Khronos OpenVX Registry</a>
-for the above specification revisions.</p>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.3<br>
-Last updated 2020-07-07 17:40:22 UTC
+Last updated 2019-07-23 05:01:12 UTC
 </div>
 </div>
 
