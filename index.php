@@ -12,15 +12,15 @@ include_once("../../assets/static_pages/khr_page_top.php");
   <ul>
     <li>OpenVX 1.3 specification (<a href="specs/1.3/html/OpenVX_Specification_1_3.html">HTML</a>,
         <a href="specs/1.3/OpenVX_Specification_1_3.pdf">PDF</a>)
-        (updated July 07, 2020).
+        (updated September 10, 2020).
     </li>
     <li>OpenVX 1.3 Feature Sets
         (<a href="specs/1.3/vx_khr_feature_sets/1.1/html/vx_khr_feature_sets_1_1.html">HTML</a>,
         <a href="specs/1.3/vx_khr_feature_sets/1.1/vx_khr_feature_sets_1_1.pdf">PDF</a>)
-        (updated July 07, 2020).
+        (updated September 10, 2020).
     </li>
     <li>OpenVX 1.3 <a href="api/1.3/openvx-standard-headers-1.3.tar.bz2">header package</a> 
-        (updated July 07, 2020).
+        (updated September 10, 2020).
     </li>
   </ul>
 

@@ -843,7 +843,7 @@ table.CodeRay td.code>pre{padding:0}
 <span id="author" class="author">Editor: Radhakrishna Giduthuri, Intel</span><br>
 <span id="author2" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="revnumber">version 1.3,</span>
-<span id="revdate">Tue, 07 Jul 2020 17:41:28 +0000</span>
+<span id="revdate">Thu, 10 Sep 2020 07:04:34 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -3359,6 +3359,317 @@ inaccessible memories.
 OpenVX does not proscribe <em>which</em> optimization the vendor does, merely that
 it <em>may</em> happen.</p>
 </div>
+<div class="paragraph">
+<p>For virtual images created with undefined or partially defined dimensions and/or without
+defined format (<code><a href="#VX_DF_IMAGE_VIRT">VX_DF_IMAGE_VIRT</a></code>), the image dimensions and format
+will be inherited from node input images during graph verification.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Vision Function</th>
+<th class="tableblock halign-left valign-top">Output Image Dimensions</th>
+<th class="tableblock halign-left valign-top">Output Image Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AbsDiff</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">And</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BilateralFilter</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Box3x3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CannyEdgeDetector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ChannelCombine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ChannelExtract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ColorConvert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ConvertDepth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Convolve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy (image object)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dilate3x3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EqualizeHist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erode3x3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FastCorners</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gaussian3x3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GaussianPyramid</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HarrisCorners</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HalfScaleGaussian</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HarrisCorners</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HOGCells</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HOGFeatures</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HoughLinesP</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IntegralImage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LaplacianPyramid</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LaplacianReconstruct</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LBP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Magnitude</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MatchTemplate</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MeanStdDev</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Median3x3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MinMaxLoc</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiply</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NonLinearFilter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NonMaxSuppression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpticalFlowPyrLK</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Or</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Phase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as remap destination</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ScaleImage</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sobel3x3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subtract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TableLookup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TensorMultiply</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TensorAdd</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TensorSubtract</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TensorMatrixMultiply</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TensorTableLookup</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TensorTranspose</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Threshold</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WarpAffine</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WarpPerspective</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WeightedAverage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Xor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same as input image</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="sub_node_parameters">2.8.3. Node Parameters</h4>
@@ -4217,7 +4528,7 @@ OpenVX in which they are supported.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Object Copy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4292,7 +4603,7 @@ OpenVX in which they are supported.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GaussianPyramid</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4583,18 +4894,6 @@ OpenVX in which they are supported.</p>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GaussianPyramid</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4958,7 +5257,7 @@ OpenVX in which they are supported.</p>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Object Copy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -5033,7 +5332,7 @@ OpenVX in which they are supported.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GaussianPyramid</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -5083,9 +5382,9 @@ OpenVX in which they are supported.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -5095,9 +5394,9 @@ OpenVX in which they are supported.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -5319,18 +5618,6 @@ OpenVX in which they are supported.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Phase</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GaussianPyramid</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
@@ -6591,8 +6878,8 @@ It is otherwise <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> <cod
 </li>
 <li>
 <p><code>[out]</code> <em>out</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
-<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0008</strong>]</code><a id="REQ-0008"></a>, which must have the same dimensions as the
-input image.</p>
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0008</strong>]</code><a id="REQ-0008"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -6641,7 +6928,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 </li>
 <li>
 <p><code>[out]</code> <em>out</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
-<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -6744,8 +7032,8 @@ enumeration <code>[<strong>REQ-0019</strong>]</code><a id="REQ-0019"></a>.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>out</em> - The output image, a <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
-<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> image <code>[<strong>REQ-0020</strong>]</code><a id="REQ-0020"></a>, which must have the same dimensions as the
-input images.</p>
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> image <code>[<strong>REQ-0020</strong>]</code><a id="REQ-0020"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -6802,7 +7090,8 @@ image.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>out</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
-<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -6905,8 +7194,8 @@ enumeration <code>[<strong>REQ-0031</strong>]</code><a id="REQ-0031"></a>.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>out</em> - The output image, a <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
-<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> image <code>[<strong>REQ-0032</strong>]</code><a id="REQ-0032"></a>, which must have the same dimensions as the
-input images.</p>
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> image <code>[<strong>REQ-0032</strong>]</code><a id="REQ-0032"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -6963,7 +7252,8 @@ image, the subtrahend.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>out</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
-<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7102,7 +7392,7 @@ Supported values are bigger then 0 and smaller or equal 20 <code>[<strong>REQ-00
 <li>
 <p><code>[out]</code> <em>dst</em> - The output data, a <code><a href="#vx_tensor">vx_tensor</a></code> of type
 <code><a href="#VX_TYPE_UINT8">VX_TYPE_UINT8</a></code> or <code><a href="#VX_TYPE_INT16">VX_TYPE_INT16</a></code>.
-Must be the same type and size of the input <code>[<strong>REQ-0043</strong>]</code><a id="REQ-0043"></a>.</p>
+Must be the same type and size of the input.</p>
 </li>
 </ul>
 </div>
@@ -7296,8 +7586,8 @@ input images <code>[<strong>REQ-0045</strong>]</code><a id="REQ-0045"></a>:</p>
 <p><code>[in]</code> <em>in2</em> - A <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> input image <code>[<strong>REQ-0048</strong>]</code><a id="REQ-0048"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image,
-which must have the same dimensions and format as the input images <code>[<strong>REQ-0049</strong>]</code><a id="REQ-0049"></a>.</p>
+<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image <code>[<strong>REQ-0049</strong>]</code><a id="REQ-0049"></a>.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7346,8 +7636,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>in2</em> - A <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> input image</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image,
-which must have the same dimensions and format as the input images.</p>
+<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7443,8 +7733,8 @@ input images <code>[<strong>REQ-0051</strong>]</code><a id="REQ-0051"></a>:</p>
 <p><code>[in]</code> <em>in2</em> - A <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> input image <code>[<strong>REQ-0054</strong>]</code><a id="REQ-0054"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image,
-which must have the same dimensions and format as the input images <code>[<strong>REQ-0055</strong>]</code><a id="REQ-0055"></a>.</p>
+<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image <code>[<strong>REQ-0055</strong>]</code><a id="REQ-0055"></a>.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7493,8 +7783,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>in2</em> - A <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> input image</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image,
-which must have the same dimensions and format as the input images.</p>
+<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7590,8 +7880,8 @@ pixel in the input images <code>[<strong>REQ-0057</strong>]</code><a id="REQ-005
 <p><code>[in]</code> <em>in2</em> - A <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> input image <code>[<strong>REQ-0060</strong>]</code><a id="REQ-0060"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image,
-which must have the same dimensions and format as the input images <code>[<strong>REQ-0061</strong>]</code><a id="REQ-0061"></a>.</p>
+<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image <code>[<strong>REQ-0061</strong>]</code><a id="REQ-0061"></a>.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7640,8 +7930,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>in2</em> - A <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> input image</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image,
-which must have the same dimensions and format as the input images.</p>
+<p><code>[out]</code> <em>out</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7732,8 +8022,8 @@ input image <code>[<strong>REQ-0063</strong>]</code><a id="REQ-0063"></a>:</p>
 <p><code>[in]</code> <em>input</em> - A <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> input image <code>[<strong>REQ-0065</strong>]</code><a id="REQ-0065"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image,
-which must have the same dimensions and format as the input image <code>[<strong>REQ-0066</strong>]</code><a id="REQ-0066"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image <code>[<strong>REQ-0066</strong>]</code><a id="REQ-0066"></a>.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7778,8 +8068,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>input</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> input image</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image,
-which must have the same dimensions and format as the input image.</p>
+<p><code>[out]</code> <em>output</em> - The <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> output image.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7863,8 +8153,8 @@ input image.</p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0070</strong>]</code><a id="REQ-0070"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format,
-which must have the same dimensions as the input image <code>[<strong>REQ-0071</strong>]</code><a id="REQ-0071"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0071</strong>]</code><a id="REQ-0071"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -7909,7 +8199,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -8198,7 +8489,8 @@ gradient, <code><a href="#VX_NORM_L1">VX_NORM_L1</a></code> or <code><a href="#V
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code>
-format with values either 0 and 1 (<code>VX_DF_IMAGE_U1</code>), or 0 and 255 (<code>VX_DF_IMAGE_U8</code>) <code>[<strong>REQ-0079</strong>]</code><a id="REQ-0079"></a>.</p>
+format with values either 0 and 1 (<code>VX_DF_IMAGE_U1</code>), or 0 and 255 (<code>VX_DF_IMAGE_U8</code>) <code>[<strong>REQ-0079</strong>]</code><a id="REQ-0079"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -8261,7 +8553,8 @@ gradient, <code><a href="#VX_NORM_L1">VX_NORM_L1</a></code> or <code><a href="#V
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code>
-format with values either 0 and 1 (<code>VX_DF_IMAGE_U1</code>), or 0 and 255 (<code>VX_DF_IMAGE_U8</code>).</p>
+format with values either 0 and 1 (<code>VX_DF_IMAGE_U1</code>), or 0 and 255 (<code>VX_DF_IMAGE_U8</code>).
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -8359,7 +8652,7 @@ Must be <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> <code>[<strong
 <li>
 <p><code>[out]</code> <em>output</em> - The output image <code>[<strong>REQ-0086</strong>]</code><a id="REQ-0086"></a>.
 The format of the image must be defined, even if the image is virtual.
-Must have the same dimensions as the input images</p>
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -8423,7 +8716,8 @@ Must be <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code>.</p>
 Must be <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image.</p>
+<p><code>[out]</code> <em>output</em> - The output image.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -8502,8 +8796,8 @@ Must be one of the defined <code><a href="#vx_df_image_e">vx_df_image_e</a></cod
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The output image.
-Must be <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> <code>[<strong>REQ-0091</strong>]</code><a id="REQ-0091"></a>, and must have the same dimensions as the
-input image.</p>
+Must be <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> <code>[<strong>REQ-0091</strong>]</code><a id="REQ-0091"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -8557,7 +8851,8 @@ Must be one of the defined <code><a href="#vx_df_image_e">vx_df_image_e</a></cod
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The output image.
-Must be <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code>.</p>
+Must be <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -9065,8 +9360,8 @@ solving for the relative intensity of the primaries.</p>
 <p><code>[in]</code> <em>input</em> - The input image from which to convert <code>[<strong>REQ-0097</strong>]</code><a id="REQ-0097"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image to which to convert, which must have
-the same dimensions as the input image <code>[<strong>REQ-0098</strong>]</code><a id="REQ-0098"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image to which to convert <code>[<strong>REQ-0098</strong>]</code><a id="REQ-0098"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -9114,7 +9409,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>input</em> - The input image.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image.</p>
+<p><code>[out]</code> <em>output</em> - The output image.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -9736,8 +10032,8 @@ For down-conversion (to U1) <code>[<strong>REQ-0130</strong>]</code><a id="REQ-0
 <p><code>[in]</code> <em>input</em> - The input image <code>[<strong>REQ-0134</strong>]</code><a id="REQ-0134"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image with the same dimensions of the
-input image <code>[<strong>REQ-0135</strong>]</code><a id="REQ-0135"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image <code>[<strong>REQ-0135</strong>]</code><a id="REQ-0135"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>policy</em> - A <code><a href="#VX_TYPE_ENUM">VX_TYPE_ENUM</a></code> of the <code><a href="#vx_convert_policy_e">vx_convert_policy_e</a></code>
@@ -9792,7 +10088,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>input</em> - The input image.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image.</p>
+<p><code>[out]</code> <em>output</em> - The output image.
+The output image must have the same dimensions as the input image.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>policy</em> - A <code><a href="#VX_TYPE_ENUM">VX_TYPE_ENUM</a></code> of the <code><a href="#vx_convert_policy_e">vx_convert_policy_e</a></code>
@@ -9952,8 +10249,8 @@ vxSetConvolutionAttribute(scharr_x, VX_CONVOLUTION_SCALE, &amp;scale, <span clas
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
-<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0147</strong>]</code><a id="REQ-0147"></a>, which must have the same dimensions as the
-input image <code>[<strong>REQ-0148</strong>]</code><a id="REQ-0148"></a>.</p>
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0147</strong>]</code><a id="REQ-0147"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -10004,7 +10301,8 @@ matrix.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
-<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -10242,8 +10540,8 @@ input image.</p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format <code>[<strong>REQ-0158</strong>]</code><a id="REQ-0158"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format,
-which must have the same dimensions and same format as the input image <code>[<strong>REQ-0159</strong>]</code><a id="REQ-0159"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -10288,8 +10586,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format,
-which must have the same dimensions and same format as the input image.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -10366,8 +10664,8 @@ contrast <code>[<strong>REQ-0161</strong>]</code><a id="REQ-0161"></a>.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The grayscale output image of type
-<code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> with equalized brightness and contrast <code>[<strong>REQ-0164</strong>]</code><a id="REQ-0164"></a> and same
-size as the input image <code>[<strong>REQ-0165</strong>]</code><a id="REQ-0165"></a>.</p>
+<code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> with equalized brightness and contrast <code>[<strong>REQ-0164</strong>]</code><a id="REQ-0164"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -10413,7 +10711,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The grayscale output image of type
-<code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> with equalized brightness and contrast.</p>
+<code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> with equalized brightness and contrast.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -10514,8 +10813,8 @@ input image.</p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format <code>[<strong>REQ-0169</strong>]</code><a id="REQ-0169"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format,
-which must have the same dimensions and same format as the input image <code>[<strong>REQ-0170</strong>]</code><a id="REQ-0170"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format <code>[<strong>REQ-0170</strong>]</code><a id="REQ-0170"></a>.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -10560,8 +10859,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format,
-which must have the same dimensions and same format as the input image.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -10909,8 +11208,8 @@ input image.</p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0183</strong>]</code><a id="REQ-0183"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0184</strong>]</code><a id="REQ-0184"></a>,
-which must have the same dimensions as the input image <code>[<strong>REQ-0185</strong>]</code><a id="REQ-0185"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0184</strong>]</code><a id="REQ-0184"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -10955,7 +11254,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -12679,8 +12979,8 @@ pixels above and to the left of it <code>[<strong>REQ-0244</strong>]</code><a id
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0247</strong>]</code><a id="REQ-0247"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U32">VX_DF_IMAGE_U32</a></code> format <code>[<strong>REQ-0248</strong>]</code><a id="REQ-0248"></a>,
-which must have the same dimensions as the input image <code>[<strong>REQ-0249</strong>]</code><a id="REQ-0249"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U32">VX_DF_IMAGE_U32</a></code> format <code>[<strong>REQ-0248</strong>]</code><a id="REQ-0248"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -12725,7 +13025,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U32">VX_DF_IMAGE_U32</a></code> format.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U32">VX_DF_IMAGE_U32</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -12761,8 +13062,8 @@ input image.</p>
 Pattern, Modified Local Binary Pattern, or Uniform Local Binary Pattern <code>[<strong>REQ-0251</strong>]</code><a id="REQ-0251"></a>.</p>
 </div>
 <div class="paragraph">
-<p>Local binary pattern is defined as: Each pixel (y,x) generate an 8 bit value
-describing the local binary pattern around the pixel, by comparing the pixel
+<p>Local binary pattern is defined as: Each pixel (y,x) generate an unsigned 8-bit value
+describing the local binary pattern around the input pixel <code>SrcImg[y,x]</code>, by comparing the pixel
 value with its 8 neighbours (selected neighbours of the 3x3 or 5x5 window).</p>
 </div>
 <div class="paragraph">
@@ -12829,7 +13130,7 @@ The LBP image is defined in the following equation <code>[<strong>REQ-0252</stro
 </div>
 <div class="paragraph">
 <p>For modified local binary pattern.
-Each pixel (y,x) generate an 8 bit value describing the modified local
+Each pixel (y,x) generate an unsigned 8-bit value describing the modified local
 binary pattern around the pixel, by comparing the average of 8 neighbour
 pixels with its 8 neighbours (5x5 window) <code>[<strong>REQ-0253</strong>]</code><a id="REQ-0253"></a>.</p>
 </div>
@@ -12961,10 +13262,10 @@ g_c) - s(g_{p-1} - g_c)|\)</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">vx_node vxLBPNode(
     vx_graph                                    graph,
-    vx_image                                    in,
+    vx_image                                    src,
     vx_enum                                     format,
     vx_int8                                     kernel_size,
-    vx_image                                    out);</code></pre>
+    vx_image                                    output);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -12976,9 +13277,7 @@ g_c) - s(g_{p-1} - g_c)|\)</p>
 <p><code>[in]</code> <em>graph</em> - The reference to the graph <code>[<strong>REQ-0255</strong>]</code><a id="REQ-0255"></a>.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>in</em> - An input image in <code><a href="#vx_image">vx_image</a></code> <code>[<strong>REQ-0256</strong>]</code><a id="REQ-0256"></a>.
-Or <span class="eq">SrcImg</span> in the equations.
-The image is of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code></p>
+<p><code>[in]</code> <em>src</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0256</strong>]</code><a id="REQ-0256"></a>.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>format</em> - A variation of LBP like original LBP and mLBP <code>[<strong>REQ-0257</strong>]</code><a id="REQ-0257"></a>.
@@ -12989,10 +13288,8 @@ See <code><a href="#vx_lbp_format_e">vx_lbp_format_e</a></code></p>
 Only size of 3 and 5 are supported</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - An output image in <code><a href="#vx_image">vx_image</a></code> <code>[<strong>REQ-0259</strong>]</code><a id="REQ-0259"></a>.
-Or <span class="eq">DstImg</span> in the equations.
-The image is of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> with the same dimensions as
-the input image <code>[<strong>REQ-0260</strong>]</code><a id="REQ-0260"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code>`<a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0259</strong>]</code><a id="REQ-0259"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -13036,9 +13333,7 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>context</em> - The reference to the overall context.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>in</em> - An input image in <code><a href="#vx_image">vx_image</a></code>.
-Or <span class="eq">SrcImg</span> in the equations.
-the image is of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code></p>
+<p><code>[in]</code> <em>src</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>format</em> - A variation of LBP like original LBP and mLBP.
@@ -13049,9 +13344,8 @@ see <code><a href="#vx_lbp_format_e">vx_lbp_format_e</a></code></p>
 Only size of 3 and 5 are supported</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - An output image in <code><a href="#vx_image">vx_image</a></code>.
-Or <span class="eq">DstImg</span> in the equations.
-The image is of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code></p>
+<p><code>[out]</code> <em>output</em> - The output image in <code>`<a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -13345,17 +13639,14 @@ int16 mag = z &gt; <span class="integer">32767</span> ? <span class="integer">32
 <p><code>[in]</code> <em>graph</em> - The reference to the graph <code>[<strong>REQ-0271</strong>]</code><a id="REQ-0271"></a>.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>grad_x</em> - The input x image.
-This must be in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0272</strong>]</code><a id="REQ-0272"></a>.</p>
+<p><code>[in]</code> <em>grad_x</em> - The input x image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0272</strong>]</code><a id="REQ-0272"></a>.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>grad_y</em> - The input y image.
-This must be in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0273</strong>]</code><a id="REQ-0273"></a>.</p>
+<p><code>[in]</code> <em>grad_y</em> - The input y image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0273</strong>]</code><a id="REQ-0273"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>mag</em> - The magnitude image.
-This is in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0274</strong>]</code><a id="REQ-0274"></a>.
-Must have the same dimensions as the input image <code>[<strong>REQ-0275</strong>]</code><a id="REQ-0275"></a>.</p>
+<p><code>[out]</code> <em>magnitude</em> - The output magnitude image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0274</strong>]</code><a id="REQ-0274"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -13401,16 +13692,14 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>context</em> - The reference to the overall context.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>grad_x</em> - The input x image.
-This must be in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<p><code>[in]</code> <em>grad_x</em> - The input x image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>grad_y</em> - The input y image.
-This must be in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<p><code>[in]</code> <em>grad_y</em> - The input y image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>mag</em> - The magnitude image.
-This will be in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<p><code>[out]</code> <em>magnitude</em> - The output magnitude image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -13746,8 +14035,8 @@ Must be of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <co
 Must be of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The output image which will hold the result of max and
-will have the same type and dimensions of the input images <code>[<strong>REQ-0291</strong>]</code><a id="REQ-0291"></a>.</p>
+<p><code>[out]</code> <em>out</em> - The output image which will hold the result of max <code>[<strong>REQ-0291</strong>]</code><a id="REQ-0291"></a>.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -13798,7 +14087,8 @@ Must be of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <co
 Must be of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The output image which will hold the result of max.</p>
+<p><code>[out]</code> <em>out</em> - The output image which will hold the result of max.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -14085,8 +14375,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>input</em> - The input image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format,
-which must have the same dimensions and same format as the input image.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -14176,8 +14466,8 @@ Must be of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <co
 Must be of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The output image which will hold the result of min and
-will have the same type and dimensions of the imput images <code>[<strong>REQ-0310</strong>]</code><a id="REQ-0310"></a>.</p>
+<p><code>[out]</code> <em>out</em> - The output image which will hold the result of min <code>[<strong>REQ-0310</strong>]</code><a id="REQ-0310"></a>.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -14228,7 +14518,8 @@ Must be of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <co
 Must be of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>out</em> - The output image which will hold the result of min.</p>
+<p><code>[out]</code> <em>out</em> - The output image which will hold the result of min.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -14524,7 +14815,7 @@ See <code><a href="#vxCreateMatrixFromPattern">vxCreateMatrixFromPattern</a></co
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format <code>[<strong>REQ-0331</strong>]</code><a id="REQ-0331"></a>,
-which must have the same dimensions and format as the input image <code>[<strong>REQ-0332</strong>]</code><a id="REQ-0332"></a>.</p>
+which must have the same dimensions and same format as the input image <code>[<strong>REQ-0332</strong>]</code><a id="REQ-0332"></a>.</p>
 </li>
 </ul>
 </div>
@@ -14582,8 +14873,8 @@ See <code><a href="#vxCreateMatrixFromPattern">vxCreateMatrixFromPattern</a></co
 <code><a href="#vxCreateMatrixFromPatternAndOrigin">vxCreateMatrixFromPatternAndOrigin</a></code>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format,
-which must have the same dimensions and format as the input image.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -14697,8 +14988,9 @@ Must be odd, and less than or equal to the smallest dimension of the
 input image.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image, of the same type and size as the
-input, that has been non-maxima suppressed <code>[<strong>REQ-0342</strong>]</code><a id="REQ-0342"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0342</strong>]</code><a id="REQ-0342"></a>.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -14759,8 +15051,9 @@ Must be odd, and less than or equal to the smallest dimension of the
 input image.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image, of the same type as the input, that
-has been non-maxima suppressed.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.
+The output image must have the same dimensions and same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -15157,17 +15450,14 @@ Each <span class="eq">ϕ</span> value is then mapped to the range 0 to 255 inclu
 <p><code>[in]</code> <em>graph</em> - The reference to the graph <code>[<strong>REQ-0365</strong>]</code><a id="REQ-0365"></a>.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>grad_x</em> - The input x image.
-This must be in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0366</strong>]</code><a id="REQ-0366"></a>.</p>
+<p><code>[in]</code> <em>grad_x</em> - The input x image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0366</strong>]</code><a id="REQ-0366"></a>.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>grad_y</em> - The input y image.
-This must be in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0367</strong>]</code><a id="REQ-0367"></a>.</p>
+<p><code>[in]</code> <em>grad_y</em> - The input y image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0367</strong>]</code><a id="REQ-0367"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>orientation</em> - The phase image.
-This is in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0368</strong>]</code><a id="REQ-0368"></a>, and must have the same
-dimensions as the input images <code>[<strong>REQ-0369</strong>]</code><a id="REQ-0369"></a>.</p>
+<p><code>[out]</code> <em>orientation</em> - The output phase image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format <code>[<strong>REQ-0368</strong>]</code><a id="REQ-0368"></a>.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -15213,16 +15503,14 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>context</em> - The reference to the overall context.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>grad_x</em> - The input x image.
-This must be in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<p><code>[in]</code> <em>grad_x</em> - The input x image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>grad_y</em> - The input y image.
-This must be in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<p><code>[in]</code> <em>grad_y</em> - The input y image in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>orientation</em> - The phase image.
-This will be in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.</p>
+<p><code>[out]</code> <em>orientation</em> - The output phase image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -15378,7 +15666,7 @@ product before overflow handling <code>[<strong>REQ-0378</strong>]</code><a id="
 <li>
 <p><code>[out]</code> <em>out</em> - The output image, a <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
 <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> image <code>[<strong>REQ-0381</strong>]</code><a id="REQ-0381"></a>.
-Must have the same type and dimensions of the input images <code>[<strong>REQ-0382</strong>]</code><a id="REQ-0382"></a>.</p>
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -15444,7 +15732,8 @@ product before overflow handling.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>out</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
-<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.</p>
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -15710,7 +15999,8 @@ A remap is typically defined as:</p>
 <p><code>[in]</code> <em>input</em> - The input <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image <code>[<strong>REQ-0394</strong>]</code><a id="REQ-0394"></a>.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>table</em> - The remap table object <code>[<strong>REQ-0395</strong>]</code><a id="REQ-0395"></a>.</p>
+<p><code>[in]</code> <em>table</em> - The remap table object <code>[<strong>REQ-0395</strong>]</code><a id="REQ-0395"></a>.
+Must be of the same dimensions as the remap table&#8217;s source image.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>policy</em> - An interpolation type from
@@ -15718,8 +16008,8 @@ A remap is typically defined as:</p>
 <code><a href="#VX_INTERPOLATION_AREA">VX_INTERPOLATION_AREA</a></code> is not supported.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image <code>[<strong>REQ-0397</strong>]</code><a id="REQ-0397"></a> with the same
-dimensions as the input image <code>[<strong>REQ-0398</strong>]</code><a id="REQ-0398"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image <code>[<strong>REQ-0397</strong>]</code><a id="REQ-0397"></a>.
+Must be of the same dimensions as the remap table&#8217;s destination image.</p>
 </li>
 </ul>
 </div>
@@ -15779,7 +16069,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>context</em> - The reference to the overall context.</p>
 </li>
 <li>
-<p><code>[in]</code> <em>input</em> - The input <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image.</p>
+<p><code>[in]</code> <em>input</em> - The input <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image.
+Must be of the same dimensions as the remap table&#8217;s source image.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>table</em> - The remap table object.</p>
@@ -15790,7 +16081,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <code><a href="#VX_INTERPOLATION_AREA">VX_INTERPOLATION_AREA</a></code> is not supported.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image.</p>
+<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image.
+Must be of the same dimensions as the remap table&#8217;s destination image.</p>
 </li>
 </ul>
 </div>
@@ -16030,7 +16322,7 @@ The interpolation mode used is nearest-neighbor.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> image <code>[<strong>REQ-0408</strong>]</code><a id="REQ-0408"></a>.
-Must be of the same type as the input image.</p>
+The output image must have the same format as the input image.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>kernel_size</em> - The input size of the Gaussian filter <code>[<strong>REQ-0409</strong>]</code><a id="REQ-0409"></a>.
@@ -16080,8 +16372,8 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 <p><code>[in]</code> <em>src</em> - The source image of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>dst</em> - The destination image of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code>,
-which must be of the same type as the input image.</p>
+<p><code>[out]</code> <em>dst</em> - The destination image of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code>.
+The output image must have the same format as the input image.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>type</em> - The interpolation type to use.</p>
@@ -16151,8 +16443,8 @@ The interpolation mode used is nearest-neighbor.</p>
 <p><code>[in]</code> <em>input</em> - The input <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> image.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> image,
-which must be if the same type as the input image.</p>
+<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> image.
+The output image must have the same format as the input image.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>kernel_size</em> - The input size of the Gaussian filter.
@@ -16204,8 +16496,8 @@ See <code><a href="#vx_status_e">vx_status_e</a></code>.</p>
 <p><code>[in]</code> <em>src</em> - The source image of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>dst</em> - The destination image of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code>,
-must be of the same type as the input image.</p>
+<p><code>[out]</code> <em>dst</em> - The destination image of type <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code>.
+The output image must have the same format as the input image.</p>
 </li>
 <li>
 <p><code>[in]</code> <em>type</em> - The interpolation type.</p>
@@ -16307,12 +16599,12 @@ The Sobel Operators <span class="eq">G<sub>x</sub>, G<sub>y</sub></span> are def
 <li>
 <p><code>[out]</code> <em>output_x</em> - [optional] The output gradient in the x direction
 in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> <code>[<strong>REQ-0418</strong>]</code><a id="REQ-0418"></a>.
-Must have the same dimensions as the input image.</p>
+The <code>output_x</code> image must have the same dimension as the input image.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>output_y</em> - [optional] The output gradient in the y direction
 in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> <code>[<strong>REQ-0419</strong>]</code><a id="REQ-0419"></a>.
-Must have the same dimensions as the input image.</p>
+The <code>output_y</code> image must have the same dimension as the input image.</p>
 </li>
 </ul>
 </div>
@@ -16362,11 +16654,13 @@ using <code><a href="#vxGetStatus">vxGetStatus</a></code></p>
 </li>
 <li>
 <p><code>[out]</code> <em>output_x</em> - [optional] The output gradient in the x direction
-in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code>.</p>
+in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code>.
+The <code>output_x</code> image must have the same dimension as the input image.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>output_y</em> - [optional] The output gradient in the y direction
-in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code>.</p>
+in <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code>.
+The <code>output_y</code> image must have the same dimension as the input image.</p>
 </li>
 </ul>
 </div>
@@ -16451,8 +16745,9 @@ image is <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a h
 <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> <code>[<strong>REQ-0425</strong>]</code><a id="REQ-0425"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image of the same type and size as the
-input image <code>[<strong>REQ-0426</strong>]</code><a id="REQ-0426"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format <code>[<strong>REQ-0426</strong>]</code><a id="REQ-0426"></a>.
+The output image must have the same dimension as the input image.</p>
 </li>
 </ul>
 </div>
@@ -16504,7 +16799,9 @@ image is <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a h
 <code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image of the same type as the input image.</p>
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or
+<code><a href="#VX_DF_IMAGE_S16">VX_DF_IMAGE_S16</a></code> format.
+The output image must have the same dimension as the input image.</p>
 </li>
 </ul>
 </div>
@@ -17757,10 +18054,9 @@ format and the <code><a href="#VX_THRESHOLD_OUTPUT_FORMAT">VX_THRESHOLD_OUTPUT_F
 output image format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image, that will contain as pixel values
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format, that will contain as pixel values
 true and false values defined by <em>thresh</em> <code>[<strong>REQ-0495</strong>]</code><a id="REQ-0495"></a>.
-Only images with format <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> are supported.
-The dimensions must be the same as the input image <code>[<strong>REQ-0496</strong>]</code><a id="REQ-0496"></a>.</p>
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -17816,10 +18112,9 @@ format and the <code><a href="#VX_THRESHOLD_OUTPUT_FORMAT">VX_THRESHOLD_OUTPUT_F
 output image format.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output image, that will contain as pixel value
+<p><code>[out]</code> <em>output</em> - The output image in <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> format, that will contain as pixel values
 true and false values defined by <em>thresh</em>.
-Only images with format <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> are supported.
-The dimensions must be the same as the input image.</p>
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -17928,8 +18223,8 @@ Must be 2x3 of type <code><a href="#VX_TYPE_FLOAT32">VX_TYPE_FLOAT32</a></code>.
 supported <code>[<strong>REQ-0503</strong>]</code><a id="REQ-0503"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> image <code>[<strong>REQ-0504</strong>]</code><a id="REQ-0504"></a>
-with the same dimensions and same format as the input image <code>[<strong>REQ-0505</strong>]</code><a id="REQ-0505"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> image <code>[<strong>REQ-0504</strong>]</code><a id="REQ-0504"></a>.
+The output image must have the same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -18001,8 +18296,8 @@ Must be 2x3 of type <code><a href="#VX_TYPE_FLOAT32">VX_TYPE_FLOAT32</a></code>.
 <code><a href="#VX_INTERPOLATION_AREA">VX_INTERPOLATION_AREA</a></code> is not supported.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> image
-with the same dimensions and same format as the input image.</p>
+<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> or <code><a href="#VX_DF_IMAGE_U1">VX_DF_IMAGE_U1</a></code> image.
+The output image must have the same format as the input image.</p>
 </li>
 </ul>
 </div>
@@ -18113,8 +18408,8 @@ Must be 3x3 of type <code><a href="#VX_TYPE_FLOAT32">VX_TYPE_FLOAT32</a></code> 
 <code><a href="#VX_INTERPOLATION_AREA">VX_INTERPOLATION_AREA</a></code> is not supported <code>[<strong>REQ-0514</strong>]</code><a id="REQ-0514"></a>.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image with the same
-dimensions as the input image <code>[<strong>REQ-0515</strong>]</code><a id="REQ-0515"></a>.</p>
+<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image
+<code>[<strong>REQ-0515</strong>]</code><a id="REQ-0515"></a>.</p>
 </li>
 </ul>
 </div>
@@ -18345,7 +18640,8 @@ range <span class="eq">0.0 ≤ α ≤ 1.0</span>.</p>
 <p><code>[in]</code> <em>img2</em> - The second <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image.</p>
 </li>
 <li>
-<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image.</p>
+<p><code>[out]</code> <em>output</em> - The output <code><a href="#VX_DF_IMAGE_U8">VX_DF_IMAGE_U8</a></code> image.
+The output image must have the same dimensions as the input image.</p>
 </li>
 </ul>
 </div>
@@ -19163,7 +19459,7 @@ bytes of an enumeration.</p>
 <div class="sect3">
 <h4 id="_vx_char">4.3.2. vx_char</h4>
 <div class="paragraph">
-<p>An 8 bit ASCII character.</p>
+<p>An 8-bit ASCII character.</p>
 </div>
 <div id="vx_char" class="listingblock">
 <div class="content">
@@ -19573,7 +19869,7 @@ sampled Y, U, V planes.
 This uses the BT709 full range by default.</p>
 </li>
 <li>
-<p><a id="VX_DF_IMAGE_YUV4"></a> <code>VX_DF_IMAGE_YUV4</code> - A 3 plane of 8 bit 4:4:4
+<p><a id="VX_DF_IMAGE_YUV4"></a> <code>VX_DF_IMAGE_YUV4</code> - A 3 plane of 8-bit 4:4:4
 sampled Y, U, V planes.
 This uses the BT709 full range by default.</p>
 </li>
@@ -37388,6 +37684,58 @@ Pattern Analysis and Machine Intelligence, 32:105b119, October 2010.</p>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0043</strong>]</code><a id="REQ-0043"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0148</strong>]</code><a id="REQ-0148"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0159</strong>]</code><a id="REQ-0159"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0165</strong>]</code><a id="REQ-0165"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0185</strong>]</code><a id="REQ-0185"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0249</strong>]</code><a id="REQ-0249"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0260</strong>]</code><a id="REQ-0260"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0275</strong>]</code><a id="REQ-0275"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0369</strong>]</code><a id="REQ-0369"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0382</strong>]</code><a id="REQ-0382"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0398</strong>]</code><a id="REQ-0398"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0496</strong>]</code><a id="REQ-0496"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-0505</strong>]</code><a id="REQ-0505"></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>[<strong>REQ-1092</strong>]</code><a id="REQ-1092"></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.3, Thu, 08 Aug 2019 20:26:04 +0000</p></td>
 </tr>
@@ -37408,7 +37756,7 @@ for the above specification revisions.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.3<br>
-Last updated 2020-07-07 17:40:22 UTC
+Last updated 2020-09-10 07:03:33 UTC
 </div>
 </div>
 
