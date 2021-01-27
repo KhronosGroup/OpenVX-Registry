@@ -20,7 +20,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
         (updated September 10, 2020).
     </li>
     <li>OpenVX 1.3 <a href="api/1.3/openvx-standard-headers-1.3.tar.bz2">header package</a> 
-        (updated September 10, 2020).
+        (updated January 26, 2021).
     </li>
   </ul>
 
@@ -48,6 +48,11 @@ include_once("../../assets/static_pages/khr_page_top.php");
         (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
         <a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.pdf">PDF</a>)
         (updated August 15, 2018).
+    </li>
+    <li>OpenVX KHR User Data Object Extension 1.1 (vx_khr_user_data_object)
+        (<a href="extensions/vx_khr_user_data_object/1.1/vx_khr_user_data_object_1_1.html">HTML</a>,
+        <a href="extensions/vx_khr_user_data_object/1.1/vx_khr_user_data_object_1_1.pdf">PDF</a>)
+        (updated October 08, 2020).
     </li>
     <li>OpenVX 1.3 <a href="api/1.3/openvx-extension-headers-1.3.tar.bz2">extension header package</a> 
         (updated July 07, 2020).
@@ -87,11 +92,6 @@ include_once("../../assets/static_pages/khr_page_top.php");
       <a href="extensions/vx_khr_opencl_interop/1.0/vx_khr_opencl_interop_1_0.pdf">PDF</a>)
       (updated January 25, 2018).
   </li>
-  <li>OpenVX KHR Pipelining, Streaming, And Batch Processing Extension 1.0.1 (vx_khr_pipelining) [provisional, OpenVX 1.1 and 1.2]
-      (<a href="extensions/vx_khr_pipelining/1.0.1/vx_khr_pipelining_1_0_1.html">HTML</a>,
-      <a href="extensions/vx_khr_pipelining/1.0.1/vx_khr_pipelining_1_0_1.pdf">PDF</a>)
-      (updated August 15, 2018).
-  </li>
   <li>OpenVX KHR S16 Extension 1.1.1 (vx_khr_s16) [provisional, OpenVX 1.1.1]
       (<a href="extensions/vx_khr_s16/1.1.1/vx_khr_s16_1_1_1.html">HTML</a>,
       <a href="extensions/vx_khr_s16/1.1.1/vx_khr_s16_1_1_1.pdf">PDF</a>)
@@ -101,11 +101,6 @@ include_once("../../assets/static_pages/khr_page_top.php");
       (<a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.html">HTML</a>,
       <a href="extensions/vx_khr_tiling/1.0.1/vx_khr_tiling_1_0_1.pdf">PDF</a>)
       (updated August 15, 2018).
-  </li>
-  <li>OpenVX KHR User Data Object Extension 1.0 (vx_khr_user_data_object) [provisional, OpenVX 1.1, 1.2]
-      (<a href="extensions/vx_khr_user_data_object/1.0/vx_khr_user_data_object_1_0.html">HTML</a>,
-      <a href="extensions/vx_khr_user_data_object/1.0/vx_khr_user_data_object_1_0.pdf">PDF</a>)
-      (updated February 13, 2019).
   </li>
   <li>OpenVX KHR XML Extension 1.1 (vx_khr_xml) [provisional, OpenVX 1.1]
       (<a href="extensions/vx_khr_xml/1.1/vx_khr_xml_1_1.html">HTML</a>,
@@ -153,6 +148,16 @@ include_once("../../assets/static_pages/khr_page_top.php");
   </li>
   <li>OpenVX 1.2 <a href="sample/openvx_sample_1.2.tar.bz2">sample code</a>
       (updated January 17, 2018).
+  </li>
+  <li>OpenVX KHR Pipelining, Streaming, And Batch Processing Extension 1.0.1 (vx_khr_pipelining) [provisional, OpenVX 1.1 and 1.2]
+      (<a href="extensions/vx_khr_pipelining/1.0.1/vx_khr_pipelining_1_0_1.html">HTML</a>,
+      <a href="extensions/vx_khr_pipelining/1.0.1/vx_khr_pipelining_1_0_1.pdf">PDF</a>)
+      (updated August 15, 2018).
+  </li>
+  <li>OpenVX KHR User Data Object Extension 1.0 (vx_khr_user_data_object) [provisional, OpenVX 1.1, 1.2]
+      (<a href="extensions/vx_khr_user_data_object/1.0/vx_khr_user_data_object_1_0.html">HTML</a>,
+      <a href="extensions/vx_khr_user_data_object/1.0/vx_khr_user_data_object_1_0.pdf">PDF</a>)
+      (updated February 13, 2019).
   </li>
 </ul>
 
