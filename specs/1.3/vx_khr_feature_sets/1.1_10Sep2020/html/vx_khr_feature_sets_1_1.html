@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.15">
+<meta name="generator" content="Asciidoctor 1.5.8">
 <meta name="author" content="Editor: Frank Brill, Radhakrishna Giduthuri, The Khronos® OpenVX Working Group">
 <title>The OpenVX&#8482; Feature Set Definitions</title>
 <style>
@@ -725,6 +725,97 @@ p.tableblock.header { color: #6d6e71; }
 
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+/*pre.CodeRay {background-color:#f7f7f8;}*/
+.CodeRay .line-numbers{border-right:1px solid #d8d8d8;padding:0 0.5em 0 .25em}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.5em;color:rgba(0,0,0,.3)}
+.CodeRay .line-numbers strong{color:rgba(0,0,0,.4)}
+table.CodeRay{border-collapse:separate;border-spacing:0;margin-bottom:0;border:0;background:none}
+table.CodeRay td{vertical-align: top;line-height:1.45}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.line-numbers>pre{padding:0;color:rgba(0,0,0,.3)}
+table.CodeRay td.code{padding:0 0 0 .5em}
+table.CodeRay td.code>pre{padding:0}
+.CodeRay .debug{color:#fff !important;background:#000080 !important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:#008080}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:#008080}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:#008080}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}
+</style>
 <link rel="stylesheet" href="katex/katex.min.css">
 <script src="katex/katex.min.js"></script>
 <script src="katex/contrib/auto-render.min.js"></script>
@@ -745,14 +836,14 @@ p.tableblock.header { color: #6d6e71; }
         );
     });
 </script></head>
-<body class="book toc2 toc-left">
-<div id="header" style="max-width: 100;">
+<body class="book toc2 toc-left" style="max-width: 100;">
+<div id="header">
 <h1>The OpenVX<sup>&#8482;</sup> Feature Set Definitions</h1>
 <div class="details">
 <span id="author" class="author">Editor: Frank Brill, Radhakrishna Giduthuri</span><br>
 <span id="author2" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="revnumber">version 1.1,</span>
-<span id="revdate">Thu, 15 Jul 2021 05:19:37 +0000</span>
+<span id="revdate">Thu, 10 Sep 2020 07:06:20 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -826,7 +917,7 @@ p.tableblock.header { color: #6d6e71; }
 </ul>
 </div>
 </div>
-<div id="content" style="max-width: 100;">
+<div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="imageblock text-center">
@@ -1449,29 +1540,29 @@ can be decomposed using the below operations are not listed separately.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>external</code>
+<td class="tableblock halign-left valign-top"><div class="verse"><code>external</code>
 <code>variable</code>
-<code>constant</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>shape</code> is 4</p></td>
+<code>constant</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>shape</code> is 4</div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No actual calculations involved, only introduce source tensors</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>conv</code>
-<code>deconv</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>input</code> and <code>filter</code> is 4
+<td class="tableblock halign-left valign-top"><div class="verse"><code>conv</code>
+<code>deconv</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>input</code> and <code>filter</code> is 4
 spatial extents of <code>filter</code> are up to 7
 spatial extents of <code>stride</code> are up to 4
 spatial extents of <code>padding</code> are less than that of <code>filter</code>
 batch and channel extents of <code>padding</code> are 0
 value of <code>border</code> equals <code>'constant'</code>
 all extents of <code>dilation</code> are 1
-<code>groups</code> equals 1 or 0 (depth-wise)</p></td>
+<code>groups</code> equals 1 or 0 (depth-wise)</div></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>max_pool</code>
-<code>avg_pool</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>input</code> is 4
+<td class="tableblock halign-left valign-top"><div class="verse"><code>max_pool</code>
+<code>avg_pool</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>input</code> is 4
 maximal spatial extents of <code>size</code> are up to 3
 maximal spatial extents of <code>stride</code> are up to 2
 batch and channel extents of <code>stride</code> are 1
@@ -1479,66 +1570,66 @@ spatial extents of <code>padding</code> are less than that of <code>filter</code
 batch and channel extents of <code>padding</code> are 0
 value of <code>border</code> equals <code>'constant'</code>
 all extents of <code>dilation</code> are 1
-<code>groups</code> equals 1 or 0 (depth-wise)</p></td>
+<code>groups</code> equals 1 or 0 (depth-wise)</div></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>max_reduce</code>
-<code>mean_reduce</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>input</code> is 4
-<code>axes</code> equals <code>[2,3]</code> (spatial dimensions)</p></td>
+<td class="tableblock halign-left valign-top"><div class="verse"><code>max_reduce</code>
+<code>mean_reduce</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>input</code> is 4
+<code>axes</code> equals <code>[2,3]</code> (spatial dimensions)</div></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>relu</code>
+<td class="tableblock halign-left valign-top"><div class="verse"><code>relu</code>
 <code>sigmoid</code>
-<code>tanh</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>x</code> is 2 or 4</p></td>
+<code>tanh</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>x</code> is 2 or 4</div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Only required to support after <code>conv</code>, <code>deconv</code>, <code>concat</code> and <code>add</code> operations</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add</code>
-<code>mul</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>x</code> and <code>y</code> is 2 or 4</p></td>
+<td class="tableblock halign-left valign-top"><div class="verse"><code>add</code>
+<code>mul</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>x</code> and <code>y</code> is 2 or 4</div></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>concat</code>
-<code>split</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of input is 4
-<code>axis</code> equals 1 (channel dimension)</p></td>
+<td class="tableblock halign-left valign-top"><div class="verse"><code>concat</code>
+<code>split</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of input is 4
+<code>axis</code> equals 1 (channel dimension)</div></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>squeeze</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of input is 4
-<code>axes</code> equals <code>[2,3]</code> (spatial dimensions)</p></td>
+<td class="tableblock halign-left valign-top"><div class="verse"><code>squeeze</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of input is 4
+<code>axes</code> equals <code>[2,3]</code> (spatial dimensions)</div></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>softmax</code>
-<code>argmax_reduce</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>input</code> is 2 or 4
-<code>axes</code> equals <code>[1]</code> (channel dimension)</p></td>
+<td class="tableblock halign-left valign-top"><div class="verse"><code>softmax</code>
+<code>argmax_reduce</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>input</code> is 2 or 4
+<code>axes</code> equals <code>[1]</code> (channel dimension)</div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Only after <code>conv</code>, <code>deconv</code>, <code>concat</code> and <code>add</code> operations, only as a sink operation (output is not processed further)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reshape</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>input</code> is 4
-<code>shape</code> equals <code>[0,-1]</code> (merge channel and spatial dimensions)</p></td>
+<td class="tableblock halign-left valign-top"><div class="verse"><code>reshape</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>input</code> is 4
+<code>shape</code> equals <code>[0,-1]</code> (merge channel and spatial dimensions)</div></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>linear</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>input</code> and <code>filter</code> is 2</p></td>
+<td class="tableblock halign-left valign-top"><div class="verse"><code>linear</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>input</code> and <code>filter</code> is 2</div></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>multilinear_upsample</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rank of <code>input</code> is 4
+<td class="tableblock halign-left valign-top"><div class="verse"><code>multilinear_upsample</code></div></td>
+<td class="tableblock halign-left valign-top"><div class="verse">rank of <code>input</code> is 4
 <code>factor</code> equals <code>[2,2]</code>
 <code>method</code> equals <code>'symmetric'</code> or <code>'asymmetric'</code>
-<code>border</code> equals <code>'constant'</code></p></td>
+<code>border</code> equals <code>'constant'</code></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Can be expressed via depth-wise deconvolution with constant weights as shown in the NNEF specification</p></td>
 </tr>
 </tbody>
@@ -1781,13 +1872,6 @@ development environment with a full set of debug tools, as opposed to the <em>de
 that runs on an embedded target device with limited resources.  A developer may use the full set of
 features to create and export a graph, and then for deployment this graph is imported by a program
 that only uses features in the Deployment Feature Set.</p>
-</div>
-<div class="paragraph">
-<p>A safety-critical implementation of OpenVX must include a Development Feature Set that passes the
-conformance test suite for one or more of the Conformance feature sets described above. It must also
-implement and pass the conformance tests for the Import/Export extension.  There are
-no special additional tests for the Deployment Feature Set or for Safety-Critical implementations
-generally.</p>
 </div>
 <div class="paragraph">
 <p>The safety-critical environment requires that graphs must execute in a deterministic,
@@ -2669,13 +2753,13 @@ developers may modify OpenVX standard header files without deviating from the Op
 </div>
 </div>
 </div>
-<div id="footer" style="max-width: 100;">
+<div id="footer">
 <div id="footer-text">
 Version 1.1<br>
-Last updated 2021-07-15 05:08:57 UTC
+Last updated 2020-09-10 07:03:33 UTC
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
 </html>
