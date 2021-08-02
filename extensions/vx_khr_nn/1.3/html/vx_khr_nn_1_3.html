@@ -2592,7 +2592,7 @@ Note that this parameter is not counted as one of the kernel parameters.</p>
 </li>
 <li>
 <p><code>[out]</code> <em>output_arr</em> - The output tensor.
-Output will have [output_width, output_height, #IFM, #batches]
+Output will have [output_width, output_height, #IFM, roi_count, #batches]
 dimensions.
 #batches is optional and must be the same as in inputs.
 (Kernel parameter #3)</p>
