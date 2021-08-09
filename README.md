@@ -37,7 +37,7 @@ Interesting files in this repository include:
 ## Adding Extension Specifications
 
 Extension specification documents can be added by proposing a pull request
-to master, adding the specification HTML files under
+adding the specification HTML files under
 extensions/extension_name/ . You must also:
 
 * Add a link from the extensions section of index.php to the extension
