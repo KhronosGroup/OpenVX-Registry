@@ -4,8 +4,11 @@ The OpenVX-Registry repository contains the OpenVX API and Extension
 Registry, including specifications.
 
 It is also used as a backing store for the web view of the registry at
-https://www.khronos.org/registry/OpenVX/ ; commits to the master branch of this
+https://www.khronos.org/registry/OpenVX/ ; commits to the main branch of this
 repository will be reflected there.
+
+**NOTE**: as of 2021-08-09, the default branch of this repository has
+been renamed from 'master' to 'main'.
 
 Please do not file issues against the OpenVX API, extensions, or headers in
 this repository. Such issues should be filed in the separate
