@@ -17,7 +17,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
     <li>OpenVX 1.3 Feature Sets
         (<a href="specs/1.3/vx_khr_feature_sets/1.1/html/vx_khr_feature_sets_1_1.html">HTML</a>,
         <a href="specs/1.3/vx_khr_feature_sets/1.1/vx_khr_feature_sets_1_1.pdf">PDF</a>)
-        (updated September 10, 2020).
+        (updated July 15, 2021).
     </li>
     <li>OpenVX 1.3 <a href="api/1.3/openvx-standard-headers-1.3.tar.bz2">header package</a> 
         (updated January 26, 2021).
