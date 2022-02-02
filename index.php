@@ -8,8 +8,12 @@ include_once("../../assets/static_pages/khr_page_top.php");
 
 <h3>OpenVX API Specification, Headers, and Documentation</h3>
 
-<p>The current version of OpenVX: <b>OpenVX 1.3</b> </p>
+<p>The current version of OpenVX: <b>OpenVX 1.3.1</b> </p>
   <ul>
+    <li>OpenVX 1.3.1 specification (<a href="specs/1.3.1/html/OpenVX_Specification_1_3_1.html">HTML</a>,
+        <a href="specs/1.3.1/OpenVX_Specification_1_3_1.pdf">PDF</a>)
+        (updated Feb 02, 2022).
+    </li>
     <li>OpenVX 1.3 specification (<a href="specs/1.3/html/OpenVX_Specification_1_3.html">HTML</a>,
         <a href="specs/1.3/OpenVX_Specification_1_3.pdf">PDF</a>)
         (updated September 10, 2020).
