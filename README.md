@@ -42,9 +42,9 @@ extensions/extension_name/ . You must also:
 
 * Add a link from the extensions section of index.php to the extension
   document, so it shows up in the web view.
-  
+
 ## License
 
-The license terms and conditions for Khronos specifications, including 
+The license terms and conditions for Khronos specifications, including
 all the specifications in this registry, can be found at
-https://www.khronos.org/registry/speccopyright.html
+https://www.khronos.org/legal/Khronos_Specification_Copyright_License_Header

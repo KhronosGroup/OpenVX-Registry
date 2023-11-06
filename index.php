@@ -71,6 +71,21 @@ include_once("../../assets/static_pages/khr_page_top.php");
 <h3>OpenVX KHR Provisional Extensions</h3>
 <p><b>NOTE:</b> OpenVX KHR Provisional Extensions do not have conformance tests</p>
 <ul>
+  <li>OpenVX KHR Bidirectional Parameters Extension 1.3.1 (vx_khr_bidirectional_parameters) [provisional, OpenVX 1.3.1]
+      (<a href="extensions/vx_khr_bidirectional_parameters/vx_khr_bidirectional_parameters_1_3_1.html">HTML</a>,
+      <a href="extensions/vx_khr_bidirectional_parameters/vx_khr_bidirectional_parameters_1_3_1.pdf">PDF</a>)
+      (updated October 31, 2023).
+  </li>
+  <li>OpenVX KHR Raw Image Extension 1.0 (vx_khr_raw_image) [provisional, OpenVX 1.3.1]
+      (<a href="extensions/vx_khr_raw_image/vx_khr_raw_image_1_0.html">HTML</a>,
+      <a href="extensions/vx_khr_raw_image/vx_khr_raw_image_1_0.pdf">PDF</a>)
+      (updated October 31, 2023).
+  </li>
+  <li>OpenVX KHR Swap And Move kernel Extension 1.3.1 (vx_khr_swap_move) [provisional, OpenVX 1.3.1]
+      (<a href="extensions/vx_khr_swap_move/vx_khr_swap_move_1_3_1.html">HTML</a>,
+      <a href="extensions/vx_khr_swap_move/vx_khr_swap_move_1_3_1.pdf">PDF</a>)
+      (updated October 31, 2023).
+  </li>
   <li>OpenVX KHR Import Kernel Extension 1.3 (vx_khr_import_kernel) [provisional, OpenVX 1.3]
       (<a href="extensions/vx_khr_import_kernel/1.3/html/vx_khr_import_kernel_1_3.html">HTML</a>,
       <a href="extensions/vx_khr_import_kernel/1.3/vx_khr_import_kernel_1_3.pdf">PDF</a>)
