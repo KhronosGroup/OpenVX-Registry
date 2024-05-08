@@ -32,6 +32,12 @@ include_once("../../assets/static_pages/khr_page_top.php");
     <li>OpenVX 1.3.1 <a href="api/1.3.1/openvx-standard-headers-1.3.1.tar.bz2">header package</a>
         (updated November 07, 2023).
     </li>
+    <ul>
+      <li>
+          See (<a href="api/1.3.1/OpenVX_Header_Files.html">information about header files</a>) for details
+          (updated May 07, 2024).
+      </li>
+    </ul>
   </ul>
 
 <p>The current version of OpenVX Safety Critical Specification: <b>OpenVX_SC 1.3</b> </p>
