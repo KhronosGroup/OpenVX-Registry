@@ -60,10 +60,10 @@ include_once("../../assets/static_pages/khr_page_top.php");
         <a href="extensions/vx_khr_pipelining/1.1/vx_khr_pipelining_1_1_0.pdf">PDF</a>)
         (updated April 10, 2019).
     </li>
-    <li>OpenVX KHR Export And Import Extension 1.1.1 (vx_khr_export_and_import) 
-        (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.html">HTML</a>,
-        <a href="extensions/vx_khr_ix/1.1.1/vx_khr_export_and_import_1_1_1.pdf">PDF</a>)
-        (updated August 15, 2018).
+    <li>OpenVX KHR Export And Import Extension 1.1.1 (vx_khr_ix)
+        (<a href="extensions/vx_khr_ix/1.1.1/vx_khr_ix_1_1_1.html">HTML</a>,
+        <a href="extensions/vx_khr_ix/1.1.1/vx_khr_ix_1_1_1.pdf">PDF</a>)
+        (updated May 08, 2024).
     </li>
     <li>OpenVX KHR User Data Object Extension 1.1 (vx_khr_user_data_object)
         (<a href="extensions/vx_khr_user_data_object/1.1/vx_khr_user_data_object_1_1.html">HTML</a>,
