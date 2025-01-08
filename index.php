@@ -83,6 +83,16 @@ include_once("../../assets/static_pages/khr_page_top.php");
 <h3>OpenVX KHR Provisional Extensions</h3>
 <p><b>NOTE:</b> OpenVX KHR Provisional Extensions do not have conformance tests</p>
 <ul>
+    <li>OpenVX KHR Safe Cast 1.3.1 (vx_khr_safe_casts) [provisional, OpenVX 1.3.1]
+      (<a href="https://openvx.pages.khronos.org/-/api-docs/-/jobs/662432/artifacts/docs/out/vx_khr_safe_casts/vx_khr_safe_casts_1_3_1/vx_khr_safe_casts_1_3_1.html">HTML</a>,
+      <a href="extensions/vx_khr_bidirectional_parameters/vx_khr_bidirectional_parameters_1_3_1.pdf">PDF</a>)
+      (updated October 31, 2023).
+  </li>
+  <li>OpenVX KHR Supplementary Data (vx_khr_supplementatry_data) [provisional, OpenVX 1.3.1]
+      (<a href="https://openvx.pages.khronos.org/-/api-docs/-/jobs/662432/artifacts/docs/out/vx_khr_supplementary_data/vx_khr_supplementary_data_1_3_1/vx_khr_supplementary_data_1_3_1.html">HTML</a>,
+      <a href="extensions/vx_khr_raw_image/vx_khr_raw_image_1_0.pdf">PDF</a>)
+      (updated October 31, 2023).
+  </li>
   <li>OpenVX KHR Bidirectional Parameters Extension 1.3.1 (vx_khr_bidirectional_parameters) [provisional, OpenVX 1.3.1]
       (<a href="extensions/vx_khr_bidirectional_parameters/vx_khr_bidirectional_parameters_1_3_1.html">HTML</a>,
       <a href="extensions/vx_khr_bidirectional_parameters/vx_khr_bidirectional_parameters_1_3_1.pdf">PDF</a>)
