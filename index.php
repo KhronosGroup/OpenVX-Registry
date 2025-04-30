@@ -92,7 +92,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
         <a href="extensions/vx_khr_pipelining/2.0/vx_khr_pipelining_2_0_0.pdf">PDF</a>)
         (updated April 29, 2025).
     </li>
-    <li>OpenVX KHR Sub Image Arrays (vx_khr_sub_imae_arrays)
+    <li>OpenVX KHR Sub Image Arrays (vx_khr_sub_image_arrays)
         (<a href="extensions/vx_khr_sub_image_arrays/vx_khr_sub_image_arrays_1_3_1/vx_khr_sub_image_arrays_1_3_1.html">HTML</a>,
         <a href="extensions/vx_khr_sub_image_arrays/vx_khr_sub_image_arrays_1_3_1.pdf">PDF</a>)
         (updated April 29, 2025).
