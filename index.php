@@ -93,7 +93,7 @@ include_once("../../assets/static_pages/khr_page_top.php");
         (updated Jan 16, 2026).
     </li>
     <li>OpenVX KHR Target Kernel V1.0 (vx_khr_target_kernel)
-        <a href="extensions/vx_khr_target_kernel/vx_khr_target_kernel_1_0.pdf">PDF</a>)
+        (<a href="extensions/vx_khr_target_kernel/vx_khr_target_kernel_1_0.pdf">PDF</a>)
         (updated Jan 16, 2026).
     </li>
     <li>OpenVX KHR Pipelining Extension 2.0 (vx_khr_pipelining)
