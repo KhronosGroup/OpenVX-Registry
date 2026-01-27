@@ -1,270 +1,1386 @@
-
-
-
-
 <!DOCTYPE html>
-<html class="gl-light ui-gray with-top-bar " lang="en">
-<head prefix="og: http://ogp.me/ns#">
-<meta charset="utf-8">
-<meta content="IE=edge" http-equiv="X-UA-Compatible">
-<meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Artifacts · Build OpenVX API Docs (#829359) · Jobs · OpenVX / API Documents · GitLab</title>
-<script nonce="ttmvhwnwOwt1iY+fo/uM8A==">
-//<![CDATA[
-window.gon={};gon.math_rendering_limits_enabled=true;gon.features={"asyncSidebarCounts":false};
-//]]>
-</script>
-<script nonce="ttmvhwnwOwt1iY+fo/uM8A==">
-//<![CDATA[
-window.uploads_path = "/openvx/api-docs/uploads";
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.24">
+<meta name="author" content="The Khronos® OpenVX Working Group, Contributor: Jesse Villarreal">
+<title>The OpenVX&#8482; Node Send Command Extension</title>
+<style>
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+/* ========================================================================== HTML5 display definitions ========================================================================== */
+/** Correct `block` display not defined in IE 8/9. */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
 
+/** Correct `inline-block` display not defined in IE 8/9. */
+audio, canvas, video { display: inline-block; }
 
+/** Prevent modern browsers from displaying `audio` without controls. Remove excess height in iOS 5 devices. */
+audio:not([controls]) { display: none; height: 0; }
 
-//]]>
-</script>
+/** Address `[hidden]` styling not present in IE 8/9. Hide the `template` element in IE, Safari, and Firefox < 22. */
+[hidden], template { display: none; }
 
+script { display: none !important; }
 
+/* ========================================================================== Base ========================================================================== */
+/** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
 
+/** Remove default margin. */
+body { margin: 0; }
 
+/* ========================================================================== Links ========================================================================== */
+/** Remove the gray background color from active links in IE 10. */
+a { background: transparent; }
 
-<link rel="stylesheet" href="/assets/application-1ddaebdb200c856586163629346de80dd66333772002a5a642dcc142c194c9ba.css" />
-<link rel="stylesheet" href="/assets/page_bundles/projects-3ecc000073da836fc87d71a9d2bc48368b34718e3df8a1904ff6f9755a7692f7.css" /><link rel="stylesheet" href="/assets/page_bundles/tree-1290ef28cdf5bf9a263be300651f92c985782ad16284daf5c07980e6117d6324.css" /><link rel="stylesheet" href="/assets/page_bundles/commit_description-1e2cba4dda3c7b30dd84924809020c569f1308dea51520fe1dd5d4ce31403195.css" /><link rel="stylesheet" href="/assets/page_bundles/work_items-cbc6a2e1633c4e847a617e35cc4833b85b80816db688d3d6dd3cd31d4251bc53.css" /><link rel="stylesheet" href="/assets/page_bundles/notes_shared-caf98f77b75b4b5399bdde69c069ee023fefdaa986d687c937e8010218785f51.css" />
-<link rel="stylesheet" href="/assets/application_utilities-0bfb919a8a7eb0e89544dfe328e69461ccb276a565685fdb6ae3b14f3db3f41b.css" />
-<link rel="stylesheet" href="/assets/tailwind-016e83140c37d97dbdff0cef9c063fcd43d214866665fb783774776747928853.css" />
+/** Address `outline` inconsistency between Chrome and other browsers. */
+a:focus { outline: thin dotted; }
 
+/** Improve readability when focused and also mouse hovered in all browsers. */
+a:active, a:hover { outline: 0; }
 
-<link rel="stylesheet" href="/assets/fonts-fae5d3f79948bd85f18b6513a025f863b19636e85b09a1492907eb4b1bb0557b.css" />
-<link rel="stylesheet" href="/assets/highlight/themes/dark-d3b12a96d7c0b736869f2869cd6bf53fc38874df1fd29dfc0018b772e7d95eb6.css" />
+/* ========================================================================== Typography ========================================================================== */
+/** Address variable `h1` font-size and margin within `section` and `article` contexts in Firefox 4+, Safari 5, and Chrome. */
+h1 { font-size: 1.9047619047619047em; margin: 0.67em 0; }
 
+/** Address styling not present in IE 8/9, Safari 5, and Chrome. */
+abbr[title] { border-bottom: 1px dotted; }
 
-<link rel="preload" href="/assets/application_utilities-0bfb919a8a7eb0e89544dfe328e69461ccb276a565685fdb6ae3b14f3db3f41b.css" as="style" type="text/css" nonce="N/vkcklnYXm3jcXBzNxApQ==">
-<link rel="preload" href="/assets/application-1ddaebdb200c856586163629346de80dd66333772002a5a642dcc142c194c9ba.css" as="style" type="text/css" nonce="N/vkcklnYXm3jcXBzNxApQ==">
-<link rel="preload" href="/assets/highlight/themes/dark-d3b12a96d7c0b736869f2869cd6bf53fc38874df1fd29dfc0018b772e7d95eb6.css" as="style" type="text/css" nonce="N/vkcklnYXm3jcXBzNxApQ==">
+/** Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
+b, strong { font-weight: bold; }
 
+/** Address styling not present in Safari 5 and Chrome. */
+dfn { font-style: italic; }
 
+/** Address differences between Firefox and other browsers. */
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
 
+/** Address styling not present in IE 8/9. */
+mark { background: #ff0; color: #000; }
 
-<script src="/assets/webpack/runtime.4cd094cc.bundle.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/main.4431f7ec.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/commons-pages.admin.abuse_reports.show-pages.admin.topics.edit-pages.admin.topics.new-pages.dashboar-c8f1318b.54872cef.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/commons-pages.admin.abuse_reports.show-pages.dashboard.issues-pages.dashboard.milestones.show-pages.-13e11bbf.1a73330b.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/commons-pages.admin.abuse_reports.show-pages.dashboard.issues-pages.groups.boards-pages.groups.issue-8dfa5f96.20262e8b.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/commons-pages.admin.abuse_reports.show-pages.dashboard.issues-pages.groups.boards-pages.groups.issue-f804d6c2.d4f467df.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/commons-pages.groups.new-pages.import.gitlab_projects.new-pages.import.manifest.new-pages.projects.n-44c6c18e.800b02b5.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/commons-pages.search.show-super_sidebar.755ec094.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/super_sidebar.839aed14.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/commons-pages.projects-pages.projects.activity-pages.projects.alert_management.details-pages.project-2cf3f004.cf930f47.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/commons-pages.projects.artifacts-pages.projects.artifacts.browse-pages.projects.artifacts.file.c1633d57.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
-<script src="/assets/webpack/pages.projects.artifacts.2a267738.chunk.js" defer="defer" nonce="ttmvhwnwOwt1iY+fo/uM8A=="></script>
+/** Correct font family set oddly in Safari 5 and Chrome. */
+code, kbd, pre, samp { font-family: monospace, serif; font-size: 0.9523809523809523em; }
 
-<meta content="object" property="og:type">
-<meta content="GitLab" property="og:site_name">
-<meta content="Artifacts · Build OpenVX API Docs (#829359) · Jobs · OpenVX / API Documents · GitLab" property="og:title">
-<meta content="API Docs for OpenVX" property="og:description">
-<meta content="https://gitlab.khronos.org/uploads/-/system/project/avatar/345/Round-OpenVX.png" property="og:image">
-<meta content="64" property="og:image:width">
-<meta content="64" property="og:image:height">
-<meta content="https://gitlab.khronos.org/openvx/api-docs/-/jobs/829359/artifacts/external_file/docs/out/vx_khr_node_send_command/vx_khr_node_send_command_1_0/vx_khr_node_send_command_1_0.html" property="og:url">
-<meta content="summary" property="twitter:card">
-<meta content="Artifacts · Build OpenVX API Docs (#829359) · Jobs · OpenVX / API Documents · GitLab" property="twitter:title">
-<meta content="API Docs for OpenVX" property="twitter:description">
-<meta content="https://gitlab.khronos.org/uploads/-/system/project/avatar/345/Round-OpenVX.png" property="twitter:image">
+/** Improve readability of pre-formatted text in all browsers. */
+pre { white-space: pre-wrap; }
 
-<meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="j7itIClF_Os4bA8FxP-s3dJdlLwYx8R4rTuVJG_JEoaaQI04LFFKCei66hpCeq3k1HuFMt1QMbE1MTseMuGXWw" />
-<meta name="csp-nonce" content="ttmvhwnwOwt1iY+fo/uM8A==" />
-<meta name="action-cable-url" content="/-/cable" />
-<link href="/-/manifest.json" rel="manifest">
-<link rel="icon" type="image/png" href="/uploads/-/system/appearance/favicon/1/favicon-32x32.png" id="favicon" data-original-href="/uploads/-/system/appearance/favicon/1/favicon-32x32.png" />
-<link rel="apple-touch-icon" type="image/x-icon" href="/assets/apple-touch-icon-b049d4bc0dd9626f31db825d61880737befc7835982586d015bded10b4435460.png" />
-<link href="/search/opensearch.xml" rel="search" title="Search GitLab" type="application/opensearchdescription+xml">
+/** Set consistent quote types. */
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
 
+/** Address inconsistent and variable font size in all browsers. */
+small { font-size: 80%; }
 
+/** Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 
+sup { top: -0.5em; }
 
-<meta content="API Docs for OpenVX" name="description">
-<meta content="#28272d" name="theme-color">
-</head>
+sub { bottom: -0.25em; }
 
-<body class="tab-width-8 gl-browser-safari gl-platform-mac" data-find-file="/openvx/api-docs/-/find_file/master" data-group="openvx" data-group-full-path="openvx" data-namespace-id="16" data-page="projects:artifacts:external_file" data-project="api-docs" data-project-full-path="openvx/api-docs" data-project-id="345">
+/* ========================================================================== Embedded content ========================================================================== */
+/** Remove border when inside `a` element in IE 8/9. */
+img { border: 0; }
 
-<script nonce="ttmvhwnwOwt1iY+fo/uM8A==">
-//<![CDATA[
-gl = window.gl || {};
-gl.client = {"isSafari":true,"isMac":true};
+/** Correct overflow displayed oddly in IE 9. */
+svg:not(:root) { overflow: hidden; }
 
+/* ========================================================================== Figures ========================================================================== */
+/** Address margin not present in IE 8/9 and Safari 5. */
+figure { margin: 0; }
 
-//]]>
-</script>
+/* ========================================================================== Forms ========================================================================== */
+/** Define consistent border, margin, and padding. */
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
 
+/** 1. Correct `color` not being inherited in IE 8/9. 2. Remove padding so people aren't caught out if they zero out fieldsets. */
+legend { border: 0; /* 1 */ padding: 0; /* 2 */ }
 
-<div class="layout-page page-with-super-sidebar">
-<aside class="js-super-sidebar super-sidebar super-sidebar-loading" data-command-palette="{&quot;project_files_url&quot;:&quot;/openvx/api-docs/-/files/master?format=json&quot;,&quot;project_blob_url&quot;:&quot;/openvx/api-docs/-/blob/master&quot;}" data-force-desktop-expanded-sidebar="" data-is-saas="false" data-root-path="/" data-sidebar="{&quot;whats_new_most_recent_release_items_count&quot;:4,&quot;whats_new_version_digest&quot;:&quot;9dab82380f617a2f79d677356ead11ffa1b3e81d6c33a5e449d6e64059bcae1c&quot;,&quot;is_logged_in&quot;:true,&quot;context_switcher_links&quot;:[{&quot;title&quot;:&quot;Your work&quot;,&quot;link&quot;:&quot;/&quot;,&quot;icon&quot;:&quot;work&quot;},{&quot;title&quot;:&quot;Explore&quot;,&quot;link&quot;:&quot;/explore&quot;,&quot;icon&quot;:&quot;compass&quot;},{&quot;title&quot;:&quot;Profile&quot;,&quot;link&quot;:&quot;/-/user_settings/profile&quot;,&quot;icon&quot;:&quot;profile&quot;},{&quot;title&quot;:&quot;Preferences&quot;,&quot;link&quot;:&quot;/-/profile/preferences&quot;,&quot;icon&quot;:&quot;preferences&quot;}],&quot;current_menu_items&quot;:[{&quot;id&quot;:&quot;project_overview&quot;,&quot;title&quot;:&quot;API Documents&quot;,&quot;avatar&quot;:&quot;/uploads/-/system/project/avatar/345/Round-OpenVX.png&quot;,&quot;entity_id&quot;:345,&quot;link&quot;:&quot;/openvx/api-docs&quot;,&quot;link_classes&quot;:&quot;shortcuts-project&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;manage_menu&quot;,&quot;title&quot;:&quot;Manage&quot;,&quot;icon&quot;:&quot;users&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/activity&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;activity&quot;,&quot;title&quot;:&quot;Activity&quot;,&quot;link&quot;:&quot;/openvx/api-docs/activity&quot;,&quot;link_classes&quot;:&quot;shortcuts-project-activity&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;members&quot;,&quot;title&quot;:&quot;Members&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/project_members&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;labels&quot;,&quot;title&quot;:&quot;Labels&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/labels&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:false},{&quot;id&quot;:&quot;plan_menu&quot;,&quot;title&quot;:&quot;Plan&quot;,&quot;icon&quot;:&quot;planning&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/issues&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;project_issue_list&quot;,&quot;title&quot;:&quot;Issues&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/issues&quot;,&quot;pill_count&quot;:&quot;44&quot;,&quot;link_classes&quot;:&quot;shortcuts-issues has-sub-items&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;boards&quot;,&quot;title&quot;:&quot;Issue boards&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/boards&quot;,&quot;link_classes&quot;:&quot;shortcuts-issue-boards&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;milestones&quot;,&quot;title&quot;:&quot;Milestones&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/milestones&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;project_wiki&quot;,&quot;title&quot;:&quot;Wiki&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/wikis/home&quot;,&quot;link_classes&quot;:&quot;shortcuts-wiki&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:false},{&quot;id&quot;:&quot;code_menu&quot;,&quot;title&quot;:&quot;Code&quot;,&quot;icon&quot;:&quot;code&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/merge_requests&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;project_merge_request_list&quot;,&quot;title&quot;:&quot;Merge requests&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/merge_requests&quot;,&quot;pill_count&quot;:&quot;11&quot;,&quot;link_classes&quot;:&quot;shortcuts-merge_requests&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;files&quot;,&quot;title&quot;:&quot;Repository&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/tree/master&quot;,&quot;link_classes&quot;:&quot;shortcuts-tree&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;branches&quot;,&quot;title&quot;:&quot;Branches&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/branches&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;commits&quot;,&quot;title&quot;:&quot;Commits&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/commits/master?ref_type=heads&quot;,&quot;link_classes&quot;:&quot;shortcuts-commits&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;tags&quot;,&quot;title&quot;:&quot;Tags&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/tags&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;graphs&quot;,&quot;title&quot;:&quot;Repository graph&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/network/master?ref_type=heads&quot;,&quot;link_classes&quot;:&quot;shortcuts-network&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;compare&quot;,&quot;title&quot;:&quot;Compare revisions&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/compare?from=master\u0026to=master&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;project_snippets&quot;,&quot;title&quot;:&quot;Snippets&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/snippets&quot;,&quot;link_classes&quot;:&quot;shortcuts-snippets&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:false},{&quot;id&quot;:&quot;build_menu&quot;,&quot;title&quot;:&quot;Build&quot;,&quot;icon&quot;:&quot;rocket&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/pipelines&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;pipelines&quot;,&quot;title&quot;:&quot;Pipelines&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/pipelines&quot;,&quot;link_classes&quot;:&quot;shortcuts-pipelines&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;jobs&quot;,&quot;title&quot;:&quot;Jobs&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/jobs&quot;,&quot;link_classes&quot;:&quot;shortcuts-builds&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;pipelines_editor&quot;,&quot;title&quot;:&quot;Pipeline editor&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/ci/editor?branch_name=master&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;pipeline_schedules&quot;,&quot;title&quot;:&quot;Pipeline schedules&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/pipeline_schedules&quot;,&quot;link_classes&quot;:&quot;shortcuts-builds&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;artifacts&quot;,&quot;title&quot;:&quot;Artifacts&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/artifacts&quot;,&quot;link_classes&quot;:&quot;shortcuts-builds&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:false},{&quot;id&quot;:&quot;secure_menu&quot;,&quot;title&quot;:&quot;Secure&quot;,&quot;icon&quot;:&quot;shield&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/security/configuration&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;configuration&quot;,&quot;title&quot;:&quot;Security configuration&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/security/configuration&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:false},{&quot;id&quot;:&quot;deploy_menu&quot;,&quot;title&quot;:&quot;Deploy&quot;,&quot;icon&quot;:&quot;deployments&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/releases&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;releases&quot;,&quot;title&quot;:&quot;Releases&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/releases&quot;,&quot;link_classes&quot;:&quot;shortcuts-deployments-releases&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;feature_flags&quot;,&quot;title&quot;:&quot;Feature flags&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/feature_flags&quot;,&quot;link_classes&quot;:&quot;shortcuts-feature-flags&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;model_registry&quot;,&quot;title&quot;:&quot;Model registry&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/ml/models&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;pages&quot;,&quot;title&quot;:&quot;Pages&quot;,&quot;link&quot;:&quot;/openvx/api-docs/pages&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:false},{&quot;id&quot;:&quot;operations_menu&quot;,&quot;title&quot;:&quot;Operate&quot;,&quot;icon&quot;:&quot;cloud-pod&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/environments&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;environments&quot;,&quot;title&quot;:&quot;Environments&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/environments&quot;,&quot;link_classes&quot;:&quot;shortcuts-environments&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;kubernetes&quot;,&quot;title&quot;:&quot;Kubernetes clusters&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/clusters&quot;,&quot;link_classes&quot;:&quot;shortcuts-kubernetes&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;terraform_states&quot;,&quot;title&quot;:&quot;Terraform states&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/terraform&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:false},{&quot;id&quot;:&quot;monitor_menu&quot;,&quot;title&quot;:&quot;Monitor&quot;,&quot;icon&quot;:&quot;monitor&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/error_tracking&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;error_tracking&quot;,&quot;title&quot;:&quot;Error Tracking&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/error_tracking&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;alert_management&quot;,&quot;title&quot;:&quot;Alerts&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/alert_management&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;incidents&quot;,&quot;title&quot;:&quot;Incidents&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/incidents&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:false},{&quot;id&quot;:&quot;analyze_menu&quot;,&quot;title&quot;:&quot;Analyze&quot;,&quot;icon&quot;:&quot;chart&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/value_stream_analytics&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;cycle_analytics&quot;,&quot;title&quot;:&quot;Value stream analytics&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/value_stream_analytics&quot;,&quot;link_classes&quot;:&quot;shortcuts-project-cycle-analytics&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;contributors&quot;,&quot;title&quot;:&quot;Contributor analytics&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/graphs/master?ref_type=heads&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;ci_cd_analytics&quot;,&quot;title&quot;:&quot;CI/CD analytics&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/pipelines/charts&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;repository_analytics&quot;,&quot;title&quot;:&quot;Repository analytics&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/graphs/master/charts&quot;,&quot;link_classes&quot;:&quot;shortcuts-repository-charts&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;model_experiments&quot;,&quot;title&quot;:&quot;Model experiments&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/ml/experiments&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:false},{&quot;id&quot;:&quot;settings_menu&quot;,&quot;title&quot;:&quot;Settings&quot;,&quot;icon&quot;:&quot;settings&quot;,&quot;avatar_shape&quot;:&quot;rect&quot;,&quot;link&quot;:&quot;/openvx/api-docs/edit&quot;,&quot;is_active&quot;:false,&quot;items&quot;:[{&quot;id&quot;:&quot;general&quot;,&quot;title&quot;:&quot;General&quot;,&quot;link&quot;:&quot;/openvx/api-docs/edit&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;integrations&quot;,&quot;title&quot;:&quot;Integrations&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/settings/integrations&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;webhooks&quot;,&quot;title&quot;:&quot;Webhooks&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/hooks&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;access_tokens&quot;,&quot;title&quot;:&quot;Access tokens&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/settings/access_tokens&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;repository&quot;,&quot;title&quot;:&quot;Repository&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/settings/repository&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;merge_request_settings&quot;,&quot;title&quot;:&quot;Merge requests&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/settings/merge_requests&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;ci_cd&quot;,&quot;title&quot;:&quot;CI/CD&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/settings/ci_cd&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;monitor&quot;,&quot;title&quot;:&quot;Monitor&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/settings/operations&quot;,&quot;is_active&quot;:false},{&quot;id&quot;:&quot;usage_quotas&quot;,&quot;title&quot;:&quot;Usage Quotas&quot;,&quot;link&quot;:&quot;/openvx/api-docs/-/usage_quotas&quot;,&quot;is_active&quot;:false}],&quot;separated&quot;:true}],&quot;current_context_header&quot;:&quot;Project&quot;,&quot;support_path&quot;:&quot;https://about.gitlab.com/get-help/&quot;,&quot;docs_path&quot;:&quot;/help/docs&quot;,&quot;display_whats_new&quot;:true,&quot;show_version_check&quot;:false,&quot;search&quot;:{&quot;search_path&quot;:&quot;/search&quot;,&quot;issues_path&quot;:&quot;/dashboard/issues&quot;,&quot;mr_path&quot;:&quot;/dashboard/merge_requests&quot;,&quot;autocomplete_path&quot;:&quot;/search/autocomplete&quot;,&quot;settings_path&quot;:&quot;/search/settings&quot;,&quot;search_context&quot;:{&quot;group&quot;:{&quot;id&quot;:16,&quot;name&quot;:&quot;OpenVX&quot;,&quot;full_name&quot;:&quot;OpenVX&quot;},&quot;group_metadata&quot;:{&quot;issues_path&quot;:&quot;/groups/openvx/-/issues&quot;,&quot;mr_path&quot;:&quot;/groups/openvx/-/merge_requests&quot;},&quot;project&quot;:{&quot;id&quot;:345,&quot;name&quot;:&quot;API Documents&quot;},&quot;project_metadata&quot;:{&quot;mr_path&quot;:&quot;/openvx/api-docs/-/merge_requests&quot;,&quot;issues_path&quot;:&quot;/openvx/api-docs/-/issues&quot;},&quot;code_search&quot;:true,&quot;scope&quot;:null,&quot;for_snippets&quot;:null}},&quot;panel_type&quot;:&quot;project&quot;,&quot;shortcut_links&quot;:[{&quot;title&quot;:&quot;Milestones&quot;,&quot;href&quot;:&quot;/dashboard/milestones&quot;,&quot;css_class&quot;:&quot;dashboard-shortcuts-milestones&quot;},{&quot;title&quot;:&quot;Snippets&quot;,&quot;href&quot;:&quot;/dashboard/snippets&quot;,&quot;css_class&quot;:&quot;dashboard-shortcuts-snippets&quot;},{&quot;title&quot;:&quot;Activity&quot;,&quot;href&quot;:&quot;/dashboard/activity&quot;,&quot;css_class&quot;:&quot;dashboard-shortcuts-activity&quot;},{&quot;title&quot;:&quot;Groups&quot;,&quot;href&quot;:&quot;/dashboard/groups&quot;,&quot;css_class&quot;:&quot;dashboard-shortcuts-groups&quot;},{&quot;title&quot;:&quot;Projects&quot;,&quot;href&quot;:&quot;/dashboard/projects&quot;,&quot;css_class&quot;:&quot;dashboard-shortcuts-projects&quot;},{&quot;title&quot;:&quot;Create a new issue&quot;,&quot;href&quot;:&quot;/openvx/api-docs/-/issues/new&quot;,&quot;css_class&quot;:&quot;shortcuts-new-issue&quot;}],&quot;terms&quot;:null,&quot;is_admin&quot;:false,&quot;name&quot;:&quot;Kiriti Nagesh Gowda (AMD)&quot;,&quot;username&quot;:&quot;kiritigowda&quot;,&quot;admin_url&quot;:&quot;https://gitlab.khronos.org/admin&quot;,&quot;admin_mode&quot;:{&quot;admin_mode_feature_enabled&quot;:false,&quot;admin_mode_active&quot;:false,&quot;enter_admin_mode_url&quot;:&quot;/admin/session/new&quot;,&quot;leave_admin_mode_url&quot;:&quot;/admin/session/destroy&quot;,&quot;user_is_admin&quot;:false},&quot;avatar_url&quot;:&quot;/uploads/-/system/user/avatar/2380/avatar.png&quot;,&quot;has_link_to_profile&quot;:true,&quot;link_to_profile&quot;:&quot;/kiritigowda&quot;,&quot;logo_url&quot;:&quot;/uploads/-/system/appearance/header_logo/1/Khronos-Round-72px.jpg&quot;,&quot;status&quot;:{&quot;can_update&quot;:true,&quot;busy&quot;:null,&quot;customized&quot;:null,&quot;availability&quot;:&quot;&quot;,&quot;emoji&quot;:null,&quot;message_html&quot;:null,&quot;message&quot;:null,&quot;clear_after&quot;:null},&quot;settings&quot;:{&quot;has_settings&quot;:true,&quot;profile_path&quot;:&quot;/-/user_settings/profile&quot;,&quot;profile_preferences_path&quot;:&quot;/-/profile/preferences&quot;},&quot;user_counts&quot;:{&quot;assigned_issues&quot;:22,&quot;assigned_merge_requests&quot;:9,&quot;review_requested_merge_requests&quot;:3,&quot;todos&quot;:60,&quot;last_update&quot;:1769492809943},&quot;can_sign_out&quot;:true,&quot;sign_out_link&quot;:&quot;/users/sign_out&quot;,&quot;issues_dashboard_path&quot;:&quot;/dashboard/issues?assignee_username=kiritigowda&quot;,&quot;merge_request_dashboard_path&quot;:null,&quot;todos_dashboard_path&quot;:&quot;/dashboard/todos&quot;,&quot;create_new_menu_groups&quot;:[{&quot;name&quot;:&quot;In this project&quot;,&quot;items&quot;:[{&quot;text&quot;:&quot;New issue&quot;,&quot;href&quot;:&quot;/openvx/api-docs/-/issues/new&quot;,&quot;component&quot;:null,&quot;extraAttrs&quot;:{&quot;data-track-label&quot;:&quot;new_issue&quot;,&quot;data-track-action&quot;:&quot;click_link&quot;,&quot;data-track-property&quot;:&quot;nav_create_menu&quot;,&quot;data-testid&quot;:&quot;create_menu_item&quot;,&quot;data-qa-create-menu-item&quot;:&quot;new_issue&quot;}},{&quot;text&quot;:&quot;New merge request&quot;,&quot;href&quot;:&quot;/openvx/api-docs/-/merge_requests/new&quot;,&quot;component&quot;:null,&quot;extraAttrs&quot;:{&quot;data-track-label&quot;:&quot;new_mr&quot;,&quot;data-track-action&quot;:&quot;click_link&quot;,&quot;data-track-property&quot;:&quot;nav_create_menu&quot;,&quot;data-testid&quot;:&quot;create_menu_item&quot;,&quot;data-qa-create-menu-item&quot;:&quot;new_mr&quot;}},{&quot;text&quot;:&quot;New snippet&quot;,&quot;href&quot;:&quot;/openvx/api-docs/-/snippets/new&quot;,&quot;component&quot;:null,&quot;extraAttrs&quot;:{&quot;data-track-label&quot;:&quot;new_snippet&quot;,&quot;data-track-action&quot;:&quot;click_link&quot;,&quot;data-track-property&quot;:&quot;nav_create_menu&quot;,&quot;data-testid&quot;:&quot;create_menu_item&quot;,&quot;data-qa-create-menu-item&quot;:&quot;new_snippet&quot;}},{&quot;text&quot;:&quot;Invite members&quot;,&quot;href&quot;:null,&quot;component&quot;:&quot;invite_members&quot;,&quot;extraAttrs&quot;:{&quot;data-track-label&quot;:&quot;invite&quot;,&quot;data-track-action&quot;:&quot;click_link&quot;,&quot;data-track-property&quot;:&quot;nav_create_menu&quot;,&quot;data-testid&quot;:&quot;create_menu_item&quot;,&quot;data-qa-create-menu-item&quot;:&quot;invite&quot;}}]},{&quot;name&quot;:&quot;In GitLab&quot;,&quot;items&quot;:[{&quot;text&quot;:&quot;New project/repository&quot;,&quot;href&quot;:&quot;/projects/new&quot;,&quot;component&quot;:null,&quot;extraAttrs&quot;:{&quot;data-track-label&quot;:&quot;general_new_project&quot;,&quot;data-track-action&quot;:&quot;click_link&quot;,&quot;data-track-property&quot;:&quot;nav_create_menu&quot;,&quot;data-testid&quot;:&quot;create_menu_item&quot;,&quot;data-qa-create-menu-item&quot;:&quot;general_new_project&quot;}},{&quot;text&quot;:&quot;New snippet&quot;,&quot;href&quot;:&quot;/-/snippets/new&quot;,&quot;component&quot;:null,&quot;extraAttrs&quot;:{&quot;data-track-label&quot;:&quot;general_new_snippet&quot;,&quot;data-track-action&quot;:&quot;click_link&quot;,&quot;data-track-property&quot;:&quot;nav_create_menu&quot;,&quot;data-testid&quot;:&quot;create_menu_item&quot;,&quot;data-qa-create-menu-item&quot;:&quot;general_new_snippet&quot;}}]}],&quot;merge_request_menu&quot;:[{&quot;name&quot;:&quot;Merge requests&quot;,&quot;items&quot;:[{&quot;text&quot;:&quot;Assigned&quot;,&quot;href&quot;:&quot;/dashboard/merge_requests?assignee_username=kiritigowda&quot;,&quot;count&quot;:9,&quot;userCount&quot;:&quot;assigned_merge_requests&quot;,&quot;extraAttrs&quot;:{&quot;data-track-action&quot;:&quot;click_link&quot;,&quot;data-track-label&quot;:&quot;merge_requests_assigned&quot;,&quot;data-track-property&quot;:&quot;nav_core_menu&quot;,&quot;class&quot;:&quot;dashboard-shortcuts-merge_requests&quot;}},{&quot;text&quot;:&quot;Review requests&quot;,&quot;href&quot;:&quot;/dashboard/merge_requests?reviewer_username=kiritigowda&quot;,&quot;count&quot;:3,&quot;userCount&quot;:&quot;review_requested_merge_requests&quot;,&quot;extraAttrs&quot;:{&quot;data-track-action&quot;:&quot;click_link&quot;,&quot;data-track-label&quot;:&quot;merge_requests_to_review&quot;,&quot;data-track-property&quot;:&quot;nav_core_menu&quot;,&quot;class&quot;:&quot;dashboard-shortcuts-review_requests&quot;}}]}],&quot;projects_path&quot;:&quot;/dashboard/projects&quot;,&quot;groups_path&quot;:&quot;/dashboard/groups&quot;,&quot;gitlab_com_but_not_canary&quot;:false,&quot;gitlab_com_and_canary&quot;:false,&quot;canary_toggle_com_url&quot;:&quot;https://next.gitlab.com&quot;,&quot;current_context&quot;:{&quot;namespace&quot;:&quot;projects&quot;,&quot;item&quot;:{&quot;id&quot;:345,&quot;name&quot;:&quot;API Documents&quot;,&quot;namespace&quot;:&quot;OpenVX / API Documents&quot;,&quot;fullPath&quot;:&quot;openvx/api-docs&quot;,&quot;webUrl&quot;:&quot;/openvx/api-docs&quot;,&quot;avatarUrl&quot;:&quot;/uploads/-/system/project/avatar/345/Round-OpenVX.png&quot;}},&quot;pinned_items&quot;:[&quot;project_issue_list&quot;,&quot;project_merge_request_list&quot;],&quot;update_pins_url&quot;:&quot;/-/users/pins&quot;,&quot;is_impersonating&quot;:false,&quot;stop_impersonation_path&quot;:&quot;/admin/impersonation&quot;,&quot;track_visits_path&quot;:&quot;/-/track_namespace_visits&quot;,&quot;work_items&quot;:null}"></aside>
+/** 1. Correct font family not being inherited in all browsers. 2. Correct font size not being inherited in all browsers. 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome. */
+button, input, select, textarea { font-family: inherit; /* 1 */ font-size: 100%; /* 2 */ margin: 0; /* 3 */ }
 
-<div class="content-wrapper">
-<div class="broadcast-wrapper">
+/** Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet. */
+button, input { line-height: normal; }
 
+/** Address inconsistent `text-transform` inheritance for `button` and `select`. All other form control elements do not inherit `text-transform` values. Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+. Correct `select` style inheritance in Firefox 4+ and Opera. */
+button, select { text-transform: none; }
 
+/** 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. 2. Correct inability to style clickable `input` types in iOS. 3. Improve usability and consistency of cursor style between image-type `input` and others. */
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */ cursor: pointer; /* 3 */ }
 
+/** Re-set default cursor for disabled elements. */
+button[disabled], html input[disabled] { cursor: default; }
 
+/** 1. Address box sizing set to `content-box` in IE 8/9. 2. Remove excess padding in IE 8/9. */
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ }
+
+/** 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome. 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof). */
+input[type="search"] { -webkit-appearance: textfield; /* 1 */ -moz-box-sizing: content-box; -webkit-box-sizing: content-box; /* 2 */ box-sizing: content-box; }
+
+/** Remove inner padding and search cancel button in Safari 5 and Chrome on OS X. */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/** Remove inner padding and border in Firefox 4+. */
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/** 1. Remove default vertical scrollbar in IE 8/9. 2. Improve readability and alignment in all browsers. */
+textarea { overflow: auto; /* 1 */ vertical-align: top; /* 2 */ }
+
+/* ========================================================================== Tables ========================================================================== */
+/** Remove most spacing between table cells. */
+table { border-collapse: collapse; border-spacing: 0; }
+
+meta.foundation-mq-small { font-family: "only screen and (min-width: 768px)"; width: 768px; }
+
+meta.foundation-mq-medium { font-family: "only screen and (min-width:1280px)"; width: 1280px; }
+
+meta.foundation-mq-large { font-family: "only screen and (min-width:1440px)"; width: 1440px; }
+
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html, body { font-size: 100%; }
+
+body { background: #fff; color: #222; padding: 0; margin: 0; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: auto; }
+
+a:hover { cursor: pointer; }
+
+img, object, embed { max-width: 100%; height: auto; }
+
+object, embed { height: 100%; }
+
+img { -ms-interpolation-mode: bicubic; }
+
+#map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object { max-width: none !important; }
+
+.left { float: left !important; }
+
+.right { float: right !important; }
+
+.text-left { text-align: left !important; }
+
+.text-right { text-align: right !important; }
+
+.text-center { text-align: center !important; }
+
+.text-justify { text-align: justify !important; }
+
+.hide { display: none; }
+
+.antialiased { -webkit-font-smoothing: antialiased; }
+
+img { display: inline-block; vertical-align: middle; }
+
+textarea { height: auto; min-height: 50px; }
+
+select { width: 100%; }
+
+object, svg { display: inline-block; vertical-align: middle; }
+
+.center { margin-left: auto; margin-right: auto; }
+
+.spread { width: 100%; }
+
+p.lead, .paragraph.lead > p, #preamble > .sectionbody > .paragraph:first-of-type p { font-size: 1.1607142857142858em; line-height: 1.6; }
+
+.subheader, .admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { line-height: 1.4; color: black; font-weight: 300; margin-top: 0.2em; margin-bottom: 0.5em; }
+
+/* Typography resets */
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6, pre, form, p, blockquote, th, td { margin: 0; padding: 0; direction: ltr; }
+
+/* Default Link Styles */
+a { color: #0068b0; text-decoration: none; line-height: inherit; }
+a:hover, a:focus { color: #333; }
+a img { border: none; }
+
+/* Default paragraph styles */
+p { font-family: Noto, sans-serif; font-weight: normal; font-size: 0.9523809523809523em; line-height: 1.6; margin-bottom: 0.75em; text-rendering: optimizeLegibility; }
+p aside { font-size: 0.8333333333333334em; line-height: 1.35; font-style: italic; }
+
+/* Default header styles */
+h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { font-family: Noto, sans-serif; font-weight: normal; font-style: normal; color: black; text-rendering: optimizeLegibility; margin-top: 0.5em; margin-bottom: 0.5em; line-height: 1.2125em; }
+h1 small, h2 small, h3 small, #toctitle small, .sidebarblock > .content > .title small, h4 small, h5 small, h6 small { font-size: 60%; color: #4d4d4d; line-height: 0; }
+
+h1 { font-size: 2.0238095238095237em; }
+
+h2 { font-size: 1.6071428571428572em; }
+
+h3, #toctitle, .sidebarblock > .content > .title { font-size: 1.3095238095238095em; }
+
+h4 { font-size: 1.0714285714285714em; }
+
+h5 { font-size: 1.0714285714285714em; }
+
+h6 { font-size: 0.9523809523809523em; }
+
+hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 1.25em 0 1.1875em; height: 0; }
+
+/* Helpful Typography Defaults */
+em, i { font-style: italic; line-height: inherit; }
+
+strong, b { font-weight: bold; line-height: inherit; }
+
+small { font-size: 60%; line-height: inherit; }
+
+code { font-family: Consolas, "Liberation Mono", Courier, monospace; font-weight: normal; color: #264357; }
+
+/* Lists */
+ul, ol, dl { font-size: 0.9523809523809523em; line-height: 1.6; margin-bottom: 0.75em; list-style-position: outside; font-family: Noto, sans-serif; }
+
+ul, ol { margin-left: 1.5em; }
+ul.no-bullet, ol.no-bullet { margin-left: 1.5em; }
+
+/* Unordered Lists */
+ul li ul, ul li ol { margin-left: 1.25em; margin-bottom: 0; font-size: 0.9523809523809523em; /* Override nested font-size change */ }
+ul.square li ul, ul.circle li ul, ul.disc li ul { list-style: inherit; }
+ul.square { list-style-type: square; }
+ul.circle { list-style-type: circle; }
+ul.disc { list-style-type: disc; }
+ul.no-bullet { list-style: none; }
+
+/* Ordered Lists */
+ol li ul, ol li ol { margin-left: 1.25em; margin-bottom: 0; }
+
+/* Definition Lists */
+dl dt { margin-bottom: 0.3em; font-weight: bold; }
+dl dd { margin-bottom: 0.75em; }
+
+/* Abbreviations */
+abbr, acronym { text-transform: uppercase; font-size: 90%; color: black; border-bottom: 1px dotted #ddd; cursor: help; }
+
+abbr { text-transform: none; }
+
+/* Blockquotes */
+blockquote { margin: 0 0 0.75em; padding: 0.5625em 1.25em 0 1.1875em; border-left: 1px solid #ddd; }
+blockquote cite { display: block; font-size: 0.7738095238095238em; color: #5e93b8; }
+blockquote cite:before { content: "\2014 \0020"; }
+blockquote cite a, blockquote cite a:visited { color: #5e93b8; }
+
+blockquote, blockquote p { line-height: 1.6; color: #333; }
+
+/* Microformats */
+.vcard { display: inline-block; margin: 0 0 1.25em 0; border: 1px solid #ddd; padding: 0.625em 0.75em; }
+.vcard li { margin: 0; display: block; }
+.vcard .fn { font-weight: bold; font-size: 0.8928571428571429em; }
+
+.vevent .summary { font-weight: bold; }
+.vevent abbr { cursor: auto; text-decoration: none; font-weight: bold; border: none; padding: 0 0.0625em; }
+
+@media only screen and (min-width: 768px) { h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { line-height: 1.4; }
+  h1 { font-size: 2.619047619047619em; }
+  h2 { font-size: 2.2023809523809526em; }
+  h3, #toctitle, .sidebarblock > .content > .title { font-size: 1.6071428571428572em; }
+  h4 { font-size: 1.369047619047619em; } }
+/* Tables */
+table { background: #fff; margin-bottom: 1.25em; border: solid 1px #d8d8ce; }
+table thead, table tfoot { background: #eee; font-weight: bold; }
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td { padding: 0.5em 0.625em 0.625em; font-size: inherit; color: #222; text-align: left; }
+table tr th, table tr td { padding: 0.5625em 0.625em; font-size: inherit; color: #6d6e71; }
+table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #f8f8f8; }
+table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td { display: table-cell; line-height: 1.4; }
+
+body { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; tab-size: 4; }
+
+h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { line-height: 1.4; }
+
+a:hover, a:focus { text-decoration: underline; }
+
+.clearfix:before, .clearfix:after, .float-group:before, .float-group:after { content: " "; display: table; }
+.clearfix:after, .float-group:after { clear: both; }
+
+*:not(pre) > code { font-size: inherit; font-style: normal !important; letter-spacing: 0; padding: 0; background-color: transparent; -webkit-border-radius: 0; border-radius: 0; line-height: inherit; word-wrap: break-word; }
+*:not(pre) > code.nobreak { word-wrap: normal; }
+*:not(pre) > code.nowrap { white-space: nowrap; }
+
+pre, pre > code { line-height: 1.6; color: #264357; font-family: Consolas, "Liberation Mono", Courier, monospace; font-weight: normal; }
+
+em em { font-style: normal; }
+
+strong strong { font-weight: normal; }
+
+.keyseq { color: #333333; }
+
+kbd { font-family: Consolas, "Liberation Mono", Courier, monospace; display: inline-block; color: black; font-size: 0.6190476190476191em; line-height: 1.45; background-color: #f7f7f7; border: 1px solid #ccc; -webkit-border-radius: 3px; border-radius: 3px; -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.1em white inset; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.1em white inset; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.1em white inset; margin: 0 0.15em; padding: 0.2em 0.5em; vertical-align: middle; position: relative; top: -0.1em; white-space: nowrap; }
+
+.keyseq kbd:first-child { margin-left: 0; }
+
+.keyseq kbd:last-child { margin-right: 0; }
+
+.menuseq, .menuref { color: #000; }
+
+.menuseq b:not(.caret), .menuref { font-weight: inherit; }
+
+.menuseq { word-spacing: -0.02em; }
+.menuseq b.caret { font-size: 1.1904761904761905em; line-height: 0.8; }
+.menuseq i.caret { font-weight: bold; text-align: center; width: 0.45em; }
+
+b.button:before, b.button:after { position: relative; top: -1px; font-weight: normal; }
+
+b.button:before { content: "["; padding: 0 3px 0 2px; }
+
+b.button:after { content: "]"; padding: 0 2px 0 3px; }
+
+#header, #content, #footnotes, #footer { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5em; *zoom: 1; position: relative; padding-left: 1.5em; padding-right: 1.5em; }
+#header:before, #header:after, #content:before, #content:after, #footnotes:before, #footnotes:after, #footer:before, #footer:after { content: " "; display: table; }
+#header:after, #content:after, #footnotes:after, #footer:after { clear: both; }
+
+#content { margin-top: 1.25em; }
+
+#content:before { content: none; }
+
+#header > h1:first-child { color: black; margin-top: 2.25rem; margin-bottom: 0; }
+#header > h1:first-child + #toc { margin-top: 8px; border-top: 1px solid #ddd; }
+#header > h1:only-child, body.toc2 #header > h1:nth-last-child(2) { border-bottom: 1px solid #ddd; padding-bottom: 8px; }
+#header .details { border-bottom: 1px solid #ddd; line-height: 1.45; padding-top: 0.25em; padding-bottom: 0.25em; padding-left: 0.25em; color: #5e93b8; display: -ms-flexbox; display: -webkit-flex; display: flex; -ms-flex-flow: row wrap; -webkit-flex-flow: row wrap; flex-flow: row wrap; }
+#header .details span:first-child { margin-left: -0.125em; }
+#header .details span.email a { color: #333; }
+#header .details br { display: none; }
+#header .details br + span:before { content: "\00a0\2013\00a0"; }
+#header .details br + span.author:before { content: "\00a0\22c5\00a0"; color: #333; }
+#header .details br + span#revremark:before { content: "\00a0|\00a0"; }
+#header #revnumber { text-transform: capitalize; }
+#header #revnumber:after { content: "\00a0"; }
+
+#content > h1:first-child:not([class]) { color: black; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-top: 0; padding-top: 1rem; margin-bottom: 1.25rem; }
+
+#toc { border-bottom: 0 solid #ddd; padding-bottom: 0.5em; }
+#toc > ul { margin-left: 0.125em; }
+#toc ul.sectlevel0 > li > a { font-style: italic; }
+#toc ul.sectlevel0 ul.sectlevel1 { margin: 0.5em 0; }
+#toc ul { font-family: Noto, sans-serif; list-style-type: none; }
+#toc li { line-height: 1.3334; margin-top: 0.3334em; }
+#toc a { text-decoration: none; }
+#toc a:active { text-decoration: underline; }
+
+#toctitle { color: black; font-size: 1.1428571428571428em; }
+
+@media only screen and (min-width: 768px) { #toctitle { font-size: 1.3095238095238095em; }
+  body.toc2 { padding-left: 15em; padding-right: 0; }
+  #toc.toc2 { margin-top: 0 !important; background-color: #fff; position: fixed; width: 15em; left: 0; top: 0; border-right: 1px solid #ddd; border-top-width: 0 !important; border-bottom-width: 0 !important; z-index: 1000; padding: 1.25em 1em; height: 100%; overflow: auto; }
+  #toc.toc2 #toctitle { margin-top: 0; margin-bottom: 0.8rem; font-size: 1.1428571428571428em; }
+  #toc.toc2 > ul { font-size: 0.8571428571428571em; margin-bottom: 0; }
+  #toc.toc2 ul ul { margin-left: 0; padding-left: 1em; }
+  #toc.toc2 ul.sectlevel0 ul.sectlevel1 { padding-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
+  body.toc2.toc-right { padding-left: 0; padding-right: 15em; }
+  body.toc2.toc-right #toc.toc2 { border-right-width: 0; border-left: 1px solid #ddd; left: auto; right: 0; } }
+@media only screen and (min-width: 1280px) { body.toc2 { padding-left: 20em; padding-right: 0; }
+  #toc.toc2 { width: 20em; }
+  #toc.toc2 #toctitle { font-size: 1.3095238095238095em; }
+  #toc.toc2 > ul { font-size: 0.9047619047619048em; }
+  #toc.toc2 ul ul { padding-left: 1.25em; }
+  body.toc2.toc-right { padding-left: 0; padding-right: 20em; } }
+#content #toc { border-style: solid; border-width: 1px; border-color: #e6e6e6; margin-bottom: 1.25em; padding: 1.25em; background: #fff; -webkit-border-radius: 0; border-radius: 0; }
+#content #toc > :first-child { margin-top: 0; }
+#content #toc > :last-child { margin-bottom: 0; }
+
+#footer { max-width: 100%; background-color: none; padding: 1.25em; }
+
+#footer-text { color: black; line-height: 1.44; }
+
+#content { margin-bottom: 0.625em; }
+
+.sect1 { padding-bottom: 0.625em; }
+
+@media only screen and (min-width: 768px) { #content { margin-bottom: 1.25em; }
+  .sect1 { padding-bottom: 1.25em; } }
+.sect1:last-child { padding-bottom: 0; }
+
+.sect1 + .sect1 { border-top: 0 solid #ddd; }
+
+#content h1 > a.anchor, h2 > a.anchor, h3 > a.anchor, #toctitle > a.anchor, .sidebarblock > .content > .title > a.anchor, h4 > a.anchor, h5 > a.anchor, h6 > a.anchor { position: absolute; z-index: 1001; width: 1.5ex; margin-left: -1.5ex; display: block; text-decoration: none !important; visibility: hidden; text-align: center; font-weight: normal; }
+#content h1 > a.anchor:before, h2 > a.anchor:before, h3 > a.anchor:before, #toctitle > a.anchor:before, .sidebarblock > .content > .title > a.anchor:before, h4 > a.anchor:before, h5 > a.anchor:before, h6 > a.anchor:before { content: "\00A7"; font-size: 0.8095238095238095em; display: block; padding-top: 0.1em; }
+#content h1:hover > a.anchor, #content h1 > a.anchor:hover, h2:hover > a.anchor, h2 > a.anchor:hover, h3:hover > a.anchor, #toctitle:hover > a.anchor, .sidebarblock > .content > .title:hover > a.anchor, h3 > a.anchor:hover, #toctitle > a.anchor:hover, .sidebarblock > .content > .title > a.anchor:hover, h4:hover > a.anchor, h4 > a.anchor:hover, h5:hover > a.anchor, h5 > a.anchor:hover, h6:hover > a.anchor, h6 > a.anchor:hover { visibility: visible; }
+#content h1 > a.link, h2 > a.link, h3 > a.link, #toctitle > a.link, .sidebarblock > .content > .title > a.link, h4 > a.link, h5 > a.link, h6 > a.link { color: black; text-decoration: none; }
+#content h1 > a.link:hover, h2 > a.link:hover, h3 > a.link:hover, #toctitle > a.link:hover, .sidebarblock > .content > .title > a.link:hover, h4 > a.link:hover, h5 > a.link:hover, h6 > a.link:hover { color: black; }
+
+.audioblock, .imageblock, .literalblock, .listingblock, .stemblock, .videoblock { margin-bottom: 1.25em; }
+
+.admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-rendering: optimizeLegibility; text-align: left; }
+
+table.tableblock > caption.title { white-space: nowrap; overflow: visible; max-width: 0; }
+
+.paragraph.lead > p, #preamble > .sectionbody > .paragraph:first-of-type p { color: black; }
+
+table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p { font-size: inherit; }
+
+.admonitionblock > table { border-collapse: separate; border: 0; background: none; width: 100%; }
+.admonitionblock > table td.icon { text-align: center; width: 80px; }
+.admonitionblock > table td.icon img { max-width: initial; }
+.admonitionblock > table td.icon .title { font-weight: bold; font-family: Noto, sans-serif; text-transform: uppercase; }
+.admonitionblock > table td.content { padding-left: 1.125em; padding-right: 1.25em; border-left: 1px solid #ddd; color: #5e93b8; }
+.admonitionblock > table td.content > :last-child > :last-child { margin-bottom: 0; }
+
+.exampleblock > .content { border-style: solid; border-width: 1px; border-color: #e6e6e6; margin-bottom: 1.25em; padding: 1.25em; background: #fff; -webkit-border-radius: 0; border-radius: 0; }
+.exampleblock > .content > :first-child { margin-top: 0; }
+.exampleblock > .content > :last-child { margin-bottom: 0; }
+
+.sidebarblock { border-style: solid; border-width: 1px; border-color: #e6e6e6; margin-bottom: 1.25em; padding: 1.25em; background: #fff; -webkit-border-radius: 0; border-radius: 0; }
+.sidebarblock > :first-child { margin-top: 0; }
+.sidebarblock > :last-child { margin-bottom: 0; }
+.sidebarblock > .content > .title { color: black; margin-top: 0; }
+
+.exampleblock > .content > :last-child > :last-child, .exampleblock > .content .olist > ol > li:last-child > :last-child, .exampleblock > .content .ulist > ul > li:last-child > :last-child, .exampleblock > .content .qlist > ol > li:last-child > :last-child, .sidebarblock > .content > :last-child > :last-child, .sidebarblock > .content .olist > ol > li:last-child > :last-child, .sidebarblock > .content .ulist > ul > li:last-child > :last-child, .sidebarblock > .content .qlist > ol > li:last-child > :last-child { margin-bottom: 0; }
+
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint { background: #eee; }
+.sidebarblock .literalblock pre, .sidebarblock .listingblock pre:not(.highlight), .sidebarblock .listingblock pre[class="highlight"], .sidebarblock .listingblock pre[class^="highlight "], .sidebarblock .listingblock pre.CodeRay, .sidebarblock .listingblock pre.prettyprint { background: #f2f1f1; }
+
+.literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { border: 1px hidden #666; -webkit-border-radius: 0; border-radius: 0; word-wrap: break-word; padding: 1.25em 1.5625em 1.125em 1.5625em; font-size: 0.7738095238095238em; }
+.literalblock pre.nowrap, .literalblock pre[class].nowrap, .listingblock pre.nowrap, .listingblock pre[class].nowrap { overflow-x: auto; white-space: pre; word-wrap: normal; }
+@media only screen and (min-width: 768px) { .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { font-size: 0.8630952380952381em; } }
+@media only screen and (min-width: 1280px) { .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { font-size: 0.9523809523809523em; } }
+
+.literalblock.output pre { color: #eee; background-color: #264357; }
+
+.listingblock pre.highlightjs { padding: 0; }
+.listingblock pre.highlightjs > code { padding: 1.25em 1.5625em 1.125em 1.5625em; -webkit-border-radius: 0; border-radius: 0; }
+
+.listingblock > .content { position: relative; }
+
+.listingblock code[data-lang]:before { display: none; content: attr(data-lang); position: absolute; font-size: 0.7142857142857143em; top: 0.425rem; right: 0.5rem; line-height: 1; text-transform: uppercase; color: #999; }
+
+.listingblock:hover code[data-lang]:before { display: block; }
+
+.listingblock.terminal pre .command:before { content: attr(data-prompt); padding-right: 0.5em; color: #999; }
+
+.listingblock.terminal pre .command:not([data-prompt]):before { content: "$"; }
+
+table.pyhltable { border-collapse: separate; border: 0; margin-bottom: 0; background: none; }
+
+table.pyhltable td { vertical-align: top; padding-top: 0; padding-bottom: 0; line-height: 1.6; }
+
+table.pyhltable td.code { padding-left: .75em; padding-right: 0; }
+
+pre.pygments .lineno, table.pyhltable td:not(.code) { color: #999; padding-left: 0; padding-right: .5em; border-right: 1px solid #ddd; }
+
+pre.pygments .lineno { display: inline-block; margin-right: .25em; }
+
+table.pyhltable .linenodiv { background: none !important; padding-right: 0 !important; }
+
+.quoteblock { margin: 0 1em 0.75em 1.5em; display: table; }
+.quoteblock > .title { margin-left: -1.5em; margin-bottom: 0.75em; }
+.quoteblock blockquote, .quoteblock blockquote p { color: #333; font-size: 1.15rem; line-height: 1.75; word-spacing: 0.1em; letter-spacing: 0; font-style: italic; text-align: justify; }
+.quoteblock blockquote { margin: 0; padding: 0; border: 0; }
+.quoteblock blockquote:before { content: "\201c"; float: left; font-size: 2.619047619047619em; font-weight: bold; line-height: 0.6em; margin-left: -0.6em; color: black; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+.quoteblock blockquote > .paragraph:last-child p { margin-bottom: 0; }
+.quoteblock .attribution { margin-top: 0.5em; margin-right: 0.5ex; text-align: right; }
+.quoteblock .quoteblock { margin-left: 0; margin-right: 0; padding: 0.5em 0; border-left: 3px solid #5e93b8; }
+.quoteblock .quoteblock blockquote { padding: 0 0 0 0.75em; }
+.quoteblock .quoteblock blockquote:before { display: none; }
+
+.verseblock { margin: 0 1em 0.75em 1em; }
+.verseblock pre { font-family: "Open Sans", "DejaVu Sans", sans; font-size: 1.15rem; color: #333; font-weight: 300; text-rendering: optimizeLegibility; }
+.verseblock pre strong { font-weight: 400; }
+.verseblock .attribution { margin-top: 1.25rem; margin-left: 0.5ex; }
+
+.quoteblock .attribution, .verseblock .attribution { font-size: 0.7738095238095238em; line-height: 1.45; font-style: italic; }
+.quoteblock .attribution br, .verseblock .attribution br { display: none; }
+.quoteblock .attribution cite, .verseblock .attribution cite { display: block; letter-spacing: -0.025em; color: #5e93b8; }
+
+.quoteblock.abstract { margin: 0 0 0.75em 0; display: block; }
+.quoteblock.abstract blockquote, .quoteblock.abstract blockquote p { text-align: left; word-spacing: 0; }
+.quoteblock.abstract blockquote:before, .quoteblock.abstract blockquote p:first-of-type:before { display: none; }
+
+table.tableblock { max-width: 100%; border-collapse: separate; }
+table.tableblock td > .paragraph:last-child p > p:last-child, table.tableblock th > p:last-child, table.tableblock td > p:last-child { margin-bottom: 0; }
+
+table.tableblock, th.tableblock, td.tableblock { border: 0 solid #d8d8ce; }
+
+table.grid-all > thead > tr > .tableblock, table.grid-all > tbody > tr > .tableblock { border-width: 0 1px 1px 0; }
+
+table.grid-all > tfoot > tr > .tableblock { border-width: 1px 1px 0 0; }
+
+table.grid-cols > * > tr > .tableblock { border-width: 0 1px 0 0; }
+
+table.grid-rows > thead > tr > .tableblock, table.grid-rows > tbody > tr > .tableblock { border-width: 0 0 1px 0; }
+
+table.grid-rows > tfoot > tr > .tableblock { border-width: 1px 0 0 0; }
+
+table.grid-all > * > tr > .tableblock:last-child, table.grid-cols > * > tr > .tableblock:last-child { border-right-width: 0; }
+
+table.grid-all > tbody > tr:last-child > .tableblock, table.grid-all > thead:last-child > tr > .tableblock, table.grid-rows > tbody > tr:last-child > .tableblock, table.grid-rows > thead:last-child > tr > .tableblock { border-bottom-width: 0; }
+
+table.frame-all { border-width: 1px; }
+
+table.frame-sides { border-width: 0 1px; }
+
+table.frame-topbot { border-width: 1px 0; }
+
+th.halign-left, td.halign-left { text-align: left; }
+
+th.halign-right, td.halign-right { text-align: right; }
+
+th.halign-center, td.halign-center { text-align: center; }
+
+th.valign-top, td.valign-top { vertical-align: top; }
+
+th.valign-bottom, td.valign-bottom { vertical-align: bottom; }
+
+th.valign-middle, td.valign-middle { vertical-align: middle; }
+
+table thead th, table tfoot th { font-weight: bold; }
+
+tbody tr th { display: table-cell; line-height: 1.4; background: #eee; }
+
+tbody tr th, tbody tr th p, tfoot tr th, tfoot tr th p { color: #222; font-weight: bold; }
+
+p.tableblock > code:only-child { background: none; padding: 0; }
+
+p.tableblock { font-size: 0.9523809523809523em; }
+
+td > div.verse { white-space: pre; }
+
+ol { margin-left: 1.75em; }
+
+ul li ol { margin-left: 1.5em; }
+
+dl dd { margin-left: 1.125em; }
+
+dl dd:last-child, dl dd:last-child > :last-child { margin-bottom: 0; }
+
+ol > li p, ul > li p, ul dd, ol dd, .olist .olist, .ulist .ulist, .ulist .olist, .olist .ulist { margin-bottom: 0.375em; }
+
+ul.checklist, ul.none, ol.none, ul.no-bullet, ol.no-bullet, ol.unnumbered, ul.unstyled, ol.unstyled { list-style-type: none; }
+
+ul.no-bullet, ol.no-bullet, ol.unnumbered { margin-left: 0.625em; }
+
+ul.unstyled, ol.unstyled { margin-left: 0; }
+
+ul.checklist { margin-left: 0.625em; }
+
+ul.checklist li > p:first-child > .fa-square-o:first-child, ul.checklist li > p:first-child > .fa-check-square-o:first-child { width: 1.25em; font-size: 0.7619047619047619em; position: relative; bottom: 0.125em; }
+
+ul.checklist li > p:first-child > input[type="checkbox"]:first-child { margin-right: 0.25em; }
+
+ul.inline { display: -ms-flexbox; display: -webkit-box; display: flex; -ms-flex-flow: row wrap; -webkit-flex-flow: row wrap; flex-flow: row wrap; list-style: none; margin: 0 0 0.375em -0.75em; }
+
+ul.inline > li { margin-left: 0.75em; }
+
+.unstyled dl dt { font-weight: normal; font-style: normal; }
+
+ol.arabic { list-style-type: decimal; }
+
+ol.decimal { list-style-type: decimal-leading-zero; }
+
+ol.loweralpha { list-style-type: lower-alpha; }
+
+ol.upperalpha { list-style-type: upper-alpha; }
+
+ol.lowerroman { list-style-type: lower-roman; }
+
+ol.upperroman { list-style-type: upper-roman; }
+
+ol.lowergreek { list-style-type: lower-greek; }
+
+.hdlist > table, .colist > table { border: 0; background: none; }
+.hdlist > table > tbody > tr, .colist > table > tbody > tr { background: none; }
+
+td.hdlist1, td.hdlist2 { vertical-align: top; padding: 0 0.625em; }
+
+td.hdlist1 { font-weight: bold; padding-bottom: 0.75em; }
+
+.literalblock + .colist, .listingblock + .colist { margin-top: -0.5em; }
+
+.colist > table tr > td:first-of-type { padding: 0.4em 0.75em 0 0.75em; line-height: 1; vertical-align: top; }
+.colist > table tr > td:first-of-type img { max-width: initial; }
+.colist > table tr > td:last-of-type { padding: 0.25em 0; }
+
+.thumb, .th { line-height: 0; display: inline-block; border: solid 4px #fff; -webkit-box-shadow: 0 0 0 1px #ddd; box-shadow: 0 0 0 1px #ddd; }
+
+.imageblock.left, .imageblock[style*="float: left"] { margin: 0.25em 0.625em 1.25em 0; }
+.imageblock.right, .imageblock[style*="float: right"] { margin: 0.25em 0 1.25em 0.625em; }
+.imageblock > .title { margin-bottom: 0; }
+.imageblock.thumb, .imageblock.th { border-width: 6px; }
+.imageblock.thumb > .title, .imageblock.th > .title { padding: 0 0.125em; }
+
+.image.left, .image.right { margin-top: 0.25em; margin-bottom: 0.25em; display: inline-block; line-height: 0; }
+.image.left { margin-right: 0.625em; }
+.image.right { margin-left: 0.625em; }
+
+a.image { text-decoration: none; display: inline-block; }
+a.image object { pointer-events: none; }
+
+sup.footnote, sup.footnoteref { font-size: 0.8333333333333334em; position: static; vertical-align: super; }
+sup.footnote a, sup.footnoteref a { text-decoration: none; }
+sup.footnote a:active, sup.footnoteref a:active { text-decoration: underline; }
+
+#footnotes { padding-top: 0.75em; padding-bottom: 0.75em; margin-bottom: 0.625em; }
+#footnotes hr { width: 20%; min-width: 6.25em; margin: -0.25em 0 0.75em 0; border-width: 1px 0 0 0; }
+#footnotes .footnote { padding: 0 0.375em 0 0.225em; line-height: 1.3334; font-size: 0.8333333333333334em; margin-left: 1.2em; margin-bottom: 0.2em; }
+#footnotes .footnote a:first-of-type { font-weight: bold; text-decoration: none; margin-left: -1.05em; }
+#footnotes .footnote:last-of-type { margin-bottom: 0; }
+#content #footnotes { margin-top: -0.625em; margin-bottom: 0; padding: 0.75em 0; }
+
+.gist .file-data > table { border: 0; background: #fff; width: 100%; margin-bottom: 0; }
+.gist .file-data > table td.line-data { width: 99%; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+.big { font-size: larger; }
+
+.small { font-size: smaller; }
+
+.underline { text-decoration: underline; }
+
+.overline { text-decoration: overline; }
+
+.line-through { text-decoration: line-through; }
+
+.aqua { color: #00bfbf; }
+
+.aqua-background { background-color: #00fafa; }
+
+.black { color: black; }
+
+.black-background { background-color: black; }
+
+.blue { color: #0000bf; }
+
+.blue-background { background-color: #0000fa; }
+
+.fuchsia { color: #bf00bf; }
+
+.fuchsia-background { background-color: #fa00fa; }
+
+.gray { color: #606060; }
+
+.gray-background { background-color: #7d7d7d; }
+
+.green { color: #006000; }
+
+.green-background { background-color: #007d00; }
+
+.lime { color: #00bf00; }
+
+.lime-background { background-color: #00fa00; }
+
+.maroon { color: #600000; }
+
+.maroon-background { background-color: #7d0000; }
+
+.navy { color: #000060; }
+
+.navy-background { background-color: #00007d; }
+
+.olive { color: #606000; }
+
+.olive-background { background-color: #7d7d00; }
+
+.purple { color: #600060; }
+
+.purple-background { background-color: #7d007d; }
+
+.red { color: #bf0000; }
+
+.red-background { background-color: #fa0000; }
+
+.silver { color: #909090; }
+
+.silver-background { background-color: #bcbcbc; }
+
+.teal { color: #006060; }
+
+.teal-background { background-color: #007d7d; }
+
+.white { color: #bfbfbf; }
+
+.white-background { background-color: #fafafa; }
+
+.yellow { color: #bfbf00; }
+
+.yellow-background { background-color: #fafa00; }
+
+span.icon > .fa { cursor: default; }
+a span.icon > .fa { cursor: inherit; }
+
+.admonitionblock td.icon [class^="fa icon-"] { font-size: 2.380952380952381em; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); cursor: default; }
+.admonitionblock td.icon .icon-note:before { content: "\f05a"; color: #29475c; }
+.admonitionblock td.icon .icon-tip:before { content: "\f0eb"; text-shadow: 1px 1px 2px rgba(155, 155, 0, 0.8); color: #111; }
+.admonitionblock td.icon .icon-warning:before { content: "\f071"; color: #bf6900; }
+.admonitionblock td.icon .icon-caution:before { content: "\f06d"; color: #bf3400; }
+.admonitionblock td.icon .icon-important:before { content: "\f06a"; color: #bf0000; }
+
+.conum[data-value] { display: inline-block; color: #fff !important; background-color: black; -webkit-border-radius: 100px; border-radius: 100px; text-align: center; font-size: 0.7142857142857143em; width: 1.67em; height: 1.67em; line-height: 1.67em; font-family: "Open Sans", "DejaVu Sans", sans-serif; font-style: normal; font-weight: bold; }
+.conum[data-value] * { color: #fff !important; }
+.conum[data-value] + b { display: none; }
+.conum[data-value]:after { content: attr(data-value); }
+pre .conum[data-value] { position: relative; top: -0.125em; }
+
+b.conum * { color: inherit !important; }
+
+.conum:not([data-value]):empty { display: none; }
+
+h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { border-bottom: 1px solid #ddd; }
+
+.sect1 { padding-bottom: 0; }
+
+#toctitle { color: #00406F; font-weight: normal; margin-top: 1.5em; }
+
+.sidebarblock { border-color: #aaa; }
+
+code { -webkit-border-radius: 4px; border-radius: 4px; }
+
+p.tableblock.header { color: #6d6e71; }
+
+.literalblock pre, .listingblock pre { background: #eee; }
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/*! Stylesheet for CodeRay to loosely match GitHub themes | MIT License */
+pre.CodeRay{background:#f7f7f8}
+.CodeRay .line-numbers{border-right:1px solid;opacity:.35;padding:0 .5em 0 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
+.CodeRay .line-numbers strong{color:#000}
+table.CodeRay{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.CodeRay td{vertical-align:top;line-height:inherit}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.code{padding:0 0 0 .75em}
+.CodeRay .debug{color:#fff!important;background:navy!important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:navy}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:teal}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:teal}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:teal}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword{color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:teal}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}
+</style>
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<script src="katex/contrib/auto-render.min.js"></script>
+    <!-- Use KaTeX to render math once document is loaded, see
+         https://github.com/Khan/KaTeX/tree/master/contrib/auto-render -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(
+            document.body,
+            {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true},
+                    { left: "\\[", right: "\\]", display: true},
+                    { left: "$", right: "$", display: false},
+                    { left: "\\(", right: "\\)", display: false}
+                ]
+            }
+        );
+    });
+</script></head>
+<body class="book toc2 toc-left">
+<div id="header" style="max-width: 100;">
+<h1>The OpenVX<sup>&#8482;</sup> Node Send Command Extension</h1>
+<div class="details">
+<span id="author" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
+<span id="author2" class="author">Contributor: Jesse Villarreal</span><br>
+<span id="revnumber">version 1.0,</span>
+<span id="revdate">Wed, 15 Oct 2025 22:18:00 +0000</span>
+<br><span id="revremark">Git branch information not available</span>
 </div>
-<div class="alert-wrapper alert-wrapper-top-space gl-flex gl-flex-col gl-gap-3 container-fluid container-limited">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-<div class="top-bar-fixed container-fluid" data-testid="top-bar">
-<div class="top-bar-container gl-flex gl-items-center gl-gap-2">
-<div class="gl-grow gl-basis-0 gl-flex gl-items-center gl-justify-start">
-<button class="gl-button btn btn-icon btn-md btn-default btn-default-tertiary js-super-sidebar-toggle-expand super-sidebar-toggle -gl-ml-3" aria-controls="super-sidebar" aria-expanded="false" aria-label="Primary navigation sidebar" type="button"><svg class="s16 gl-icon gl-button-icon " data-testid="sidebar-icon"><use href="/assets/icons-8791a66659d025e0a4c801978c79a1fbd82db1d27d85f044a35728ea7cf0ae80.svg#sidebar"></use></svg>
-
-</button>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OpenVX","item":"https://gitlab.khronos.org/openvx"},{"@type":"ListItem","position":2,"name":"API Documents","item":"https://gitlab.khronos.org/openvx/api-docs"},{"@type":"ListItem","position":3,"name":"Jobs","item":"https://gitlab.khronos.org/openvx/api-docs/-/jobs/829359/artifacts/external_file/docs/out/vx_khr_node_send_command/vx_khr_node_send_command_1_0/vx_khr_node_send_command_1_0.html"}]}
-
-
-</script>
-<div data-testid="breadcrumb-links" id="js-vue-page-breadcrumbs-wrapper">
-<div data-breadcrumbs-json="[{&quot;text&quot;:&quot;OpenVX&quot;,&quot;href&quot;:&quot;/openvx&quot;,&quot;avatarPath&quot;:&quot;/uploads/-/system/group/avatar/16/Round-OpenVX.png&quot;},{&quot;text&quot;:&quot;API Documents&quot;,&quot;href&quot;:&quot;/openvx/api-docs&quot;,&quot;avatarPath&quot;:&quot;/uploads/-/system/project/avatar/345/Round-OpenVX.png&quot;},{&quot;text&quot;:&quot;Jobs&quot;,&quot;href&quot;:&quot;/openvx/api-docs/-/jobs/829359/artifacts/external_file/docs/out/vx_khr_node_send_command/vx_khr_node_send_command_1_0/vx_khr_node_send_command_1_0.html&quot;,&quot;avatarPath&quot;:null}]" id="js-vue-page-breadcrumbs"></div>
-<div id="js-injected-page-breadcrumbs"></div>
-</div>
-
-
-</div>
-<div class="gl-flex-none gl-flex gl-items-center gl-justify-center">
-<div id="js-advanced-search-modal"></div>
-
-</div>
-<div class="gl-grow gl-basis-0 gl-flex gl-items-center gl-justify-end">
-<div id="js-work-item-feedback"></div>
-
-
-</div>
-</div>
-</div>
-
-<div class="container-fluid container-limited project-highlight-puc">
-<main class="content" id="content-body" itemscope itemtype="http://schema.org/SoftwareSourceCode">
-<div class="flash-container flash-container-page sticky" data-testid="flash-container">
-<div id="js-global-alerts"></div>
-</div>
-
-
-<div class="js-invite-members-modal" data-access-levels="{&quot;Guest&quot;:10,&quot;Reporter&quot;:20,&quot;Developer&quot;:30,&quot;Maintainer&quot;:40,&quot;Owner&quot;:50}" data-default-access-level="10" data-full-path="openvx/api-docs" data-help-link="https://gitlab.khronos.org/help/user/permissions.md" data-id="345" data-is-project="true" data-name="API Documents" data-reload-page-on-submit="false" data-root-id="16"></div>
-
-
-
-
-<div class="content-block build-header top-area page-content-header">
-<div class="header-content">
-<a href="/openvx/api-docs/-/jobs/829359" class="ci-icon ci-icon-variant-success gl-inline-flex gl-items-center gl-text-sm " title="Pipeline: passed" data-toggle="tooltip" data-placement="left" data-container="body" data-testid="ci-icon"><span class="ci-icon-gl-icon-wrapper"><svg class="s24 gl-icon" data-testid="status_success_borderless-icon"><use href="/assets/icons-8791a66659d025e0a4c801978c79a1fbd82db1d27d85f044a35728ea7cf0ae80.svg#status_success_borderless"></use></svg></span><span class="gl-mx-2 gl-whitespace-nowrap gl-leading-1 gl-self-center" data-testid="ci-icon-text">passed</span></a>
-
-<strong>
-Job
-<a class="js-build-id" href="/openvx/api-docs/-/jobs/829359">#829359</a>
-</strong>
-in pipeline
-<strong>
-<a href="/openvx/api-docs/-/pipelines/88195">#88195</a>
-</strong>
-for
-<strong>
-<a class="commit-sha" href="/openvx/api-docs/-/commit/66a367b8637a4df12e77ac6a95fb503331dbb48a">66a367b8</a>
-</strong>
-from
-<strong>
-<a class="ref-name" href="/openvx/api-docs/-/commits/master">master</a>
-</strong>
-by
-<a href="/jessegv">
-<span class="gl-hidden sm:gl-inline">
-<img srcset="/uploads/-/system/user/avatar/23/tic.jpg?width=48 1x, /uploads/-/system/user/avatar/23/tic.jpg?width=48 2x" alt="" class="gl-avatar gl-avatar-s24  gl-avatar-circle" height="24" width="24" loading="lazy" src="/uploads/-/system/user/avatar/23/tic.jpg?width=48" />
-
-<strong data-placement="top" data-title="@jessegv" data-toggle="tooltip">
-Jesse Villarreal (Texas Instruments)
-</strong>
-</span>
-<strong class="gl-inline sm:gl-hidden">@jessegv</strong>
-</a>
-
-<time class="js-timeago" title="Oct 15, 2025 10:13pm" datetime="2025-10-15T22:13:46Z" data-toggle="tooltip" data-placement="top" data-container="body">Oct 15, 2025</time>
-</div>
-</div>
-
-<div class="tree-holder">
-<div class="nav-block">
-<ul class="breadcrumb repo-breadcrumb">
-<li class="breadcrumb-item">
-<a href="/openvx/api-docs/-/jobs/829359/artifacts/browse">Artifacts</a>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_extension_to_support_sending_asynchronous_commands_to_nodes">1. Extension to support sending asynchronous commands to nodes</a>
+<ul class="sectlevel2">
+<li><a href="#sec_purpose">1.1. Purpose</a></li>
+<li><a href="#sec_usecases">1.2. Example Use Cases</a></li>
+<li><a href="#sec_background">1.3. Background</a>
+<ul class="sectlevel3">
+<li><a href="#sec_problem">1.3.1. Limitations in Existing Specification</a></li>
+</ul>
+</li>
+<li><a href="#sec_design">1.4. Summary</a></li>
+<li><a href="#sec_acknowledge">1.5. Acknowledgements</a></li>
+</ul>
+</li>
+<li><a href="#module_documentation">2. Module Documentation</a>
+<ul class="sectlevel2">
+<li><a href="#_macros">2.1. Macros</a>
+<ul class="sectlevel3">
+<li><a href="#_vx_timeout_no_wait">2.1.1. VX_TIMEOUT_NO_WAIT</a></li>
+<li><a href="#_vx_timeout_wait_forever">2.1.2. VX_TIMEOUT_WAIT_FOREVER</a></li>
+<li><a href="#_vx_control_cmd_send_to_all_replicated_nodes">2.1.3. VX_CONTROL_CMD_SEND_TO_ALL_REPLICATED_NODES</a></li>
+<li><a href="#_vx_node_num_with_replicas">2.1.4. VX_NODE_NUM_WITH_REPLICAS</a></li>
+</ul>
+</li>
+<li><a href="#_typedefs">2.2. Typedefs</a>
+<ul class="sectlevel3">
+<li><a href="#_vx_kernel_command_f">2.2.1. vx_kernel_command_f</a></li>
+</ul>
+</li>
+<li><a href="#_functions">2.3. Functions</a>
+<ul class="sectlevel3">
+<li><a href="#_vxaddcommandtokernel">2.3.1. vxAddCommandToKernel</a></li>
+<li><a href="#_vxnodesendcommand">2.3.2. vxNodeSendCommand</a></li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </div>
-
-<h2>You are being redirected away from GitLab</h2>
-<p>This page is hosted on GitLab pages but contains user-generated content and may contain malicious code. Do not accept unless you trust the author and source.</p>
-<a target="_blank" title="Opens in a new window" rel="noopener noreferrer" href="http://openvx.pages.khronos.org/-/api-docs/-/jobs/829359/artifacts/docs/out/vx_khr_node_send_command/vx_khr_node_send_command_1_0/vx_khr_node_send_command_1_0.html">http://openvx.pages.khronos.org/-/api-docs/-/jobs/829359/artifacts/docs/out/vx_khr_node_send_command/vx_khr_node_send_command_1_0/vx_khr_node_send_command_1_0.html</a>
 </div>
-
-</main>
-</div>
-
-
+<div id="content" style="max-width: 100;">
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock text-center">
+<div class="content">
+<img src="data:image/svg+xml;base64,PHN2ZyBpZD0iT3BlblZYIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjMyLjc1IDMwOC40MiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtpc29sYXRpb246aXNvbGF0ZTt9LmNscy0ye2ZpbGw6I2M3MDUwNjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPk9wZW5WWF9SR0JfTWF5MTY8L3RpdGxlPjxnIGlkPSJUTSIgY2xhc3M9ImNscy0xIj48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMjkwLjU5LDM0Ni4xOWgtNy4zNXYxOS4xMWgtNi40MlYzNDYuMTloLTcuMzV2LTUuNTJoMjEuMTF2NS41MmgwWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTg4LjE2IC0xMDMuNTcpIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTI5My40NSwzNDAuNjdoOS40NWw0LjI0LDE2LjQyaDAuMDdsNC4yNC0xNi40Mmg5LjQ1djI0LjYzaC02di0xOC43aC0wLjA3bC01LjE4LDE4LjdoLTQuOWwtNS4xOC0xOC43aC0wLjA3djE4LjdoLTZWMzQwLjY3aDBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODguMTYgLTEwMy41NykiLz48L2c+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjk0LDMzOC44Yy02OS43NC0yLjU1LTE2NC44OS0zNS40Ni0xODQuNjMtODMtMTcuMDctNDMuMjQtLjEzLTkzLjYsODAuMzctMTI5LjMsNDcuNzUtMjAuNTgsMTIwLTI2LjM4LDE3NS42My0yMS4xMSw3OSw3LjQ4LDE1NC4yLDQ5LjczLDE1NC4zLDQ5Ljg1djU5LjE5bC0wLjA2LDRBMzcxLjYyLDM3MS42MiwwLDAsMCw0NjQuNTEsMTc3Yy0yOC43OS0xNy40LTU1LjIxLTI5LjY5LTEwNy41Ny0zNC42OS0xMi4yNS0xLjE3LTMzLjEyLTQtNjYuOTEuODUtMTMuNjYsMi0zMi44OSwzLjQ2LTc2LjIsMjMuMTItMTQuMDksNi45LTI3LDE0LjMzLTM3LDIyLjkyLTUuMjUsNC41LTEyLjMxLDEwLjg0LTE3LjM3LDE2LjE4LTEyLjM1LDE2LTE4LjksMjgtMTUuNzcsNDkuOCwzLjYyLDE2LjM4LDEwLjY3LDI2LjY5LDMxLDQyLjM2LDguODEsNi43OSw5Ljg0LDYuNzUsMTMuNzQsOC44NCwzNi40MSwxOS40NSw2NS41LDI2LjYzLDEwNy4wNywzMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTg4LjE2IC0xMDMuNTcpIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjk3LjcyLDE1MC41NGM2OS44OS0uMjgsMTY5LDI4LjY3LDE5NC44MSw3NS4yOEM1MTUuMTEsMjY4LjI0LDUwNC42OCwzMTkuMTcsNDI5LDM1OGMtNDUsMjIuNDUtMTE2LjMsMzEuMi0xNzIuNDYsMjguMTlDMTc2Ljc5LDM4Miw5Ni4zMywzNDIuOTEsOTYuMjIsMzQyLjc5bC03LjYxLTU5LTAuNDUtNHMyNy4zNiwyMS44OSw2MC4yNSwzOS4wNmMzMSwxNi4xOSw1OC44OSwyNy4zNiwxMTEuNzUsMzAuMjIsMTIuMzYsMC42NywzMy41NSwyLjY0LDY2LjYyLTMuNTcsMTMuMzctMi41MSwzMi4zNy00Ljc5LDczLTI2LjE1QzQxMywzMTEuODgsNDI0Ljg3LDMwNCw0MzMuNzYsMjk1QTIxNywyMTcsMCwwLDAsNDQ5LDI3OC4xNGMxMC4yNi0xNi40NywxNS4yNi0yOC43Miw5LjMzLTUwLjMyLTUuNzEtMTYuMTktMTQuMDctMjYuMTgtMzYuMzMtNDEtOS42Ni02LjQyLTEwLjY4LTYuMzQtMTQuODQtOC4yNi0zOC44MS0xNy45Mi02OC43NS0yMy44OS0xMTAuOS0yNy41OCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTg4LjE2IC0xMDMuNTcpIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNTM4LjM1LDIzMy40MnYxNy41MWgwLjQyYTMxLjc4LDMxLjc4LDAsMCwxLDE2LjQ4LTE1LjY0QTYxLjU1LDYxLjU1LDAsMCwxLDU4MCwyMzAuNDFxMTUsMCwyNi4xLDUuNWE1My4yMyw1My4yMywwLDAsMSwxOC40OCwxNC44Nyw2Niw2NiwwLDAsMSwxMS4xMiwyMS42LDg4Ljc2LDg4Ljc2LDAsMCwxLDMuNzQsMjYsOTEuMzQsOTEuMzQsMCwwLDEtMy42MiwyNiw2MSw2MSwwLDAsMS0xMSwyMS4zNSw1MS42Miw1MS42MiwwLDAsMS0xOC40OSwxNC4zN3EtMTEuMTEsNS4yNC0yNS44NCw1LjI0YTY0LjI2LDY0LjI2LDAsMCwxLTEwLjYxLTEsNTkuMjQsNTkuMjQsMCwwLDEtMTEuNjEtMy4yNSw0NS4xOSw0NS4xOSwwLDAsMS0xMC44Ny02LjEzLDM0LDM0LDAsMCwxLTguNjEtOS42MmgtMC40MlY0MTJINTE2LjkzVjIzMy40MmgyMS40MlptNzYsNDUuOTNBNDcuNjEsNDcuNjEsMCwwLDAsNjA3LjEzLDI2NGEzNS4zOSwzNS4zOSwwLDAsMC0xMi40Ni0xMC43NCwzNy44MSwzNy44MSwwLDAsMC0xNy44MS00cS0xMC43MiwwLTE4LjE5LDQuMjRhMzYuMzUsMzYuMzUsMCwwLDAtMTIuMjEsMTEuMTEsNDYuMzQsNDYuMzQsMCwwLDAtNi44NSwxNS42MSw3NS44LDc1LjgsMCwwLDAsLjEyLDM2LjA4LDQ1LjU4LDQ1LjU4LDAsMCwwLDcuMSwxNS42LDM2LjA3LDM2LjA3LDAsMCwwLDEyLjU3LDEwLjg2cTcuNzQsNC4xNCwxOC43LDQuMTN0MTguMzEtNC4yM2EzNC4yLDM0LjIsMCwwLDAsMTEuODMtMTEuMjUsNDksNDksMCwwLDAsNi40OC0xNiw4NS41OSw4NS41OSwwLDAsMCwyLTE4LjQ4LDY2LjMsNjYuMywwLDAsMC0yLjM3LTE3LjYxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODguMTYgLTEwMy41NykiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik03NDguNjIsMzU0LjMzcS0xNC41MSwxMS0zNi41MywxMS0xNS41MSwwLTI2LjkxLTVhNTMuMTUsNTMuMTUsMCwwLDEtMTkuMTUtMTQsNTkuMjcsNTkuMjcsMCwwLDEtMTEuNjQtMjEuNDlBMTAzLjY2LDEwMy42NiwwLDAsMSw2NTAsMjk3LjYyYTc3LjMxLDc3LjMxLDAsMCwxLDQuNTEtMjcsNjQuNTUsNjQuNTUsMCwwLDEsMTIuNjQtMjEuMjQsNTcuNTEsNTcuNTEsMCwwLDEsMTkuMjktMTQsNTksNTksMCwwLDEsMjQuNDItNXExNy4yOSwwLDI4LjY3LDcuMTRhNTYuNTksNTYuNTksMCwwLDEsMTguMjksMTguMTUsNzEuNzEsNzEuNzEsMCwwLDEsOS41MiwyNCwxMDIuNjUsMTAyLjY1LDAsMCwxLDIuMTMsMjQuNzhINjcyLjcyYTUxLjI4LDUxLjI4LDAsMCwwLDIsMTYuMDhBMzYuNCwzNi40LDAsMCwwLDY4MiwzMzQuMDVhMzUuNjMsMzUuNjMsMCwwLDAsMTIuNzQsOS4zNSw0NCw0NCwwLDAsMCwxOC4yMiwzLjQ5cTEzLjQ5LDAsMjIuMS02LjI0dDExLjM2LTE5aDIxcS00LjI3LDIxLjcxLTE4Ljc3LDMyLjdtLTUuMTktODIuODlhMzYuMzcsMzYuMzcsMCwwLDAtNy43My0xMS41OSwzNi45MywzNi45MywwLDAsMC0xMS40Ny03LjcyLDM2LjIyLDM2LjIyLDAsMCwwLTE0LjU5LTIuODcsMzYuODYsMzYuODYsMCwwLDAtMTQuODUsMi44N0EzNC4zMiwzNC4zMiwwLDAsMCw2ODMuNDQsMjYwLDM3LjcyLDM3LjcyLDAsMCwwLDY3NiwyNzEuNTdhNDQuMDgsNDQuMDgsMCwwLDAtMy4yNSwxNC4wOWg3NC4wOWE0My43NSw0My43NSwwLDAsMC0zLjM4LTE0LjIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODguMTYgLTEwMy41NykiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik04MDMuODIsMjM1LjUxVjI1NmgwLjRxMTMuMzEtMjMuNDksNDIuMjEtMjMuNTEsMTIuODEsMCwyMS4zNiwzLjUyYTM1LjA4LDM1LjA4LDAsMCwxLDEzLjgyLDkuNzVBMzYuMDgsMzYuMDgsMCwwLDEsODg5LDI2MC42NWE3OS45MSw3OS45MSwwLDAsMSwyLjE0LDE5LjE0djg1SDg2OS43NFYyNzcuMzRxMC0xMi03LTE5dC0xOS4yOS03YTQzLjU4LDQzLjU4LDAsMCwwLTE2LjkyLDMsMzEuNzQsMzEuNzQsMCwwLDAtMTEuOSw4LjUsMzYuNTUsMzYuNTUsMCwwLDAtNy4xNCwxMi44Nyw1Miw1MiwwLDAsMC0yLjM4LDE2LjEzdjczSDc4My42NlYyMzUuNTFoMjAuMTZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODguMTYgLTEwMy41NykiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMDAyLjU4LDM2NS40MUg5NTIuMTlsLTY2LTIwMy4yNmg0Ni4xMmw0NS4yNywxNDIuOTFoMC41N2w0NS44My0xNDIuOTFIMTA3MFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04OC4xNiAtMTAzLjU3KSIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTExMzAuMTEsMjU4Ljk0bC02NS40OC05Ni43OWg1MS44MWwzOS44NSw2NC45MSw0MS4yOC02NC45MWg0OWwtNjUuMTksOTcuMDgsNzAuODgsMTA2LjE4SDExOTlsLTQ0LjQxLTcwLjMxLTQ1LjI2LDcwLjMxaC01MC4zOVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04OC4xNiAtMTAzLjU3KSIvPjwvc3ZnPg==" alt="OpenVX RGB" width="400">
 </div>
 </div>
+<div class="paragraph">
+<p>Copyright 2013-2025 The Khronos Group Inc.</p>
+</div>
+<div class="paragraph">
+<p>This specification is protected by copyright laws and contains material
+proprietary to Khronos.
+Except as described by these terms, it or any components may not be
+reproduced, republished, distributed, transmitted, displayed, broadcast or
+otherwise exploited in any manner without the express prior written
+permission of Khronos.</p>
+</div>
+<div class="paragraph">
+<p>This specification has been created under the Khronos Intellectual Property
+Rights Policy, which is Attachment A of the Khronos Group Membership
+Agreement available at www.khronos.org/files/member_agreement.pdf.
+Khronos Group grants a conditional copyright license to use and reproduce
+the unmodified specification for any purpose, without fee or royalty, EXCEPT
+no licenses to any patent, trademark or other intellectual property rights
+are granted under these terms.
+Parties desiring to implement the specification and make use of Khronos
+trademarks in relation to that implementation, and receive reciprocal patent
+license protection under the Khronos IP Policy must become Adopters and
+confirm the implementation as conformant under the process defined by
+Khronos for this specification; see <a href="https://www.khronos.org/adopters" class="bare">https://www.khronos.org/adopters</a>.</p>
+</div>
+<div class="paragraph">
+<p>Khronos makes no, and expressly disclaims any, representations or
+warranties, express or implied, regarding this specification, including,
+without limitation: merchantability, fitness for a particular purpose,
+non-infringement of any intellectual property, correctness, accuracy,
+completeness, timeliness, and reliability.
+Under no circumstances will Khronos, or any of its Promoters, Contributors
+or Members, or their respective partners, officers, directors, employees,
+agents or representatives be liable for any damages, whether direct,
+indirect, special or consequential damages for lost revenues, lost profits,
+or otherwise, arising from or in connection with these materials.</p>
+</div>
+<div class="paragraph">
+<p>Khronos is a registered trademark, and OpenVX is a trademark of The Khronos
+Group Inc.
+OpenCL is a trademark of Apple Inc., used under license by Khronos.
+All other product names, trademarks, and/or company names are used solely
+for identification and belong to their respective owners.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<!-- toc disabled -->
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extension_to_support_sending_asynchronous_commands_to_nodes">1. Extension to support sending asynchronous commands to nodes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sec_purpose">1.1. Purpose</h3>
+<div class="paragraph">
+<p><a id="vx_status_e"></a> <a id="vx_kernel"></a> <a id="vxAddUserKernel"></a> <a id="vxVerifyGraph"></a><a id="VX_SUCCESS"></a> <a id="VX_FAILURE"></a> <a id="VX_ERROR_INVALID_REFERENCE"></a> <a id="VX_ERROR_INVALID_PARAMETERS"></a> <a id="VX_ERROR_INVALID_GRAPH"></a> <a id="VX_ERROR_TIMEOUT"></a> <a id="VX_ERROR_GRAPH_NOT_VERIFIED"></a> <a id="VX_ERROR_INVALID_NODE"></a> <a id="VX_NODE_IS_REPLICATED"></a> This document details an extension to any OpenVX version from 1.1 to 1.3, and references some APIs and symbols that may be found in those APIs: <a href="https://www.khronos.org/registry/OpenVX/" class="bare">https://www.khronos.org/registry/OpenVX/</a>.</p>
+</div>
+<div class="paragraph">
+<p><a id="node_send_command"></a> This extension is intended to define support for the application to send asynchronous commands to nodes within OpenVX.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec_usecases">1.2. Example Use Cases</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Automotive camera-based system: When the application detects that the speed of the car has crossed a threshold, it may want to send a command to a specific node in the graph to modify the camera frame rate, or algorithmic tuning parameter accordingly.  Since this information comes from outside of the OpenVX graph at a very infrequent rate, there needs to be a means by which the application can efficiently communicate this information to the node in the graph.</p>
+</li>
+<li>
+<p>If a node has triggered an error event, then the application may want to query the node which triggered the event to get more information about the type of error so that it can take corrective action.</p>
+</li>
+<li>
+<p>An application may want to periodically trigger and report results of some kind of safety diagnostic for a node.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec_background">1.3. Background</h3>
+<div class="paragraph">
+<p>Prior to this extension, the only standard way that an application has to send commands to an OpenVX node is through input and output parameters.</p>
+</div>
+<div class="ulist">
+<div class="title"><strong>Node Input Parameters</strong></div>
+<ul>
+<li>
+<p>For example, if an application wanted to modify the behaviour of a node at run-time, it would need to first ensure that there is an input parameter to the node which can contain the control commands that the application needs to update.  Then, at run-time, in between graph process calls, the application can call the specific input object map or copy calls to update the input data object.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title"><strong>Node Output Parameters</strong></div>
+<ul>
+<li>
+<p>Likewise, if the application needed to get some information from the node, it would need to first ensure that there is an output parameter to the node which the node can fill for every frame to contain any information that the application may need to access.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="sec_problem">1.3.1. Limitations in Existing Specification</h4>
+<div class="paragraph">
+<p>If the application only needs to send commands, or receive node specific information rarely, the node has to be instrumented with these extra parameters to always consider the input and write the output, even when this is not needed by the application.  Depending on the cost of consuming this input and/or providing this output, this could be a very inefficient use of resources.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, when pipelining is used, the application is not able to write to or read from a node input or output unless the object is treated as a graph parameter.  This further puts additional burden on the application to continuously enqueue and dequeue these parameters when it most of the time may not need to since the input and outputs only need to be rarely asynchronously accessed.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec_design">1.4. Summary</h3>
+<div class="paragraph">
+<p>In summary, this extension supplies functions to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Register a new command callback function pointer to a user kernel.</p>
+</li>
+<li>
+<p>Send a command to a node, including any replicas it may have</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec_acknowledge">1.5. Acknowledgements</h3>
+<div class="paragraph">
+<p>This specification would not be possible without the contributions from this
+partial list of the following individuals from the Khronos Working Group and
+the companies that they represented at the time:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kiriti Nagesh Gowda - AMD</p>
+</li>
+<li>
+<p>Viktor Gyenes - AI Motive</p>
+</li>
+<li>
+<p>Raphael Cano - Robert Bosch GmbH</p>
+</li>
+<li>
+<p>Stephen Ramm - ETAS (Robert Bosch GmbH)</p>
+</li>
+<li>
+<p>Jesse Villarreal - TI</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="module_documentation">2. Module Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Macros</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#VX_TIMEOUT_NO_WAIT">VX_TIMEOUT_NO_WAIT</a></code></p>
+</li>
+<li>
+<p><code><a href="#VX_TIMEOUT_WAIT_FOREVER">VX_TIMEOUT_WAIT_FOREVER</a></code></p>
+</li>
+<li>
+<p><code><a href="#VX_CONTROL_CMD_SEND_TO_ALL_REPLICATED_NODES">VX_CONTROL_CMD_SEND_TO_ALL_REPLICATED_NODES</a></code></p>
+</li>
+<li>
+<p><code><a href="#VX_NODE_NUM_WITH_REPLICAS">VX_NODE_NUM_WITH_REPLICAS</a></code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Typedefs</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#vx_kernel_command_f">vx_kernel_command_f</a></code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Functions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#vxAddCommandToKernel">vxAddCommandToKernel</a></code></p>
+</li>
+<li>
+<p><code><a href="#vxNodeSendCommand">vxNodeSendCommand</a></code></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_macros">2.1. Macros</h3>
+<div class="sect3">
+<h4 id="_vx_timeout_no_wait">2.1.1. VX_TIMEOUT_NO_WAIT</h4>
+<div class="paragraph">
+<p>
+Constant to indicate that a timeout parameter to an api should check and not wait for the call to complete</p>
+</div>
+<div id="VX_TIMEOUT_NO_WAIT" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_TIMEOUT_NO_WAIT (<span class="integer">0</span>u)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vx_timeout_wait_forever">2.1.2. VX_TIMEOUT_WAIT_FOREVER</h4>
+<div class="paragraph">
+<p>
+Constant to indicate that a timeout parameter to an api should wait forever for the call to complete</p>
+</div>
+<div id="VX_TIMEOUT_WAIT_FOREVER" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_TIMEOUT_WAIT_FOREVER ((vx_uint32)<span class="hex">0xFFFFFFFF</span>U)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vx_control_cmd_send_to_all_replicated_nodes">2.1.3. VX_CONTROL_CMD_SEND_TO_ALL_REPLICATED_NODES</h4>
+<div class="paragraph">
+<p>
+When sending a control command to a replicated node, this can be used to send control command to all replicated node.</p>
+</div>
+<div id="VX_CONTROL_CMD_SEND_TO_ALL_REPLICATED_NODES" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_CONTROL_CMD_SEND_TO_ALL_REPLICATED_NODES ((vx_uint32)<span class="hex">0xFFFFFFFF</span>U)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vx_node_num_with_replicas">2.1.4. VX_NODE_NUM_WITH_REPLICAS</h4>
+<div class="paragraph">
+<p>
+Indicates the number of nodes associated with this node, including first_node and its replicas. A value of '0' indicates that the node has been optimized away; a value of '1' indicates that the node is not replicated; a value greater than 1 indicates that the node is replicated.  Read-only. Use a vx_uint32 parameter.</p>
+</div>
+<div id="VX_NODE_NUM_WITH_REPLICAS" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="preprocessor">#define</span> VX_NODE_NUM_WITH_REPLICAS (VX_ATTRIBUTE_BASE(VX_ID_KHRONOS, VX_TYPE_NODE) + <span class="hex">0xA</span>)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_typedefs">2.2. Typedefs</h3>
+<div class="sect3">
+<h4 id="_vx_kernel_command_f">2.2.1. vx_kernel_command_f</h4>
+<div class="paragraph">
+<p><code>[<strong>REQ-NC01</strong>]</code><a id="REQ-NC01"></a> The pointer to the control command function for the kernel.</p>
+</div>
+<div id="vx_kernel_command_f" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> vx_status (*vx_kernel_command_f)(
+            vx_node node,
+            vx_uint32 node_cmd_id,
+            <span class="directive">const</span> vx_reference *ref,
+            vx_uint32 num_refs);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>[<strong>REQ-NC02</strong>]</code><a id="REQ-NC02"></a> It is the responsibility of this callback to verify that the command passed and type and size of the references that are passed are valid prior to processing.</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[in]</code> <em>node</em> - The handle to the node that contains this kernel.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>node_cmd_id</em> - The kernel-specific command identifier for the node.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>ref</em> - The array of references.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>num_refs</em> - The number of references in the refs array.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Returns:</strong> An error code describing the status of the command .</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_functions">2.3. Functions</h3>
+<div class="sect3">
+<h4 id="_vxaddcommandtokernel">2.3.1. vxAddCommandToKernel</h4>
+<div class="paragraph">
+<p>
+<code>[<strong>REQ-NC03</strong>]</code><a id="REQ-NC03"></a> Allows users to add a control command callback to the kernel.</p>
+</div>
+<div id="vxAddCommandToKernel" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxAddCommandToKernel(
+    vx_kernel                                   kernel,
+    vx_kernel_command_f                         command_func_ptr);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This function can be optionally called when creating a user kernel to register a command callback function with the kernel</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[in]</code> <em>kernel</em>           - The reference to the kernel added with <code><a href="#vxAddUserKernel">vxAddUserKernel</a></code>.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>command_func_ptr</em> - The process-local function pointer to be invoked when application calls <code><a href="#vxNodeSendCommand">vxNodeSendCommand</a></code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Returns:</strong> A <code><a href="#vx_status_e">vx_status_e</a></code> enumerated value.</p>
+</div>
+<div class="paragraph">
+<p><strong>Return Values</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#VX_SUCCESS">VX_SUCCESS</a></code> <code>[<strong>REQ-NC04</strong>]</code><a id="REQ-NC04"></a> Command callback is successfully set on kernel; any other value indicates failure .</p>
+</li>
+<li>
+<p><code><a href="#VX_ERROR_INVALID_REFERENCE">VX_ERROR_INVALID_REFERENCE</a></code> - kernel is not a valid <code><a href="#vx_kernel">vx_kernel</a></code> reference.</p>
+</li>
+<li>
+<p><code><a href="#VX_ERROR_INVALID_PARAMETERS">VX_ERROR_INVALID_PARAMETERS</a></code> - If the parameter is not valid for any reason.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Precondition:</strong> <code><a href="#vxAddUserKernel">vxAddUserKernel</a></code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vxnodesendcommand">2.3.2. vxNodeSendCommand</h4>
+<div class="paragraph">
+<p></p>
+</div>
+<div class="paragraph">
+<p><code>[<strong>REQ-NC05</strong>]</code><a id="REQ-NC05"></a> Send node-specific control command</p>
+</div>
+<div id="vxNodeSendCommand" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">vx_status vxNodeSendCommand(
+    vx_node                                     node,
+    vx_uint32                                   replicate_nodex_idx,
+    vx_uint32                                   node_cmd_id,
+    vx_reference                                ref[],
+    vx_uint32                                   num_refs,
+    vx_uint32                                   timeout);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is used to send a specific control command to the specified node asynchronously.
+Not all nodes support commands, so refer to the node documentation for the specific control command.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[<strong>REQ-NC06</strong>]</code><a id="REQ-NC06"></a> Note that this blocks for at most 'timeout' milli-seconds; i.e. this returns either when the command execution finishes or when the timeout occurs, whichever occurs first.</p>
+</li>
+<li>
+<p><code>[<strong>REQ-NC07</strong>]</code><a id="REQ-NC07"></a> Multiple commands can be sent to same or different nodes from different threads.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Parameters</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[in]</code> <em>node</em>                     - Reference of the node to which this command is to be sent.</p>
+</li>
+<li>
+<p><code>[in]</code> <em>replicate_nodex_idx</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[<strong>REQ-NC08</strong>]</code><a id="REQ-NC08"></a> In case of a non-replicated node this should be 0.
+For a replicated node this is the index of the node replica to which the command is targeted.</p>
+</li>
+<li>
+<p><code>[<strong>REQ-NC09</strong>]</code><a id="REQ-NC09"></a> To send same command to all replicated nodes use <code><a href="#VX_CONTROL_CMD_SEND_TO_ALL_REPLICATED_NODES">VX_CONTROL_CMD_SEND_TO_ALL_REPLICATED_NODES</a></code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>[in]</code> <em>node_cmd_id</em>              - The Node-specific control command id</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[<strong>REQ-NC10</strong>]</code><a id="REQ-NC10"></a>Node-specific control command id, refer to node-specific documentation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>[inout]</code> <em>ref</em>                   - List of references, they can be any OpenVX object, created using the create API</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[<strong>REQ-NC11</strong>]</code><a id="REQ-NC11"></a> This is a list of references, required as parameters for this
+control command. They can be any OpenVX object, created using the create API.
+They are bidirectional parameters, can be used for INPUT, OUTPUT or both.
+Refer to node documentation to get details about the parameters required for given control command.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>[in]</code> <em>num_refs</em>                 - Number of valid entries/references in ref[] array</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[<strong>REQ-NC12</strong>]</code><a id="REQ-NC12"></a> Number of valid entries/references in ref[] array shall valid depending on the given control command</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>[in]</code> <em>timeout</em>                  - Timeout in units of msecs,</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>[<strong>REQ-NC13</strong>]</code><a id="REQ-NC13"></a> Timeout in units of msecs, use <code><a href="#VX_TIMEOUT_WAIT_FOREVER">VX_TIMEOUT_WAIT_FOREVER</a></code> to wait forever
+5
+<strong>Returns:</strong> A <code><a href="#vx_status_e">vx_status_e</a></code> enumerated value.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Return Values</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#VX_SUCCESS">VX_SUCCESS</a></code> <code>[<strong>REQ-NC14</strong>]</code><a id="REQ-NC14"></a> No errors; any other value indicates failure.</p>
+</li>
+<li>
+<p><code><a href="#VX_ERROR_INVALID_NODE">VX_ERROR_INVALID_NODE</a></code> - if the node parameter is not a valid node.</p>
+</li>
+<li>
+<p><code><a href="#VX_ERROR_GRAPH_NOT_VERIFIED">VX_ERROR_GRAPH_NOT_VERIFIED</a></code> - if the graph that the node is a part of is not yet verified</p>
+</li>
+<li>
+<p><code><a href="#VX_ERROR_INVALID_REFERENCE">VX_ERROR_INVALID_REFERENCE</a></code> - if one or more of the ref parameter references is not a valid reference.</p>
+</li>
+<li>
+<p><code><a href="#VX_ERROR_TIMEOUT">VX_ERROR_TIMEOUT</a></code> - if the operation exceeds the timeout value.</p>
+</li>
+<li>
+<p><code><a href="#VX_ERROR_INVALID_PARAMETERS">VX_ERROR_INVALID_PARAMETERS</a></code> - if any of the other parameters are not valid or out of bounds</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Precondition:</strong> <code><a href="#vxVerifyGraph">vxVerifyGraph</a></code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" style="max-width: 100;">
+<div id="footer-text">
+Version 1.0<br>
+Last updated 2025-10-15 22:14:07 UTC
+</div>
+</div>
 
-
-<script nonce="ttmvhwnwOwt1iY+fo/uM8A==">
-//<![CDATA[
-if ('loading' in HTMLImageElement.prototype) {
-  document.querySelectorAll('img.lazy').forEach(img => {
-    img.loading = 'lazy';
-    let imgUrl = img.dataset.src;
-    // Only adding width + height for avatars for now
-    if (imgUrl.indexOf('/avatar/') > -1 && imgUrl.indexOf('?') === -1) {
-      const targetWidth = img.getAttribute('width') || img.width;
-      imgUrl += `?width=${targetWidth}`;
-    }
-    img.src = imgUrl;
-    img.removeAttribute('data-src');
-    img.classList.remove('lazy');
-    img.classList.add('js-lazy-loaded');
-    img.dataset.testid = 'js-lazy-loaded-content';
-  });
-}
-
-//]]>
-</script>
-<script nonce="ttmvhwnwOwt1iY+fo/uM8A==">
-//<![CDATA[
-gl = window.gl || {};
-gl.experiments = {};
-
-
-//]]>
-</script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
 </html>
-
