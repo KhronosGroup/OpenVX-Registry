@@ -87,18 +87,29 @@ include_once("../../assets/static_pages/khr_page_top.php");
 <h3>OpenVX KHR Provisional Extensions</h3>
 <p><b>NOTE:</b> OpenVX KHR Provisional Extensions do not have conformance tests</p>
 <ul>
+    <li>OpenVX KHR Node Send Command V1.0 (vx_khr_node_send_command)
+        (<a href="extensions/vx_khr_node_send_command/vx_khr_node_send_command_1_0.html">HTML</a>,
+        <a href="extensions/vx_khr_node_send_command/vx_khr_node_send_command_1_0.pdf">PDF</a>)
+        (updated Jan 16, 2026).
+    </li>
+    <li>OpenVX KHR Target Kernel V1.0 (vx_khr_target_kernel)
+        <a href="extensions/vx_khr_target_kernel/vx_khr_target_kernel_1_0.pdf">PDF</a>)
+        (updated Jan 16, 2026).
+    </li>
     <li>OpenVX KHR Pipelining Extension 2.0 (vx_khr_pipelining)
         (<a href="extensions/vx_khr_pipelining/2.0/vx_khr_pipelining_2_0_0/vx_khr_pipelining_2_0_0.html">HTML</a>,
         <a href="extensions/vx_khr_pipelining/2.0/vx_khr_pipelining_2_0_0.pdf">PDF</a>)
         (updated April 29, 2025).
     </li>
     <li>OpenVX KHR Sub Image Arrays (vx_khr_sub_image_arrays)
-        (<a href="extensions/vx_khr_sub_image_arrays/vx_khr_sub_image_arrays_1_3_1/vx_khr_sub_image_arrays_1_3_1.html">HTML</a>,
+        (<a
+            href="extensions/vx_khr_sub_image_arrays/vx_khr_sub_image_arrays_1_3_1/vx_khr_sub_image_arrays_1_3_1.html">HTML</a>,
         <a href="extensions/vx_khr_sub_image_arrays/vx_khr_sub_image_arrays_1_3_1.pdf">PDF</a>)
         (updated April 29, 2025).
     </li>
     <li>OpenVX KHR Tensor from images (vx_khr_tensor_from_images)
-        (<a href="extensions/vx_khr_tensor_from_image/vx_khr_tensor_from_image_1_3_1/vx_khr_tensor_from_image_1_3_1.html">HTML</a>,
+        (<a
+            href="extensions/vx_khr_tensor_from_image/vx_khr_tensor_from_image_1_3_1/vx_khr_tensor_from_image_1_3_1.html">HTML</a>,
         <a href="extensions/vx_khr_tensor_from_image/vx_khr_tensor_from_image_1_3_1.pdf">PDF</a>)
         (updated April 29, 2025).
     </li>
