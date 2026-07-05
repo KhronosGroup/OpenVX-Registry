@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.8">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <meta name="author" content="The Khronos® OpenVX Working Group, Editors: Radhakrishna Giduthuri, Tomer Schwartz, Mostafa Hagog">
 <title>The OpenVX&#8482; Neural Network Extension</title>
 <style>
@@ -726,20 +726,18 @@ p.tableblock.header { color: #6d6e71; }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
-/*pre.CodeRay {background-color:#f7f7f8;}*/
-.CodeRay .line-numbers{border-right:1px solid #d8d8d8;padding:0 0.5em 0 .25em}
-.CodeRay span.line-numbers{display:inline-block;margin-right:.5em;color:rgba(0,0,0,.3)}
-.CodeRay .line-numbers strong{color:rgba(0,0,0,.4)}
-table.CodeRay{border-collapse:separate;border-spacing:0;margin-bottom:0;border:0;background:none}
-table.CodeRay td{vertical-align: top;line-height:1.45}
+/*! Stylesheet for CodeRay to loosely match GitHub themes | MIT License */
+pre.CodeRay{background:#f7f7f8}
+.CodeRay .line-numbers{border-right:1px solid;opacity:.35;padding:0 .5em 0 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
+.CodeRay .line-numbers strong{color:#000}
+table.CodeRay{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.CodeRay td{vertical-align:top;line-height:inherit}
 table.CodeRay td.line-numbers{text-align:right}
-table.CodeRay td.line-numbers>pre{padding:0;color:rgba(0,0,0,.3)}
-table.CodeRay td.code{padding:0 0 0 .5em}
-table.CodeRay td.code>pre{padding:0}
-.CodeRay .debug{color:#fff !important;background:#000080 !important}
+table.CodeRay td.code{padding:0 0 0 .75em}
+.CodeRay .debug{color:#fff!important;background:navy!important}
 .CodeRay .annotation{color:#007}
-.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-name{color:navy}
 .CodeRay .attribute-value{color:#700}
 .CodeRay .binary{color:#509}
 .CodeRay .comment{color:#998;font-style:italic}
@@ -748,7 +746,7 @@ table.CodeRay td.code>pre{padding:0}
 .CodeRay .char .delimiter{color:#039}
 .CodeRay .class{color:#458;font-weight:bold}
 .CodeRay .complex{color:#a08}
-.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .constant,.CodeRay .predefined-constant{color:teal}
 .CodeRay .color{color:#099}
 .CodeRay .class-variable{color:#369}
 .CodeRay .decorator{color:#b0b}
@@ -763,7 +761,7 @@ table.CodeRay td.code>pre{padding:0}
 .CodeRay .exception{color:inherit}
 .CodeRay .filename{color:#099}
 .CodeRay .function{color:#900;font-weight:bold}
-.CodeRay .global-variable{color:#008080}
+.CodeRay .global-variable{color:teal}
 .CodeRay .hex{color:#058}
 .CodeRay .integer,.CodeRay .float{color:#099}
 .CodeRay .include{color:#555}
@@ -774,7 +772,7 @@ table.CodeRay td.code>pre{padding:0}
 .CodeRay .inline-delimiter{color:#d14}
 .CodeRay .important{color:#555;font-weight:bold}
 .CodeRay .interpreted{color:#b2b}
-.CodeRay .instance-variable{color:#008080}
+.CodeRay .instance-variable{color:teal}
 .CodeRay .label{color:#970}
 .CodeRay .local-variable{color:#963}
 .CodeRay .octal{color:#40e}
@@ -784,7 +782,7 @@ table.CodeRay td.code>pre{padding:0}
 .CodeRay .directive{font-weight:bold}
 .CodeRay .type{font-weight:bold}
 .CodeRay .predefined-type{color:inherit}
-.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .reserved,.CodeRay .keyword{color:#000;font-weight:bold}
 .CodeRay .key{color:#808}
 .CodeRay .key .delimiter{color:#606}
 .CodeRay .key .char{color:#80f}
@@ -804,7 +802,7 @@ table.CodeRay td.code>pre{padding:0}
 .CodeRay .symbol{color:#990073}
 .CodeRay .symbol .content{color:#a60}
 .CodeRay .symbol .delimiter{color:#630}
-.CodeRay .tag{color:#008080}
+.CodeRay .tag{color:teal}
 .CodeRay .tag-special{color:#d70}
 .CodeRay .variable{color:#036}
 .CodeRay .insert{background:#afa}
@@ -836,14 +834,14 @@ table.CodeRay td.code>pre{padding:0}
         );
     });
 </script></head>
-<body class="book toc2 toc-left" style="max-width: 100;">
-<div id="header">
+<body class="book toc2 toc-left">
+<div id="header" style="max-width: 100;">
 <h1>The OpenVX<sup>&#8482;</sup> Neural Network Extension</h1>
 <div class="details">
 <span id="author" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Radhakrishna Giduthuri, Tomer Schwartz, Mostafa Hagog</span><br>
 <span id="revnumber">version 1.3,</span>
-<span id="revdate">Thu, 08 Aug 2019 20:28:08 +0000</span>
+<span id="revdate">Thu, 02 Jul 2026 15:34:35 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -874,7 +872,7 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </div>
 </div>
-<div id="content">
+<div id="content" style="max-width: 100;">
 <div id="preamble">
 <div class="sectionbody">
 <div class="imageblock text-center">
@@ -883,7 +881,7 @@ table.CodeRay td.code>pre{padding:0}
 </div>
 </div>
 <div class="paragraph">
-<p>Copyright 2013-2019 The Khronos Group Inc.</p>
+<p>Copyright 2013-2026 The Khronos Group Inc.</p>
 </div>
 <div class="paragraph">
 <p>This specification is protected by copyright laws and contains material
@@ -1117,7 +1115,7 @@ area needs to be allocated and a copy and conversion needs to be done.</p>
 that can be implemented more efficiently.
 Implementations of <code>vxImportBinary</code> could read a weight file or perhaps an
 entire graph description directly without the need for an intermediate copy.
-The format of this binary will be implementation-dependent.
+The format of this binary will be implementation-defined.
 OpenVX implementations that support both the Neural Network extension and
 the binary import/export extension can use this more efficient method to set
 the Deep Neural Networks weights/biasses.
@@ -1877,13 +1875,10 @@ The function operate a specific function (Specified in
 <code><a href="#vx_nn_activation_function_e">vx_nn_activation_function_e</a></code>), On the input data.
 the equation for the layer is:</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p><span class="eq">outputs(i,j,k,l) = function(inputs(i,j,k,l), a, b)</span></p>
-</dd>
-</dl>
+<div class="literalblock">
+<div class="content">
+<pre>:: [eq]#outputs(i,j,k,l) = function(inputs(i,j,k,l), a, b)#</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>for all i,j,k,l.</p>
@@ -1950,7 +1945,7 @@ Any possible errors preventing a successful creation should be checked using
     vx_tensor                                   inputs,
     vx_tensor                                   weights,
     vx_tensor                                   biases,
-    <span class="directive">const</span> vx_nn_convolution_params_t*           convolution_params,
+    <span class="directive">const</span> vx_nn_convolution_params_t            *convolution_params,
     vx_size                                     size_of_convolution_params,
     vx_tensor                                   outputs);</code></pre>
 </div>
@@ -1959,7 +1954,7 @@ Any possible errors preventing a successful creation should be checked using
 <p>This function implement Convolutional Network Convolution layer.
 For fixed-point data types, a fixed point calculation is performed with
 round and saturate according to the number of accumulator bits.
-The number of the accumulator bits are implementation defined, and should be
+The number of the accumulator bits are implementation-defined, and should be
 at least 16.</p>
 </div>
 <div class="paragraph">
@@ -2098,7 +2093,7 @@ Any possible errors preventing a successful creation should be checked using
     vx_tensor                                   inputs,
     vx_tensor                                   weights,
     vx_tensor                                   biases,
-    <span class="directive">const</span> vx_nn_deconvolution_params_t*         deconvolution_params,
+    <span class="directive">const</span> vx_nn_deconvolution_params_t          *deconvolution_params,
     vx_size                                     size_of_deconv_params,
     vx_tensor                                   outputs);</code></pre>
 </div>
@@ -2113,7 +2108,7 @@ up-sampling the inputs with zeros insertions between the inputs, and
 convolving the Deconvolution kernels on the up-sampled result.
 For fixed-point data types, a fixed point calculation is performed with
 round and saturate according to the number of accumulator bits.
-The number of the accumulator bits are implementation defined, and should be
+The number of the accumulator bits are implementation-defined, and should be
 at least 16.</p>
 </div>
 <div class="paragraph">
@@ -2142,24 +2137,18 @@ height dimension.</p>
 with zeros is performed.
 The relation between input to output is as follows:</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p><span class="eq">width<sub>output</sub> = (width<sub>input</sub> - 1) * upscale<sub>x</sub> - 2 * padding<sub>x</sub> + kernel<sub>x</sub> + a<sub>x</sub></span></p>
-</dd>
-</dl>
+<div class="literalblock">
+<div class="content">
+<pre>:: [eq]#width~output~ = (width~input~ - 1) * upscale~x~ - 2 * padding~x~ + kernel~x~ + a~x~#</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>and</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"></dt>
-<dd>
-<p><span class="eq">height<sub>output</sub> = (height<sub>input</sub> - 1) * upscale<sub>y</sub> - 2 * padding<sub>y</sub> + kernel<sub>y</sub> + a<sub>y</sub></span></p>
-</dd>
-</dl>
+<div class="literalblock">
+<div class="content">
+<pre>:: [eq]#height~output~ = (height~input~ - 1) * upscale~y~ - 2 * padding~y~ + kernel~y~ + a~y~#</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>where <span class="eq">width<sub>input</sub></span> is the size of the input width dimension.
@@ -2173,7 +2162,7 @@ between the <span class="eq">upscale<sub>x</sub></span> and <span class="eq">ups
 sizes.
 <span class="eq">upscale<sub>x</sub></span> and <span class="eq">upscale<sub>y</sub></span> are calculated by the relation between
 input and output.
-<span class="eq">a<sub>x</sub></span> and <span class="eq">a<sub>y</sub></span> must be positive and smaller then <span class="eq">upscale<sub>x</sub></span>
+<span class="eq">a<sub>x</sub></span> and <span class="eq">a<sub>y</sub></span> must be positive and smaller than <span class="eq">upscale<sub>x</sub></span>
 and <span class="eq">upscale<sub>y</sub></span> respectively.
 Since the padding parameter is on the output, the effective input padding
 is:</p>
@@ -2266,7 +2255,7 @@ Any possible errors preventing a successful creation should be checked using
 <p>This function implement Fully connected Convolutional Network layers.
 For fixed-point data types, a fixed point calculation is performed with
 round and saturate according to the number of accumulator bits.
-The number of the accumulator bits are implementation defined, and should be
+The number of the accumulator bits are implementation-defined, and should be
 at least 16.</p>
 </div>
 <div class="paragraph">
@@ -2381,7 +2370,7 @@ Each input value is divided by</p>
 </div>
 <div class="paragraph">
 <p>where <span class="eq">n</span> is the number of elements to normalize across.
-and the sum is taken over a rectangle region centred at that value (zero
+and the sum is taken over a rectangle region centered at that value (zero
 padding is added where necessary).</p>
 </div>
 <div class="paragraph">
@@ -2461,7 +2450,7 @@ height dimension.</p>
 </div>
 <div class="paragraph">
 <p>Pooling operation is a function operation over a rectangle size and then a
-nearest neighbour down scale.
+nearest neighbor down scale.
 Here we use pooling_size_x and pooling_size_y to specify the rectangle size
 on which the operation is performed.</p>
 </div>
@@ -2536,7 +2525,7 @@ Any possible errors preventing a successful creation should be checked using
     vx_graph                                    graph,
     vx_tensor                                   input_data,
     vx_tensor                                   input_rois,
-    <span class="directive">const</span> vx_nn_roi_pool_params_t*              roi_pool_params,
+    <span class="directive">const</span> vx_nn_roi_pool_params_t               *roi_pool_params,
     vx_size                                     size_of_roi_params,
     vx_tensor                                   output_arr);</code></pre>
 </div>
@@ -2671,13 +2660,13 @@ Any possible errors preventing a successful creation should be checked using
 </div>
 </div>
 </div>
-<div id="footer">
+<div id="footer" style="max-width: 100;">
 <div id="footer-text">
 Version 1.3<br>
-Last updated 2019-04-26 07:33:45 UTC
+Last updated 2026-07-02 15:29:03 UTC
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <meta name="author" content="The Khronos® OpenVX Working Group, Contributor: Steve Ramm">
 <title>The OpenVX&#8482; Swap and Move kernel Extension</title>
 <style>
@@ -841,13 +841,13 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <span id="author" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="author2" class="author">Contributor: Steve Ramm</span><br>
 <span id="revnumber">version 1.3.1,</span>
-<span id="revdate">Mon, 02 Oct 2023 15:00:59 +0000</span>
+<span id="revdate">Thu, 02 Jul 2026 15:35:24 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_openvx_1_3_1_swap_and_move_new_kernels_with_bidirectional_parameters">1. OpenVX 1.3.1: SWAP and MOVE: New kernels with bidirectional parameters</a>
+<li><a href="#_openvx_1_3_2_swap_and_move_new_kernels_with_bidirectional_parameters">1. OpenVX 1.3.2: SWAP and MOVE: New kernels with bidirectional parameters</a>
 <ul class="sectlevel2">
 <li><a href="#sec_purpose">1.1. Purpose</a>
 <ul class="sectlevel3">
@@ -871,6 +871,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_performance_note">2.2.5. Performance note</a></li>
 </ul>
 </li>
+<li><a href="#_kernel_names">2.3. Kernel Names</a></li>
 </ul>
 </li>
 </ul>
@@ -885,7 +886,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="paragraph">
-<p>Copyright 2013-2023 The Khronos Group Inc.</p>
+<p>Copyright 2013-2026 The Khronos Group Inc.</p>
 </div>
 <div class="paragraph">
 <p>This specification is protected by copyright laws and contains material
@@ -933,7 +934,7 @@ for identification and belong to their respective owners.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_openvx_1_3_1_swap_and_move_new_kernels_with_bidirectional_parameters">1. OpenVX 1.3.1: SWAP and MOVE: New kernels with bidirectional parameters</h2>
+<h2 id="_openvx_1_3_2_swap_and_move_new_kernels_with_bidirectional_parameters">1. OpenVX 1.3.2: SWAP and MOVE: New kernels with bidirectional parameters</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="sec_purpose">1.1. Purpose</h3>
@@ -1259,9 +1260,28 @@ vx_status vxuMove(vx_context context, vx_reference first, vx_reference second);<
 <div class="sect4">
 <h5 id="_usage">Usage</h5>
 <div class="paragraph">
-<p>Users should avoid using MOVE or COPY where objects are in different memory areas (implementation-dependent).</p>
+<p>Users should avoid using MOVE or COPY where objects are in different memory areas (implementation-defined).</p>
 </div>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kernel_names">2.3. Kernel Names</h3>
+<div class="paragraph">
+<p><code>[<strong>REQ-SWP19</strong>]</code><a id="REQ-SWP19"></a></p>
+</div>
+<div class="paragraph">
+<p>When using <code>vxGetKernelByName</code> the following are strings specifying the swap and move kernel extension kernel names:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>org.khronos.openvx.swap</p>
+</li>
+<li>
+<p>org.khronos.openvx.move</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1270,10 +1290,10 @@ vx_status vxuMove(vx_context context, vx_reference first, vx_reference second);<
 <div id="footer" style="max-width: 100;">
 <div id="footer-text">
 Version 1.3.1<br>
-Last updated 2023-10-02 14:52:06 UTC
+Last updated 2026-07-02 15:29:03 UTC
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

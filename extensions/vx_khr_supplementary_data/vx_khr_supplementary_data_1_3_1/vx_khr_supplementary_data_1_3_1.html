@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <meta name="author" content="The Khronos® OpenVX Working Group, Contributors: Raphael Cano, Steve Ramm">
 <title>The OpenVX&#8482; Supplementary data Extension</title>
 <style>
@@ -841,7 +841,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <span id="author" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="author2" class="author">Contributors: Raphael Cano, Steve Ramm</span><br>
 <span id="revnumber">version 1.3.1,</span>
-<span id="revdate">Wed, 20 Nov 2024 17:10:06 +0000</span>
+<span id="revdate">Thu, 02 Jul 2026 15:35:28 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -891,7 +891,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="paragraph">
-<p>Copyright 2013-2023 The Khronos Group Inc.</p>
+<p>Copyright 2013-2026 The Khronos Group Inc.</p>
 </div>
 <div class="paragraph">
 <p>This specification is protected by copyright laws and contains material
@@ -1097,7 +1097,7 @@ vx_size source_bytes = <span class="integer">2</span> * <span class="keyword">si
 vx_user_data_object supp = vxGetSupplementaryUserDataObject(input, <span class="string"><span class="delimiter">&quot;</span><span class="content">my_user_data_t</span><span class="delimiter">&quot;</span></span>);
 vx_status status = vxExtendSupplementaryUserDataObject(output, supp, &amp;my_user_data, source_bytes, <span class="keyword">sizeof</span>(my_user_data));
 
-<span class="comment">/* You could optimise stack usage if there was no reason to have the entire my_user_data array: */</span>
+<span class="comment">/* You could optimize stack usage if there was no reason to have the entire my_user_data array: */</span>
 <span class="keyword">struct</span> {<span class="predefined-type">int</span> a, b, c} just_one_entry;
 vx_user_data_object supp = vxGetSupplementaryUserDataObject(input, <span class="string"><span class="delimiter">&quot;</span><span class="content">my_user_data_t</span><span class="delimiter">&quot;</span></span>);
 <span class="comment">/* Fill the first two entries from the input, and the third from a local copy */</span>
@@ -1129,37 +1129,37 @@ vx_status status = vxExtendSupplementaryUserDataObject(output, supp, &amp;just_o
 <td class="tableblock halign-left valign-top"><p class="tableblock">vxCreateImageFromROI</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_image</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_image</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OpenVX 1.3.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenVX 1.3.2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vxCreateImageFromChannel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_image</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_image</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OpenVX 1.3.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenVX 1.3.2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="ArrayFromTensor"></a>vxCreateImageObjectArrayFromTensor</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_tensor</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_image</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OpenVX 1.3.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenVX 1.3.2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vxCreateTensorFromView</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_tensor</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_tensor</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">OpenVX 1.3.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenVX 1.3.2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vxCreateObjectArrayFromROI</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_image</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_image</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="sub_image"></a>vx_khr_sub_image_arrays</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="sub_image"></a>vx_khr_sub_image_object_array</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vxCreateObjectArrayFromChannel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_image</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vx_image</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vx_khr_sub_image_arrays</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vx_khr_sub_image_object_array</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vxCreateTensorFromROI</p></td>
@@ -1194,10 +1194,10 @@ vx_status status = vxExtendSupplementaryUserDataObject(output, supp, &amp;just_o
 </tbody>
 </table>
 <div class="paragraph">
-<p>Child objects may be used as any sort of parameter to kernels, subject to the rules laid out in section 2.8.6 of the OpenVX Specification V1.3.1. For example, it may be useful to use different non-overlapping ROIs of a single parent image as outputs to different kernels. In the case where a child object is used solely as input to a kernel, it makes sense that it does not have its own supplementary data, but uses that of the parent. However, in the cases where it is an output object, then there could be an issue with overwriting the parent&#8217;s supplementary data. For this reason, we have a special action for child objects; when retrieving supplementary data, the data from the parent will be used in the case where no supplementary data has been specifically set on the child data object (<em>c.f.,</em> <a href="#inherit">inheritance</a>). For output child objects, however, the programmer can specifically give them their own supplementary data.</p>
+<p>Child objects may be used as any sort of parameter to kernels, subject to the rules laid out in section 2.8.6 of the OpenVX Specification V1.3.2. For example, it may be useful to use different non-overlapping ROIs of a single parent image as outputs to different kernels. In the case where a child object is used solely as input to a kernel, it makes sense that it does not have its own supplementary data, but uses that of the parent. However, in the cases where it is an output object, then there could be an issue with overwriting the parent&#8217;s supplementary data. For this reason, we have a special action for child objects; when retrieving supplementary data, the data from the parent will be used in the case where no supplementary data has been specifically set on the child data object (<em>c.f.,</em> <a href="#inherit">inheritance</a>). For output child objects, however, the programmer can specifically give them their own supplementary data.</p>
 </div>
 <div class="paragraph">
-<p>It is then up to the programmer to collate information from different child objects and the parent object, where child objects have been modified, but in the more usual situation where child objects are used solely as input to kernels, there is no extra work to do and the number of supplementary data objects is minimised.</p>
+<p>It is then up to the programmer to collate information from different child objects and the parent object, where child objects have been modified, but in the more usual situation where child objects are used solely as input to kernels, there is no extra work to do and the number of supplementary data objects is minimized.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1208,7 +1208,7 @@ vx_status status = vxExtendSupplementaryUserDataObject(output, supp, &amp;just_o
 <td class="content">
 <div class="title">Object Arrays</div>
 <div class="paragraph">
-<p>An object array (the container) may also have supplementary data, distinct from the data of the elements of the array. Object arrays themselves can never be <a href="#child_object">child objects</a>, since currently there is no way to create a child object array. However, the elements of an object array may be children of elements of another object array, created using <code><a href="#ArrayFromTensor">vxCreateImageObjectArrayFromTensor</a></code> or using functions from the extensions <em><a href="#sub_image">vx_khr_sub_image_arrays</a></em> or <em><a href="#from_image">vx_khr_tensor_from_image</a></em>. See also <a href="#exemplars">objects created from exemplars</a>.</p>
+<p>An object array (the container) may also have supplementary data, distinct from the data of the elements of the array. Object arrays themselves can never be <a href="#child_object">child objects</a>, since currently there is no way to create a child object array. However, the elements of an object array may be children of elements of another object array, created using <code><a href="#ArrayFromTensor">vxCreateImageObjectArrayFromTensor</a></code> or using functions from the extensions <em><a href="#sub_image">vx_khr_sub_image_object_array</a></em> or <em><a href="#from_image">vx_khr_tensor_from_image</a></em>. See also <a href="#exemplars">objects created from exemplars</a>.</p>
 </div>
 </td>
 </tr>
@@ -1223,7 +1223,7 @@ vx_status status = vxExtendSupplementaryUserDataObject(output, supp, &amp;just_o
 <div class="sect2">
 <h3 id="vxSet">4.1. vxSetSupplementaryUserDataObject</h3>
 <div class="paragraph">
-<p>See also <code><a href="#vxExtend">vxExtendSupplementaryUserDataObject</a></code>, which is a generalisation of this function.</p>
+<p>See also <code><a href="#vxExtend">vxExtendSupplementaryUserDataObject</a></code>, which is a generalization of this function.</p>
 </div>
 <div class="paragraph">
 <p><code>[<strong>REQ-SD01</strong>]</code><a id="REQ-SD01"></a>
@@ -1264,7 +1264,7 @@ If there is no supplementary data associated with the <strong>destination</stron
 </div>
 <div class="paragraph">
 <p><code>[<strong>REQ-SD04</strong>]</code><a id="REQ-SD04"></a>
-If no supplementary data is associated with the <strong>destination</strong> object, and the <strong>destination</strong> object is not associated with any verified graph, then a new supplementary data object shall be created using the <strong>source</strong> as an exemplar, and its data shall be initialised from the <strong>source</strong> object.</p>
+If no supplementary data is associated with the <strong>destination</strong> object, and the <strong>destination</strong> object is not associated with any verified graph, then a new supplementary data object shall be created using the <strong>source</strong> as an exemplar, and its data shall be initialized from the <strong>source</strong> object.</p>
 </div>
 <div class="paragraph">
 <p><code>[<strong>REQ-SD05</strong>]</code><a id="REQ-SD05"></a>
@@ -1388,7 +1388,7 @@ The data and supplementary data of virtual objects is inaccessible except inside
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VX_SUCCESS</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The supplementary data of <strong>destination</strong> is successfully initialised</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The supplementary data of <strong>destination</strong> is successfully initialized</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VX_ERROR_INVALID_REFERENCE</strong></p></td>
@@ -1492,7 +1492,7 @@ If <strong>ref</strong> is a <a href="#child_object">child object</a> without it
 <h5 id="input_params">Kernel Input Parameters</h5>
 <div class="paragraph">
 <p><code>[<strong>REQ-SD17</strong>]</code><a id="REQ-SD17"></a>
-If the function is called from within a kernel processing function and <strong>ref</strong> is passed as an input parameter to the kernel function, the the reference retrieved for the supplementary data shall be a <a href="#read_only">read-only</a> vx_user_data_object for the duration of the kernel processing function.</p>
+If the function is called from within a kernel processing function and <strong>ref</strong> is passed as an input parameter to the kernel function, the reference retrieved for the supplementary data shall be a <a href="#read_only">read-only</a> vx_user_data_object for the duration of the kernel processing function.</p>
 </div>
 </div>
 <div class="sect4">
@@ -1510,7 +1510,7 @@ The supplementary data of virtual objects is inaccessible except inside a kernel
 <td class="content">
 <div class="title">Memory allocation</div>
 <div class="paragraph">
-<p>The user should be aware that when a supplementary data object is added to a reference, there will be dynamic allocation of data. For this reason it is not allowed for objects after a graph has been verified, and  therefore <code><a href="#vxSet">vxSetSupplementaryUserDataObject</a></code> must be called in the validator to initialise virtual objects.</p>
+<p>The user should be aware that when a supplementary data object is added to a reference, there will be dynamic allocation of data. For this reason it is not allowed for objects after a graph has been verified, and  therefore <code><a href="#vxSet">vxSetSupplementaryUserDataObject</a></code> must be called in the validator to initialize virtual objects.</p>
 </div>
 </td>
 </tr>
@@ -1583,7 +1583,7 @@ A call to <strong>vxReleaseReference</strong> or <strong>vxReleaseUserDataObject
 Create or set supplementary user data object for a destination reference using another object as the source, possibly extending it with data from a local buffer.</p>
 </div>
 <div class="paragraph">
-<p>The reason for including this function is to minimise the number of separate buffer map operations required when copying and extending supplementary data.</p>
+<p>The reason for including this function is to minimize the number of separate buffer map operations required when copying and extending supplementary data.</p>
 </div>
 <div class="paragraph">
 <p><em>c.f.,</em> <code><a href="#vxSet">vxSetSupplementaryUserDataObject</a></code>.</p>
@@ -1828,7 +1828,7 @@ The following values shall be supported for <strong>destination</strong>:</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VX_SUCCESS</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The supplementary data of <strong>destination</strong> is successfully initialised</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The supplementary data of <strong>destination</strong> is successfully initialized</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VX_ERROR_INVALID_REFERENCE</strong></p></td>
@@ -1889,7 +1889,7 @@ If no supplementary data is copied for whatever reason this shall not result in 
 <div class="sectionbody">
 <div id="exemplars" class="paragraph">
 <p><code>[<strong>REQ-SD36</strong>]</code><a id="REQ-SD36"></a>
-When objects are created from exemplars (for example elements of object arrays and delays), any supplementary data in the exemplars shall be cloned into the newly created objects. For example, if an object array of images is created from an exemplar with supplementary data with a type name of "user_data_one_t" then all the images in the object array shall be given supplementary data of this type, and the supplementary data shall be initialised from the supplementary data of the exemplar.</p>
+When objects are created from exemplars (for example elements of object arrays and delays), any supplementary data in the exemplars shall be cloned into the newly created objects. For example, if an object array of images is created from an exemplar with supplementary data with a type name of "user_data_one_t" then all the images in the object array shall be given supplementary data of this type, and the supplementary data shall be initialized from the supplementary data of the exemplar.</p>
 </div>
 <div class="paragraph">
 <p>Sometimes objects may be created automatically by the framework, for example if pipelining or batch processing is used, where node and edge objects may be duplicated to allow concurrent processing. In such cases the edge objects shall be created with supplementary data cloned from the originals. In other words the framework must provide objects with supplementary data as expected by the kernels.</p>
@@ -1935,10 +1935,10 @@ Under some circumstances supplementary data shall be read-only and attempts to w
 <div id="footer" style="max-width: 100;">
 <div id="footer-text">
 Version 1.3.1<br>
-Last updated 2024-11-20 17:06:19 UTC
+Last updated 2026-07-02 15:29:03 UTC
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
