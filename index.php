@@ -116,10 +116,10 @@ $safety_specs = array(
     array(
         'title' => 'OpenVX Safety Critical Specification 1.3 is published within the Feature Set document',
         'links' => array(
-            array('label' => 'HTML', 'href' => 'specs/1.3/vx_khr_feature_sets/1.1/html/vx_khr_feature_sets_1_1.html#_safety_critical_deployment_feature_set'),
-            array('label' => 'PDF', 'href' => 'specs/1.3/vx_khr_feature_sets/1.1/vx_khr_feature_sets_1_1.pdf'),
+            array('label' => 'HTML', 'href' => 'specs/1.3.2/vx_khr_feature_sets/html/vx_khr_feature_sets_1_1.html#_safety_critical_deployment_feature_set'),
+            array('label' => 'PDF', 'href' => 'specs/1.3.2/vx_khr_feature_sets/vx_khr_feature_sets_1_1.pdf'),
         ),
-        'updated' => 'July 07, 2020',
+        'updated' => 'July 02, 2026',
     ),
 );
 
