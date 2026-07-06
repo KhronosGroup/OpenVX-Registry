@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $static_title = 'Khronos OpenVX Registry';
 
 include_once("../../assets/static_pages/khr_page_top.php");
@@ -34,7 +34,7 @@ function openvx_render_row($item, $is_child = false)
     }
     echo $item['title'];
     if (!empty($item['note'])) {
-        echo '<span class="ovx-note">' . $item['note'] . '</span>';
+        echo '<span class="ovx-note">' . openvx_escape($item['note']) . '</span>';
     }
     echo '</p></td>';
     echo '<td class="tableblock halign-left valign-top"><p class="tableblock">' . openvx_format_links($links) . '</p></td>';
@@ -181,7 +181,7 @@ $khr_extensions = array(
             array('label' => 'Download', 'href' => 'api/1.3.2/openvx-extension-headers-1.3.2.tar.bz2'),
         ),
         'updated' => 'July 05, 2026',
-        'note' => 'This package contains header files for these officially supported extensions <em>and</em> for the provisional extensions listed below.',
+        'note' => 'This package contains header files for these officially supported extensions and for the provisional extensions listed below.',
     ),
 );
 
@@ -358,14 +358,14 @@ $older_specs = array(
 
 <p>To provide feedback or file issues with the OpenVX API, extensions, and
     headers, file an issue in the <a href="https://github.com/KhronosGroup/OpenVX-api-docs">
-        KhronosGroup/OpenVX-api-docs</a> Github project, where the
+        KhronosGroup/OpenVX-api-docs</a> GitHub project, where the
     Specification source documents are hosted.
 </p>
 
 <p>To provide feedback on the OpenVX registry itself (such as reporting
     missing content, bad links, etc.), file an issue in the <a
         href="https://github.com/KhronosGroup/OpenVX-Registry/issues">
-        OpenVX-Registry</a> Github project.
+        OpenVX-Registry</a> GitHub project.
 </p>
 
 </div>

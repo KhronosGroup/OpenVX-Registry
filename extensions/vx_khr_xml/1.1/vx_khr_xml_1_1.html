@@ -1326,15 +1326,15 @@ context.</p>
 <td class="content">
 <div class="title">Note</div>
 <div class="paragraph">
-<p>The reference indices in the import object corresponds with the reference
+<p>The reference indices in the import object correspond with the reference
 numbers in the XML file.
 It is assumed that the program has some means to know which references to
 use from imported list (either by name using <code>vxGetImportReferenceByName()</code>,
 or by index from looking at the XML file (debug use case):
 <code>vxGetImportReferenceByIndex()</code>).
-Alternativly, the program can use <code>vxGetImportReferenceByIndex()</code> in a
+Alternatively, the program can use <code>vxGetImportReferenceByIndex()</code> in a
 loop and query each one to understand what was imported.
-After all references of interest have been retrieved, this import obects
+After all references of interest have been retrieved, this import objects
 should be released using <code>vxReleaseImport()</code>.</p>
 </div>
 </td>
