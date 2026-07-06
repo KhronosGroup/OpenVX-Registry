@@ -8,10 +8,10 @@ function openvx_escape($value)
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
 
-function openvx_render_links($links)
+function openvx_format_links($links)
 {
     if (empty($links)) {
-        return;
+        return '&#8212;';
     }
 
     $rendered_links = array();
@@ -19,38 +19,48 @@ function openvx_render_links($links)
         $rendered_links[] = '<a href="' . openvx_escape($link['href']) . '">' . openvx_escape($link['label']) . '</a>';
     }
 
-    echo ' (' . implode(', ', $rendered_links) . ')';
+    return implode(', ', $rendered_links);
 }
 
-function openvx_render_updated($updated)
+function openvx_render_row($item, $is_child = false)
 {
-    if (!empty($updated)) {
-        echo ' <span class="updated">(updated ' . openvx_escape($updated) . ').</span>';
+    $links = isset($item['links']) ? $item['links'] : array();
+    $updated = !empty($item['updated']) ? openvx_escape($item['updated']) : '&#8212;';
+
+    echo '<tr>';
+    echo '<td class="tableblock halign-left valign-top"><p class="tableblock' . ($is_child ? ' ovx-child' : '') . '">';
+    if ($is_child) {
+        echo '<span class="ovx-arrow">&#8627;</span> ';
+    }
+    echo $item['title'];
+    if (!empty($item['note'])) {
+        echo '<span class="ovx-note">' . $item['note'] . '</span>';
+    }
+    echo '</p></td>';
+    echo '<td class="tableblock halign-left valign-top"><p class="tableblock">' . openvx_format_links($links) . '</p></td>';
+    echo '<td class="tableblock halign-left valign-top"><p class="tableblock ovx-updated">' . $updated . '</p></td>';
+    echo "</tr>\n";
+
+    if (!empty($item['children'])) {
+        foreach ($item['children'] as $child) {
+            openvx_render_row($child, true);
+        }
     }
 }
 
-function openvx_render_items($items)
+function openvx_render_table($items)
 {
-    echo "<ul>\n";
+    echo '<table class="tableblock frame-all grid-all stretch">' . "\n";
+    echo '<colgroup><col style="width: 58%;"><col style="width: 24%;"><col style="width: 18%;"></colgroup>' . "\n";
+    echo '<thead><tr>';
+    echo '<th class="tableblock halign-left valign-middle">Document</th>';
+    echo '<th class="tableblock halign-left valign-middle">Formats</th>';
+    echo '<th class="tableblock halign-left valign-middle">Updated</th>';
+    echo "</tr></thead>\n<tbody>\n";
     foreach ($items as $item) {
-        echo "    <li>" . $item['title'];
-        if (!empty($item['links'])) {
-            openvx_render_links($item['links']);
-        }
-        if (!empty($item['updated'])) {
-            openvx_render_updated($item['updated']);
-        }
-        if (!empty($item['note'])) {
-            echo '<br><span class="note">' . $item['note'] . '</span>';
-        }
-        if (!empty($item['children'])) {
-            echo "\n";
-            openvx_render_items($item['children']);
-            echo "    ";
-        }
-        echo "</li>\n";
+        openvx_render_row($item);
     }
-    echo "</ul>\n";
+    echo "</tbody>\n</table>\n";
 }
 
 $current_specs = array(
@@ -104,11 +114,20 @@ $current_specs = array(
         'updated' => 'July 15, 2021',
     ),
     array(
-        'title' => 'OpenVX 1.3.2 header package',
+        'title' => 'OpenVX 1.3.2 standard header package',
         'links' => array(
-            array('label' => 'Download', 'href' => 'api/1.3.2/openvx-headers.tar'),
+            array('label' => 'Download', 'href' => 'api/1.3.2/openvx-standard-headers-1.3.2.tar.bz2'),
         ),
         'updated' => 'July 05, 2026',
+        'children' => array(
+            array(
+                'title' => 'Information about header files',
+                'links' => array(
+                    array('label' => 'HTML', 'href' => 'api/1.3.2/OpenVX_Header_Files.html'),
+                ),
+                'updated' => 'July 02, 2026',
+            ),
+        ),
     ),
 );
 
@@ -157,12 +176,12 @@ $khr_extensions = array(
         'updated' => 'July 02, 2026',
     ),
     array(
-        'title' => 'OpenVX 1.3.2 header package',
+        'title' => 'OpenVX 1.3.2 extension header package',
         'links' => array(
-            array('label' => 'Download', 'href' => 'api/1.3.2/openvx-headers.tar'),
+            array('label' => 'Download', 'href' => 'api/1.3.2/openvx-extension-headers-1.3.2.tar.bz2'),
         ),
         'updated' => 'July 05, 2026',
-        'note' => 'This package contains header files for the OpenVX 1.3.2 core API, officially supported extensions, and provisional extensions listed below.',
+        'note' => 'This package contains header files for these officially supported extensions <em>and</em> for the provisional extensions listed below.',
     ),
 );
 
@@ -271,10 +290,33 @@ $older_specs = array(
 );
 ?>
 
+<style>
+.ovx-registry table.tableblock{width:100%;background:#fff;margin:0 0 1.5em;border:1px solid #dedede;border-collapse:collapse;word-wrap:normal}
+.ovx-registry table.tableblock thead th{background:#f7f8f7;font-weight:bold}
+.ovx-registry table.tableblock th,.ovx-registry table.tableblock td{padding:.55em .7em;text-align:left;border:1px solid #dedede;line-height:1.5}
+.ovx-registry table.tableblock th.valign-middle,.ovx-registry table.tableblock td.valign-middle{vertical-align:middle}
+.ovx-registry table.tableblock td.valign-top{vertical-align:top}
+.ovx-registry table.tableblock tbody tr:nth-child(even){background:#fafafa}
+.ovx-registry table.tableblock p.tableblock{margin:0;font-size:.95em;line-height:1.5}
+.ovx-registry .ovx-updated{white-space:nowrap;color:#555;font-size:.9em}
+.ovx-registry .ovx-note{display:block;margin-top:.35em;color:#666;font-size:.85em;font-style:italic}
+.ovx-registry .ovx-child{padding-left:1.3em;color:rgba(0,0,0,.72)}
+.ovx-registry .ovx-arrow{color:#999;margin-right:.3em}
+.ovx-registry .ovx-toc{margin:.5em 0 1.75em;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.5em}
+.ovx-registry .ovx-toc li{margin:0}
+.ovx-registry .ovx-toc a{display:inline-block;padding:.35em .8em;background:#f0f3f7;border:1px solid #d6dee8;border-radius:4px;text-decoration:none;font-size:.9em;color:#2156a5}
+.ovx-registry .ovx-toc a:hover{background:#e3ebf5}
+.ovx-registry .ovx-current{margin:.25em 0 1em;font-size:1.05em}
+.ovx-registry .ovx-badge{display:inline-block;padding:.05em .5em;margin-left:.4em;border-radius:3px;font-size:.75em;font-weight:600;vertical-align:middle;background:#e6f0e6;color:#2d6a2d;border:1px solid #bcd9bc}
+.ovx-registry .ovx-badge.ovx-badge-prov{background:#fbf1e0;color:#8a5a00;border-color:#e6d3ac}
+</style>
+
+<div class="ovx-registry">
+
 <p>The OpenVX registry contains specifications of the core API, headers, extensions, and related documentation.</p>
 
 <h3>OpenVX Registry Contents</h3>
-<ul>
+<ul class="ovx-toc">
     <li><a href="#current-specifications">Current Specifications</a></li>
     <li><a href="#khr-extensions">Ratified KHR Extensions</a></li>
     <li><a href="#provisional-extensions">Provisional KHR Extensions</a></li>
@@ -284,19 +326,17 @@ $older_specs = array(
 
 <h3 id="current-specifications">Current Specifications, Headers, and Documentation</h3>
 
-<p>The current version of OpenVX: <strong>OpenVX 1.3.2</strong></p>
-<?php openvx_render_items($current_specs); ?>
+<p class="ovx-current">Current version of OpenVX: <strong>OpenVX 1.3.2</strong></p>
+<?php openvx_render_table($current_specs); ?>
 
-<p>The current version of OpenVX Safety Critical Specification: <strong>OpenVX_SC 1.3</strong></p>
-<?php openvx_render_items($safety_specs); ?>
+<p class="ovx-current">Current version of OpenVX Safety Critical Specification: <strong>OpenVX_SC 1.3</strong></p>
+<?php openvx_render_table($safety_specs); ?>
 
-<h3 id="khr-extensions">OpenVX KHR Extensions</h3>
-<p><strong>NOTE:</strong> OpenVX KHR Extensions have conformance tests available.</p>
-<?php openvx_render_items($khr_extensions); ?>
+<h3 id="khr-extensions">Ratified KHR Extensions <span class="ovx-badge">Conformance tests available</span></h3>
+<?php openvx_render_table($khr_extensions); ?>
 
-<h3 id="provisional-extensions">OpenVX KHR Provisional Extensions</h3>
-<p><strong>NOTE:</strong> OpenVX KHR Provisional Extensions do not have conformance tests.</p>
-<?php openvx_render_items($provisional_extensions); ?>
+<h3 id="provisional-extensions">Provisional KHR Extensions <span class="ovx-badge ovx-badge-prov">No conformance tests</span></h3>
+<?php openvx_render_table($provisional_extensions); ?>
 
 <h3 id="older-specifications">Older Specifications</h3>
 <p>Older versions of the OpenVX specification are provided for reference.</p>
@@ -306,7 +346,7 @@ $older_specs = array(
 <?php if (!empty($section['intro'])) { ?>
 <p><em><?php echo openvx_escape($section['intro']); ?></em></p>
 <?php } ?>
-<?php openvx_render_items($section['items']); ?>
+<?php openvx_render_table($section['items']); ?>
 <?php if (!empty($section['note'])) { ?>
 <p><small><?php echo openvx_escape($section['note']); ?></small></p>
 <?php } ?>
@@ -327,5 +367,7 @@ $older_specs = array(
         href="https://github.com/KhronosGroup/OpenVX-Registry/issues">
         OpenVX-Registry</a> Github project.
 </p>
+
+</div>
 
 <?php include_once("../../assets/static_pages/khr_page_bottom.php"); ?>
