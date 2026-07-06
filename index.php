@@ -71,6 +71,15 @@ $current_specs = array(
             array('label' => 'PDF', 'href' => 'specs/1.3.2/OpenVX_Specification_1_3_2.pdf'),
         ),
         'updated' => 'July 02, 2026',
+        'children' => array(
+            array(
+                'title' => "What's new in OpenVX 1.3.2 (changelog)",
+                'links' => array(
+                    array('label' => 'HTML', 'href' => 'specs/1.3.2/CHANGELOG_1_3_2.html'),
+                ),
+                'updated' => 'July 02, 2026',
+            ),
+        ),
     ),
     array(
         'title' => 'OpenVX 1.3.2 Feature Sets',
@@ -79,39 +88,6 @@ $current_specs = array(
             array('label' => 'PDF', 'href' => 'specs/1.3.2/vx_khr_feature_sets/vx_khr_feature_sets_1_1.pdf'),
         ),
         'updated' => 'July 02, 2026',
-    ),
-    array(
-        'title' => 'OpenVX 1.3.1 specification',
-        'links' => array(
-            array('label' => 'HTML', 'href' => 'specs/1.3.1/html/OpenVX_Specification_1_3_1.html'),
-            array('label' => 'PDF', 'href' => 'specs/1.3.1/OpenVX_Specification_1_3_1.pdf'),
-        ),
-        'updated' => 'Feb 02, 2022',
-        'children' => array(
-            array(
-                'title' => 'Corrections to OpenVX Specification 1.3.1',
-                'links' => array(
-                    array('label' => 'PDF', 'href' => 'specs/1.3.1/OpenVX_Specification_1_3_1_Correction_1_changes.pdf'),
-                ),
-                'updated' => 'Nov 07, 2023',
-            ),
-        ),
-    ),
-    array(
-        'title' => 'OpenVX 1.3 specification',
-        'links' => array(
-            array('label' => 'HTML', 'href' => 'specs/1.3/html/OpenVX_Specification_1_3.html'),
-            array('label' => 'PDF', 'href' => 'specs/1.3/OpenVX_Specification_1_3.pdf'),
-        ),
-        'updated' => 'September 10, 2020',
-    ),
-    array(
-        'title' => 'OpenVX 1.3 Feature Sets',
-        'links' => array(
-            array('label' => 'HTML', 'href' => 'specs/1.3/vx_khr_feature_sets/1.1/html/vx_khr_feature_sets_1_1.html'),
-            array('label' => 'PDF', 'href' => 'specs/1.3/vx_khr_feature_sets/1.1/vx_khr_feature_sets_1_1.pdf'),
-        ),
-        'updated' => 'July 15, 2021',
     ),
     array(
         'title' => 'OpenVX 1.3.2 standard header package',
@@ -219,10 +195,18 @@ $provisional_extensions = array(
 
 $older_specs = array(
     array(
-        'heading' => 'OpenVX 1.3 (August 08, 2019)',
+        'heading' => 'OpenVX 1.3.1',
         'items' => array(
-            array('title' => 'OpenVX 1.3 specification', 'links' => array(array('label' => 'HTML', 'href' => 'specs/1.3_08Aug2019/html/OpenVX_Specification_1_3.html'), array('label' => 'PDF', 'href' => 'specs/1.3_08Aug2019/OpenVX_Specification_1_3.pdf'))),
-            array('title' => 'OpenVX 1.3 Feature Sets', 'links' => array(array('label' => 'HTML', 'href' => 'specs/1.3/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html'), array('label' => 'PDF', 'href' => 'specs/1.3/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf'))),
+            array('title' => 'OpenVX 1.3.1 specification', 'links' => array(array('label' => 'HTML', 'href' => 'specs/1.3.1/html/OpenVX_Specification_1_3_1.html'), array('label' => 'PDF', 'href' => 'specs/1.3.1/OpenVX_Specification_1_3_1.pdf')), 'updated' => 'Feb 02, 2022', 'children' => array(array('title' => 'Corrections to OpenVX Specification 1.3.1', 'links' => array(array('label' => 'PDF', 'href' => 'specs/1.3.1/OpenVX_Specification_1_3_1_Correction_1_changes.pdf')), 'updated' => 'Nov 07, 2023'))),
+        ),
+    ),
+    array(
+        'heading' => 'OpenVX 1.3',
+        'items' => array(
+            array('title' => 'OpenVX 1.3 specification', 'links' => array(array('label' => 'HTML', 'href' => 'specs/1.3/html/OpenVX_Specification_1_3.html'), array('label' => 'PDF', 'href' => 'specs/1.3/OpenVX_Specification_1_3.pdf')), 'updated' => 'September 10, 2020'),
+            array('title' => 'OpenVX 1.3 Feature Sets', 'links' => array(array('label' => 'HTML', 'href' => 'specs/1.3/vx_khr_feature_sets/1.1/html/vx_khr_feature_sets_1_1.html'), array('label' => 'PDF', 'href' => 'specs/1.3/vx_khr_feature_sets/1.1/vx_khr_feature_sets_1_1.pdf')), 'updated' => 'July 15, 2021'),
+            array('title' => 'OpenVX 1.3 specification (August 08, 2019)', 'links' => array(array('label' => 'HTML', 'href' => 'specs/1.3_08Aug2019/html/OpenVX_Specification_1_3.html'), array('label' => 'PDF', 'href' => 'specs/1.3_08Aug2019/OpenVX_Specification_1_3.pdf'))),
+            array('title' => 'OpenVX 1.3 Feature Sets (1.0)', 'links' => array(array('label' => 'HTML', 'href' => 'specs/1.3/vx_khr_feature_sets/1.0/html/vx_khr_feature_sets_1_0.html'), array('label' => 'PDF', 'href' => 'specs/1.3/vx_khr_feature_sets/1.0/vx_khr_feature_sets_1_0.pdf'))),
             array('title' => 'OpenVX 1.3 standard header package', 'links' => array(array('label' => 'Download', 'href' => 'api/1.3_08Aug2019/openvx-standard-headers-1.3.tar.bz2'))),
             array('title' => 'OpenVX 1.3 extension header package', 'links' => array(array('label' => 'Download', 'href' => 'api/1.3_08Aug2019/openvx-extension-headers-1.3.tar.bz2'))),
         ),
