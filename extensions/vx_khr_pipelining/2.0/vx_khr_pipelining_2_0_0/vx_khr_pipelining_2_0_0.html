@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <meta name="author" content="The Khronos® OpenVX Working Group, Editors: Kedar Chitnis, Jesse Villareal, Radhakrishna Giduthuri, and Frank Brill">
 <title>The OpenVX&#8482; Graph Pipelining, Streaming, and Batch Processing Extension V2.0</title>
 <style>
@@ -841,7 +841,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <span id="author" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Kedar Chitnis, Jesse Villareal, Radhakrishna Giduthuri, and Frank Brill</span><br>
 <span id="revnumber">version 2.0.0,</span>
-<span id="revdate">Tue, 29 Apr 2025 13:24:11 +0000</span>
+<span id="revdate">Thu, 02 Jul 2026 15:34:39 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -985,7 +985,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="paragraph">
-<p>Copyright 2013-2025 The Khronos Group Inc.</p>
+<p>Copyright 2013-2026 The Khronos Group Inc.</p>
 </div>
 <div class="paragraph">
 <p>This specification is protected by copyright laws and contains material
@@ -2914,7 +2914,7 @@ consumed events to trigger calls to <code><a href="#vxGraphParameterEnqueueReady
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Wait for an event and process it. Because this is for any event, it includes user events, graph parameter events, etc. on all graphs. Therefore it is necessary to create a broker process to dispatch tasks for event processing, and this architecture may not always be suitable and could require an additional signalling mechanism.</p>
+<p>Wait for an event and process it. Because this is for any event, it includes user events, graph parameter events, etc. on all graphs. Therefore it is necessary to create a broker process to dispatch tasks for event processing, and this architecture may not always be suitable and could require an additional signaling mechanism.</p>
 </li>
 <li>
 <p>Poll for each parameter in turn; this is not efficient as it either burns cpu time, or if a sleep mechanism is used, results in a lack of responsivity.</p>
@@ -3032,7 +3032,7 @@ processing.</p>
 <pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_graph_parameter_queue_params_t {
     vx_uint32         graph_parameter_index;
     vx_uint32         refs_list_size;
-    vx_reference *    refs_list;
+    vx_reference      *refs_list;
 } vx_graph_parameter_queue_params_t;</code></pre>
 </div>
 </div>
@@ -3204,7 +3204,7 @@ Read-only. Use a <code>vx_enum</code> parameter. See
 <td class="content">
 <div class="title">Note</div>
 <div class="paragraph">
-<p>Setting the timeout attribute <code><a href="#VX_GRAPH_TIMEOUT">[VX_GRAPH_TIMEOUT]</a></code> does not set any limit upon the duration of graph execution, it merely prevents the above-mentioned functions from delaying more than the time given. There are no other requirements upon what the framework should do; it is up to the application to recognise the timeout and take appropriate action.</p>
+<p>Setting the timeout attribute <code><a href="#VX_GRAPH_TIMEOUT">[VX_GRAPH_TIMEOUT]</a></code> does not set any limit upon the duration of graph execution, it merely prevents the above-mentioned functions from delaying more than the time given. There are no other requirements upon what the framework should do; it is up to the application to recognize the timeout and take appropriate action.</p>
 </div>
 </td>
 </tr>
@@ -3227,7 +3227,7 @@ Read-only. Use a <code>vx_enum</code> parameter. See
 <td class="content">
 <div class="title">Note</div>
 <div class="paragraph">
-<p>Setting the timeout attribute <code><a href="#VX_GRAPH_EVENT_TIMEOUT">[VX_GRAPH_EVENT_TIMEOUT]</a></code> does not set any limit upon the duration of graph execution, it merely prevents the above-mentioned function from delaying more than the time given. There are no other requirements upon what the framework should do; it is up to the application to recognise the timeout and take appropriate action.</p>
+<p>Setting the timeout attribute <code><a href="#VX_GRAPH_EVENT_TIMEOUT">[VX_GRAPH_EVENT_TIMEOUT]</a></code> does not set any limit upon the duration of graph execution, it merely prevents the above-mentioned function from delaying more than the time given. There are no other requirements upon what the framework should do; it is up to the application to recognize the timeout and take appropriate action.</p>
 </div>
 </td>
 </tr>
@@ -3237,7 +3237,7 @@ Read-only. Use a <code>vx_enum</code> parameter. See
 <ul>
 <li>
 <p><a id="VX_GRAPH_PIPELINE_DEPTH"></a>
-<code><a href="#VX_GRAPH_PIPELINE_DEPTH">[VX_GRAPH_PIPELINE_DEPTH]</a></code> - Set or return the graph pipeline depth; the depth used in the graph is known after graph verification. Read-write. Us a <code>vx_uint32</code> parameter. <code>[<strong>REQ-PI018</strong>]</code><a id="REQ-PI018"></a></p>
+<code><a href="#VX_GRAPH_PIPELINE_DEPTH">[VX_GRAPH_PIPELINE_DEPTH]</a></code> - Set or return the graph pipeline depth; the depth used in the graph is known after graph verification. Read-write. Use a <code>vx_uint32</code> parameter. <code>[<strong>REQ-PI018</strong>]</code><a id="REQ-PI018"></a></p>
 </li>
 </ul>
 </div>
@@ -3254,7 +3254,7 @@ Read-only. Use a <code>vx_enum</code> parameter. See
 The framework will calculate the maximum depth of pipeline that is sensible for any given graph. It would be useful for the user to be able to obtain this data in a programmatic way and modify execution accordingly, for example to know that result dequeuing is possible after queuing a certain number of inputs. An additional attribute allows this data to be obtained from a verified graph.</p>
 </div>
 <div class="paragraph">
-<p>The attribute is made read-write, so that an application may modify pipeline behaviour. Example use cases are to save memory by restricting pipeline depth, or to effectively turn off pipelining by setting the depth to 1 for debugging purposes.</p>
+<p>The attribute is made read-write, so that an application may modify pipeline behavior. Example use cases are to save memory by restricting pipeline depth, or to effectively turn off pipelining by setting the depth to 1 for debugging purposes.</p>
 </div>
 <div class="paragraph">
 <p><code>[<strong>REQ-PI020</strong>]</code><a id="REQ-PI020"></a>
@@ -3376,7 +3376,7 @@ graph as much as possible until an enqueued reference is not available at
 which time it will stall the graph until the reference becomes
 available. This allows application to schedule a graph even when all
 parameters references are not yet available, i.e do a &#8220;late&#8221; enqueue.
-However, exact behaviour is implementation specific.</p>
+However, exact behavior is implementation specific.</p>
 </li>
 </ul>
 </div>
@@ -3495,7 +3495,7 @@ Additionally, this function is responsible for adding parameters to the graph, i
 <p>The first reference in a list may not be NULL <code>[<strong>REQ-PI035</strong>]</code><a id="REQ-PI035"></a></p>
 </li>
 <li>
-<p>If a NULL reference is otherwise specified in the list, the results are implementation-dependent</p>
+<p>If a NULL reference is otherwise specified in the list, the results are implementation-defined</p>
 </li>
 </ol>
 </div>
@@ -3845,7 +3845,7 @@ parameters <code>[<strong>REQ-PI047</strong>]</code><a id="REQ-PI047"></a></p>
 <p><code>[in]</code> number_to_add - the number of new references to be added. Must be greater than zero. <code>[<strong>REQ-PI069</strong>]</code><a id="REQ-PI069"></a></p>
 </li>
 <li>
-<p><code>[in]</code> new_references - array holding the new references, must be same length as "number_to_add". There may be an implementation-dependent limit on the total number of references per graph parameter. <code>[<strong>REQ-PI070</strong>]</code><a id="REQ-PI070"></a></p>
+<p><code>[in]</code> new_references - array holding the new references, must be same length as "number_to_add". There may be an implementation-defined limit on the total number of references per graph parameter. <code>[<strong>REQ-PI070</strong>]</code><a id="REQ-PI070"></a></p>
 </li>
 </ul>
 </div>
@@ -3898,7 +3898,7 @@ parameters <code>[<strong>REQ-PI047</strong>]</code><a id="REQ-PI047"></a></p>
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxGraphParameterEnqueueReadyRef(
     vx_graph                                    graph,
     vx_uint32                                   graph_parameter_index,
-    <span class="directive">const</span> vx_reference *                        refs,
+    <span class="directive">const</span> vx_reference                          *refs,
     vx_uint32                                   num_refs);</code></pre>
 </div>
 </div>
@@ -3939,7 +3939,7 @@ graph parameter that is not input to a graph, this function provides a
 <p>The references that are enqueued MUST be the references listed by calling
 <code><a href="#vxSetGraphScheduleConfig">vxSetGraphScheduleConfig</a></code> before graph verification or subsequently added by using
  <code><a href="#vxAddReferencesToGraphParameterList">vxAddReferencesToGraphParameterList</a></code>. If a reference outside this list is provided
-then behaviour is undefined.</p>
+then behavior is undefined.</p>
 </div>
 <div class="paragraph">
 <p><strong>Parameters</strong></p>
@@ -3996,9 +3996,9 @@ valid graph parameter index <code>[<strong>REQ-PI088</strong>]</code><a id="REQ-
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxGraphParameterDequeueDoneRef(
     vx_graph                                    graph,
     vx_uint32                                   graph_parameter_index,
-    vx_reference *                              refs,
+    vx_reference                                *refs,
     vx_uint32                                   max_refs,
-    vx_uint32 *                                 num_refs);</code></pre>
+    vx_uint32                                   *num_refs);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4092,7 +4092,7 @@ milliseconds. <code>[<strong>REQ-PI238</strong>]</code><a id="REQ-PI238"></a></p
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxGraphParameterCheckDoneRef(
     vx_graph                                    graph,
     vx_uint32                                   graph_parameter_index,
-    vx_uint32 *                                 num_refs);</code></pre>
+    vx_uint32                                   *num_refs);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4404,7 +4404,7 @@ node whose completion causes a new execution of the graph to be triggered.  <cod
 the graph is not pipelined by the implementation, then the trigger_node
 parameter is ignored and the graph will be re-triggered upon each graph
 completion. The trigger_node parameter is optional, so if it is set to NULL,
-then the trigger node is implementation dependent.</p>
+then the trigger node is implementation-defined.</p>
 </div>
 <div class="paragraph">
 <p><strong>Parameters</strong></p>
@@ -4765,7 +4765,7 @@ milliseconds. <code>[<strong>REQ-ST36</strong>]</code><a id="REQ-ST36"></a></p>
 <div id="vx_event_user_event" class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">typedef</span> <span class="keyword">struct</span> _vx_event_user_event {
-    <span class="directive">void</span> *    user_event_parameter;
+    <span class="directive">void</span>      *user_event_parameter;
 } vx_event_user_event;</code></pre>
 </div>
 </div>
@@ -4883,7 +4883,7 @@ milliseconds. <code>[<strong>REQ-ST36</strong>]</code><a id="REQ-ST36"></a></p>
 <td class="content">
 <div class="title">Note</div>
 <div class="paragraph">
-<p>Setting timeout attributes does not in any way change the occurrence of events, it merely prevents the above-mentioned functions from delaying more than the time given. There are no other requirements upon what the framework should do; it is up to the application to recognise the timeout and take appropriate action.</p>
+<p>Setting timeout attributes does not in any way change the occurrence of events, it merely prevents the above-mentioned functions from delaying more than the time given. There are no other requirements upon what the framework should do; it is up to the application to recognize the timeout and take appropriate action.</p>
 </div>
 </td>
 </tr>
@@ -5047,7 +5047,7 @@ does <strong>NOT</strong> register user events using <code><a href="#vxRegisterE
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxWaitEvent(
     vx_context                                  context,
-    vx_event_t *                                event,
+    vx_event_t                                  *event,
     vx_bool                                     do_not_block);</code></pre>
 </div>
 </div>
@@ -5062,7 +5062,7 @@ are re-enabled using <code><a href="#vxEnableEvents">vxEnableEvents</a></code> a
 </div>
 <div class="paragraph">
 <p>If <code><a href="#vxWaitEvent">vxWaitEvent</a></code> is called simultaneously from multiple thread/task
-contexts then its behaviour is not defined by OpenVX.</p>
+contexts then its behavior is not defined by OpenVX.</p>
 </div>
 <div class="paragraph">
 <p><strong>Parameters</strong></p>
@@ -5196,7 +5196,7 @@ would be returned via <code><a href="#vxWaitEvent">vxWaitEvent</a></code> API un
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxSendUserEvent(
     vx_context                                  context,
     vx_uint32                                   app_value,
-    <span class="directive">const</span> <span class="directive">void</span> *                                parameter);</code></pre>
+    <span class="directive">const</span> <span class="directive">void</span>                                  *parameter);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5309,7 +5309,7 @@ reference. <code>[<strong>REQ-PI171</strong>]</code><a id="REQ-PI171"></a></p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxWaitGraphEvent(
     vx_graph                                    graph,
-    vx_event_t *                                event,
+    vx_event_t                                  *event,
     vx_bool                                     do_not_block);</code></pre>
 </div>
 </div>
@@ -5367,10 +5367,10 @@ milliseconds. No event is received. <code>[<strong>REQ-PI177</strong>]</code><a 
 <td class="content">
 <div class="paragraph">
 <div class="title">Notes</div>
-<p>If <code>vxReleaseContext</code> or <code>vxReleaseGraph(&amp;graph)</code> is called while an application is blocked on <em>vxWaitGraphEvent(Graph,&#8230;&#8203;)</em>, the behaviour is not defined.</p>
+<p>If <code>vxReleaseContext</code> or <code>vxReleaseGraph(&amp;graph)</code> is called while an application is blocked on <em>vxWaitGraphEvent(Graph,&#8230;&#8203;)</em>, the behavior is not defined.</p>
 </div>
 <div class="paragraph">
-<p>If <em>vxWaitGraphEvent(Graph,&#8230;&#8203;)</em> is called simultaneously from different threads with the same first parameter, then the behaviour is not defined.</p>
+<p>If <em>vxWaitGraphEvent(Graph,&#8230;&#8203;)</em> is called simultaneously from different threads with the same first parameter, then the behavior is not defined.</p>
 </div>
 </td>
 </tr>
@@ -5520,7 +5520,7 @@ would be returned via <code><a href="#vxWaitGraphEvent">vxWaitGraphEvent</a></co
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxSendUserGraphEvent(
     vx_graph                                    graph,
     vx_uint32                                   app_value,
-    <span class="directive">const</span> <span class="directive">void</span> *                                parameter);</code></pre>
+    <span class="directive">const</span> <span class="directive">void</span>                                  *parameter);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5826,7 +5826,7 @@ The value of the constant must fit in 32 bits and must be documented; a suitable
 </ul>
 </div>
 <div class="paragraph">
-<p>The function is intended to return data after a kernel has been finalised; if the function is called before a kernel is finalised, the results are not defined.</p>
+<p>The function is intended to return data after a kernel has been finalized; if the function is called before a kernel is finalized, the results are not defined.</p>
 </div>
 <div class="paragraph">
 <p><strong>Returns:</strong> A <code>vx_status_e</code> enumeration.</p>
@@ -5840,7 +5840,7 @@ The value of the constant must fit in 32 bits and must be documented; a suitable
 <p><code>VX_SUCCESS</code> - No errors. <code>[<strong>REQ-PI227</strong>]</code><a id="REQ-PI227"></a></p>
 </li>
 <li>
-<p><code>VX_ERROR_INVALID_REFERENCE</code> The kernel was invalid or not finalised <code>[<strong>REQ-PI228</strong>]</code><a id="REQ-PI228"></a></p>
+<p><code>VX_ERROR_INVALID_REFERENCE</code> The kernel was invalid or not finalized <code>[<strong>REQ-PI228</strong>]</code><a id="REQ-PI228"></a></p>
 </li>
 <li>
 <p><code>VX_ERROR_INVALID_PARAMETERS</code> The number of parameters is incorrect, or a NULL pointer was passed for <em>parameter_config</em>. <code>[<strong>REQ-PI229</strong>]</code><a id="REQ-PI229"></a></p>
@@ -5851,7 +5851,7 @@ The value of the constant must fit in 32 bits and must be documented; a suitable
 <p>The meta format object (member <em>meta</em> of <code><a href="#vx_kernel_parameter_config_t">vx_kernel_parameter_config_t</a></code>) may be returned so that graphs may be created using appropriate objects for imported kernels. If a meta format object is returned (i.e., <em>meta</em> is not NULL), it must be released using <code>vxReleaseReference(vxCastRefFromMetaFormatP(&amp;meta))</code>, as there is no specific <code>vxReleaseMetaFormat()</code> function.</p>
 </div>
 <div class="paragraph">
-<p>An implementation is not required to return a meta format object for all or indeed any of the kernel parameters but if it does so it could allow an application to create graphs that can use different imported kernels in a dynamic fashion. When querying the meta format object the application should only query those attributes appropriate for the object type; <em>c.f.</em>, <code>vxQueryMetaFormatAttribute()</code>, and The Kernel Import Extension to OpenVX 1.3.</p>
+<p>An implementation is not required to return a meta format object for all or indeed any of the kernel parameters but if it does so it could allow an application to create graphs that can use different imported kernels in a dynamic fashion. When querying the meta format object the application should only query those attributes appropriate for the object type; <em>c.f.</em>, <code>vxQueryMetaFormatAttribute()</code>, and The Kernel Import Extension to OpenVX 1.3.2.</p>
 </div>
 <div class="paragraph">
 <p>An application should check for non-null meta format objects and release them even if it does not support dynamic graph creation.</p>
@@ -5879,14 +5879,14 @@ The value of the constant must fit in 32 bits and must be documented; a suitable
 <h4 id="_deprecation_of_vxaddparametertograph">4.3.1. Deprecation of <code>vxAddParameterToGraph</code></h4>
 <div class="paragraph">
 <p><code>[<strong>REQ-PI233</strong>]</code><a id="REQ-PI233"></a>
-This API is deprecated in favour of <code><a href="#vxSetGraphScheduleConfig">vxSetGraphScheduleConfig</a></code> and a new function <code><a href="#vxAddReferencesToGraphParameterList">vxAddReferencesToGraphParameterList</a></code>. If it is used, it will behave as before, but any graph parameter assignments will be scrapped if <code><a href="#vxSetGraphScheduleConfig">vxSetGraphScheduleConfig</a></code> is subsequently called.</p>
+This API is deprecated in favor of <code><a href="#vxSetGraphScheduleConfig">vxSetGraphScheduleConfig</a></code> and a new function <code><a href="#vxAddReferencesToGraphParameterList">vxAddReferencesToGraphParameterList</a></code>. If it is used, it will behave as before, but any graph parameter assignments will be scrapped if <code><a href="#vxSetGraphScheduleConfig">vxSetGraphScheduleConfig</a></code> is subsequently called.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_deprecation_of_vxgetgraphparameterbyindex">4.3.2. Deprecation of <code>vxGetGraphParameterByIndex</code></h4>
 <div class="paragraph">
 <p><code>[<strong>REQ-PI234</strong>]</code><a id="REQ-PI234"></a>
-The parameter object returned by <code>vxGetGraphParameterByIndex</code> is insufficiently specified. The assumption has been that it is the same object as originally set using <code>vxAddParameterToGraph</code>, an API that we would like to deprecate. However, the utility of returning a parameter object in this way is also questionable, and we would like to deprecate the function in favour of a more useful interface to obtain more thorough information about all the graph parameters, i.e., <code><a href="#vxGetGraphParameterConfig">vxGetGraphParameterConfig</a></code>.</p>
+The parameter object returned by <code>vxGetGraphParameterByIndex</code> is insufficiently specified. The assumption has been that it is the same object as originally set using <code>vxAddParameterToGraph</code>, an API that we would like to deprecate. However, the utility of returning a parameter object in this way is also questionable, and we would like to deprecate the function in favor of a more useful interface to obtain more thorough information about all the graph parameters, i.e., <code><a href="#vxGetGraphParameterConfig">vxGetGraphParameterConfig</a></code>.</p>
 </div>
 </div>
 </div>
@@ -5894,7 +5894,7 @@ The parameter object returned by <code>vxGetGraphParameterByIndex</code> is insu
 <h3 id="_deprecation_of_the_parameter_object">4.4. Deprecation of the parameter object</h3>
 <div class="paragraph">
 <p><code>[<strong>REQ-PI235</strong>]</code><a id="REQ-PI235"></a>
-The <code>vx_parameter</code> object may be deprecated if the the above changes are made. The following APIs and definitions may be removed if backwards-compatibility is not <strong class="purple">required</strong></p>
+The <code>vx_parameter</code> object may be deprecated if the above changes are made. The following APIs and definitions may be removed if backwards-compatibility is not <strong class="purple">required</strong></p>
 </div>
 <table class="tableblock frame-all grid-all stretch options="header"">
 <colgroup>
@@ -6060,7 +6060,7 @@ The <code>vx_parameter</code> object may be deprecated if the the above changes 
 <td class="tableblock halign-left valign-top"><p class="tableblock">No requirements</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vx_khr_sub_image_arrays</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vx_khr_sub_image_object_array</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No requirements</p></td>
 </tr>
 <tr>
@@ -6096,7 +6096,7 @@ The rules for deciding the direction of graph parameters and additional rule for
 <h3 id="_the_buffer_aliasing_extension">5.2. The Buffer Aliasing Extension</h3>
 <div class="paragraph">
 <p><code>[<strong>REQ-PI237</strong>]</code><a id="REQ-PI237"></a>
-If the buffer aliasing function is supported, and a kernel has given the hint that it supports in-place processing, and the framework is able to support an aliased buffer on a leaf node, the the direction of a graph parameter assigned to such an aliased reference will be given as <code>VX_BIDIRECTIONAL</code> when reported by the new function <code><a href="#vxGetGraphParameterConfig">vxGetGraphParameterConfig</a></code>.</p>
+If the buffer aliasing function is supported, and a kernel has given the hint that it supports in-place processing, and the framework is able to support an aliased buffer on a leaf node, the direction of a graph parameter assigned to such an aliased reference will be given as <code>VX_BIDIRECTIONAL</code> when reported by the new function <code><a href="#vxGetGraphParameterConfig">vxGetGraphParameterConfig</a></code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -6114,7 +6114,7 @@ If the buffer aliasing function is supported, and a kernel has given the hint th
 <div class="sect2">
 <h3 id="_the_feature_sets_description">5.4. The feature sets description</h3>
 <div class="paragraph">
-<p>The feature sets document should be revised to include pipelining, batching and streaming. In particular the safety-critical feature set should specify which functionalities are allowed in the deployment feature set and which are restricted to the development set. The following is a list of those APIs that should be restricted to the the development set:</p>
+<p>The feature sets document should be revised to include pipelining, batching and streaming. In particular the safety-critical feature set should specify which functionalities are allowed in the deployment feature set and which are restricted to the development set. The following is a list of those APIs that should be restricted to the development set:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -6346,10 +6346,10 @@ Two different tags are used, to separate requirements for the pipelining and eve
 <div id="footer" style="max-width: 100;">
 <div id="footer-text">
 Version 2.0.0<br>
-Last updated 2025-04-29 13:20:16 UTC
+Last updated 2026-07-02 15:29:03 UTC
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <meta name="author" content="The Khronos® OpenVX Working Group, Editor: Jesse Villarreal">
 <title>The OpenVX&#8482; Raw Image Extension</title>
 <style>
@@ -841,7 +841,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <span id="author" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="author2" class="author">Editor: Jesse Villarreal</span><br>
 <span id="revnumber">version 1.0,</span>
-<span id="revdate">Mon, 02 Oct 2023 15:00:53 +0000</span>
+<span id="revdate">Thu, 02 Jul 2026 15:35:16 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -926,7 +926,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="paragraph">
-<p>Copyright 2013-2023 The Khronos Group Inc.</p>
+<p>Copyright 2013-2026 The Khronos Group Inc.</p>
 </div>
 <div class="paragraph">
 <p>This specification is protected by copyright laws and contains material
@@ -1496,7 +1496,7 @@ Indicates if the exposures are interleaved in memory. Read-only. Use a <code><a 
 <h4 id="_vx_image_raw_format">3.1.4. VX_IMAGE_RAW_FORMAT</h4>
 <div class="paragraph">
 <p>
-The format of the the raw image. Read-only. Use a pointer to a <code><a href="#vx_image_raw_format_t">vx_image_raw_format_t</a></code> array.</p>
+The format of the raw image. Read-only. Use a pointer to a <code><a href="#vx_image_raw_format_t">vx_image_raw_format_t</a></code> array.</p>
 </div>
 <div id="VX_IMAGE_RAW_FORMAT" class="listingblock">
 <div class="content">
@@ -1773,7 +1773,7 @@ Creates an opaque reference to a raw sensor image (including multi-exposure and 
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">vx_image vxCreateRawImage(
     vx_context                                  context,
-    <span class="directive">const</span> vx_image_raw_create_params_t*         params,
+    <span class="directive">const</span> vx_image_raw_create_params_t          *params,
     vx_size                                     size);</code></pre>
 </div>
 </div>
@@ -1811,7 +1811,7 @@ Creates an opaque reference to a virtual raw sensor image with no direct user ac
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">vx_image vxCreateVirtualRawImage(
     vx_graph                                    graph,
-    <span class="directive">const</span> vx_image_raw_create_params_t*         params,
+    <span class="directive">const</span> vx_image_raw_create_params_t          *params,
     vx_size                                     size);</code></pre>
 </div>
 </div>
@@ -1851,10 +1851,10 @@ plane.</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxCopyImagePatchWithFlags(
     vx_image                                    image,
-    <span class="directive">const</span> vx_rectangle_t*                       image_rect,
+    <span class="directive">const</span> vx_rectangle_t                        *image_rect,
     vx_uint32                                   image_plane_index,
-    <span class="directive">const</span> vx_imagepatch_addressing_t*           user_addr,
-    <span class="directive">void</span>*                                       user_ptr,
+    <span class="directive">const</span> vx_imagepatch_addressing_t            *user_addr,
+    <span class="directive">void</span>                                        *user_ptr,
     vx_enum                                     usage,
     vx_enum                                     user_mem_type,
     vx_uint32                                   flags);</code></pre>
@@ -1998,10 +1998,10 @@ and/or end of the patch are implementation-defined.</p>
 <div id="footer" style="max-width: 100;">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2023-10-02 14:52:06 UTC
+Last updated 2026-07-02 15:29:03 UTC
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <meta name="author" content="The Khronos® OpenVX Working Group, Contributor: Steve Ramm">
 <title>The OpenVX&#8482; Bidirectional parameters Extension</title>
 <style>
@@ -841,13 +841,13 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <span id="author" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="author2" class="author">Contributor: Steve Ramm</span><br>
 <span id="revnumber">version 1.3.1,</span>
-<span id="revdate">Mon, 02 Oct 2023 15:01:02 +0000</span>
+<span id="revdate">Thu, 02 Jul 2026 15:35:26 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_extension_to_support_bidirectional_parameters_in_openvx_v1_3_1">1. Extension to support bidirectional parameters in OpenVX V1.3.1</a>
+<li><a href="#_extension_to_support_bidirectional_parameters_in_openvx_v1_3_2">1. Extension to support bidirectional parameters in OpenVX V1.3.2</a>
 <ul class="sectlevel2">
 <li><a href="#sec_purpose">1.1. Purpose</a></li>
 <li><a href="#sec_usecases">1.2. Example Use Case</a>
@@ -893,6 +893,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_returns_3">3.3.2. Returns</a></li>
 </ul>
 </li>
+<li><a href="#_kernel_names">3.4. Kernel Names</a></li>
+<li><a href="#_kernel_enumerations">3.5. Kernel enumerations</a></li>
 </ul>
 </li>
 </ul>
@@ -907,7 +909,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="paragraph">
-<p>Copyright 2013-2023 The Khronos Group Inc.</p>
+<p>Copyright 2013-2026 The Khronos Group Inc.</p>
 </div>
 <div class="paragraph">
 <p>This specification is protected by copyright laws and contains material
@@ -955,12 +957,12 @@ for identification and belong to their respective owners.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_extension_to_support_bidirectional_parameters_in_openvx_v1_3_1">1. Extension to support bidirectional parameters in OpenVX V1.3.1</h2>
+<h2 id="_extension_to_support_bidirectional_parameters_in_openvx_v1_3_2">1. Extension to support bidirectional parameters in OpenVX V1.3.2</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="sec_purpose">1.1. Purpose</h3>
 <div class="paragraph">
-<p>Bidirectional parameters were originally specified in OpenVX but then were removed due to difficulties and lack of clarity in specifying the scheduling of nodes. This extension is against OpenVX V1.3.1 and seeks to add them back, with a revision of the rules concerning their use, and of the graph formalism.</p>
+<p>Bidirectional parameters were originally specified in OpenVX but then were removed due to difficulties and lack of clarity in specifying the scheduling of nodes. This extension is against OpenVX V1.3.2 and seeks to add them back, with a revision of the rules concerning their use, and of the graph formalism.</p>
 </div>
 <div class="paragraph">
 <p>In this document requirements are marked thus: <code>[REQ-BPnn]</code>, where "nn" indicates numbering</p>
@@ -1136,7 +1138,7 @@ the companies that they represented at the time:</p>
 <p><code>[<strong>REQ-BP02</strong>]</code><a id="REQ-BP02"></a></p>
 </div>
 <div class="paragraph">
-<p>c.f. <code>[REQ-1892]</code> of OpenVX V1.3.1 The third parameter (direction) to the API vxAddParameterToKernel(kernel, index, direction, data_type, state) can be in general VX_BIDIRECTIONAL, VX_INPUT, or VX_OUTPUT.</p>
+<p>c.f. <code>[REQ-1892]</code> of OpenVX V1.3.2 The third parameter (direction) to the API vxAddParameterToKernel(kernel, index, direction, data_type, state) can be in general VX_BIDIRECTIONAL, VX_INPUT, or VX_OUTPUT.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1161,7 +1163,7 @@ Reasoning:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>As it is a virtual object, it needs to be initialised by a graph node as the data is not accessible outside the graph, therefore is needs to be connected to an output</p>
+<p>As it is a virtual object, it needs to be initialized by a graph node as the data is not accessible outside the graph, therefore is needs to be connected to an output</p>
 </li>
 <li>
 <p>As it is a virtual object, the (modified) data is not accessible outside the graph, so to be of any use it must be connected to the input of a graph node.</p>
@@ -1281,7 +1283,7 @@ Reasoning:</p>
 <div class="sect2">
 <h3 id="_replicated_nodes">2.10. Replicated Nodes</h3>
 <div class="paragraph">
-<p><code>[<strong>REQ-BP12</strong>]</code><a id="REQ-BP12"></a> c.f <code>[REQ-0697]</code> of OpenVX V1.3.1:
+<p><code>[<strong>REQ-BP12</strong>]</code><a id="REQ-BP12"></a> c.f <code>[REQ-0697]</code> of OpenVX V1.3.2:
 Describing parameter three of vxReplicateNode() an array of vx_bool with a value of vx_true_e for the parameters that should be iterated over (should be a reference to a vx_pyramid or a vx_object_array), vx_false_e for the parameters that should be the same across replicated nodes and for optional parameters that are not used. Should be vx_true_e for all output <strong><em>and bidirectional</em></strong> parameters.</p>
 </div>
 </div>
@@ -1586,16 +1588,70 @@ The overflow policy used is VX_CONVERT_POLICY_SATURATE.</p>
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_kernel_names">3.4. Kernel Names</h3>
+<div class="paragraph">
+<p><code>[<strong>REQ-BP31</strong>]</code><a id="REQ-BP31"></a></p>
+</div>
+<div class="paragraph">
+<p>Notice that only node APIs are added when compared to the original definition of the accumulate functions in OpenVX, consequently the same kernels are re-used.
+When using <code>vxGetKernelByName</code> the following are strings specifying the bidirectional parameter extension kernel names:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>org.khronos.openvx.accumulate</p>
+</li>
+<li>
+<p>org.khronos.openvx.accumulate_square</p>
+</li>
+<li>
+<p>org.khronos.openvx.accumulate_weighted</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kernel_enumerations">3.5. Kernel enumerations</h3>
+<div class="paragraph">
+<p><code>[<strong>REQ-BP32</strong>]</code><a id="REQ-BP32"></a></p>
+</div>
+<div class="paragraph">
+<p>The following enumeration constants are defined:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="keyword">enum</span> vx_kernel_e {
+
+     <span class="comment">/*! \brief The accumulation kernel.
+     * \see group_vision_function_accumulate
+     */</span>
+    VX_KERNEL_ACCUMULATE = VX_KERNEL_BASE(VX_ID_KHRONOS, VX_LIBRARY_KHR_BASE) + <span class="hex">0x16</span>,
+
+    <span class="comment">/*! \brief The weighted accumulation kernel.
+     * \see group_vision_function_accumulate_weighted
+     */</span>
+    VX_KERNEL_ACCUMULATE_WEIGHTED = VX_KERNEL_BASE(VX_ID_KHRONOS, VX_LIBRARY_KHR_BASE) + <span class="hex">0x17</span>,
+
+    <span class="comment">/*! \brief The squared accumulation kernel.
+     * \see group_vision_function_accumulate_square
+     */</span>
+    VX_KERNEL_ACCUMULATE_SQUARE = VX_KERNEL_BASE(VX_ID_KHRONOS, VX_LIBRARY_KHR_BASE) + <span class="hex">0x18</span>,
+
+};</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer" style="max-width: 100;">
 <div id="footer-text">
 Version 1.3.1<br>
-Last updated 2023-10-02 14:52:06 UTC
+Last updated 2026-07-02 15:29:03 UTC
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

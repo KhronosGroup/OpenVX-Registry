@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.22">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <meta name="author" content="The Khronos® OpenVX Working Group, Editors: Steve Ramm, Radhakrishna Giduthuri">
 <title>The OpenVX&#8482; Export and Import Extension</title>
 <style>
@@ -841,7 +841,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <span id="author" class="author">The Khronos<sup>®</sup> OpenVX Working Group</span><br>
 <span id="author2" class="author">Editors: Steve Ramm, Radhakrishna Giduthuri</span><br>
 <span id="revnumber">version 1.1.1,</span>
-<span id="revdate">Wed, 08 May 2024 14:30:22 +0000</span>
+<span id="revdate">Thu, 02 Jul 2026 15:34:31 +0000</span>
 <br><span id="revremark">Git branch information not available</span>
 </div>
 <div id="toc" class="toc2">
@@ -895,7 +895,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="paragraph">
-<p>Copyright 2013-2023 The Khronos Group Inc.</p>
+<p>Copyright 2013-2026 The Khronos Group Inc.</p>
 </div>
 <div class="paragraph">
 <p>This specification is protected by copyright laws and contains material
@@ -960,7 +960,7 @@ objects, in vendor-specific formats.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Embedded systems using fixed graphs, to minimise the amount of code
+<p>Embedded systems using fixed graphs, to minimize the amount of code
 required.</p>
 </li>
 <li>
@@ -1221,18 +1221,7 @@ object before export.</p>
 </li>
 <li>
 <p><strong>2.7.3</strong> Before export, objects may be named for retrieval by name using
-the existing API</p>
-<div class="openblock">
-<div class="content">
-<div id="vxSetReferenceName" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="c">vx_status vxSetReferenceName(
-    vx_reference                                ref,
-    <span class="directive">const</span> vx_char*                              name);</code></pre>
-</div>
-</div>
-</div>
-</div>
+the existing <code>vxSetReferenceName()</code> API.</p>
 </li>
 <li>
 <p><strong>2.7.4</strong> Export will fail if duplicate names are found for listed
@@ -1356,10 +1345,10 @@ from the import object.</p>
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxExportObjectsToMemory(
     vx_context                                  context,
     vx_size                                     numrefs,
-    <span class="directive">const</span> vx_reference*                         refs,
-    <span class="directive">const</span> vx_enum*                              uses,
-    <span class="directive">const</span> vx_uint8**                            ptr,
-    vx_size*                                    length);</code></pre>
+    <span class="directive">const</span> vx_reference                          *refs,
+    <span class="directive">const</span> vx_enum                               *uses,
+    <span class="directive">const</span> vx_uint8                              **ptr,
+    vx_size                                     *length);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1435,7 +1424,7 @@ implementation will automatically create them.</p>
 <div class="title">Note</div>
 <div class="paragraph">
 <p>The <code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code> value must be given for
-images created from handles, or the the export operation will fail.</p>
+images created from handles, or the export operation will fail.</p>
 </div>
 </td>
 </tr>
@@ -1629,7 +1618,7 @@ memory.</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxReleaseExportedMemory(
     vx_context                                  context,
-    <span class="directive">const</span> vx_uint8**                            ptr);</code></pre>
+    <span class="directive">const</span> vx_uint8                              **ptr);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1771,7 +1760,7 @@ Import is a container of OpenVX objects, which may be retreived by name.</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">vx_reference vxGetImportReferenceByName(
     vx_import                                   import,
-    <span class="directive">const</span> vx_char*                              name);</code></pre>
+    <span class="directive">const</span> vx_char                               *name);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1856,9 +1845,9 @@ release function to release a reference obtained by this method.</p>
 <pre class="CodeRay highlight"><code data-lang="c">vx_import vxImportObjectsFromMemory(
     vx_context                                  context,
     vx_size                                     numrefs,
-    vx_reference*                               refs,
-    <span class="directive">const</span> vx_enum*                              uses,
-    <span class="directive">const</span> vx_uint8*                             ptr,
+    vx_reference                                *refs,
+    <span class="directive">const</span> vx_enum                               *uses,
+    <span class="directive">const</span> vx_uint8                              *ptr,
     vx_size                                     length);</code></pre>
 </div>
 </div>
@@ -1941,7 +1930,7 @@ export.
 Only references for objects created by the application, where the
 corresponding <em>uses</em> entry is <code><a href="#VX_IX_USE_APPLICATION_CREATE">VX_IX_USE_APPLICATION_CREATE</a></code> should be
 filled in by the application; all other entries will be supplied by the
-framework and may be initialised by the application to NULL.
+framework and may be initialized by the application to NULL.
 The <em>uses</em> array must have the identical length and content as given at the
 time of export, and the value of <em>numrefs</em> must also match; these measures
 increase confidence that the import contains the correct data.</p>
@@ -1967,7 +1956,7 @@ new parameter is of the correct type to run with the graph, which cannot be
 re-verified.
 If the reference supplied is not suitable, an error will be returned, but
 there may be circumstances where changing graph parameters for unsuitable
-ones is not detected and could lead to implementation-dependent behaviour;
+ones is not detected and could lead to implementation-defined behavior;
 one such circumstance is when the new parameters are images corresponding to
 overlapping regions of interest.
 The user should avoid these circumstances.
@@ -2044,7 +2033,7 @@ required.</p>
 <div id="vxReleaseImport" class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="c">vx_status vxReleaseImport(
-    vx_import*                                  import);</code></pre>
+    vx_import                                   *import);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2105,10 +2094,10 @@ object.</p>
 <div id="footer" style="max-width: 100;">
 <div id="footer-text">
 Version 1.1.1<br>
-Last updated 2024-05-08 14:10:32 UTC
+Last updated 2026-07-02 15:29:03 UTC
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
