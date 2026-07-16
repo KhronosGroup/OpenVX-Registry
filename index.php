@@ -88,7 +88,19 @@ $current_specs = array(
             array('label' => 'PDF', 'href' => 'specs/1.3.2/vx_khr_feature_sets/vx_khr_feature_sets_1_1.pdf'),
         ),
         'updated' => 'July 02, 2026',
+        'children' => array(
+            array(
+                'title' => 'OpenVX Safety Critical Specification 1.3 is published within the Feature Set document',
+                'links' => array(
+                    array('label' => 'HTML', 'href' => 'specs/1.3.2/vx_khr_feature_sets/html/vx_khr_feature_sets_1_1.html#_safety_critical_deployment_feature_set'),
+                ),
+                'updated' => 'July 02, 2026',
+            ),
+        ),
     ),
+);
+
+$header_packages = array(
     array(
         'title' => 'OpenVX 1.3.2 standard header package',
         'links' => array(
@@ -105,18 +117,25 @@ $current_specs = array(
             ),
         ),
     ),
-);
-
-$safety_specs = array(
     array(
-        'title' => 'OpenVX Safety Critical Specification 1.3 is published within the Feature Set document',
+        'title' => 'OpenVX 1.3.2 extension header package',
         'links' => array(
-            array('label' => 'HTML', 'href' => 'specs/1.3.2/vx_khr_feature_sets/html/vx_khr_feature_sets_1_1.html#_safety_critical_deployment_feature_set'),
-            array('label' => 'PDF', 'href' => 'specs/1.3.2/vx_khr_feature_sets/vx_khr_feature_sets_1_1.pdf'),
+            array('label' => 'Download', 'href' => 'api/1.3.2/openvx-extension-headers-1.3.2.tar.bz2'),
         ),
-        'updated' => 'July 02, 2026',
+        'updated' => 'July 05, 2026',
+        'note' => 'This package contains header files for these officially supported extensions and for the provisional extensions listed below.',
+        'children' => array(
+            array(
+                'title' => 'Information about header files',
+                'links' => array(
+                    array('label' => 'HTML', 'href' => 'api/1.3.2/OpenVX_Header_Files.html'),
+                ),
+                'updated' => 'July 02, 2026',
+            ),
+        ),
     ),
 );
+
 
 $khr_extensions = array(
     array(
@@ -150,14 +169,6 @@ $khr_extensions = array(
             array('label' => 'PDF', 'href' => 'extensions/vx_khr_user_data_object/1.1/vx_khr_user_data_object_1_1.pdf'),
         ),
         'updated' => 'July 02, 2026',
-    ),
-    array(
-        'title' => 'OpenVX 1.3.2 extension header package',
-        'links' => array(
-            array('label' => 'Download', 'href' => 'api/1.3.2/openvx-extension-headers-1.3.2.tar.bz2'),
-        ),
-        'updated' => 'July 05, 2026',
-        'note' => 'This package contains header files for these officially supported extensions and for the provisional extensions listed below.',
     ),
 );
 
@@ -302,6 +313,7 @@ $older_specs = array(
 <h3>OpenVX Registry Contents</h3>
 <ul class="ovx-toc">
     <li><a href="#current-specifications">Current Specifications</a></li>
+    <li><a href="#headers">Header Packages</a></li>
     <li><a href="#khr-extensions">Ratified KHR Extensions</a></li>
     <li><a href="#provisional-extensions">Provisional KHR Extensions</a></li>
     <li><a href="#older-specifications">Older Specifications</a></li>
@@ -313,8 +325,9 @@ $older_specs = array(
 <p class="ovx-current">Current version of OpenVX: <strong>OpenVX 1.3.2</strong></p>
 <?php openvx_render_table($current_specs); ?>
 
-<p class="ovx-current">Current version of OpenVX Safety Critical Specification: <strong>OpenVX_SC 1.3</strong></p>
-<?php openvx_render_table($safety_specs); ?>
+
+<h3 id="headers">Header Packages</h3>
+<?php openvx_render_table($header_packages); ?>
 
 <h3 id="khr-extensions">Ratified KHR Extensions <span class="ovx-badge">Conformance tests available</span></h3>
 <?php openvx_render_table($khr_extensions); ?>
