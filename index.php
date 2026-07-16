@@ -106,33 +106,22 @@ $header_packages = array(
         'links' => array(
             array('label' => 'Download', 'href' => 'api/1.3.2/openvx-standard-headers-1.3.2.tar.bz2'),
         ),
-        'updated' => 'July 05, 2026',
-        'children' => array(
-            array(
-                'title' => 'Information about header files',
-                'links' => array(
-                    array('label' => 'HTML', 'href' => 'api/1.3.2/OpenVX_Header_Files.html'),
-                ),
-                'updated' => 'July 02, 2026',
-            ),
-        ),
+        'updated' => 'July 02, 2026',
     ),
     array(
         'title' => 'OpenVX 1.3.2 extension header package',
         'links' => array(
             array('label' => 'Download', 'href' => 'api/1.3.2/openvx-extension-headers-1.3.2.tar.bz2'),
         ),
-        'updated' => 'July 05, 2026',
-        'note' => 'This package contains header files for these officially supported extensions and for the provisional extensions listed below.',
-        'children' => array(
-            array(
-                'title' => 'Information about header files',
-                'links' => array(
-                    array('label' => 'HTML', 'href' => 'api/1.3.2/OpenVX_Header_Files.html'),
-                ),
-                'updated' => 'July 02, 2026',
-            ),
+        'updated' => 'July 02, 2026',
+        'note' => 'This package contains header files for ratified and the provisional extensions listed below.',
+    ),
+    array(
+        'title' => 'Information about header files',
+        'links' => array(
+            array('label' => 'HTML', 'href' => 'api/1.3.2/OpenVX_Header_Files.html'),
         ),
+        'updated' => 'July 02, 2026',
     ),
 );
 
